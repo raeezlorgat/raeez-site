@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP8T5J8M28"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JP8T5J8M28');
-  </script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP8T5J8M28"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JP8T5J8M28');
+    </script>
 
     <title>Raeez Lorgat</title>
-    
+
     <!-- Typography: EB Garamond variable font for complete control -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
-    
+
     <style>
         /* Reset with precision */
         *, *::before, *::after {
@@ -27,24 +27,24 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         /* Typography System */
         :root {
             /* Type families */
             --serif: 'EB Garamond', 'Hoefler Text', Garamond, serif;
-            
+
             /* Modular Scale: Perfect Fourth (1.333) */
             --scale-ratio: 1.333;
             --text-base: clamp(19px, 2.1vw, 22px);
             --text-small: calc(var(--text-base) / var(--scale-ratio));
             --text-tiny: calc(var(--text-small) / var(--scale-ratio));
-            
+
             /* Vertical Rhythm: 8px baseline grid */
             --baseline: 8px;
             --line-height-tight: 1.35;
             --line-height-base: 1.618;
             --line-height-loose: 1.75;
-            
+
             /* Spacing: Golden Ratio relationships */
             --space-quantum: var(--baseline);
             --space-atom: calc(var(--space-quantum) * 2);    /* 16px */
@@ -52,13 +52,13 @@
             --space-organism: calc(var(--space-quantum) * 5); /* 40px */
             --space-ecosystem: calc(var(--space-quantum) * 8); /* 64px */
             --space-universe: calc(var(--space-quantum) * 13); /* 104px */
-            
+
             /* Measure & Layout */
             --measure-narrow: 580px;
             --measure-base: 640px;
             --measure-wide: 720px;
             --gutter: calc(var(--space-atom) * 1.618);
-            
+
             /* Colors: Refined grayscale */
             --ink: #1a1917;
             --ink-secondary: #57534e;
@@ -66,7 +66,7 @@
             --ink-ghost: #d6d3d1;
             --paper: #fefdfb;
             --paper-alt: #fafaf9;
-            
+
             /* Optical adjustments */
             --optical-edge: -0.05em;
             --kern-tight: -0.02em;
@@ -75,7 +75,7 @@
             --kern-wide: 0.08em;
             --kern-ultra: 0.12em;
         }
-        
+
         /* Base document */
         html {
             font-size: 100%;
@@ -83,18 +83,18 @@
             scroll-behavior: smooth;
             hanging-punctuation: first last;
         }
-        
+
         /* Canvas */
         body {
             font-family: var(--serif);
             font-size: var(--text-base);
             font-weight: 400;
-            font-feature-settings: 
-                "kern" 1,    /* Kerning */
-                "liga" 1,    /* Ligatures */
-                "calt" 1,    /* Contextual alternates */
-                "onum" 1,    /* Old-style numerals */
-                "pnum" 1;    /* Proportional numerals */
+            font-feature-settings:
+                    "kern" 1,    /* Kerning */
+                    "liga" 1,    /* Ligatures */
+                    "calt" 1,    /* Contextual alternates */
+                    "onum" 1,    /* Old-style numerals */
+                    "pnum" 1;    /* Proportional numerals */
             line-height: var(--line-height-base);
             color: var(--ink);
             background: var(--paper);
@@ -102,7 +102,7 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-        
+
         /* Container: With space for left-positioned image */
         .container {
             max-width: calc(var(--measure-base) + var(--baseline) * 14);
@@ -111,7 +111,7 @@
             padding-left: calc(var(--baseline) * 20); /* More room for left image + margin */
             position: relative;
         }
-        
+
         /* Profile image: Positioned to the left of text */
         .profile-image {
             position: absolute;
@@ -122,12 +122,12 @@
             border-radius: 50%;
             object-fit: cover;
             filter: grayscale(0.1) contrast(1.05);
-            box-shadow: 
-                0 1px 2px rgba(0,0,0,0.04),
-                0 2px 4px rgba(0,0,0,0.03),
-                0 4px 8px rgba(0,0,0,0.02);
+            box-shadow:
+                    0 1px 2px rgba(0,0,0,0.04),
+                    0 2px 4px rgba(0,0,0,0.03),
+                    0 4px 8px rgba(0,0,0,0.02);
         }
-        
+
         /* Name: More prominent */
         .name {
             font-family: var(--serif);
@@ -139,7 +139,7 @@
             margin-bottom: var(--space-atom); /* Reduced from space-molecule */
             margin-left: var(--optical-edge);
         }
-        
+
         /* Bio: Elegant statement */
         .bio {
             font-size: calc(var(--text-base) * 0.95); /* Slightly smaller */
@@ -151,7 +151,7 @@
             hyphenate-limit-chars: 6 3 2;
             hyphenate-limit-lines: 2;
         }
-        
+
         /* Section headers */
         .section-header {
             font-family: var(--serif);
@@ -164,12 +164,12 @@
             margin-bottom: var(--space-molecule);
             margin-left: var(--optical-edge);
         }
-        
+
         /* List refinement */
         .project-list {
             list-style: none;
         }
-        
+
         .project-item {
             display: grid;
             grid-template-columns: 3.5rem 1fr;
@@ -178,7 +178,7 @@
             margin-bottom: calc(var(--baseline) * 1.5);
             padding-left: 0;
         }
-        
+
         /* Year: Tabular figures */
         .year {
             font-family: var(--serif);
@@ -188,43 +188,43 @@
             color: var(--ink-ghost);
             letter-spacing: var(--kern-loose);
         }
-        
+
         /* Content wrapper */
         .content {
             font-size: calc(var(--text-base) * 0.95); /* Slightly smaller */
             line-height: var(--line-height-tight);
         }
-        
+
         /* Links: Subtle and refined */
         a {
             color: inherit;
             text-decoration: none;
             background-image: linear-gradient(
-                to bottom,
-                transparent 0%,
-                transparent calc(100% - 1.5px),
-                var(--ink-ghost) calc(100% - 1.5px),
-                var(--ink-ghost) 100%
+                    to bottom,
+                    transparent 0%,
+                    transparent calc(100% - 1.5px),
+                    var(--ink-ghost) calc(100% - 1.5px),
+                    var(--ink-ghost) 100%
             );
             background-size: 100% 100%;
             background-position: 0 0;
-            transition: 
-                background-size 200ms cubic-bezier(0.4, 0, 0.2, 1),
-                color 200ms ease;
+            transition:
+                    background-size 200ms cubic-bezier(0.4, 0, 0.2, 1),
+                    color 200ms ease;
         }
-        
+
         a:hover {
             color: var(--ink);
             background-size: 100% 2px;
         }
-        
+
         /* Math notation */
         .math {
             font-style: italic;
             letter-spacing: var(--kern-loose);
             font-feature-settings: "ss01" 1; /* Stylistic set for math */
         }
-        
+
         /* Subtitle links */
         .subtitle {
             display: block;
@@ -234,23 +234,23 @@
             font-style: italic;
             letter-spacing: var(--kern-normal);
         }
-        
+
         .subtitle a {
             background-image: linear-gradient(
-                to bottom,
-                transparent 0%,
-                transparent calc(100% - 1px),
-                var(--ink-ghost) calc(100% - 1px),
-                var(--ink-ghost) 100%
+                    to bottom,
+                    transparent 0%,
+                    transparent calc(100% - 1px),
+                    var(--ink-ghost) calc(100% - 1px),
+                    var(--ink-ghost) 100%
             );
         }
-        
+
         /* Hanging punctuation */
         .content > a::before {
             content: "";
             margin-left: var(--optical-edge);
         }
-        
+
         /* Fine-tuned responsive */
         @media (max-width: 680px) {
             :root {
@@ -258,83 +258,83 @@
                 --space-universe: calc(var(--space-quantum) * 8);
                 --space-ecosystem: calc(var(--space-quantum) * 6);
             }
-            
+
             .container {
                 padding-left: var(--gutter);
                 padding-right: var(--gutter);
                 padding-top: calc(var(--baseline) * 16); /* Make room for image above */
             }
-            
+
             .profile-image {
                 position: relative;
                 left: auto;
                 top: auto;
                 margin-bottom: var(--space-organism);
             }
-            
+
             .project-item {
                 grid-template-columns: 1fr;
                 gap: calc(var(--baseline) * 0.5);
             }
-            
+
             .year {
                 color: var(--ink-tertiary);
             }
         }
-        
+
         /* Print optimization */
         @media print {
             :root {
                 --ink: #000;
                 --paper: #fff;
             }
-            
+
             body {
                 font-size: 11pt;
                 line-height: 1.4;
             }
-            
+
             .container {
                 max-width: 100%;
                 padding: 0;
             }
-            
+
             .profile-image {
                 display: none;
             }
-            
+
             a {
                 background: none;
                 border-bottom: 0.5pt solid #ddd;
             }
-            
+
             .section-header {
                 page-break-after: avoid;
             }
-            
+
             .project-item {
                 page-break-inside: avoid;
             }
         }
-        
+
         /* Micro-interactions */
         @media (hover: hover) {
             .project-item {
                 transition: transform 100ms ease;
             }
-            
+
             .project-item:hover {
                 transform: translateX(2px);
             }
         }
-        
+
         /* Focus states for accessibility */
         a:focus-visible {
             outline: 2px solid var(--ink-secondary);
             outline-offset: 4px;
             border-radius: 2px;
         }
-        
+
         /* Selection styling */
         ::selection {
             background: var(--ink);
@@ -343,123 +343,134 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <img 
-            src="https://mass-finance.github.io/raeez/76.jpeg" 
+<div class="container">
+    <img
+            src="https://mass-finance.github.io/raeez/76.jpeg"
             alt="Raeez Lorgat"
             class="profile-image"
             loading="eager"
             decoding="async"
-        >
-        
-        <h1 class="name">Raeez Lorgat</h1>
-        
-        <p class="bio">
-            Managing director of <a href="https://momentum.inc">Momentum</a>. CEO of <a href="https://app.mass.build">Mass</a>. Researcher at <a href="https://perimeterinstitute.ca">Perimeter Institute for Theoretical Physics</a> at the intersection of <a href="https://en.wikipedia.org/wiki/Arithmetic_geometry">arithmetic</a> and <a href="https://en.wikipedia.org/wiki/Enumerative_geometry">enumerative geometry</a>, <a href="https://en.wikipedia.org/wiki/Factorization_algebra">factorization algebras</a>, and <a href="https://en.wikipedia.org/wiki/Quantum_field_theory">quantum field theory</a>.
-        </p>
-        
-        <h2 class="section-header">Projects & Whitepapers</h2>
-        
-        <ul class="project-list">
+    >
 
+    <h1 class="name">Raeez Lorgat</h1>
 
+    <p class="bio">
+        Managing director of <a href="https://momentum.inc">Momentum</a>. CEO of <a href="https://app.mass.build">Mass</a>. Researcher at <a href="https://perimeterinstitute.ca">Perimeter Institute for Theoretical Physics</a> at the intersection of <a href="https://en.wikipedia.org/wiki/Arithmetic_geometry">arithmetic</a> and <a href="https://en.wikipedia.org/wiki/Enumerative_geometry">enumerative geometry</a>, <a href="https://en.wikipedia.org/wiki/Factorization_algebra">factorization algebras</a>, and <a href="https://en.wikipedia.org/wiki/Quantum_field_theory">quantum field theory</a>.
+    </p>
 
+    <h2 class="section-header">Projects & Whitepapers</h2>
 
-            <li class="project-item">
-                <span class="year">2025</span>
-                <span class="content">
-                    <a href="https://tinyurl.com/55hsc5ky">Chiral Duality in the presence of Quantum Corrections: Geometric Realizations via Configuration Spaces</a>
+    <ul class="project-list">
+
+        <li class="project-item">
+            <span class="year">2025</span>
+            <span class="content">
+                    <a href="https://tinyurl.com/mr368bkn">A∞ Chiral Algebras and Chiral Hochschild Cohomology in 3D Holomorphic–Topological Quatum Field Theory (wip, preprint)</a>
                 </span>
-            </li>
+        </li>
 
-           <!-- <li class="project-item">
-                <span class="year">2025</span>
-                <span class="content">
-                    <a href="https://drive.google.com/file/d/1dc_Dmc9lJ93PYzmxbJPWUvEAjdTsDAc7/view?usp=sharing">BitStock as a Smart Asset</a>
+        <li class="project-item">
+            <span class="year">2025</span>
+            <span class="content">
+                    <a href="https://tinyurl.com/3dyfe7um">Smart Buildings: The Programmable Built Environment Operating System</a>
                 </span>
-            </li> -->
+        </li>
 
-            <li class="project-item">
-                <span class="year">2025</span>
-                <span class="content">
+        <li class="project-item">
+            <span class="year">2025</span>
+            <span class="content">
+                    <a href="https://tinyurl.com/55hsc5ky">Chiral Duality in the presence of Quantum Corrections: Geometric Realizations via Configuration Spaces (wip, preprint)</a>
+                </span>
+        </li>
+
+        <!-- <li class="project-item">
+             <span class="year">2025</span>
+             <span class="content">
+                 <a href="https://drive.google.com/file/d/1dc_Dmc9lJ93PYzmxbJPWUvEAjdTsDAc7/view?usp=sharing">BitStock as a Smart Asset</a>
+             </span>
+         </li> -->
+
+        <li class="project-item">
+            <span class="year">2025</span>
+            <span class="content">
                     <a href="https://docs.google.com/document/d/1RW1DNRaVieee3NvW4BUf1m6pYGr0jcPo9HHlnZdrLqM/edit?usp=sharing">Smart Assets</a>
                 </span>
-            </li>
+        </li>
 
-            <li class="project-item">
-                <span class="year">2025</span>
-                <span class="content">
+        <li class="project-item">
+            <span class="year">2025</span>
+            <span class="content">
                     <a href="https://docs.google.com/document/d/1c4luYj4edBCkVnW47JojjDK_3m8a20wX-2fPztIAF8Q/edit?usp=sharing">Prefabricated Construction Methodologies</a>
                 </span>
-            </li>
+        </li>
 
-            
-            <li class="project-item">
-                <span class="year">2025</span>
-                <span class="content">
+
+        <li class="project-item">
+            <span class="year">2025</span>
+            <span class="content">
                     <a href="https://docsend.com/view/gw8ipv2aymzg9kx6">Mass DIFC Deck</a>
                 </span>
-            </li>
-            
-            <li class="project-item">
-                <span class="year">2025</span>
-                <span class="content">
+        </li>
+
+        <li class="project-item">
+            <span class="year">2025</span>
+            <span class="content">
                     <a href="https://docs.google.com/document/d/1oTfyWyjEgBjWSw30W4BLQa029pMGJ7ciFDUzn4fUjj4/edit?usp=sharing">Special Economic Zones in a Box: from proof of scale to proof of network</a>
                 </span>
-            </li>
-            
-            <li class="project-item">
-                <span class="year">2025</span>
-                <span class="content">
+        </li>
+
+        <li class="project-item">
+            <span class="year">2025</span>
+            <span class="content">
                     <a href="https://docs.google.com/document/d/1eGnq8WpcdjS5TbD4U87v4HaN5YBgSwjKvXwerrXMIFY/edit?usp=sharing">The Laboratory for Incentivization, Coordination and Cooperation (LICC)</a>
                 </span>
-            </li>
-            
-            <li class="project-item">
-                <span class="year">2025</span>
-                <span class="content">
+        </li>
+
+        <li class="project-item">
+            <span class="year">2025</span>
+            <span class="content">
                     <a href="https://docs.google.com/document/d/12TriV64rqMidmlzEXU5HdvbhpX_Fu4bNq5UUo7-125I/edit?usp=sharing">Archai: scalable primitives for land and community infrastructure ownership</a>
                 </span>
-            </li>
-            
-            <li class="project-item">
-                <span class="year">2025</span>
-                <span class="content">
+        </li>
+
+        <li class="project-item">
+            <span class="year">2025</span>
+            <span class="content">
                     <a href="https://docs.google.com/document/d/1mHGFAXGUP0VY90l8zW8djmEiMTRIPfgLz0a6NnqD7hY/edit?usp=sharing">Momentum Ecosystem Overview</a>
                 </span>
-            </li>
-            
-            <li class="project-item">
-                <span class="year">2025</span>
-                <span class="content">
+        </li>
+
+        <li class="project-item">
+            <span class="year">2025</span>
+            <span class="content">
                     <a href="https://docs.google.com/document/d/1c5iKhtAs03-KnmoRyF45xjePOszGIeMRUe642dpWTEQ/edit?usp=sharing">Moxie: programmable loyalty and rewards for large-distribution brands</a>
                 </span>
-            </li>
-            
-            <li class="project-item">
-                <span class="year">2025</span>
-                <span class="content">
+        </li>
+
+        <li class="project-item">
+            <span class="year">2025</span>
+            <span class="content">
                     <a href="https://docsend.com/view/wtbr7cfyfhckanht">Mass</a>
                 </span>
-            </li>
-            
-            <li class="project-item">
-                <span class="year">2020</span>
-                <span class="content">
+        </li>
+
+        <li class="project-item">
+            <span class="year">2020</span>
+            <span class="content">
                     <a href="https://github.com/raeez/igusa-cusp-form/blob/master/raeez.lorgat.automorphic-corrections.pdf">Automorphic Corrections: A Borcherds Lift of the Weak Jacobi Form <span class="math">φ</span>₀,₁, Generalized Borcherds-Kac-Moody Superalgebras and the Igusa Cusp Form</a>
                     <span class="subtitle">
                         <a href="https://github.com/raeez/igusa-cusp-form/blob/master/raeez.lorgat.automorphic-corrections-presentation.pdf">Slides with example CY3 geometries categorifying Automorphic forms</a>
                     </span>
                 </span>
-            </li>
-            
-            <li class="project-item">
-                <span class="year">2018</span>
-                <span class="content">
+        </li>
+
+        <li class="project-item">
+            <span class="year">2018</span>
+            <span class="content">
                     <a href="https://github.com/raeez/topological-strings/blob/master/out/main.pdf">Some calculations concerning the topological string</a>
                 </span>
-            </li>
-        </ul>
-    </div>
+        </li>
+    </ul>
+</div>
 </body>
 </html>
