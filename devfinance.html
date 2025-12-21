@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>/dev/finance — Raeez Lorgat</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --serif: 'EB Garamond', 'Hoefler Text', Garamond, serif;
+            --text-base: clamp(18px, 2.1vw, 21px);
+            --text-small: calc(var(--text-base) / 1.2);
+            --text-tiny: calc(var(--text-small) / 1.2);
+            --baseline: 8px;
+            --ink: #1a1917;
+            --ink-secondary: #57534e;
+            --ink-tertiary: #a8a29e;
+            --ink-ghost: #d6d3d1;
+            --paper: #fefdfb;
+        }
+
+        html {
+            font-size: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--serif);
+            font-size: var(--text-base);
+            font-weight: 400;
+            line-height: 1.618;
+            color: var(--ink);
+            background: var(--paper);
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 80px 24px 120px;
+        }
+
+        .back-link {
+            font-size: var(--text-tiny);
+            color: var(--ink-tertiary);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 48px;
+        }
+
+        .back-link:hover {
+            color: var(--ink);
+        }
+
+        h1 {
+            font-size: calc(var(--text-base) * 1.8);
+            font-weight: 400;
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
+        }
+
+        .subtitle {
+            font-size: var(--text-base);
+            color: var(--ink-secondary);
+            font-style: italic;
+            margin-bottom: 48px;
+        }
+
+        .narrative {
+            font-size: var(--text-base);
+            line-height: 1.75;
+            margin-bottom: 32px;
+            max-width: 640px;
+        }
+
+        .narrative a {
+            color: var(--ink);
+            text-decoration: none;
+            background-image: linear-gradient(
+                to bottom,
+                transparent 0%,
+                transparent calc(100% - 1px),
+                var(--ink-ghost) calc(100% - 1px),
+                var(--ink-ghost) 100%
+            );
+        }
+
+        .narrative a:hover {
+            background-image: linear-gradient(
+                to bottom,
+                transparent 0%,
+                transparent calc(100% - 1.5px),
+                var(--ink-secondary) calc(100% - 1.5px),
+                var(--ink-secondary) 100%
+            );
+        }
+
+        .section-label {
+            font-size: var(--text-tiny);
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--ink-tertiary);
+            margin-bottom: 24px;
+            margin-top: 64px;
+        }
+
+        .section-label:first-of-type {
+            margin-top: 48px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .photo-grid.single {
+            grid-template-columns: 1fr;
+        }
+
+        .photo-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            filter: contrast(1.02);
+        }
+
+        .photo-caption {
+            font-size: var(--text-small);
+            color: var(--ink-tertiary);
+            font-style: italic;
+            margin-bottom: 48px;
+            line-height: 1.5;
+        }
+
+        .address {
+            font-style: normal;
+            color: var(--ink-secondary);
+        }
+
+        .artifact-list {
+            list-style: none;
+            margin-top: 24px;
+        }
+
+        .artifact-item {
+            margin-bottom: 20px;
+            padding-left: 0;
+        }
+
+        .artifact-item a {
+            color: var(--ink);
+            text-decoration: none;
+            background-image: linear-gradient(
+                to bottom,
+                transparent 0%,
+                transparent calc(100% - 1px),
+                var(--ink-ghost) calc(100% - 1px),
+                var(--ink-ghost) 100%
+            );
+        }
+
+        .artifact-item a:hover {
+            color: var(--ink);
+            background-image: linear-gradient(
+                to bottom,
+                transparent 0%,
+                transparent calc(100% - 1.5px),
+                var(--ink-secondary) calc(100% - 1.5px),
+                var(--ink-secondary) 100%
+            );
+        }
+
+        .artifact-description {
+            display: block;
+            font-size: var(--text-small);
+            color: var(--ink-tertiary);
+            margin-top: 4px;
+        }
+
+        .year-tag {
+            font-size: var(--text-tiny);
+            color: var(--ink-ghost);
+            margin-right: 12px;
+            font-feature-settings: "tnum" 1;
+        }
+
+        blockquote {
+            border-left: 2px solid var(--ink-ghost);
+            padding-left: 20px;
+            margin: 40px 0;
+            font-style: italic;
+            color: var(--ink-secondary);
+        }
+
+        blockquote footer {
+            font-style: normal;
+            font-size: var(--text-small);
+            margin-top: 8px;
+            color: var(--ink-tertiary);
+        }
+
+        .divider {
+            width: 40px;
+            height: 1px;
+            background: var(--ink-ghost);
+            margin: 56px 0;
+        }
+
+        @media (max-width: 600px) {
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 48px 20px 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Raeez Lorgat</a>
+
+        <h1>/dev/finance</h1>
+        <p class="subtitle">Palo Alto, 2009–2010</p>
+
+        <p class="narrative">
+            An MIT upperclassman introduced me to Patrick Collison during my freshman year in the 2008-2009 academic year. We hit it off immediately—both interested in payments, APIs, developer tools, global finance and programmable money. A few weeks later, Patrick invited me to join him on his first international flight: Palo Alto to Vancouver, British Columbia, in a small plane he'd fly himself. The trip was in a week.
+        </p>
+
+        <p class="narrative">
+            Being from South Africa, I knew immediately the main obstruction would be getting a Canadian visa in time. I had to decline. But that night, I took a chance: a 3am bus to New York City, four hours through the dark. I arrived at the Canadian consulate when it opened and pleaded my case. The woman at the desk took pity on me—I may have mentioned a family member in need—and they printed a single-entry visa on the spot.
+        </p>
+
+        <p class="narrative">
+            That morning I lay down on the grass in Central Park and <a href="https://twitter.com/raeez">tweeted</a>: "laying on the grass in central park after hacking my way to a visa." Patrick liked the tweet, and the game was on.
+        </p>
+
+        <div class="divider"></div>
+
+        <p class="section-label">The flight</p>
+
+        <p class="narrative">
+            We flew from Palo Alto up the coast over Oregon and Washington: Patrick's first international flight. That same day, we hiked the Grouse Grind in Vancouver—the sign said it was closed for winter conditions, so we went anyway.
+        </p>
+
+
+        <div class="photo-grid">
+            <img src="IMG_1981.JPG" alt="On the plane">
+            <img src="IMG_1982.JPG" alt="With the Diamond Star">
+        </div>
+
+        <div class="photo-grid">
+            <img src="IMG_1983.JPG" alt="On the tarmac">
+            <img src="IMG_1984.JPG" alt="Before takeoff">
+        </div>
+
+        <div class="photo-grid">
+            <img src="IMG_1988.JPG" alt="In the cockpit">
+            <img src="IMG_1989.JPG" alt="Flying">
+        </div>
+
+        <div class="photo-grid single">
+            <img src="IMG_1986.JPG" alt="Over water">
+        </div>
+        <p class="photo-caption">
+            Somewhere over Northern California, Oregon and/or Washington.
+        </p>
+
+        <div class="photo-grid">
+            <img src="IMG_1979.JPG" alt="Hiking">
+            <img src="IMG_1980.JPG" alt="Grouse Grind closed sign">
+        </div>
+
+        <p class="photo-caption">
+            Vancouver. The Grouse Grind was closed. We hiked it anyway.
+        </p>
+        <div class="divider"></div>
+
+        <p class="section-label">701 Webster Street</p>
+
+        <p class="narrative">
+            After dropping out and moving to California, the three of us—Patrick, John, and I—lived and worked out of a two-bedroom apartment at <span class="address">701 Webster Street, Palo Alto</span>. We called the company /dev/finance inc. and the product /dev/payments in homage to the Posix device naming convention. The legal corporation name was SlashDevSlashFinance inc. on account of Delaware corporate registry being unable to name companies with the forward slash '/'.
+
+<br/>
+<br/>
+The product idea was to make accepting money online as simple as a few lines of code. It was later renamed Stripe.
+        </p>
+
+        <div class="photo-grid">
+            <img src="IMG_1975.JPG" alt="Late night coding, 2010">
+            <img src="IMG_1976.JPG" alt="The apartment office">
+        </div>
+        <p class="photo-caption">
+            The apartment. Standing desks made of IKEA parts, cables everywhere.
+        </p>
+
+        <div class="photo-grid single">
+            <img src="IMG_1977.JPG" alt="/dev/payments website on screen">
+        </div>
+        <p class="photo-caption">
+            The /dev/payments website. "Payment processing for developers."
+        </p>
+
+        <div class="photo-grid">
+            <img src="IMG_1978.JPG" alt="John working">
+        </div>
+        <p class="photo-caption">
+            John at his desk.
+        </p>
+
+        <div class="divider"></div>
+
+        <p class="section-label">Artifacts</p>
+
+        <ul class="artifact-list">
+            <li class="artifact-item">
+                <span class="year-tag">2010</span>
+                <a href="devfinance.pdf">/dev/finance inc. — Original pitch document I crafted; we raised from Sequoia, a16z, Peter Thiel and Elon Musk</a>
+                <span class="artifact-description">"Finance for developers, by developers."</span>
+            </li>
+            <li class="artifact-item">
+                <span class="year-tag">2022</span>
+                <a href="Letter Patrick Collison.pdf">Letter from Patrick Collison</a>
+                <span class="artifact-description">Stripe letterhead.</span>
+            </li>
+            <li class="artifact-item">
+                <span class="year-tag">2022</span>
+                <a href="Raeez Letter GC Letter Teneja.pdf">Letter from Hemant Taneja</a>
+                <span class="artifact-description">General Catalyst.</span>
+            </li>
+        </ul>
+
+    </div>
+</body>
+</html>
