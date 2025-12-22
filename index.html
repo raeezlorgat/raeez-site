@@ -103,6 +103,18 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
+        code {
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+            font-size: 0.75em;
+            letter-spacing: -0.02em;
+            background: var(--paper-alt);
+            padding: 0.15em 0.35em;
+            border-radius: 3px;
+            font-weight: 450;
+            color: var(--ink-secondary);
+        }
+
+
         /* Container: With space for left-positioned image */
         .container {
             max-width: calc(var(--measure-base) + var(--baseline) * 14);
@@ -112,7 +124,16 @@
             position: relative;
         }
 
-        /* Profile image: Positioned to the left of text */
+        a code {
+            background: transparent;
+            padding: 0;
+            transition: color 200ms ease;
+        }
+
+        a:hover code {
+            color: var(--ink);
+        }
+                /* Profile image: Positioned to the left of text */
         .profile-image {
             position: absolute;
             left: calc(var(--gutter) * 1.2);
@@ -410,6 +431,11 @@ At sixteen, I had <a href="https://en.wikipedia.org/wiki/Meanings_of_minor-plane
             <span class="year">2025</span>
             <span class="content">
                     <a href="https://docs.google.com/document/d/18c076KBHJZLo-HZSI8rZM5l5xgzPJ_J1HHMHzafMg2Y/edit?tab=t.0">Open Source SEZ Legal Stack</a>
+
+               <span class="subtitle">
+                 <a href="https://github.com/momentum-sez/stack"><code>momentum-sez/stack</code> public github repository</a>
+               </span>
+
              </span>
         </li>
 
