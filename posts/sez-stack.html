@@ -8,7 +8,11 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP8T5J8M28"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
         gtag('config', 'G-JP8T5J8M28');
     </script>
@@ -16,16 +20,19 @@
     <title>The Momentum Open Source SEZ Stack — Raeez Lorgat</title>
 
     <!-- SEO Meta -->
-    <meta name="description" content="A Technical Specification for Programmable Jurisdictional Infrastructure. The complete open-source stack for building and operating Special Economic Zones.">
+    <meta name="description"
+          content="A Technical Specification for Programmable Jurisdictional Infrastructure. The complete open-source stack for building and operating Special Economic Zones.">
     <meta name="author" content="Raeez Lorgat">
     <meta property="og:title" content="The Momentum Open Source SEZ Stack">
-    <meta property="og:description" content="A Technical Specification for Programmable Jurisdictional Infrastructure — Raeez Lorgat">
+    <meta property="og:description"
+          content="A Technical Specification for Programmable Jurisdictional Infrastructure — Raeez Lorgat">
     <meta property="og:type" content="article">
 
     <!-- Typography: EB Garamond variable font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+          rel="stylesheet">
 
     <style>
         /* Reset */
@@ -325,58 +332,60 @@
     </style>
 </head>
 <body>
-    <article class="article-container">
-        <a href="index.html" class="back-link">Raeez Lorgat</a>
+<article class="article-container">
+    <a href="index.html" class="back-link">Raeez Lorgat</a>
 
-        <header class="article-header">
-            <h1 class="article-title">The Momentum Open Source SEZ Stack</h1>
-            <p class="article-subtitle">A Technical Specification for Programmable Jurisdictional Infrastructure</p>
-            <p class="article-meta">
-                Version 0.4.0 — December 2025 — <a href="https://docs.google.com/document/d/18c076KBHJZLo-HZSI8rZM5l5xgzPJ_J1HHMHzafMg2Y" target="_blank" rel="noopener">View on Google Docs</a>
-            </p>
-        </header>
+    <header class="article-header">
+        <h1 class="article-title">The Momentum Open Source SEZ Stack</h1>
+        <p class="article-subtitle">A Technical Specification for Programmable Jurisdictional Infrastructure</p>
+        <p class="article-meta">
+            Version 0.4.0 — December 2025 — <a
+                href="https://docs.google.com/document/d/18c076KBHJZLo-HZSI8rZM5l5xgzPJ_J1HHMHzafMg2Y" target="_blank"
+                rel="noopener">View on Google Docs</a>
+        </p>
+    </header>
 
-        <div id="article-content" class="article-content">
-            <p class="loading">Loading article...</p>
-        </div>
+    <div id="article-content" class="article-content">
+        <p class="loading">Loading article...</p>
+    </div>
 
-        <footer class="author-byline">
-            <strong>Raeez Lorgat</strong>, Managing Partner at Momentum
-        </footer>
-    </article>
+    <footer class="author-byline">
+        <strong>Raeez Lorgat</strong>, Managing Partner at Momentum
+    </footer>
+</article>
 
-    <script>
-        const GOOGLE_DOC_ID = '18c076KBHJZLo-HZSI8rZM5l5xgzPJ_J1HHMHzafMg2Y';
+<script>
+    const GOOGLE_DOC_ID = '18c076KBHJZLo-HZSI8rZM5l5xgzPJ_J1HHMHzafMg2Y';
 
-        // Your deployed Google Apps Script URL (same one used for other articles)
-        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwap-GYIRky-iOioo_7IaA0VvW8t_i1lXNesPlLT-hcGsJxQUeb93YR_t466iVw8wpdBQ/exec';
+    // Your deployed Google Apps Script URL (same one used for other articles)
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwap-GYIRky-iOioo_7IaA0VvW8t_i1lXNesPlLT-hcGsJxQUeb93YR_t466iVw8wpdBQ/exec';
 
-        async function loadArticle() {
-            const contentEl = document.getElementById('article-content');
+    async function loadArticle() {
+        const contentEl = document.getElementById('article-content');
 
-            try {
-                const url = `${APPS_SCRIPT_URL}?id=${GOOGLE_DOC_ID}`;
-                const response = await fetch(url);
+        try {
+            const url = `${APPS_SCRIPT_URL}?id=${GOOGLE_DOC_ID}`;
+            const response = await fetch(url);
 
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status}`);
-                }
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
 
-                let html = await response.text();
+            let html = await response.text();
 
-                // Check if it's an error JSON response
-                if (html.startsWith('{') && html.includes('error')) {
-                    throw new Error('Apps Script error');
-                }
+            // Check if it's an error JSON response
+            if (html.startsWith('{') && html.includes('error')) {
+                throw new Error('Apps Script error');
+            }
 
-                // Filter out the intro elements we display in the header
-                html = filterIntro(html);
+            // Filter out the intro elements we display in the header
+            html = filterIntro(html);
 
-                contentEl.innerHTML = html;
+            contentEl.innerHTML = html;
 
-            } catch (error) {
-                console.error('Failed to load article:', error);
-                contentEl.innerHTML = `
+        } catch (error) {
+            console.error('Failed to load article:', error);
+            contentEl.innerHTML = `
         <div class="error">
           <p>Unable to load the article.</p>
           <p>
@@ -390,38 +399,36 @@
           </p>
         </div>
       `;
+        }
+    }
+
+    function filterIntro(html) {
+        const temp = document.createElement('div');
+        temp.innerHTML = html;
+
+        const elements = temp.querySelectorAll('p, h1, h2, h3');
+
+        elements.forEach(el => {
+            const text = el.textContent.trim().toUpperCase();
+
+            if (
+                text.includes('MOMENTUM OPEN SOURCE SEZ STACK') ||
+                text.includes('TECHNICAL SPECIFICATION') ||
+                text.includes('PROGRAMMABLE JURISDICTIONAL') ||
+                text.includes('VERSION') ||
+                text.includes('TABLE OF CONTENTS')
+            ) {
+                el.remove();
             }
-        }
+        });
 
-        function filterIntro(html) {
-            // Parse and filter out intro elements we already display in the header
-            const temp = document.createElement('div');
-            temp.innerHTML = html;
+        return temp.innerHTML;
+    }
 
-            const elements = temp.querySelectorAll('p, h1, h2, h3');
-            let skipCount = 0;
 
-            elements.forEach(el => {
-                const text = el.textContent.trim().toUpperCase();
-
-                if (
-                    text.includes('MOMENTUM OPEN SOURCE SEZ STACK') ||
-                    text.includes('TECHNICAL SPECIFICATION') ||
-                    text.includes('PROGRAMMABLE JURISDICTIONAL') ||
-                    text.includes('VERSION') ||
-                    text.includes('TABLE OF CONTENTS')
-                ) {
-                    el.remove();
-                    removed++;
-                }
-            });
-
-            return temp.innerHTML;
-        }
-
-        // Load immediately
-        loadArticle();
-    </script>
+    // Load immediately
+    loadArticle();
+</script>
 
 </body>
 </html>
