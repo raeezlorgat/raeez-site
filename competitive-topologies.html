@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP8T5J8M28"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JP8T5J8M28');
+    </script>
+
+    <title>Competitive Topologies & The Monopoly Problem — Raeez Lorgat</title>
+
+    <!-- SEO Meta -->
+    <meta name="description" content="Why Democratic Institutions Need Competition. A Response to Eric Schmidt and Andrew Sorota's 'This Is No Way to Rule a Country'">
+    <meta name="author" content="Raeez Lorgat">
+    <meta property="og:title" content="Competitive Topologies & The Monopoly Problem">
+    <meta property="og:description" content="Why Democratic Institutions Need Competition — Raeez Lorgat">
+    <meta property="og:type" content="article">
+
+    <!-- Typography: EB Garamond variable font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Typography System */
+        :root {
+            --serif: 'EB Garamond', 'Hoefler Text', Garamond, serif;
+            --scale-ratio: 1.333;
+            --text-base: clamp(19px, 2.1vw, 22px);
+            --text-small: calc(var(--text-base) / var(--scale-ratio));
+            --text-tiny: calc(var(--text-small) / var(--scale-ratio));
+            --text-large: calc(var(--text-base) * var(--scale-ratio));
+            --text-xlarge: calc(var(--text-large) * var(--scale-ratio));
+            --text-xxlarge: calc(var(--text-xlarge) * var(--scale-ratio));
+
+            --baseline: 8px;
+            --line-height-tight: 1.35;
+            --line-height-base: 1.618;
+            --line-height-loose: 1.75;
+
+            --space-quantum: var(--baseline);
+            --space-atom: calc(var(--space-quantum) * 2);
+            --space-molecule: calc(var(--space-quantum) * 3);
+            --space-organism: calc(var(--space-quantum) * 5);
+            --space-ecosystem: calc(var(--space-quantum) * 8);
+            --space-universe: calc(var(--space-quantum) * 13);
+
+            --measure-narrow: 580px;
+            --measure-base: 640px;
+            --measure-wide: 720px;
+            --gutter: calc(var(--space-atom) * 1.618);
+
+            --ink: #1a1917;
+            --ink-secondary: #57534e;
+            --ink-tertiary: #a8a29e;
+            --ink-ghost: #d6d3d1;
+            --paper: #fefdfb;
+            --paper-alt: #fafaf9;
+
+            --optical-edge: -0.05em;
+            --kern-tight: -0.02em;
+            --kern-normal: 0;
+            --kern-loose: 0.015em;
+            --kern-wide: 0.08em;
+            --kern-ultra: 0.12em;
+        }
+
+        html {
+            font-size: 100%;
+            -webkit-text-size-adjust: 100%;
+            scroll-behavior: smooth;
+            hanging-punctuation: first last;
+        }
+
+        body {
+            font-family: var(--serif);
+            font-size: var(--text-base);
+            font-weight: 400;
+            font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "onum" 1, "pnum" 1;
+            line-height: var(--line-height-base);
+            color: var(--ink);
+            background: var(--paper);
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Article Container */
+        .article-container {
+            max-width: var(--measure-wide);
+            margin: 0 auto;
+            padding: var(--space-universe) var(--gutter) var(--space-ecosystem);
+        }
+
+        /* Back link */
+        .back-link {
+            font-size: var(--text-tiny);
+            font-weight: 500;
+            letter-spacing: var(--kern-ultra);
+            text-transform: uppercase;
+            color: var(--ink-tertiary);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: var(--space-organism);
+            transition: color 200ms ease;
+        }
+
+        .back-link:hover {
+            color: var(--ink);
+        }
+
+        .back-link::before {
+            content: '←';
+            margin-right: 0.5em;
+        }
+
+        /* Article Header */
+        .article-header {
+            margin-bottom: var(--space-ecosystem);
+            border-bottom: 1px solid var(--ink-ghost);
+            padding-bottom: var(--space-organism);
+        }
+
+        .article-title {
+            font-family: var(--serif);
+            font-size: var(--text-xxlarge);
+            font-weight: 500;
+            line-height: var(--line-height-tight);
+            color: var(--ink);
+            margin-bottom: var(--space-molecule);
+            letter-spacing: var(--kern-tight);
+        }
+
+        .article-subtitle {
+            font-size: var(--text-large);
+            font-style: italic;
+            color: var(--ink-secondary);
+            line-height: var(--line-height-base);
+            margin-bottom: var(--space-molecule);
+        }
+
+        .article-meta {
+            font-size: var(--text-small);
+            color: var(--ink-tertiary);
+            font-style: italic;
+        }
+
+        .article-meta a {
+            color: var(--ink-secondary);
+            text-decoration: none;
+            border-bottom: 1px solid var(--ink-ghost);
+            transition: border-color 200ms ease, color 200ms ease;
+        }
+
+        .article-meta a:hover {
+            color: var(--ink);
+            border-color: var(--ink-secondary);
+        }
+
+        /* Article Content */
+        .article-content {
+            max-width: var(--measure-base);
+        }
+
+        .article-content p {
+            margin-bottom: var(--space-molecule);
+            hyphens: auto;
+            hyphenate-limit-chars: 6 3 2;
+            hyphenate-limit-lines: 2;
+        }
+
+        .article-content h1 {
+            font-family: var(--serif);
+            font-size: var(--text-xlarge);
+            font-weight: 600;
+            color: var(--ink);
+            margin-top: var(--space-ecosystem);
+            margin-bottom: var(--space-molecule);
+            line-height: var(--line-height-tight);
+            letter-spacing: var(--kern-tight);
+        }
+
+        .article-content h2 {
+            font-family: var(--serif);
+            font-size: var(--text-large);
+            font-weight: 600;
+            color: var(--ink);
+            margin-top: var(--space-ecosystem);
+            margin-bottom: var(--space-molecule);
+            line-height: var(--line-height-tight);
+            letter-spacing: var(--kern-tight);
+        }
+
+        .article-content h3 {
+            font-family: var(--serif);
+            font-size: var(--text-base);
+            font-weight: 600;
+            color: var(--ink);
+            margin-top: var(--space-organism);
+            margin-bottom: var(--space-atom);
+            line-height: var(--line-height-tight);
+        }
+
+        .article-content a {
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid var(--ink-tertiary);
+            transition: border-color 200ms ease;
+        }
+
+        .article-content a:hover {
+            border-color: var(--ink);
+        }
+
+        .article-content strong {
+            font-weight: 600;
+        }
+
+        .article-content em {
+            font-style: italic;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin-bottom: var(--space-molecule);
+            padding-left: var(--space-organism);
+        }
+
+        .article-content li {
+            margin-bottom: var(--space-atom);
+        }
+
+        .article-content hr {
+            border: none;
+            border-top: 1px solid var(--ink-ghost);
+            margin: var(--space-ecosystem) 0;
+        }
+
+        /* Author byline */
+        .author-byline {
+            margin-top: var(--space-ecosystem);
+            padding-top: var(--space-organism);
+            border-top: 1px solid var(--ink-ghost);
+            font-style: italic;
+            color: var(--ink-secondary);
+        }
+
+        /* Loading state */
+        .loading {
+            text-align: center;
+            padding: var(--space-universe) 0;
+            color: var(--ink-tertiary);
+            font-style: italic;
+        }
+
+        /* Error state */
+        .error {
+            padding: var(--space-organism);
+            background: var(--paper-alt);
+            border-radius: 4px;
+            color: var(--ink-secondary);
+        }
+
+        .error a {
+            color: var(--ink);
+        }
+
+        /* Responsive */
+        @media (max-width: 680px) {
+            .article-container {
+                padding: var(--space-ecosystem) var(--space-molecule) var(--space-organism);
+            }
+
+            .article-title {
+                font-size: var(--text-xlarge);
+            }
+
+            .article-subtitle {
+                font-size: var(--text-base);
+            }
+        }
+    </style>
+</head>
+<body>
+    <article class="article-container">
+        <a href="index.html" class="back-link">Raeez Lorgat</a>
+
+        <header class="article-header">
+            <h1 class="article-title">Competitive Topologies & The Monopoly Problem</h1>
+            <p class="article-subtitle">Why Democratic Institutions Need Competition</p>
+            <p class="article-meta">
+                A Response to Eric Schmidt and Andrew Sorota's
+                <a href="https://www.nytimes.com/2025/11/11/opinion/ai-democracy-government-authoritarianism.html" target="_blank" rel="noopener">"This Is No Way to Rule a Country"</a>
+            </p>
+        </header>
+
+        <div id="article-content" class="article-content">
+            <p class="loading">Loading...</p>
+        </div>
+
+        <footer class="author-byline">
+            <strong>Raeez Lorgat</strong>, Managing Partner at Momentum
+        </footer>
+    </article>
+
+    <script>
+        // ============================================================
+        // CONFIGURATION - Update this after deploying Apps Script
+        // ============================================================
+
+        // Your deployed Google Apps Script URL
+        // Example: 'https://script.google.com/macros/s/AKfycbx.../exec'
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwap-GYIRky-iOioo_7IaA0VvW8t_i1lXNesPlLT-hcGsJxQUeb93YR_t466iVw8wpdBQ/exec';
+
+        // Google Doc ID
+        const GOOGLE_DOC_ID = '1nNZcgk4zH0-aKP_Sea5dqrS56nzRsYxNBUvqOuAHX5Y';
+
+        // ============================================================
+
+        async function loadArticle() {
+            const contentEl = document.getElementById('article-content');
+
+            try {
+                const response = await fetch(`${APPS_SCRIPT_URL}?id=${GOOGLE_DOC_ID}`);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+
+                const html = await response.text();
+
+                // Check if it's an error response
+                if (html.startsWith('{')) {
+                    const error = JSON.parse(html);
+                    throw new Error(error.message || error.error);
+                }
+
+                // Filter out the title/subtitle/byline that we already show in the header
+                const cleanedHtml = filterIntro(html);
+                contentEl.innerHTML = cleanedHtml;
+
+            } catch (error) {
+                console.error('Failed to load article:', error);
+                contentEl.innerHTML = `
+                    <div class="error">
+                        <p>Unable to load article. <a href="https://docs.google.com/document/d/${GOOGLE_DOC_ID}/pub" target="_blank" rel="noopener">Read on Google Docs →</a></p>
+                    </div>
+                `;
+            }
+        }
+
+        function filterIntro(html) {
+            // Parse and filter out intro elements we already display
+            const temp = document.createElement('div');
+            temp.innerHTML = html;
+
+            const elements = temp.querySelectorAll('p, h1, h2, h3');
+            let skipCount = 0;
+
+            elements.forEach(el => {
+                const text = el.textContent.trim();
+                if (skipCount < 4) {
+                    if (text.includes('Competitive Topologies') ||
+                        text.includes('Why Democratic Institutions') ||
+                        text.includes('Response to Eric Schmidt') ||
+                        text.includes('Raeez Lorgat, Managing Partner')) {
+                        el.remove();
+                        skipCount++;
+                    }
+                }
+            });
+
+            return temp.innerHTML;
+        }
+
+        // Load immediately
+        loadArticle();
+    </script>
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP8T5J8M28"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JP8T5J8M28');
+    </script>
+
+    <title>The Momentum Open Source SEZ Stack — Raeez Lorgat</title>
+
+    <!-- SEO Meta -->
+    <meta name="description" content="A Technical Specification for Programmable Jurisdictional Infrastructure. The complete open-source stack for building and operating Special Economic Zones.">
+    <meta name="author" content="Raeez Lorgat">
+    <meta property="og:title" content="The Momentum Open Source SEZ Stack">
+    <meta property="og:description" content="A Technical Specification for Programmable Jurisdictional Infrastructure — Raeez Lorgat">
+    <meta property="og:type" content="article">
+
+    <!-- Typography: EB Garamond variable font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Typography System */
+        :root {
+            --serif: 'EB Garamond', 'Hoefler Text', Garamond, serif;
+            --mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+            --scale-ratio: 1.333;
+            --text-base: clamp(19px, 2.1vw, 22px);
+            --text-small: calc(var(--text-base) / var(--scale-ratio));
+            --text-tiny: calc(var(--text-small) / var(--scale-ratio));
+            --text-large: calc(var(--text-base) * var(--scale-ratio));
+            --text-xlarge: calc(var(--text-large) * var(--scale-ratio));
+            --text-xxlarge: calc(var(--text-xlarge) * var(--scale-ratio));
+
+            --baseline: 8px;
+            --line-height-tight: 1.35;
+            --line-height-base: 1.618;
+            --line-height-loose: 1.75;
+
+            --space-quantum: var(--baseline);
+            --space-atom: calc(var(--space-quantum) * 2);
+            --space-molecule: calc(var(--space-quantum) * 3);
+            --space-organism: calc(var(--space-quantum) * 5);
+            --space-ecosystem: calc(var(--space-quantum) * 8);
+            --space-universe: calc(var(--space-quantum) * 13);
+
+            --measure-narrow: 580px;
+            --measure-base: 640px;
+            --measure-wide: 720px;
+            --gutter: calc(var(--space-atom) * 1.618);
+
+            --ink: #1a1917;
+            --ink-secondary: #57534e;
+            --ink-tertiary: #78716c;
+            --ink-ghost: #d6d3d1;
+            --paper: #fafaf9;
+            --paper-warm: #f5f5f4;
+        }
+
+        html {
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        body {
+            font-family: var(--serif);
+            font-size: var(--text-base);
+            line-height: var(--line-height-base);
+            color: var(--ink);
+            background: var(--paper);
+            min-height: 100vh;
+        }
+
+        /* Article Container */
+        .article-container {
+            max-width: var(--measure-wide);
+            margin: 0 auto;
+            padding: var(--space-universe) var(--gutter) var(--space-ecosystem);
+        }
+
+        /* Back link */
+        .back-link {
+            display: inline-block;
+            font-size: var(--text-small);
+            color: var(--ink-tertiary);
+            text-decoration: none;
+            margin-bottom: var(--space-ecosystem);
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--ink);
+        }
+
+        .back-link::before {
+            content: '←';
+            margin-right: 0.5em;
+        }
+
+        /* Article Header */
+        .article-header {
+            margin-bottom: var(--space-ecosystem);
+        }
+
+        .article-title {
+            font-size: var(--text-xxlarge);
+            font-weight: 500;
+            line-height: var(--line-height-tight);
+            letter-spacing: -0.02em;
+            margin-bottom: var(--space-molecule);
+        }
+
+        .article-subtitle {
+            font-size: var(--text-large);
+            font-style: italic;
+            color: var(--ink-secondary);
+            line-height: var(--line-height-tight);
+            margin-bottom: var(--space-atom);
+        }
+
+        .article-meta {
+            font-size: var(--text-small);
+            color: var(--ink-tertiary);
+        }
+
+        .article-meta a {
+            color: var(--ink-secondary);
+            text-decoration: none;
+            border-bottom: 1px solid var(--ink-ghost);
+        }
+
+        .article-meta a:hover {
+            border-color: var(--ink);
+        }
+
+        /* Article Content */
+        .article-content h1 {
+            font-size: var(--text-xlarge);
+            font-weight: 600;
+            margin: var(--space-universe) 0 var(--space-organism);
+            line-height: var(--line-height-tight);
+            letter-spacing: -0.01em;
+        }
+
+        .article-content h2 {
+            font-size: var(--text-large);
+            font-weight: 600;
+            margin: var(--space-ecosystem) 0 var(--space-organism);
+            line-height: var(--line-height-tight);
+        }
+
+        .article-content h3 {
+            font-size: var(--text-base);
+            font-weight: 600;
+            margin: var(--space-organism) 0 var(--space-molecule);
+            line-height: var(--line-height-tight);
+        }
+
+        .article-content p {
+            margin-bottom: var(--space-organism);
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .article-content a {
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid var(--ink-ghost);
+            transition: border-color 0.2s ease;
+        }
+
+        .article-content a:hover {
+            border-color: var(--ink);
+        }
+
+        .article-content blockquote {
+            margin: var(--space-organism) 0;
+            padding-left: var(--space-molecule);
+            border-left: 2px solid var(--ink-ghost);
+            color: var(--ink-secondary);
+            font-style: italic;
+        }
+
+        .article-content strong {
+            font-weight: 600;
+        }
+
+        .article-content em {
+            font-style: italic;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: var(--space-organism) 0;
+            padding-left: var(--space-ecosystem);
+        }
+
+        .article-content li {
+            margin-bottom: var(--space-atom);
+        }
+
+        .article-content code {
+            font-family: var(--mono);
+            font-size: 0.9em;
+            background: var(--paper-warm);
+            padding: 0.1em 0.3em;
+            border-radius: 3px;
+        }
+
+        .article-content pre {
+            background: var(--paper-warm);
+            padding: var(--space-molecule);
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: var(--space-organism) 0;
+        }
+
+        .article-content pre code {
+            background: none;
+            padding: 0;
+        }
+
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--space-organism) 0;
+            font-size: var(--text-small);
+        }
+
+        .article-content th,
+        .article-content td {
+            padding: var(--space-atom) var(--space-molecule);
+            text-align: left;
+            border-bottom: 1px solid var(--ink-ghost);
+        }
+
+        .article-content th {
+            font-weight: 600;
+            background: var(--paper-warm);
+        }
+
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            margin: var(--space-organism) 0;
+            border-radius: 4px;
+        }
+
+        /* Author byline */
+        .author-byline {
+            margin-top: var(--space-ecosystem);
+            padding-top: var(--space-organism);
+            border-top: 1px solid var(--ink-ghost);
+            font-style: italic;
+            color: var(--ink-secondary);
+        }
+
+        /* Horizontal rule */
+        .article-content hr {
+            border: none;
+            border-top: 1px solid var(--ink-ghost);
+            margin: var(--space-ecosystem) 0;
+        }
+
+        /* Loading state */
+        .loading {
+            text-align: center;
+            padding: var(--space-universe) 0;
+            color: var(--ink-tertiary);
+            font-style: italic;
+        }
+
+        /* Error state */
+        .error {
+            text-align: center;
+            padding: var(--space-ecosystem) 0;
+            color: var(--ink-secondary);
+        }
+
+        .error a {
+            color: var(--ink);
+            border-bottom: 1px solid var(--ink-ghost);
+        }
+
+        /* Responsive */
+        @media (max-width: 680px) {
+            .article-container {
+                padding: var(--space-ecosystem) var(--space-molecule) var(--space-organism);
+            }
+
+            .article-title {
+                font-size: var(--text-xlarge);
+            }
+
+            .article-subtitle {
+                font-size: var(--text-base);
+            }
+
+            .article-content table {
+                font-size: var(--text-tiny);
+            }
+
+            .article-content th,
+            .article-content td {
+                padding: var(--space-quantum) var(--space-atom);
+            }
+        }
+    </style>
+</head>
+<body>
+    <article class="article-container">
+        <a href="index.html" class="back-link">Raeez Lorgat</a>
+
+        <header class="article-header">
+            <h1 class="article-title">The Momentum Open Source SEZ Stack</h1>
+            <p class="article-subtitle">A Technical Specification for Programmable Jurisdictional Infrastructure</p>
+            <p class="article-meta">
+                Version 0.4.0 — December 2025 — <a href="https://docs.google.com/document/d/18c076KBHJZLo-HZSI8rZM5l5xgzPJ_J1HHMHzafMg2Y" target="_blank" rel="noopener">View on Google Docs</a>
+            </p>
+        </header>
+
+        <div id="article-content" class="article-content">
+            <p class="loading">Loading article...</p>
+        </div>
+
+        <footer class="author-byline">
+            <strong>Raeez Lorgat</strong>, Managing Partner at Momentum
+        </footer>
+    </article>
+
+    <script>
+        const GOOGLE_DOC_ID = '18c076KBHJZLo-HZSI8rZM5l5xgzPJ_J1HHMHzafMg2Y';
+
+        // Your deployed Google Apps Script URL (same one used for other articles)
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwap-GYIRky-iOioo_7IaA0VvW8t_i1lXNesPlLT-hcGsJxQUeb93YR_t466iVw8wpdBQ/exec';
+
+        async function loadArticle() {
+            const contentEl = document.getElementById('article-content');
+
+            try {
+                const url = `${APPS_SCRIPT_URL}?id=${GOOGLE_DOC_ID}`;
+                const response = await fetch(url);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+
+                let html = await response.text();
+
+                // Check if it's an error JSON response
+                if (html.startsWith('{') && html.includes('error')) {
+                    throw new Error('Apps Script error');
+                }
+
+                // Filter out the intro elements we display in the header
+                html = filterIntro(html);
+
+                contentEl.innerHTML = html;
+
+            } catch (error) {
+                console.error('Failed to load article:', error);
+                contentEl.innerHTML = `
+                    <div class="error">
+                        <p>Unable to load the article.</p>
+                        <p><a href="https://docs.google.com/document/d/${GOOGLE_DOC_ID}/pub" target="_blank" rel="noopener">Read on Google Docs →</a></p>
+                    </div>
+                `;
+            }
+        }
+
+        function filterIntro(html) {
+            // Parse and filter out intro elements we already display in the header
+            const temp = document.createElement('div');
+            temp.innerHTML = html;
+
+            const elements = temp.querySelectorAll('p, h1, h2, h3');
+            let skipCount = 0;
+
+            elements.forEach(el => {
+                const text = el.textContent.trim().toUpperCase();
+                if (skipCount < 5) {
+                    // Skip title, version info that we show in header
+                    if (text.includes('MOMENTUM OPEN SOURCE SEZ STACK') ||
+                        text.includes('TECHNICAL SPECIFICATION') ||
+                        text.includes('PROGRAMMABLE JURISDICTIONAL') ||
+                        text.includes('VERSION')) {
+                        text.includes('TABLE OF CONTENTS')) {
+                        el.remove();
+                        skipCount++;
+                    }
+                }
+            });
+
+            return temp.innerHTML;
+        }
+
+        // Load immediately
+        loadArticle();
+    </script>
+</body>
+</html>
