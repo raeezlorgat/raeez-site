@@ -348,8 +348,8 @@
     <script>
         const GOOGLE_DOC_ID = '18c076KBHJZLo-HZSI8rZM5l5xgzPJ_J1HHMHzafMg2Y';
 
-        // Your deployed Google Apps Script URL (same one used for other articles)
-        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwap-GYIRky-iOioo_7IaA0VvW8t_i1lXNesPlLT-hcGsJxQUeb93YR_t466iVw8wpdBQ/exec';
+        const APPS_SCRIPT_URL =
+            'https://script.google.com/macros/s/AKfycbwap-GYIRky-iOioo_7IaA0VvW8t_i1lXNesPlLT-hcGsJxQUeb93YR_t466iVw8wpdBQ/exec';
 
         async function loadArticle() {
             const contentEl = document.getElementById('article-content');
@@ -364,55 +364,58 @@
 
                 let html = await response.text();
 
-                // Check if it's an error JSON response
                 if (html.startsWith('{') && html.includes('error')) {
                     throw new Error('Apps Script error');
                 }
 
-                // Filter out the intro elements we display in the header
                 html = filterIntro(html);
-
                 contentEl.innerHTML = html;
 
             } catch (error) {
                 console.error('Failed to load article:', error);
                 contentEl.innerHTML = `
-                    <div class="error">
-                        <p>Unable to load the article.</p>
-                        <p><a href="https://docs.google.com/document/d/${GOOGLE_DOC_ID}/pub" target="_blank" rel="noopener">Read on Google Docs →</a></p>
-                    </div>
-                `;
+                <div class="error">
+                    <p>Unable to load the article.</p>
+                    <p>
+                        <a href="https://docs.google.com/document/d/${GOOGLE_DOC_ID}/pub"
+                           target="_blank" rel="noopener">
+                           Read on Google Docs →
+                        </a>
+                    </p>
+                </div>
+            `;
             }
         }
 
         function filterIntro(html) {
-            // Parse and filter out intro elements we already display in the header
             const temp = document.createElement('div');
             temp.innerHTML = html;
 
             const elements = temp.querySelectorAll('p, h1, h2, h3');
-            let skipCount = 0;
+            let removed = 0;
 
             elements.forEach(el => {
+                if (removed >= 5) return;
+
                 const text = el.textContent.trim().toUpperCase();
-                if (skipCount < 5) {
-                    // Skip title, version info that we show in header
-                    if (text.includes('MOMENTUM OPEN SOURCE SEZ STACK') ||
-                        text.includes('TECHNICAL SPECIFICATION') ||
-                        text.includes('PROGRAMMABLE JURISDICTIONAL') ||
-                        text.includes('VERSION')) {
-                        text.includes('TABLE OF CONTENTS')) {
-                        el.remove();
-                        skipCount++;
-                    }
+
+                if (
+                    text.includes('MOMENTUM OPEN SOURCE SEZ STACK') ||
+                    text.includes('TECHNICAL SPECIFICATION') ||
+                    text.includes('PROGRAMMABLE JURISDICTIONAL') ||
+                    text.includes('VERSION') ||
+                    text.includes('TABLE OF CONTENTS')
+                ) {
+                    el.remove();
+                    removed++;
                 }
             });
 
             return temp.innerHTML;
         }
 
-        // Load immediately
         loadArticle();
     </script>
+
 </body>
 </html>
