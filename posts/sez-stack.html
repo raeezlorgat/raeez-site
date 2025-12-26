@@ -377,11 +377,19 @@
             } catch (error) {
                 console.error('Failed to load article:', error);
                 contentEl.innerHTML = `
-                    <div class="error">
-                        <p>Unable to load the article.</p>
-                        <p><a href="https://docs.google.com/document/d/${GOOGLE_DOC_ID}/pub" target="_blank" rel="noopener">Read on Google Docs →</a></p>
-                    </div>
-                `;
+        <div class="error">
+          <p>Unable to load the article.</p>
+          <p>
+            <a
+              href="https://docs.google.com/document/d/${GOOGLE_DOC_ID}/pub"
+              target="_blank"
+              rel="noopener"
+            >
+              Read on Google Docs →
+            </a>
+          </p>
+        </div>
+      `;
             }
         }
 
@@ -395,16 +403,16 @@
 
             elements.forEach(el => {
                 const text = el.textContent.trim().toUpperCase();
-                if (skipCount < 5) {
-                    // Skip title, version info that we show in header
-                    if (text.includes('MOMENTUM OPEN SOURCE SEZ STACK') ||
-                        text.includes('TECHNICAL SPECIFICATION') ||
-                        text.includes('PROGRAMMABLE JURISDICTIONAL') ||
-                        text.includes('VERSION')) {
-                        text.includes('TABLE OF CONTENTS')) {
-                        el.remove();
-                        skipCount++;
-                    }
+
+                if (
+                    text.includes('MOMENTUM OPEN SOURCE SEZ STACK') ||
+                    text.includes('TECHNICAL SPECIFICATION') ||
+                    text.includes('PROGRAMMABLE JURISDICTIONAL') ||
+                    text.includes('VERSION') ||
+                    text.includes('TABLE OF CONTENTS')
+                ) {
+                    el.remove();
+                    removed++;
                 }
             });
 
@@ -414,5 +422,6 @@
         // Load immediately
         loadArticle();
     </script>
+
 </body>
 </html>
