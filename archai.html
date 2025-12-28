@@ -54,8 +54,11 @@
 
         :root {
             --serif: 'garamond-premier-pro', 'EB Garamond', 'Hoefler Text', Garamond, serif;
+            --serif-display: 'garamond-premier-pro-display', 'garamond-premier-pro', 'EB Garamond', Garamond, serif;
+            --serif-caption: 'garamond-premier-pro-caption', 'garamond-premier-pro', 'EB Garamond', Garamond, serif;
             --mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
 
+            /* Type Scale: Perfect Fourth (1.333) */
             --scale-ratio: 1.333;
             --text-base: clamp(19px, 2.1vw, 22px);
             --text-small: calc(var(--text-base) / var(--scale-ratio));
@@ -64,33 +67,38 @@
             --text-xlarge: calc(var(--text-large) * var(--scale-ratio));
             --text-xxlarge: calc(var(--text-xlarge) * var(--scale-ratio));
 
+            /* Baseline Grid: 8px */
             --baseline: 8px;
-            --line-height-tight: 1.25;
-            --line-height-base: 1.618;
-            --line-height-loose: 1.75;
+            --line-height-tight: 1.3;
+            --line-height-base: 1.55;
+            --line-height-loose: 1.7;
 
-            --space-quantum: var(--baseline);
-            --space-atom: calc(var(--space-quantum) * 2);
-            --space-molecule: calc(var(--space-quantum) * 3);
-            --space-organism: calc(var(--space-quantum) * 5);
-            --space-ecosystem: calc(var(--space-quantum) * 8);
-            --space-universe: calc(var(--space-quantum) * 13);
+            /* Spacing Scale */
+            --space-xs: calc(var(--baseline) * 1);    /*  8px */
+            --space-sm: calc(var(--baseline) * 2);    /* 16px */
+            --space-md: calc(var(--baseline) * 3);    /* 24px */
+            --space-lg: calc(var(--baseline) * 5);    /* 40px */
+            --space-xl: calc(var(--baseline) * 8);    /* 64px */
+            --space-2xl: calc(var(--baseline) * 13);  /* 104px */
 
+            /* Measures */
             --measure-narrow: 580px;
             --measure-base: 640px;
             --measure-wide: 720px;
 
+            /* Colors */
             --ink: #1a1917;
-            --ink-secondary: #57534e;
-            --ink-tertiary: #a8a29e;
-            --ink-ghost: #d6d3d1;
+            --ink-secondary: #4a4744;
+            --ink-tertiary: #8a8580;
+            --ink-ghost: #bab5b0;
+            --ink-whisper: #d6d3d1;
             --paper: #fefdfb;
-            --paper-alt: #f7f6f4;
+            --paper-alt: #f9f8f6;
 
-            --optical-edge: -0.05em;
-            --kern-tight: -0.02em;
-            --kern-loose: 0.015em;
-            --kern-ultra: 0.12em;
+            /* Optical Adjustments */
+            --optical-edge: -0.03em;
+            --kern-tight: -0.015em;
+            --kern-caps: 0.06em;
         }
 
         html {
@@ -104,53 +112,65 @@
             font-family: var(--serif);
             font-size: var(--text-base);
             font-weight: 400;
-            font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "onum" 1, "pnum" 1;
+            font-feature-settings: 
+                "kern" 1,
+                "liga" 1,
+                "calt" 1,
+                "onum" 1,
+                "pnum" 1,
+                "dlig" 1;
             line-height: var(--line-height-base);
             color: var(--ink);
             background: var(--paper);
             text-rendering: optimizeLegibility;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            font-variant-ligatures: common-ligatures discretionary-ligatures contextual;
         }
 
         .container {
             max-width: var(--measure-base);
             margin: 0 auto;
-            padding: var(--space-universe) var(--space-molecule) var(--space-ecosystem);
+            padding: var(--space-2xl) var(--space-md) var(--space-xl);
         }
 
-        /* Back navigation */
+        /* ════════════════════════════════════════════
+           Back Navigation
+           ════════════════════════════════════════════ */
         .back-nav {
-            font-size: var(--text-tiny);
-            font-weight: 500;
-            letter-spacing: var(--kern-ultra);
-            text-transform: uppercase;
-            margin-bottom: var(--space-ecosystem);
+            margin-bottom: var(--space-xl);
         }
 
         .back-nav a {
+            font-size: var(--text-small);
+            font-variant-caps: small-caps;
+            font-feature-settings: "smcp" 1, "c2sc" 1, "kern" 1;
+            letter-spacing: var(--kern-caps);
             color: var(--ink-tertiary);
             text-decoration: none;
-            transition: color 200ms ease;
+            transition: color 150ms ease;
         }
 
         .back-nav a:hover {
             color: var(--ink);
         }
 
-        /* Article Header */
+        /* ════════════════════════════════════════════
+           Article Header
+           ════════════════════════════════════════════ */
         .article-header {
-            margin-bottom: var(--space-ecosystem);
-            padding-bottom: var(--space-organism);
-            border-bottom: 1px solid var(--ink-ghost);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-lg);
+            border-bottom: 1px solid var(--ink-whisper);
         }
 
         .article-title {
+            font-family: var(--serif-display);
             font-size: var(--text-xxlarge);
             font-weight: 400;
             letter-spacing: var(--kern-tight);
             line-height: var(--line-height-tight);
-            margin-bottom: var(--space-molecule);
+            margin-bottom: var(--space-md);
             margin-left: var(--optical-edge);
         }
 
@@ -166,28 +186,33 @@
         .article-meta {
             font-size: var(--text-small);
             color: var(--ink-tertiary);
-            margin-top: var(--space-molecule);
+            margin-top: var(--space-md);
         }
 
         .article-meta a {
             color: var(--ink-secondary);
-            text-decoration: none;
-            border-bottom: 1px solid var(--ink-ghost);
-            transition: border-color 200ms ease;
+            text-decoration: underline;
+            text-decoration-color: var(--ink-whisper);
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.12em;
+            transition: text-decoration-color 150ms ease;
         }
 
         .article-meta a:hover {
-            border-color: var(--ink-secondary);
+            text-decoration-color: var(--ink-secondary);
         }
 
-        /* Article Body */
+        /* ════════════════════════════════════════════
+           Article Body
+           ════════════════════════════════════════════ */
         .article-body {
-            font-variant-ligatures: common-ligatures;
+            font-variant-ligatures: common-ligatures discretionary-ligatures;
         }
 
         .article-body p {
-            margin-bottom: var(--space-molecule);
+            margin-bottom: var(--space-md);
             max-width: var(--measure-base);
+            line-height: var(--line-height-loose);
             hyphens: auto;
             hyphenate-limit-chars: 6 3 2;
             hyphenate-limit-lines: 2;
@@ -198,8 +223,8 @@
             font-weight: 600;
             letter-spacing: var(--kern-tight);
             line-height: var(--line-height-tight);
-            margin-top: var(--space-universe);
-            margin-bottom: var(--space-molecule);
+            margin-top: var(--space-2xl);
+            margin-bottom: var(--space-md);
             margin-left: var(--optical-edge);
         }
 
@@ -208,8 +233,8 @@
             font-weight: 600;
             letter-spacing: var(--kern-tight);
             line-height: var(--line-height-tight);
-            margin-top: var(--space-ecosystem);
-            margin-bottom: var(--space-molecule);
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-md);
             margin-left: var(--optical-edge);
         }
 
@@ -217,8 +242,8 @@
             font-size: var(--text-base);
             font-weight: 600;
             line-height: var(--line-height-tight);
-            margin-top: var(--space-organism);
-            margin-bottom: var(--space-atom);
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-sm);
         }
 
         .article-body h4 {
@@ -226,18 +251,20 @@
             font-weight: 600;
             font-style: italic;
             line-height: var(--line-height-tight);
-            margin-top: var(--space-organism);
-            margin-bottom: var(--space-atom);
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-sm);
         }
 
         /* Links */
         .article-body a {
             color: var(--ink);
             text-decoration: underline;
+            text-decoration-color: var(--ink-whisper);
             text-decoration-thickness: 1px;
             text-underline-offset: 0.15em;
-            text-decoration-color: var(--ink-ghost);
-            transition: text-decoration-color 200ms ease;
+            text-decoration-skip-ink: auto;
+            transition: text-decoration-color 150ms ease;
+            cursor: pointer;
         }
 
         .article-body a:hover {
@@ -254,8 +281,8 @@
 
         /* Block Quote */
         .article-body blockquote {
-            margin: var(--space-organism) 0;
-            padding-left: var(--space-molecule);
+            margin: var(--space-lg) 0;
+            padding-left: var(--space-md);
             border-left: 2px solid var(--ink-ghost);
             font-style: italic;
             color: var(--ink-secondary);
@@ -264,41 +291,41 @@
         /* Code */
         code {
             font-family: var(--mono);
-            font-size: 0.75em;
+            font-size: 0.8em;
             letter-spacing: -0.02em;
             background: var(--paper-alt);
             padding: 0.15em 0.35em;
             border-radius: 3px;
-            color: var(--ink-secondary);
         }
 
         pre {
-            background: var(--ink);
-            color: var(--paper);
-            padding: var(--space-molecule);
+            font-family: var(--mono);
+            font-size: var(--text-small);
+            line-height: 1.5;
+            background: var(--paper-alt);
+            padding: var(--space-md);
             border-radius: 4px;
             overflow-x: auto;
-            margin: var(--space-organism) 0;
-            font-size: var(--text-small);
-            line-height: var(--line-height-base);
+            margin: var(--space-lg) 0;
         }
 
         pre code {
             background: none;
             padding: 0;
-            font-size: inherit;
-            color: inherit;
+            border-radius: 0;
         }
 
         /* Lists */
         .article-body ul,
         .article-body ol {
-            margin: var(--space-molecule) 0;
-            padding-left: var(--space-molecule);
+            margin: var(--space-md) 0;
+            padding-left: 1.5em;
+            max-width: var(--measure-base);
         }
 
         .article-body li {
-            margin-bottom: var(--space-atom);
+            margin-bottom: var(--space-xs);
+            line-height: var(--line-height-base);
         }
 
         .article-body li::marker {
@@ -309,15 +336,15 @@
         .article-body table {
             width: 100%;
             border-collapse: collapse;
-            margin: var(--space-organism) 0;
+            margin: var(--space-lg) 0;
             font-size: var(--text-small);
         }
 
         .article-body th,
         .article-body td {
-            padding: var(--space-atom) var(--space-molecule);
+            padding: var(--space-sm) var(--space-md);
+            border-bottom: 1px solid var(--ink-whisper);
             text-align: left;
-            border-bottom: 1px solid var(--ink-ghost);
         }
 
         .article-body th {
@@ -329,20 +356,20 @@
         .article-body img {
             max-width: 100%;
             height: auto;
-            margin: var(--space-organism) 0;
             border-radius: 4px;
+            margin: var(--space-lg) 0;
         }
 
-        /* Section Break */
+        /* Horizontal Rule - Section Break */
         .article-body hr {
             border: none;
             text-align: center;
-            margin: var(--space-ecosystem) 0;
+            margin: var(--space-lg) 0;
         }
 
         .article-body hr::before {
             content: '· · ·';
-            color: var(--ink-tertiary);
+            color: var(--ink-ghost);
             letter-spacing: 0.5em;
         }
 
@@ -350,129 +377,175 @@
            Table of Contents
            ════════════════════════════════════════════ */
         .toc {
-            margin: var(--space-molecule) 0 var(--space-ecosystem);
-            padding: var(--space-organism);
+            margin: var(--space-md) 0 var(--space-xl);
+            padding: var(--space-lg);
             background: var(--paper-alt);
-            border-radius: 6px;
-            max-width: var(--measure-narrow);
+            border-radius: 4px;
         }
 
         .toc-title {
-            font-size: var(--text-small) !important;
-            font-weight: 500 !important;
-            letter-spacing: var(--kern-ultra);
-            text-transform: uppercase;
+            font-size: var(--text-small);
+            font-weight: 400;
+            font-variant-caps: small-caps;
+            font-feature-settings: "smcp" 1, "c2sc" 1, "kern" 1;
+            letter-spacing: 0.08em;
             color: var(--ink-tertiary);
-            margin: 0 0 var(--space-molecule) 0 !important;
-            padding: 0;
+            margin-bottom: var(--space-md);
+            margin-left: 0;
         }
 
         .toc-list {
-            list-style: none !important;
-            padding: 0 !important;
-            margin: 0 !important;
-            font-size: var(--text-small);
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
         .toc-list li {
-            margin: 0 !important;
-            padding: 0;
+            margin-bottom: var(--space-sm);
+            border-bottom: 1px solid var(--ink-whisper);
+            padding-bottom: var(--space-sm);
+        }
+
+        .toc-list li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
         }
 
         .toc-list a {
-            display: block;
-            padding: calc(var(--space-quantum) * 1.25) 0;
-            text-decoration: none !important;
             color: var(--ink);
-            border-bottom: 1px solid transparent;
-            transition: color 150ms ease, padding-left 150ms ease;
-            line-height: var(--line-height-tight);
-        }
-
-        .toc-list li:not(:last-child) a {
-            border-bottom-color: var(--ink-ghost);
+            text-decoration: none;
+            font-size: var(--text-small);
+            display: block;
+            transition: padding-left 150ms ease, color 150ms ease;
         }
 
         .toc-list a:hover {
-            color: var(--ink);
-            padding-left: var(--space-atom);
-        }
-
-        /* Part/Chapter level - bold, full width */
-        .toc-level-0 a {
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: var(--text-tiny);
-            letter-spacing: var(--kern-loose);
-            padding-top: var(--space-atom);
-            padding-bottom: var(--space-atom);
-            color: var(--ink);
-        }
-
-        /* Section level (1.1, 2.3, etc.) */
-        .toc-level-1 a {
-            padding-left: var(--space-atom);
+            padding-left: var(--space-sm);
             color: var(--ink-secondary);
         }
 
-        .toc-level-1 a:hover {
-            padding-left: calc(var(--space-atom) + var(--space-quantum));
+        /* Part/Chapter level */
+        .toc-level-0 a {
+            font-weight: 600;
+            font-size: var(--text-base);
         }
 
-        /* Subsection level (1.1.1, 2.3.4, etc.) */
+        /* Section level */
+        .toc-level-1 a {
+            padding-left: var(--space-sm);
+            font-size: var(--text-small);
+        }
+
+        .toc-level-1 a:hover {
+            padding-left: calc(var(--space-sm) + var(--space-xs));
+        }
+
+        /* Subsection level */
         .toc-level-2 a {
-            padding-left: var(--space-molecule);
+            padding-left: var(--space-md);
             color: var(--ink-tertiary);
             font-size: calc(var(--text-small) * 0.95);
         }
 
         .toc-level-2 a:hover {
-            padding-left: calc(var(--space-molecule) + var(--space-quantum));
+            padding-left: calc(var(--space-md) + var(--space-xs));
             color: var(--ink-secondary);
         }
 
-        /* Sub-subsection level (1.1.1.1, etc.) */
+        /* Sub-subsection level */
         .toc-level-3 a {
-            padding-left: var(--space-organism);
+            padding-left: var(--space-lg);
             color: var(--ink-tertiary);
             font-size: calc(var(--text-small) * 0.9);
         }
 
         .toc-level-3 a:hover {
-            padding-left: calc(var(--space-organism) + var(--space-quantum));
+            padding-left: calc(var(--space-lg) + var(--space-xs));
             color: var(--ink-secondary);
         }
 
         /* ════════════════════════════════════════════
-           Footer
+           Footer / Contact
            ════════════════════════════════════════════ */
         .article-footer {
-            margin-top: var(--space-ecosystem);
-            padding-top: var(--space-organism);
-            border-top: 1px solid var(--ink-ghost);
-            font-size: var(--text-small);
-            color: var(--ink-tertiary);
-        }
-
-        .article-footer-nav {
+            margin-top: var(--space-xl);
+            padding-top: var(--space-lg);
+            padding-bottom: var(--space-lg);
+            border-top: 1px solid var(--ink-whisper);
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            margin-top: var(--space-molecule);
-        }
-
-        .article-footer-nav a {
-            color: var(--ink-secondary);
-            text-decoration: none;
-            transition: color 200ms ease;
-        }
-
-        .article-footer-nav a:hover {
-            color: var(--ink);
         }
 
         .author-byline {
+            font-size: var(--text-small);
             font-style: italic;
             color: var(--ink-secondary);
+        }
+
+        .author-byline strong {
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .footer-nav a {
+            font-size: var(--text-small);
+            font-variant-caps: small-caps;
+            font-feature-settings: "smcp" 1, "c2sc" 1, "kern" 1;
+            letter-spacing: var(--kern-caps);
+            color: var(--ink-tertiary);
+            text-decoration: none;
+            transition: color 150ms ease;
+        }
+
+        .footer-nav a:hover {
+            color: var(--ink);
+        }
+
+        .contact-footer {
+            margin-top: var(--space-lg);
+            padding-top: var(--space-lg);
+            font-size: var(--text-small);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid var(--ink-whisper);
+        }
+
+        .contact-footer > a {
+            color: var(--ink-tertiary);
+            text-decoration: none;
+            transition: color 150ms ease;
+        }
+
+        .contact-footer > a:hover {
+            color: var(--ink);
+        }
+
+        .contact-footer .social {
+            display: flex;
+            align-items: center;
+            gap: 0.25em;
+        }
+
+        .contact-footer .icon-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2em;
+            height: 2em;
+            color: var(--ink-ghost);
+            transition: color 150ms ease;
+            border-radius: 4px;
+        }
+
+        .contact-footer .icon-link:hover {
+            color: var(--ink);
+        }
+
+        .contact-footer .icon-link svg {
+            display: block;
         }
 
         /* ════════════════════════════════════════════
@@ -480,43 +553,70 @@
            ════════════════════════════════════════════ */
         @media (max-width: 640px) {
             .container {
-                padding: var(--space-ecosystem) var(--space-atom) var(--space-organism);
+                padding: var(--space-xl) var(--space-sm) var(--space-lg);
             }
 
             .article-title {
                 font-size: var(--text-xlarge);
             }
 
-            .toc {
-                padding: var(--space-molecule);
+            .article-subtitle {
+                font-size: var(--text-base);
             }
 
-            .toc-level-1 a { padding-left: var(--space-quantum); }
-            .toc-level-2 a { padding-left: var(--space-atom); }
-            .toc-level-3 a { padding-left: var(--space-molecule); }
+            .article-body h1 {
+                font-size: var(--text-large);
+            }
+
+            .article-body h2 {
+                font-size: calc(var(--text-base) * 1.1);
+            }
+
+            .toc {
+                padding: var(--space-md);
+            }
+
+            .article-footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-sm);
+            }
         }
 
         /* ════════════════════════════════════════════
            Print
            ════════════════════════════════════════════ */
         @media print {
-            .back-nav,
-            .article-footer-nav {
-                display: none;
-            }
-
-            .container {
-                padding: 0;
-                max-width: 100%;
+            :root {
+                --ink: #000;
+                --paper: #fff;
             }
 
             body {
-                background: white;
+                font-size: 11pt;
+                line-height: 1.4;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .back-nav { display: none; }
+            .contact-footer { display: none; }
+
+            a {
+                text-decoration: none !important;
+                color: var(--ink) !important;
+            }
+
+            .article-body h1,
+            .article-body h2 {
+                page-break-after: avoid;
             }
 
             .toc {
-                background: none;
-                border: 1px solid #ddd;
+                page-break-after: always;
             }
         }
 
@@ -549,13 +649,29 @@
             </header>
 
             <div class="article-body">
-<div></div><p>This document is for research and design discussion. It does not constitute an offer to sell securities, financial advice, or legal advice. Real-world deployments require jurisdiction-specific legal structuring, licensing, and compliance.</p><hr><h2 id="h.q27xdmtq63r7">Table of contents</h2><p><span><a href="#h.sx96p3sjzmun">1) The thesis 3</a></span></p><p><span><a href="#h.zg7fc5q0t43z">Why now (the missing enabling stack) 3</a></span></p><p><span><a href="#h.4rl8rbrwxmt9">2) The problem 4</a></span></p><p><span><a href="#h.cva2pcnppzuy">2.1 Ownership in real estate is structurally exclusionary 4</a></span></p><p><span><a href="#h.bycy7bje1the">2.2 Housing markets are dominated by rentier dynamics 4</a></span></p><p><span><a href="#h.eefj5i434uol">2.3 Buildings are opaque, so risk is mispriced 4</a></span></p><p><span><a href="#h.tshd0r7b11je">2.4 The coordination problem: land + community + infrastructure 4</a></span></p><p><span><a href="#h.kl933o82m2gl">3) Design principles (non-negotiables) 5</a></span></p><p><span><a href="#h.o8i93bw2i6px">3.1 Legal reality first 5</a></span></p><p><span><a href="#h.gwu08ngr86q8">3.2 Yield first, not appreciation first 5</a></span></p><p><span><a href="#h.mnljc5ymfe2">3.3 Anti-speculation must be engineered 5</a></span></p><p><span><a href="#h.pyaqxebf5ihi">3.4 Composability at the primitive level 5</a></span></p><p><span><a href="#h.5qr1af2rcasf">3.5 Continuous attestations, not annual audits 5</a></span></p><p><span><a href="#h.wjyclzcmw3w">3.6 Progressive decentralization with hard guardrails 5</a></span></p><p><span><a href="#h.o6yda9lw9gp2">4) System model: what Archai actually is 6</a></span></p><p><span><a href="#h.fqxrydpytyn4">4.1 Archai is a network of “Vault Institutions” 6</a></span></p><p><span><a href="#h.gkegw8k2l2eb">4.2 Archai separates “use” from “ownership” (crucial) 6</a></span></p><p><span><a href="#h.3nwubztlpg19">4.3 Archai is a policy engine for many civilizational models 6</a></span></p><p><span><a href="#h.fig9g3x1m93o">5) Protocol architecture 7</a></span></p><p><span><a href="#h.gu2dtrfj651d">5.1 Layer 1: Legal wrapper (Mass-native entity) 7</a></span></p><p><span><a href="#h.resv3lhnfgtv">5.2 Layer 2: Vault contracts (capital + rights engine) 7</a></span></p><p><span><a href="#h.mgxrlcrn438w">5.3 Layer 3: Governance module (polycentric) 7</a></span></p><p><span><a href="#h.gjrbbn8nuv62">5.4 Layer 4: Commons + network treasury 8</a></span></p><p><span><a href="#h.ag1qta7jqr6u">5.5 Layer 5: Evidence layer (HomeOS + attestation streams) 8</a></span></p><p><span><a href="#h.6k1aywc00x3q">5.6 Layer 6: Arbitration and dispute resolution 8</a></span></p><p><span><a href="#h.gn01qeowok5f">6) Vault economics: stake-to-live, stake-to-own, and earned equity 9</a></span></p><p><span><a href="#h.qrre6bo9kxeo">6.1 Vault balance sheet: it’s finance, admit it 9</a></span></p><p><span><a href="#h.prra535ew3am">6.2 Two primary stake products (clean segmentation) 9</a></span></p><p><span><a href="#h.sdvkydiz3p25">A) Resident Stake (stake-to-live) 9</a></span></p><p><span><a href="#h.ispvej5ndacq">B) Capital Stake (stake-to-build / stake-to-yield) 10</a></span></p><p><span><a href="#h.tmjmialj6abw">6.3 Earned equity: from first principles 10</a></span></p><p><span><a href="#h.o85abqmtc7na">6.4 Rent: discount as “coupon” 11</a></span></p><p><span><a href="#h.omtexarr1jux">6.5 Surplus: the sacred object 11</a></span></p><p><span><a href="#h.blsm10b39fsp">7) Liquidity and exit without rentier speculation 12</a></span></p><p><span><a href="#h.az8edwy00tsy">7.1 Three exit paths (each with constraints) 12</a></span></p><p><span><a href="#h.avl1sd5xewei">7.2 Redemption gates: preventing bank runs 12</a></span></p><p><span><a href="#h.x451guyz436t">7.3 “Non-speculative” as a pricing rule 13</a></span></p><p><span><a href="#h.esad2nunz5c9">8) Governance and control surfaces 13</a></span></p><p><span><a href="#h.3cwg88r4gzl4">8.1 Governance must be polycentric 13</a></span></p><p><span><a href="#h.aik3djxpuzx1">Resident Council 13</a></span></p><p><span><a href="#h.4cp31fexavfo">Capital Council 14</a></span></p><p><span><a href="#h.1widhbadise4">Trustee/Guardian 14</a></span></p><p><span><a href="#h.gelsokt0w5xw">8.2 Constitutional constraints (hard-coded) 14</a></span></p><p><span><a href="#h.jwqn5wyklvps">8.3 Evidence-based governance 14</a></span></p><p><span><a href="#h.uhwgacugo2y9">9) Legal + compliance: Mass-native smart assets 15</a></span></p><p><span><a href="#h.d1qbpebvpn2">9.1 The Mass integration is not optional 15</a></span></p><p><span><a href="#h.seiw2rfsyd6j">9.2 Smart Assets carry legal modules 15</a></span></p><p><span><a href="#h.2kbsjwsuag55">9.3 Attestation streams are the regulator interface 16</a></span></p><p><span><a href="#h.u5s08v7ofqku">9.4 Legal wrappers are modular (jurisdiction SDK) 16</a></span></p><p><span><a href="#h.elrdt19ef8ck">10) Security, risk, and solvency 16</a></span></p><p><span><a href="#h.xwdpi163lkmm">10.1 Threat model (real, not crypto-theater) 16</a></span></p><p><span><a href="#h.mza5sup9wism">10.2 Controls (minimum viable institutional safety) 17</a></span></p><p><span><a href="#h.uebrp5h81mey">10.3 Insurance and underwriting (network moat) 17</a></span></p><p><span><a href="#h.s1y2lhwt5we">11) Token model: $ARCH and vault assets 17</a></span></p><p><span><a href="#h.2e1efudebdt">11.1 Two token categories 18</a></span></p><p><span><a href="#h.5996je538odl">11.2 Distribution design (principles, not arbitrary numbers) 18</a></span></p><p><span><a href="#h.odctlbghiqng">11.3 Regulatory posture 18</a></span></p><p><span><a href="#h.yjrr8nmqzzmh">12) Roadmap 18</a></span></p><p><span><a href="#h.4hxb0dfoechw">Phase 1: MVP (single vault) 18</a></span></p><p><span><a href="#h.yspucu1vpq36">Phase 2: Multi-vault registry + portability 19</a></span></p><p><span><a href="#h.sw5pdk9gcfyu">Phase 3: Commons layer + underwriting 19</a></span></p><p><span><a href="#h.hx66cu7389q">Phase 4: Jurisdiction SDK (legal modules) 19</a></span></p><p><span><a href="#h.7qlbtms42nvn">Phase 5: Resident and operator interface 19</a></span></p><p><span><a href="#h.s79148lc9qjn">13) Appendix A: The Archai stack in one diagram 19</a></span></p><p><span><a href="#h.j3ru58yt89gd">14) Appendix B: Glossary (minimal) 20</a></span></p><hr><h2 id="h.sx96p3sjzmun">1) The thesis</h2><p>The built environment is the largest asset class humans maintain, yet its ownership rails are archaic: high friction, low transparency, rentier capture, and political brittleness.</p><p>Archai is the protocol layer that turns land and buildings into programmable, arbitration-enabled, on-chain/off-chain hybrid institutions, where:</p><ul><li>people can enter via staking (not only buying),</li><li>earn ownership over time and contribution,</li><li>surplus is allocated by explicit constitutional logic, and</li><li>the whole system stays compliant, auditable, and jurisdiction-portable through Mass primitives and attestation streams.</li></ul><p>Archai is not “a village.” It is the capital + governance substrate for many settlements and many civilizational models (Amagi and beyond).</p><h3 id="h.zg7fc5q0t43z">Why now (the missing enabling stack)</h3><p>Archai becomes credible because the Momentum stack exists:</p><ul><li>Mass makes entities/ownership/consent programmable and enforceable through compliant APIs (the “legal substrate”).<br></li><li>HomeOS makes buildings legible and continuously measurable (the “operational substrate”), and that data directly improves valuation and risk models for tokenized assets.<br></li><li>Programmable legal stacks / SEZ modules make jurisdictional portability possible (the “jurisdiction substrate”), with Smart Assets carrying compliance and producing attestation streams regulators can verify programmatically.</li></ul><p>In our view, this is the difference between “tokenizing PDFs” and building a real institutional layer.</p><hr><h2 id="h.4rl8rbrwxmt9">2) The problem</h2><h3 id="h.cva2pcnppzuy">2.1 Ownership in real estate is structurally exclusionary</h3><p>For most people, “ownership” means a mortgage or nothing. Entry requires large down payments, creditworthiness, and legal sophistication. Exit is illiquid and expensive. Transaction costs are brutal.</p><h3 id="h.bycy7bje1the">2.2 Housing markets are dominated by rentier dynamics</h3><p>The default incentives reward:</p><ul><li>holding scarce assets,</li><li>restricting supply,</li><li>harvesting rent,</li><li>and capturing appreciation driven by policy and scarcity.</li></ul><p>If you want abundant, well-maintained, community-aligned housing, you must change the default incentive package.</p><h3 id="h.eefj5i434uol">2.3 Buildings are opaque, so risk is mispriced</h3><p>Traditional real estate suffers from chronic information asymmetry. HomeOS flips this: buildings can self-report occupancy, energy, maintenance, and revenue streams—creating a continuous operational evidence layer that tokenization actually needs.</p><h3 id="h.tshd0r7b11je">2.4 The coordination problem: land + community + infrastructure</h3><p>Land ownership is not just finance. It encodes:</p><ul><li>governance,</li><li>cultural norms,</li><li>maintenance commitments,</li><li>collective investment decisions.</li></ul><p>Today, these are handled by slow legal processes and weak social trust. Archai’s premise is that they can be expressed as programmable institutional logic.</p><hr><h2 id="h.kl933o82m2gl">3) Design principles (non-negotiables)</h2><p>Archai is not a “crypto project.” It is institutional infrastructure. So it must obey institutional physics.</p><h3 id="h.o8i93bw2i6px">3.1 Legal reality first</h3><p>A “token” is not a secured asset unless it maps to enforceable rights. Archai vault assets are always paired with a real legal wrapper (SPV, trust, foundation, coop) that holds title and signs a protocol-aligned charter. This must be made explicit and primary.</p><h3 id="h.gwu08ngr86q8">3.2 Yield first, not appreciation first</h3><p>We treat built assets as cash-flow machines (housing, services, utilities, data, commerce). Appreciation is not the core promise.</p><h3 id="h.mnljc5ymfe2">3.3 Anti-speculation must be engineered</h3><p>“Non-speculative” is a set of constraints:</p><ul><li>pricing rule,</li><li>transfer constraints,</li><li>premium capture rules,</li><li>exit windows and gates,</li><li>and governance limits.</li></ul><h3 id="h.pyaqxebf5ihi">3.4 Composability at the primitive level</h3><p>Mass provides primitives (entities/ownership/identity/consent/etc.). Archai composes them into “built asset institutions.” This is exactly how Momentum describes the ecosystem architecture: Archai is the tokenization layer for HomeOS buildings that integrate natively with Mass primitives.</p><h3 id="h.5qr1af2rcasf">3.5 Continuous attestations, not annual audits</h3><p>A system this complex needs an evidence layer. SEZ Legal Stack implements: Smart should generate cryptographically secured, legally enforceable attestation streams so compliance can be verified programmatically without exposing private data.</p><h3 id="h.wjyclzcmw3w">3.6 Progressive decentralization with hard guardrails</h3><p>Governance starts with safety: trustees, emergency powers, upgrade controls. It decentralizes only as mechanisms prove stable.</p><hr><h2 id="h.o6yda9lw9gp2">4) System model: what Archai actually is</h2><h3 id="h.fqxrydpytyn4">4.1 Archai is a network of “Vault Institutions”</h3><p>Each Archai project is a Vault:</p><ul><li>a set of on-chain contracts,</li><li>bound to an off-chain legal wrapper,</li><li>holding a specific portfolio of land/buildings/infrastructure,</li><li>issuing stake positions and ownership claims,</li><li>distributing surplus according to encoded policy.</li></ul><h3 id="h.gkegw8k2l2eb">4.2 Archai separates “use” from “ownership” (crucial)</h3><p>Most housing systems bundle:</p><ul><li>right to occupy (use),</li><li>financial exposure (ownership),</li><li>and governance power.</li></ul><p>Archai treats them as separable primitives:</p><ol start="1"><li>Use Rights: the ability to live/work in a unit under certain terms.</li><li>Stake Positions: time-locked capital with defined redemption and yield.</li><li>Ownership Units: equity-like claims on the underlying entity.</li><li>Contribution Credits: earned equity via labor/service, verified by attestations.</li><li>Governance Power: parameterized, scoped, and constrained.</li></ol><p>Separating these lets us engineer “non-speculative” systems while still raising capital.</p><h3 id="h.3nwubztlpg19">4.3 Archai is a policy engine for many civilizational models</h3><p>A “civilizational model” is a parameter set + governance constitution:</p><ul><li>rent policy,</li><li>surplus split,</li><li>equity issuance schedule,</li><li>contribution valuation rules,</li><li>secondary transfer constraints,</li><li>commons obligations.</li></ul><p>Archai hosts multiple models; vaults select one (and can migrate with governance).</p><hr><h2 id="h.fig9g3x1m93o">5) Protocol architecture</h2><h3 id="h.gu2dtrfj651d">5.1 Layer 1: Legal wrapper (Mass-native entity)</h3><p>Each Vault corresponds to a legal entity (or entity set):</p><ul><li>Asset SPV / Trust holds title and bank accounts.</li><li>Operator entity contracts services (maintenance, property management, construction).</li><li>Archai Foundation / protocol entity holds IP, administers upgrades, manages network treasury.</li></ul><p>Mass provides the programmable rails to automatically form and maintain these entities and encode governance, ownership tables, identity gating, and consent flows programmatically.</p><p>In other words: the legal wrapper is not paperwork. It is a programmable Smart Asset.</p><h3 id="h.resv3lhnfgtv">5.2 Layer 2: Vault contracts (capital + rights engine)</h3><p>Vault contracts manage:</p><ul><li>deposits,</li><li>stake terms,</li><li>redemptions,</li><li>distribution,</li><li>issuance of ownership units,</li><li>rent discount rules,</li><li>secondary transfer rules,</li><li>reserve accounts,</li><li>liquidation/wind-down logic.</li></ul><h3 id="h.mgxrlcrn438w">5.3 Layer 3: Governance module (polycentric)</h3><p><span>Vault governance is not “one token, one vote.”<br>It is:</span></p><ul><li>scoped,</li><li>role-based,</li><li>bicameral where necessary,</li><li>with trustee/guardian failsafes.</li></ul><h3 id="h.gjrbbn8nuv62">5.4 Layer 4: Commons + network treasury</h3><p>A portion of surplus flows to the Archai Commons Treasury (v0.1 proposes 5–10%).</p><p><span><br>This treasury funds:</span></p><ul><li>seeding new vaults,</li><li>resident subsidies,</li><li>protocol R&amp;D,</li><li>and crucially: risk underwriting (insurance).</li></ul><h3 id="h.ag1qta7jqr6u">5.5 Layer 5: Evidence layer (HomeOS + attestation streams)</h3><p>Buildings running HomeOS produce continuous operational data:</p><ul><li>occupancy,</li><li>energy,</li><li>maintenance costs,</li><li>revenue streams.</li></ul><p>This reduces information asymmetry and feeds valuation and risk models for tokenized assets.</p><p>Separately, the SEZ Legal Stack concept of attestation streams applies to compliance: prove required checks (KYC tier, AML screening, transfer restrictions) without revealing underlying private data.</p><h3 id="h.6k1aywc00x3q">5.6 Layer 6: Arbitration and dispute resolution</h3><p>Every vault must have:</p><ul><li>a defined dispute path,</li><li>arbitration clause,</li><li>on-chain evidence admissibility rules,</li><li>and emergency intervention rights.</li></ul><p>Momentum’s ecosystem explicitly includes an ADGM-based arbitration court for digital asset and machine-intelligence workflows; Archai vaults should route disputes into such hardened venues by default.</p><p>Momentum Monograph - Google Docs</p><hr><h2 id="h.gn01qeowok5f">6) Vault economics: stake-to-live, stake-to-own, and earned equity</h2><p>This section closes the biggest gap in v0.1: why lock capital up and how returns are actually produced without speculation.</p><h3 id="h.qrre6bo9kxeo">6.1 Vault balance sheet: it’s finance, admit it</h3><p>Each vault is a mini private equity + real estate platform with a capital stack:</p><ul><li>Senior capital (bank debt / bonds)<br>Lowest risk, capped return, first claim.</li><li>Resident stake (time-locked deposits)<br>Medium risk, compensated via rent discounts + earned equity.</li><li>Programmatic equity (vault ownership units)<br>Variable return, receives residual surplus and some appreciation per policy.</li><li>Sponsor/operator equity<br>Paid for execution, absorbs early risk, earns if the asset performs.</li><li>Commons stake (network)<br>Receives protocol fee and may provide insurance backstops.</li></ul><p>The whitepaper must explicitly model this, because solvency and redemptions depend on it.</p><h3 id="h.prra535ew3am">6.2 Two primary stake products (clean segmentation)</h3><h4 id="h.sdvkydiz3p25">A) Resident Stake (stake-to-live)</h4><p><span>Residents stake capital for a term (v0.1 suggested 3–7 years).<br><br>They receive:</span></p><ul><li>a rent discount (economic benefit now),</li><li>earned equity over time (wealth building),</li><li>governance participation (scoped),</li><li>and the right to redeem principal at maturity (subject to safety gates).</li></ul><p>This is not “investing.” It is a capitalized membership in a housing institution.</p><h4 id="h.ispvej5ndacq">B) Capital Stake (stake-to-build / stake-to-yield)</h4><p>Non-resident capital providers stake into the vault with:</p><ul><li>defined term,</li><li>defined distribution rules (coupon-like),</li><li>potentially equity kicker,</li><li>no occupancy rights.</li></ul><p>This is the instrument for scaling supply without turning the whole system into a speculative casino.</p><h3 id="h.tmjmialj6abw">6.3 Earned equity: from first principles</h3><p>Earned equity exists to reward time, risk, and contribution instead of mere wealth.</p><p><span>v0.1’s formula is directionally correct (equity proportional to stake * multiplier / valuation).<br><br>But here we refine toa safer, more precise model:</span></p><p>Let:</p><ul><li>𝑁𝐴𝑉𝑡NAVt​ = net asset value of the vault at time t (audited + attested)</li><li>𝑆𝑖Si​ = stake amount for position i</li><li>𝑇𝑖Ti​ = term length for position i</li><li>𝑅𝑖Ri​ = risk multiplier (construction &gt; stabilization &gt; mature)</li><li>𝐶𝑖(𝑡)Ci​(t) = contribution score (verified labor/service)</li><li>𝛼,𝛽α,β = policy parameters</li></ul><p>Define Equity Accrual Rate:</p><p>𝐸𝐴𝑖(𝑡)=𝑆𝑖𝑁𝐴𝑉𝑡⋅𝑓(𝑇𝑖)⋅𝑅𝑖 + 𝛼⋅𝐶𝑖(𝑡)EAi​(t)=NAVt​Si​​⋅f(Ti​)⋅Ri​+α⋅Ci​(t)</p><p>Where:</p><ul><li>𝑓(𝑇)f(T) is convex in time (long-term alignment rewarded),</li><li>𝑅𝑖Ri​ is bounded (no infinite multipliers),</li><li>𝐶𝑖(𝑡)Ci​(t) is capped per epoch to prevent gaming.</li></ul><p>Equity accrues continuously or in epochs, minted as Vault Ownership Units.</p><h3 id="h.o85abqmtc7na">6.4 Rent: discount as “coupon”</h3><p>We formalize:</p><ul><li>Let Base Rent be computed from:</li></ul><ul><li>operating costs,</li><li>reserves,</li><li>debt service,</li><li>targeted maintenance SLA,</li><li>and affordability policy.</li></ul><ul><li>A Resident Stake provides a discount that functions like the “interest payment” on their locked capital.</li></ul><p>This is economically coherent: the vault is borrowing from residents; residents are compensated through reduced rent + earned equity.</p><h3 id="h.omtexarr1jux">6.5 Surplus: the sacred object</h3><p>Define:</p><p>𝑆𝑢𝑟𝑝𝑙𝑢𝑠=𝑁𝑂𝐼−𝐷𝑒𝑏𝑡𝑆𝑒𝑟𝑣𝑖𝑐𝑒−𝑅𝑒𝑠𝑒𝑟𝑣𝑒𝑠Surplus=NOI−DebtService−Reserves</p><p>Then allocate surplus by policy:</p><ul><li>Resident / staker distributions: 50–70% (v0.1)</li><li>Reinvestment: 20–40% (v0.1)</li><li>Protocol fee to Commons: 5–10% (v0.1)</li></ul><p>We add one missing bucket:</p><ul><li>Insurance / contingency buffer (can be part of reserves or funded via protocol treasury)</li></ul><p>Surplus allocation is not “governance vibes.” It is the economic constitution.</p><hr><h2 id="h.blsm10b39fsp">7) Liquidity and exit without rentier speculation</h2><p>This is where most “tokenized real estate” fails.</p><h3 id="h.az8edwy00tsy">7.1 Three exit paths (each with constraints)</h3><ol start="1"><li>Redemption at maturity (primary)</li></ol><ul><li>Stake positions redeem at maturity at a deterministic rule:</li></ul><ul><li>principal less fees,</li><li>subject to solvency and redemption queues.</li></ul><ol start="2"><li>Secondary transfer of stake rights (bounded)<br><br>We formalize:</li></ol><ul><li>transfers only to whitelisted (KYC/KYB) recipients,</li><li>premium cap relative to NAV,</li><li>any premium above cap is routed to Commons (anti-speculation capture),</li><li>mandatory disclosure of vault state.</li></ul><ol start="3"><li>Cross-vault portability (network feature)<br>As Archai evolves into a registry, positions can be portable:</li></ol><ul><li>stake exits one vault and enters another under rules,</li><li>enabling mobility without liquidation cascades.</li></ul><h3 id="h.avl1sd5xewei">7.2 Redemption gates: preventing bank runs</h3><p><span>Real assets are illiquid. If you promise instant liquidity, you’re lying.<br>Archai uses explicit gates:</span></p><ul><li>max redemption per epoch,</li><li>variable queue times tied to liquidity,</li><li>emergency halts when reserves breach threshold.</li></ul><p>This is not anti-user; it is solvency.</p><h3 id="h.x451guyz436t">7.3 “Non-speculative” as a pricing rule</h3><p>A vault can choose among policy modes:</p><ul><li>NAV-bounded mode: ownership units trade within a tight band around NAV; excess premium is taxed away.</li><li>Affordability-first mode: occupancy rights are non-transferable or transferable only at cost.</li><li>Growth mode (allowed but explicit): partial appreciation can accrue, but with caps and commons capture.</li></ul><p>The key is: speculation is never the default. It’s a deliberate configuration.</p><hr><h2 id="h.esad2nunz5c9">8) Governance and control surfaces</h2><p>v0.1 led with “stake-based, resident-weighted, trustee-checked.”. We make this enforceable.</p><h3 id="h.3cwg88r4gzl4">8.1 Governance must be polycentric</h3><p>Different decisions require different stakeholders.</p><p>Recommended structure:</p><h4 id="h.aik3djxpuzx1">Resident Council</h4><p>Controls:</p><ul><li>community rules,</li><li>local service priorities,</li><li>cultural programming,</li><li>some budget allocations.</li></ul><p>Voting weight: occupancy + contribution (not raw capital).</p><h4 id="h.4cp31fexavfo">Capital Council</h4><p>Controls:</p><ul><li>leverage limits,</li><li>reserve policy,</li><li>large capex,</li><li>refinancing terms,</li><li>issuance policy.</li></ul><p>Voting weight: stake and ownership units (bounded).</p><h4 id="h.1widhbadise4">Trustee/Guardian</h4><p>Controls:</p><ul><li>legal compliance,</li><li>emergency actions,</li><li>fraud response,</li><li>enforcing constitutional constraints.</li></ul><p>Trustees are not “centralization”; they are the interface to legal reality.</p><h3 id="h.gelsokt0w5xw">8.2 Constitutional constraints (hard-coded)</h3><p>Certain parameters must be upgrade-resistant:</p><ul><li>maximum leverage,</li><li>minimum reserves,</li><li>affordability floors,</li><li>anti-speculation constraints,</li><li>disclosure requirements.</li></ul><p>Governance cannot vote to steal the treasury or lever the vault into oblivion.</p><h3 id="h.jwqn5wyklvps">8.3 Evidence-based governance</h3><p>Governance proposals must reference:</p><ul><li>attested operating metrics (HomeOS),</li><li>audited financials,</li><li>risk reports,</li><li>and predicted impacts.</li></ul><p>This is where “building as programmable institution” becomes real.</p><hr><h2 id="h.uhwgacugo2y9">9) Legal + compliance: Mass-native smart assets</h2><h3 id="h.d1qbpebvpn2">9.1 The Mass integration is not optional</h3><p>Mass provides programmable primitives:</p><ul><li>entities,</li><li>ownership structures,</li><li>financial instruments,</li><li>identity,</li><li>consent.<br>Momentum Monograph - Google Docs</li></ul><p>Archai vaults should be implemented as a specific composition of those primitives:</p><ul><li>the SPV/trust is a Mass entity,</li><li>stake positions and ownership units are Mass-native ownership tables/tokens,</li><li>transfers are governed by identity gates and consent workflows,</li><li>distributions use Mass fiscal rails (accounts/wallets/banking integration).</li></ul><h3 id="h.seiw2rfsyd6j">9.2 Smart Assets carry legal modules</h3><p>SEZ Stack expresses the crucial design principle: a Smart Asset should encode jurisdiction, transfer restrictions, identity tier requirements, consent mechanisms—so compliance is intrinsic, not a separate spreadsheet.</p><p>For Archai:</p><ul><li>Each vault declares its jurisdictional module.</li><li>Transfers compute the intersection of permissible actions (e.g., KYC tiers, residency rules, securities exemptions).</li><li>The asset enforces constraints programmatically.</li></ul><h3 id="h.2kbsjwsuag55">9.3 Attestation streams are the regulator interface</h3><p><span>Regulators and auditors don’t want dashboards; they want verifiable compliance.<br>Attestation streams prove requirements were met without exposing private data (e.g., “all holders meet KYC tier X”).</span></p><p>Archai uses attestation streams for:</p><ul><li>holder eligibility,</li><li>transfer compliance,</li><li>treasury flows,</li><li>operating metrics integrity.</li></ul><h3 id="h.u5s08v7ofqku">9.4 Legal wrappers are modular (jurisdiction SDK)</h3><p><span>v0.1 mentioned modular templates (Cayman foundation, Swiss Verein, Panama company).<br>The correct framing:</span></p><ul><li>Create a Jurisdiction SDK: a set of deployable legal + compliance modules (entity type, offering exemptions, custody model, dispute resolution path).</li><li>Vaults instantiate within a chosen module.</li><li>Modules can be upgraded or migrated with governance and trustee oversight.</li></ul><hr><h2 id="h.elrdt19ef8ck">10) Security, risk, and solvency</h2><h3 id="h.xwdpi163lkmm">10.1 Threat model (real, not crypto-theater)</h3><p>Primary risks:</p><ul><li>title defects / legal disputes,</li><li>operator fraud,</li><li>valuation manipulation,</li><li>oracle corruption (data + appraisals),</li><li>governance capture,</li><li>liquidity cascade (redemption run),</li><li>jurisdictional intervention,</li><li>stablecoin/banking rail failure,</li><li>smart contract bugs.</li></ul><h3 id="h.mza5sup9wism">10.2 Controls (minimum viable institutional safety)</h3><ul><li>Segregated accounts (operating vs reserves vs distributions)</li><li>Independent appraisal + HomeOS attested ops data feeding NAV</li><li>Redemption gates + queues</li><li>Role-based access control for operational actions</li><li>On-chain + off-chain audit trails</li><li>Emergency guardian powers with transparency constraints</li><li>Insurance module (protocol-level underwriting)</li></ul><h3 id="h.uebrp5h81mey">10.3 Insurance and underwriting (network moat)</h3><p><span>v0.1 mentions underwriting network health via insurance mechanisms and a protocol token role.<br>Make it concrete:</span></p><ul><li>The Commons Treasury can act as a first-loss backstop for defined event categories.</li><li>$ARCH can be staked into underwriting pools (risk-weighted).</li><li>Vaults pay risk-based premiums (paid from surplus).</li></ul><p>This creates a network effect: more vaults = better risk modeling = cheaper capital.</p><hr><h2 id="h.s1y2lhwt5we">11) Token model: $ARCH and vault assets</h2><p>v0.1: “The protocol token ($ARCH) governs the Archai network… stake-weighted voting… access to preferred vaults… claim on commons surplus… underwriting.”</p><p>We refine this into a clean separation:</p><h3 id="h.2e1efudebdt">11.1 Two token categories</h3><ol start="1"><li>Vault Assets (per-vault)</li></ol><ul><li>Stake position tokens (time-locked notes / deposit receipts)</li><li>Ownership units (equity-like claims)</li><li>Use rights (occupancy/access claims)</li></ul><p>These map to specific legal wrappers and are highly jurisdiction-dependent.</p><ol start="2"><li>$ARCH (network token)</li></ol><ul><li>Governance of protocol-level parameters and upgrades</li><li>Underwriting / insurance staking</li><li>Access coordination (optional, not core)</li><li>Fee capture from Commons Treasury (if legally viable)</li></ul><h3 id="h.5996je538odl">11.2 Distribution design (principles, not arbitrary numbers)</h3><ul><li>Incentivize early vault bootstrapping (but don’t subsidize forever).</li><li>Reward verified contribution (builders, maintainers, operators) more than passive speculation.</li><li>Fund long-term commons (treasury).</li><li>Avoid short-term emission schedules that create mercenary behavior.</li></ul><h3 id="h.odctlbghiqng">11.3 Regulatory posture</h3><p>Vault assets are likely regulated financial instruments in many jurisdictions. That is fine if compliance is embedded (Mass-native) and distributions/transfers are constrained accordingly.</p><p>$ARCH must be treated carefully; if it has explicit cashflow claims, it may be regulated. If it is positioned as governance + underwriting collateral with carefully scoped economics, it may have a cleaner posture. This is jurisdiction-specific; Archai must be modular here.</p><hr><h2 id="h.yjrr8nmqzzmh">12) Roadmap</h2><p>v0.1 roadmap is directionally correct; we sharpen it into phases with explicit deliverables.</p><h3 id="h.4hxb0dfoechw">Phase 1: MVP (single vault)</h3><ul><li>One legal wrapper</li><li>One vault contract system (stake, redemption, distribution)</li><li>One governance constitution</li><li>One evidence feed (basic HomeOS metrics)</li><li>Basic KYC gating through Mass</li></ul><h3 id="h.yspucu1vpq36">Phase 2: Multi-vault registry + portability</h3><ul><li>Registry contracts</li><li>Standard interfaces for vault types</li><li>Cross-vault portability primitives</li><li>Redemption queue standardization</li></ul><h3 id="h.sw5pdk9gcfyu">Phase 3: Commons layer + underwriting</h3><ul><li>Protocol treasury routing</li><li>Grants program for new vault origination</li><li>Insurance pools + risk scoring</li></ul><h3 id="h.hx66cu7389q">Phase 4: Jurisdiction SDK (legal modules)</h3><ul><li>Deployable templates per jurisdiction</li><li>Integration hooks to SEZ stack modules</li><li>Attestation stream standards for compliance</li></ul><h3 id="h.7qlbtms42nvn">Phase 5: Resident and operator interface</h3><ul><li>Mobile dashboard</li><li>Resident onboarding flows</li><li>Contribution verification tooling</li><li>Proposal and voting UX</li></ul><hr><h2 id="h.s79148lc9qjn">13) Appendix A: The Archai stack in one diagram</h2><p>Value + control flow (simplified)</p><p><span>Residents / Investors<br>→ stake capital into </span><span>Vault Contract<br></span>→ Vault Contract coordinates with <span>Mass Entity (SPV/Trust)<br></span><span>→ Entity holds title + bank accounts, pays operators<br>→ Building ops run on </span>HomeOS<span>, producing attested metrics<br>→ Vault calculates surplus, updates NAV, distributes per policy<br>→ Protocol fee to </span><span>Commons Treasury<br></span>→ Commons funds seeding + subsidies + insurance</p><hr><h2 id="h.j3ru58yt89gd">14) Appendix B: Glossary (minimal)</h2><ul><li>Vault: on-chain capital + rights engine paired to a real legal entity holding the asset.</li><li>Stake position: time-locked capital with defined redemption/yield.</li><li>Ownership unit: equity-like claim on the underlying entity.</li><li>Use right: occupancy/access claim (may be non-transferable or bounded-transfer).</li><li>Attestation stream: cryptographic proof stream of compliance/operations.</li><li>Commons: shared treasury and seeding/underwriting engine.</li></ul>
+<div></div><p>This document is for research and design discussion. It does not constitute an offer to sell securities, financial advice, or legal advice. Real-world deployments require jurisdiction-specific legal structuring, licensing, and compliance.</p><hr><nav class="toc" aria-label="Table of Contents"><h2 class="toc-title">Contents</h2><ul class="toc-list"><li class="toc-level-0"><a href="#h.sx96p3sjzmun">1) The thesis 3</a></li><li><a href="#h.zg7fc5q0t43z">Why now (the missing enabling stack) 3</a></li><li class="toc-level-0"><a href="#h.4rl8rbrwxmt9">2) The problem 4</a></li><li class="toc-level-1"><a href="#h.cva2pcnppzuy">2.1 Ownership in real estate is structurally exclusionary 4</a></li><li class="toc-level-1"><a href="#h.bycy7bje1the">2.2 Housing markets are dominated by rentier dynamics 4</a></li><li class="toc-level-1"><a href="#h.eefj5i434uol">2.3 Buildings are opaque, so risk is mispriced 4</a></li><li class="toc-level-1"><a href="#h.tshd0r7b11je">2.4 The coordination problem: land + community + infrastructure 4</a></li><li class="toc-level-0"><a href="#h.kl933o82m2gl">3) Design principles (non-negotiables) 5</a></li><li class="toc-level-1"><a href="#h.o8i93bw2i6px">3.1 Legal reality first 5</a></li><li class="toc-level-1"><a href="#h.gwu08ngr86q8">3.2 Yield first, not appreciation first 5</a></li><li class="toc-level-1"><a href="#h.mnljc5ymfe2">3.3 Anti-speculation must be engineered 5</a></li><li class="toc-level-1"><a href="#h.pyaqxebf5ihi">3.4 Composability at the primitive level 5</a></li><li class="toc-level-1"><a href="#h.5qr1af2rcasf">3.5 Continuous attestations, not annual audits 5</a></li><li class="toc-level-1"><a href="#h.wjyclzcmw3w">3.6 Progressive decentralization with hard guardrails 5</a></li><li class="toc-level-0"><a href="#h.o6yda9lw9gp2">4) System model: what Archai actually is 6</a></li><li class="toc-level-1"><a href="#h.fqxrydpytyn4">4.1 Archai is a network of “Vault Institutions” 6</a></li><li class="toc-level-1"><a href="#h.gkegw8k2l2eb">4.2 Archai separates “use” from “ownership” (crucial) 6</a></li><li class="toc-level-1"><a href="#h.3nwubztlpg19">4.3 Archai is a policy engine for many civilizational models 6</a></li><li class="toc-level-0"><a href="#h.fig9g3x1m93o">5) Protocol architecture 7</a></li><li class="toc-level-1"><a href="#h.gu2dtrfj651d">5.1 Layer 1: Legal wrapper (Mass-native entity) 7</a></li><li class="toc-level-1"><a href="#h.resv3lhnfgtv">5.2 Layer 2: Vault contracts (capital + rights engine) 7</a></li><li class="toc-level-1"><a href="#h.mgxrlcrn438w">5.3 Layer 3: Governance module (polycentric) 7</a></li><li class="toc-level-1"><a href="#h.gjrbbn8nuv62">5.4 Layer 4: Commons + network treasury 8</a></li><li class="toc-level-1"><a href="#h.ag1qta7jqr6u">5.5 Layer 5: Evidence layer (HomeOS + attestation streams) 8</a></li><li class="toc-level-1"><a href="#h.6k1aywc00x3q">5.6 Layer 6: Arbitration and dispute resolution 8</a></li><li class="toc-level-0"><a href="#h.gn01qeowok5f">6) Vault economics: stake-to-live, stake-to-own, and earned equity 9</a></li><li class="toc-level-1"><a href="#h.qrre6bo9kxeo">6.1 Vault balance sheet: it’s finance, admit it 9</a></li><li class="toc-level-1"><a href="#h.prra535ew3am">6.2 Two primary stake products (clean segmentation) 9</a></li><li><a href="#h.sdvkydiz3p25">A) Resident Stake (stake-to-live) 9</a></li><li><a href="#h.ispvej5ndacq">B) Capital Stake (stake-to-build / stake-to-yield) 10</a></li><li class="toc-level-1"><a href="#h.tmjmialj6abw">6.3 Earned equity: from first principles 10</a></li><li class="toc-level-1"><a href="#h.o85abqmtc7na">6.4 Rent: discount as “coupon” 11</a></li><li class="toc-level-1"><a href="#h.omtexarr1jux">6.5 Surplus: the sacred object 11</a></li><li class="toc-level-0"><a href="#h.blsm10b39fsp">7) Liquidity and exit without rentier speculation 12</a></li><li class="toc-level-1"><a href="#h.az8edwy00tsy">7.1 Three exit paths (each with constraints) 12</a></li><li class="toc-level-1"><a href="#h.avl1sd5xewei">7.2 Redemption gates: preventing bank runs 12</a></li><li class="toc-level-1"><a href="#h.x451guyz436t">7.3 “Non-speculative” as a pricing rule 13</a></li><li class="toc-level-0"><a href="#h.esad2nunz5c9">8) Governance and control surfaces 13</a></li><li class="toc-level-1"><a href="#h.3cwg88r4gzl4">8.1 Governance must be polycentric 13</a></li><li><a href="#h.aik3djxpuzx1">Resident Council 13</a></li><li><a href="#h.4cp31fexavfo">Capital Council 14</a></li><li><a href="#h.1widhbadise4">Trustee/Guardian 14</a></li><li class="toc-level-1"><a href="#h.gelsokt0w5xw">8.2 Constitutional constraints (hard-coded) 14</a></li><li class="toc-level-1"><a href="#h.jwqn5wyklvps">8.3 Evidence-based governance 14</a></li><li class="toc-level-0"><a href="#h.uhwgacugo2y9">9) Legal + compliance: Mass-native smart assets 15</a></li><li class="toc-level-1"><a href="#h.d1qbpebvpn2">9.1 The Mass integration is not optional 15</a></li><li class="toc-level-1"><a href="#h.seiw2rfsyd6j">9.2 Smart Assets carry legal modules 15</a></li><li class="toc-level-1"><a href="#h.2kbsjwsuag55">9.3 Attestation streams are the regulator interface 16</a></li><li class="toc-level-1"><a href="#h.u5s08v7ofqku">9.4 Legal wrappers are modular (jurisdiction SDK) 16</a></li><li class="toc-level-0"><a href="#h.elrdt19ef8ck">10) Security, risk, and solvency 16</a></li><li class="toc-level-1"><a href="#h.xwdpi163lkmm">10.1 Threat model (real, not crypto-theater) 16</a></li><li class="toc-level-1"><a href="#h.mza5sup9wism">10.2 Controls (minimum viable institutional safety) 17</a></li><li class="toc-level-1"><a href="#h.uebrp5h81mey">10.3 Insurance and underwriting (network moat) 17</a></li><li class="toc-level-0"><a href="#h.s1y2lhwt5we">11) Token model: $ARCH and vault assets 17</a></li><li class="toc-level-1"><a href="#h.2e1efudebdt">11.1 Two token categories 18</a></li><li class="toc-level-1"><a href="#h.5996je538odl">11.2 Distribution design (principles, not arbitrary numbers) 18</a></li><li class="toc-level-1"><a href="#h.odctlbghiqng">11.3 Regulatory posture 18</a></li><li class="toc-level-0"><a href="#h.yjrr8nmqzzmh">12) Roadmap 18</a></li><li><a href="#h.4hxb0dfoechw">Phase 1: MVP (single vault) 18</a></li><li><a href="#h.yspucu1vpq36">Phase 2: Multi-vault registry + portability 19</a></li><li><a href="#h.sw5pdk9gcfyu">Phase 3: Commons layer + underwriting 19</a></li><li><a href="#h.hx66cu7389q">Phase 4: Jurisdiction SDK (legal modules) 19</a></li><li><a href="#h.7qlbtms42nvn">Phase 5: Resident and operator interface 19</a></li><li class="toc-level-0"><a href="#h.s79148lc9qjn">13) Appendix A: The Archai stack in one diagram 19</a></li><li class="toc-level-0"><a href="#h.j3ru58yt89gd">14) Appendix B: Glossary (minimal) 20</a></li></ul></nav><h2 id="h.sx96p3sjzmun">1) The thesis</h2><p>The built environment is the largest asset class humans maintain, yet its ownership rails are archaic: high friction, low transparency, rentier capture, and political brittleness.</p><p>Archai is the protocol layer that turns land and buildings into programmable, arbitration-enabled, on-chain/off-chain hybrid institutions, where:</p><ul><li>people can enter via staking (not only buying),</li><li>earn ownership over time and contribution,</li><li>surplus is allocated by explicit constitutional logic, and</li><li>the whole system stays compliant, auditable, and jurisdiction-portable through Mass primitives and attestation streams.</li></ul><p>Archai is not “a village.” It is the capital + governance substrate for many settlements and many civilizational models (Amagi and beyond).</p><h3 id="h.zg7fc5q0t43z">Why now (the missing enabling stack)</h3><p>Archai becomes credible because the Momentum stack exists:</p><ul><li>Mass makes entities/ownership/consent programmable and enforceable through compliant APIs (the “legal substrate”).<br></li><li>HomeOS makes buildings legible and continuously measurable (the “operational substrate”), and that data directly improves valuation and risk models for tokenized assets.<br></li><li>Programmable legal stacks / SEZ modules make jurisdictional portability possible (the “jurisdiction substrate”), with Smart Assets carrying compliance and producing attestation streams regulators can verify programmatically.</li></ul><p>In our view, this is the difference between “tokenizing PDFs” and building a real institutional layer.</p><hr><h2 id="h.4rl8rbrwxmt9">2) The problem</h2><h3 id="h.cva2pcnppzuy">2.1 Ownership in real estate is structurally exclusionary</h3><p>For most people, “ownership” means a mortgage or nothing. Entry requires large down payments, creditworthiness, and legal sophistication. Exit is illiquid and expensive. Transaction costs are brutal.</p><h3 id="h.bycy7bje1the">2.2 Housing markets are dominated by rentier dynamics</h3><p>The default incentives reward:</p><ul><li>holding scarce assets,</li><li>restricting supply,</li><li>harvesting rent,</li><li>and capturing appreciation driven by policy and scarcity.</li></ul><p>If you want abundant, well-maintained, community-aligned housing, you must change the default incentive package.</p><h3 id="h.eefj5i434uol">2.3 Buildings are opaque, so risk is mispriced</h3><p>Traditional real estate suffers from chronic information asymmetry. HomeOS flips this: buildings can self-report occupancy, energy, maintenance, and revenue streams—creating a continuous operational evidence layer that tokenization actually needs.</p><h3 id="h.tshd0r7b11je">2.4 The coordination problem: land + community + infrastructure</h3><p>Land ownership is not just finance. It encodes:</p><ul><li>governance,</li><li>cultural norms,</li><li>maintenance commitments,</li><li>collective investment decisions.</li></ul><p>Today, these are handled by slow legal processes and weak social trust. Archai’s premise is that they can be expressed as programmable institutional logic.</p><hr><h2 id="h.kl933o82m2gl">3) Design principles (non-negotiables)</h2><p>Archai is not a “crypto project.” It is institutional infrastructure. So it must obey institutional physics.</p><h3 id="h.o8i93bw2i6px">3.1 Legal reality first</h3><p>A “token” is not a secured asset unless it maps to enforceable rights. Archai vault assets are always paired with a real legal wrapper (SPV, trust, foundation, coop) that holds title and signs a protocol-aligned charter. This must be made explicit and primary.</p><h3 id="h.gwu08ngr86q8">3.2 Yield first, not appreciation first</h3><p>We treat built assets as cash-flow machines (housing, services, utilities, data, commerce). Appreciation is not the core promise.</p><h3 id="h.mnljc5ymfe2">3.3 Anti-speculation must be engineered</h3><p>“Non-speculative” is a set of constraints:</p><ul><li>pricing rule,</li><li>transfer constraints,</li><li>premium capture rules,</li><li>exit windows and gates,</li><li>and governance limits.</li></ul><h3 id="h.pyaqxebf5ihi">3.4 Composability at the primitive level</h3><p>Mass provides primitives (entities/ownership/identity/consent/etc.). Archai composes them into “built asset institutions.” This is exactly how Momentum describes the ecosystem architecture: Archai is the tokenization layer for HomeOS buildings that integrate natively with Mass primitives.</p><h3 id="h.5qr1af2rcasf">3.5 Continuous attestations, not annual audits</h3><p>A system this complex needs an evidence layer. SEZ Legal Stack implements: Smart should generate cryptographically secured, legally enforceable attestation streams so compliance can be verified programmatically without exposing private data.</p><h3 id="h.wjyclzcmw3w">3.6 Progressive decentralization with hard guardrails</h3><p>Governance starts with safety: trustees, emergency powers, upgrade controls. It decentralizes only as mechanisms prove stable.</p><hr><h2 id="h.o6yda9lw9gp2">4) System model: what Archai actually is</h2><h3 id="h.fqxrydpytyn4">4.1 Archai is a network of “Vault Institutions”</h3><p>Each Archai project is a Vault:</p><ul><li>a set of on-chain contracts,</li><li>bound to an off-chain legal wrapper,</li><li>holding a specific portfolio of land/buildings/infrastructure,</li><li>issuing stake positions and ownership claims,</li><li>distributing surplus according to encoded policy.</li></ul><h3 id="h.gkegw8k2l2eb">4.2 Archai separates “use” from “ownership” (crucial)</h3><p>Most housing systems bundle:</p><ul><li>right to occupy (use),</li><li>financial exposure (ownership),</li><li>and governance power.</li></ul><p>Archai treats them as separable primitives:</p><ol start="1"><li>Use Rights: the ability to live/work in a unit under certain terms.</li><li>Stake Positions: time-locked capital with defined redemption and yield.</li><li>Ownership Units: equity-like claims on the underlying entity.</li><li>Contribution Credits: earned equity via labor/service, verified by attestations.</li><li>Governance Power: parameterized, scoped, and constrained.</li></ol><p>Separating these lets us engineer “non-speculative” systems while still raising capital.</p><h3 id="h.3nwubztlpg19">4.3 Archai is a policy engine for many civilizational models</h3><p>A “civilizational model” is a parameter set + governance constitution:</p><ul><li>rent policy,</li><li>surplus split,</li><li>equity issuance schedule,</li><li>contribution valuation rules,</li><li>secondary transfer constraints,</li><li>commons obligations.</li></ul><p>Archai hosts multiple models; vaults select one (and can migrate with governance).</p><hr><h2 id="h.fig9g3x1m93o">5) Protocol architecture</h2><h3 id="h.gu2dtrfj651d">5.1 Layer 1: Legal wrapper (Mass-native entity)</h3><p>Each Vault corresponds to a legal entity (or entity set):</p><ul><li>Asset SPV / Trust holds title and bank accounts.</li><li>Operator entity contracts services (maintenance, property management, construction).</li><li>Archai Foundation / protocol entity holds IP, administers upgrades, manages network treasury.</li></ul><p>Mass provides the programmable rails to automatically form and maintain these entities and encode governance, ownership tables, identity gating, and consent flows programmatically.</p><p>In other words: the legal wrapper is not paperwork. It is a programmable Smart Asset.</p><h3 id="h.resv3lhnfgtv">5.2 Layer 2: Vault contracts (capital + rights engine)</h3><p>Vault contracts manage:</p><ul><li>deposits,</li><li>stake terms,</li><li>redemptions,</li><li>distribution,</li><li>issuance of ownership units,</li><li>rent discount rules,</li><li>secondary transfer rules,</li><li>reserve accounts,</li><li>liquidation/wind-down logic.</li></ul><h3 id="h.mgxrlcrn438w">5.3 Layer 3: Governance module (polycentric)</h3><p><span>Vault governance is not “one token, one vote.”<br>It is:</span></p><ul><li>scoped,</li><li>role-based,</li><li>bicameral where necessary,</li><li>with trustee/guardian failsafes.</li></ul><h3 id="h.gjrbbn8nuv62">5.4 Layer 4: Commons + network treasury</h3><p>A portion of surplus flows to the Archai Commons Treasury (v0.1 proposes 5–10%).</p><p><span><br>This treasury funds:</span></p><ul><li>seeding new vaults,</li><li>resident subsidies,</li><li>protocol R&amp;D,</li><li>and crucially: risk underwriting (insurance).</li></ul><h3 id="h.ag1qta7jqr6u">5.5 Layer 5: Evidence layer (HomeOS + attestation streams)</h3><p>Buildings running HomeOS produce continuous operational data:</p><ul><li>occupancy,</li><li>energy,</li><li>maintenance costs,</li><li>revenue streams.</li></ul><p>This reduces information asymmetry and feeds valuation and risk models for tokenized assets.</p><p>Separately, the SEZ Legal Stack concept of attestation streams applies to compliance: prove required checks (KYC tier, AML screening, transfer restrictions) without revealing underlying private data.</p><h3 id="h.6k1aywc00x3q">5.6 Layer 6: Arbitration and dispute resolution</h3><p>Every vault must have:</p><ul><li>a defined dispute path,</li><li>arbitration clause,</li><li>on-chain evidence admissibility rules,</li><li>and emergency intervention rights.</li></ul><p>Momentum’s ecosystem explicitly includes an ADGM-based arbitration court for digital asset and machine-intelligence workflows; Archai vaults should route disputes into such hardened venues by default.</p><p>Momentum Monograph - Google Docs</p><hr><h2 id="h.gn01qeowok5f">6) Vault economics: stake-to-live, stake-to-own, and earned equity</h2><p>This section closes the biggest gap in v0.1: why lock capital up and how returns are actually produced without speculation.</p><h3 id="h.qrre6bo9kxeo">6.1 Vault balance sheet: it’s finance, admit it</h3><p>Each vault is a mini private equity + real estate platform with a capital stack:</p><ul><li>Senior capital (bank debt / bonds)<br>Lowest risk, capped return, first claim.</li><li>Resident stake (time-locked deposits)<br>Medium risk, compensated via rent discounts + earned equity.</li><li>Programmatic equity (vault ownership units)<br>Variable return, receives residual surplus and some appreciation per policy.</li><li>Sponsor/operator equity<br>Paid for execution, absorbs early risk, earns if the asset performs.</li><li>Commons stake (network)<br>Receives protocol fee and may provide insurance backstops.</li></ul><p>The whitepaper must explicitly model this, because solvency and redemptions depend on it.</p><h3 id="h.prra535ew3am">6.2 Two primary stake products (clean segmentation)</h3><h4 id="h.sdvkydiz3p25">A) Resident Stake (stake-to-live)</h4><p><span>Residents stake capital for a term (v0.1 suggested 3–7 years).<br><br>They receive:</span></p><ul><li>a rent discount (economic benefit now),</li><li>earned equity over time (wealth building),</li><li>governance participation (scoped),</li><li>and the right to redeem principal at maturity (subject to safety gates).</li></ul><p>This is not “investing.” It is a capitalized membership in a housing institution.</p><h4 id="h.ispvej5ndacq">B) Capital Stake (stake-to-build / stake-to-yield)</h4><p>Non-resident capital providers stake into the vault with:</p><ul><li>defined term,</li><li>defined distribution rules (coupon-like),</li><li>potentially equity kicker,</li><li>no occupancy rights.</li></ul><p>This is the instrument for scaling supply without turning the whole system into a speculative casino.</p><h3 id="h.tmjmialj6abw">6.3 Earned equity: from first principles</h3><p>Earned equity exists to reward time, risk, and contribution instead of mere wealth.</p><p><span>v0.1’s formula is directionally correct (equity proportional to stake * multiplier / valuation).<br><br>But here we refine toa safer, more precise model:</span></p><p>Let:</p><ul><li>𝑁𝐴𝑉𝑡NAVt​ = net asset value of the vault at time t (audited + attested)</li><li>𝑆𝑖Si​ = stake amount for position i</li><li>𝑇𝑖Ti​ = term length for position i</li><li>𝑅𝑖Ri​ = risk multiplier (construction &gt; stabilization &gt; mature)</li><li>𝐶𝑖(𝑡)Ci​(t) = contribution score (verified labor/service)</li><li>𝛼,𝛽α,β = policy parameters</li></ul><p>Define Equity Accrual Rate:</p><p>𝐸𝐴𝑖(𝑡)=𝑆𝑖𝑁𝐴𝑉𝑡⋅𝑓(𝑇𝑖)⋅𝑅𝑖 + 𝛼⋅𝐶𝑖(𝑡)EAi​(t)=NAVt​Si​​⋅f(Ti​)⋅Ri​+α⋅Ci​(t)</p><p>Where:</p><ul><li>𝑓(𝑇)f(T) is convex in time (long-term alignment rewarded),</li><li>𝑅𝑖Ri​ is bounded (no infinite multipliers),</li><li>𝐶𝑖(𝑡)Ci​(t) is capped per epoch to prevent gaming.</li></ul><p>Equity accrues continuously or in epochs, minted as Vault Ownership Units.</p><h3 id="h.o85abqmtc7na">6.4 Rent: discount as “coupon”</h3><p>We formalize:</p><ul><li>Let Base Rent be computed from:</li></ul><ul><li>operating costs,</li><li>reserves,</li><li>debt service,</li><li>targeted maintenance SLA,</li><li>and affordability policy.</li></ul><ul><li>A Resident Stake provides a discount that functions like the “interest payment” on their locked capital.</li></ul><p>This is economically coherent: the vault is borrowing from residents; residents are compensated through reduced rent + earned equity.</p><h3 id="h.omtexarr1jux">6.5 Surplus: the sacred object</h3><p>Define:</p><p>𝑆𝑢𝑟𝑝𝑙𝑢𝑠=𝑁𝑂𝐼−𝐷𝑒𝑏𝑡𝑆𝑒𝑟𝑣𝑖𝑐𝑒−𝑅𝑒𝑠𝑒𝑟𝑣𝑒𝑠Surplus=NOI−DebtService−Reserves</p><p>Then allocate surplus by policy:</p><ul><li>Resident / staker distributions: 50–70% (v0.1)</li><li>Reinvestment: 20–40% (v0.1)</li><li>Protocol fee to Commons: 5–10% (v0.1)</li></ul><p>We add one missing bucket:</p><ul><li>Insurance / contingency buffer (can be part of reserves or funded via protocol treasury)</li></ul><p>Surplus allocation is not “governance vibes.” It is the economic constitution.</p><hr><h2 id="h.blsm10b39fsp">7) Liquidity and exit without rentier speculation</h2><p>This is where most “tokenized real estate” fails.</p><h3 id="h.az8edwy00tsy">7.1 Three exit paths (each with constraints)</h3><ol start="1"><li>Redemption at maturity (primary)</li></ol><ul><li>Stake positions redeem at maturity at a deterministic rule:</li></ul><ul><li>principal less fees,</li><li>subject to solvency and redemption queues.</li></ul><ol start="2"><li>Secondary transfer of stake rights (bounded)<br><br>We formalize:</li></ol><ul><li>transfers only to whitelisted (KYC/KYB) recipients,</li><li>premium cap relative to NAV,</li><li>any premium above cap is routed to Commons (anti-speculation capture),</li><li>mandatory disclosure of vault state.</li></ul><ol start="3"><li>Cross-vault portability (network feature)<br>As Archai evolves into a registry, positions can be portable:</li></ol><ul><li>stake exits one vault and enters another under rules,</li><li>enabling mobility without liquidation cascades.</li></ul><h3 id="h.avl1sd5xewei">7.2 Redemption gates: preventing bank runs</h3><p><span>Real assets are illiquid. If you promise instant liquidity, you’re lying.<br>Archai uses explicit gates:</span></p><ul><li>max redemption per epoch,</li><li>variable queue times tied to liquidity,</li><li>emergency halts when reserves breach threshold.</li></ul><p>This is not anti-user; it is solvency.</p><h3 id="h.x451guyz436t">7.3 “Non-speculative” as a pricing rule</h3><p>A vault can choose among policy modes:</p><ul><li>NAV-bounded mode: ownership units trade within a tight band around NAV; excess premium is taxed away.</li><li>Affordability-first mode: occupancy rights are non-transferable or transferable only at cost.</li><li>Growth mode (allowed but explicit): partial appreciation can accrue, but with caps and commons capture.</li></ul><p>The key is: speculation is never the default. It’s a deliberate configuration.</p><hr><h2 id="h.esad2nunz5c9">8) Governance and control surfaces</h2><p>v0.1 led with “stake-based, resident-weighted, trustee-checked.”. We make this enforceable.</p><h3 id="h.3cwg88r4gzl4">8.1 Governance must be polycentric</h3><p>Different decisions require different stakeholders.</p><p>Recommended structure:</p><h4 id="h.aik3djxpuzx1">Resident Council</h4><p>Controls:</p><ul><li>community rules,</li><li>local service priorities,</li><li>cultural programming,</li><li>some budget allocations.</li></ul><p>Voting weight: occupancy + contribution (not raw capital).</p><h4 id="h.4cp31fexavfo">Capital Council</h4><p>Controls:</p><ul><li>leverage limits,</li><li>reserve policy,</li><li>large capex,</li><li>refinancing terms,</li><li>issuance policy.</li></ul><p>Voting weight: stake and ownership units (bounded).</p><h4 id="h.1widhbadise4">Trustee/Guardian</h4><p>Controls:</p><ul><li>legal compliance,</li><li>emergency actions,</li><li>fraud response,</li><li>enforcing constitutional constraints.</li></ul><p>Trustees are not “centralization”; they are the interface to legal reality.</p><h3 id="h.gelsokt0w5xw">8.2 Constitutional constraints (hard-coded)</h3><p>Certain parameters must be upgrade-resistant:</p><ul><li>maximum leverage,</li><li>minimum reserves,</li><li>affordability floors,</li><li>anti-speculation constraints,</li><li>disclosure requirements.</li></ul><p>Governance cannot vote to steal the treasury or lever the vault into oblivion.</p><h3 id="h.jwqn5wyklvps">8.3 Evidence-based governance</h3><p>Governance proposals must reference:</p><ul><li>attested operating metrics (HomeOS),</li><li>audited financials,</li><li>risk reports,</li><li>and predicted impacts.</li></ul><p>This is where “building as programmable institution” becomes real.</p><hr><h2 id="h.uhwgacugo2y9">9) Legal + compliance: Mass-native smart assets</h2><h3 id="h.d1qbpebvpn2">9.1 The Mass integration is not optional</h3><p>Mass provides programmable primitives:</p><ul><li>entities,</li><li>ownership structures,</li><li>financial instruments,</li><li>identity,</li><li>consent.<br>Momentum Monograph - Google Docs</li></ul><p>Archai vaults should be implemented as a specific composition of those primitives:</p><ul><li>the SPV/trust is a Mass entity,</li><li>stake positions and ownership units are Mass-native ownership tables/tokens,</li><li>transfers are governed by identity gates and consent workflows,</li><li>distributions use Mass fiscal rails (accounts/wallets/banking integration).</li></ul><h3 id="h.seiw2rfsyd6j">9.2 Smart Assets carry legal modules</h3><p>SEZ Stack expresses the crucial design principle: a Smart Asset should encode jurisdiction, transfer restrictions, identity tier requirements, consent mechanisms—so compliance is intrinsic, not a separate spreadsheet.</p><p>For Archai:</p><ul><li>Each vault declares its jurisdictional module.</li><li>Transfers compute the intersection of permissible actions (e.g., KYC tiers, residency rules, securities exemptions).</li><li>The asset enforces constraints programmatically.</li></ul><h3 id="h.2kbsjwsuag55">9.3 Attestation streams are the regulator interface</h3><p><span>Regulators and auditors don’t want dashboards; they want verifiable compliance.<br>Attestation streams prove requirements were met without exposing private data (e.g., “all holders meet KYC tier X”).</span></p><p>Archai uses attestation streams for:</p><ul><li>holder eligibility,</li><li>transfer compliance,</li><li>treasury flows,</li><li>operating metrics integrity.</li></ul><h3 id="h.u5s08v7ofqku">9.4 Legal wrappers are modular (jurisdiction SDK)</h3><p><span>v0.1 mentioned modular templates (Cayman foundation, Swiss Verein, Panama company).<br>The correct framing:</span></p><ul><li>Create a Jurisdiction SDK: a set of deployable legal + compliance modules (entity type, offering exemptions, custody model, dispute resolution path).</li><li>Vaults instantiate within a chosen module.</li><li>Modules can be upgraded or migrated with governance and trustee oversight.</li></ul><hr><h2 id="h.elrdt19ef8ck">10) Security, risk, and solvency</h2><h3 id="h.xwdpi163lkmm">10.1 Threat model (real, not crypto-theater)</h3><p>Primary risks:</p><ul><li>title defects / legal disputes,</li><li>operator fraud,</li><li>valuation manipulation,</li><li>oracle corruption (data + appraisals),</li><li>governance capture,</li><li>liquidity cascade (redemption run),</li><li>jurisdictional intervention,</li><li>stablecoin/banking rail failure,</li><li>smart contract bugs.</li></ul><h3 id="h.mza5sup9wism">10.2 Controls (minimum viable institutional safety)</h3><ul><li>Segregated accounts (operating vs reserves vs distributions)</li><li>Independent appraisal + HomeOS attested ops data feeding NAV</li><li>Redemption gates + queues</li><li>Role-based access control for operational actions</li><li>On-chain + off-chain audit trails</li><li>Emergency guardian powers with transparency constraints</li><li>Insurance module (protocol-level underwriting)</li></ul><h3 id="h.uebrp5h81mey">10.3 Insurance and underwriting (network moat)</h3><p><span>v0.1 mentions underwriting network health via insurance mechanisms and a protocol token role.<br>Make it concrete:</span></p><ul><li>The Commons Treasury can act as a first-loss backstop for defined event categories.</li><li>$ARCH can be staked into underwriting pools (risk-weighted).</li><li>Vaults pay risk-based premiums (paid from surplus).</li></ul><p>This creates a network effect: more vaults = better risk modeling = cheaper capital.</p><hr><h2 id="h.s1y2lhwt5we">11) Token model: $ARCH and vault assets</h2><p>v0.1: “The protocol token ($ARCH) governs the Archai network… stake-weighted voting… access to preferred vaults… claim on commons surplus… underwriting.”</p><p>We refine this into a clean separation:</p><h3 id="h.2e1efudebdt">11.1 Two token categories</h3><ol start="1"><li>Vault Assets (per-vault)</li></ol><ul><li>Stake position tokens (time-locked notes / deposit receipts)</li><li>Ownership units (equity-like claims)</li><li>Use rights (occupancy/access claims)</li></ul><p>These map to specific legal wrappers and are highly jurisdiction-dependent.</p><ol start="2"><li>$ARCH (network token)</li></ol><ul><li>Governance of protocol-level parameters and upgrades</li><li>Underwriting / insurance staking</li><li>Access coordination (optional, not core)</li><li>Fee capture from Commons Treasury (if legally viable)</li></ul><h3 id="h.5996je538odl">11.2 Distribution design (principles, not arbitrary numbers)</h3><ul><li>Incentivize early vault bootstrapping (but don’t subsidize forever).</li><li>Reward verified contribution (builders, maintainers, operators) more than passive speculation.</li><li>Fund long-term commons (treasury).</li><li>Avoid short-term emission schedules that create mercenary behavior.</li></ul><h3 id="h.odctlbghiqng">11.3 Regulatory posture</h3><p>Vault assets are likely regulated financial instruments in many jurisdictions. That is fine if compliance is embedded (Mass-native) and distributions/transfers are constrained accordingly.</p><p>$ARCH must be treated carefully; if it has explicit cashflow claims, it may be regulated. If it is positioned as governance + underwriting collateral with carefully scoped economics, it may have a cleaner posture. This is jurisdiction-specific; Archai must be modular here.</p><hr><h2 id="h.yjrr8nmqzzmh">12) Roadmap</h2><p>v0.1 roadmap is directionally correct; we sharpen it into phases with explicit deliverables.</p><h3 id="h.4hxb0dfoechw">Phase 1: MVP (single vault)</h3><ul><li>One legal wrapper</li><li>One vault contract system (stake, redemption, distribution)</li><li>One governance constitution</li><li>One evidence feed (basic HomeOS metrics)</li><li>Basic KYC gating through Mass</li></ul><h3 id="h.yspucu1vpq36">Phase 2: Multi-vault registry + portability</h3><ul><li>Registry contracts</li><li>Standard interfaces for vault types</li><li>Cross-vault portability primitives</li><li>Redemption queue standardization</li></ul><h3 id="h.sw5pdk9gcfyu">Phase 3: Commons layer + underwriting</h3><ul><li>Protocol treasury routing</li><li>Grants program for new vault origination</li><li>Insurance pools + risk scoring</li></ul><h3 id="h.hx66cu7389q">Phase 4: Jurisdiction SDK (legal modules)</h3><ul><li>Deployable templates per jurisdiction</li><li>Integration hooks to SEZ stack modules</li><li>Attestation stream standards for compliance</li></ul><h3 id="h.7qlbtms42nvn">Phase 5: Resident and operator interface</h3><ul><li>Mobile dashboard</li><li>Resident onboarding flows</li><li>Contribution verification tooling</li><li>Proposal and voting UX</li></ul><hr><h2 id="h.s79148lc9qjn">13) Appendix A: The Archai stack in one diagram</h2><p>Value + control flow (simplified)</p><p><span>Residents / Investors<br>→ stake capital into </span><span>Vault Contract<br></span>→ Vault Contract coordinates with <span>Mass Entity (SPV/Trust)<br></span><span>→ Entity holds title + bank accounts, pays operators<br>→ Building ops run on </span>HomeOS<span>, producing attested metrics<br>→ Vault calculates surplus, updates NAV, distributes per policy<br>→ Protocol fee to </span><span>Commons Treasury<br></span>→ Commons funds seeding + subsidies + insurance</p><hr><h2 id="h.j3ru58yt89gd">14) Appendix B: Glossary (minimal)</h2><ul><li>Vault: on-chain capital + rights engine paired to a real legal entity holding the asset.</li><li>Stake position: time-locked capital with defined redemption/yield.</li><li>Ownership unit: equity-like claim on the underlying entity.</li><li>Use right: occupancy/access claim (may be non-transferable or bounded-transfer).</li><li>Attestation stream: cryptographic proof stream of compliance/operations.</li><li>Commons: shared treasury and seeding/underwriting engine.</li></ul>
             </div>
 
             <footer class="article-footer">
                 <p class="author-byline"><strong>Raeez Lorgat</strong>, Managing Partner at Momentum</p>
-                <nav class="article-footer-nav">
+                <nav class="footer-nav">
                     <a href="/">← All Papers</a>
+                </nav>
+            </footer>
+
+            <footer class="contact-footer">
+                <a href="mailto:raeez@momentum.inc">raeez@momentum.inc</a>
+                <nav class="social" aria-label="Social links">
+                    <a href="https://x.com/raeez" aria-label="X (Twitter)" class="icon-link">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/raeez" aria-label="Instagram" class="icon-link">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
                 </nav>
             </footer>
         </article>
