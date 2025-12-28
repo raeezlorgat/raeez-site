@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>/dev/finance inc. — Raeez Lorgat</title>
 
+    <!-- Adobe Fonts: Garamond Premier Pro -->
+    <link rel="stylesheet" href="https://use.typekit.net/YOUR_KIT_ID.css">
+
+    <!-- Fallback -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
@@ -17,7 +21,7 @@
         }
 
         :root {
-            --serif: 'EB Garamond', 'Hoefler Text', Garamond, serif;
+            --serif: 'garamond-premier-pro', 'EB Garamond', 'Hoefler Text', Garamond, serif;
             --text-base: clamp(18px, 2.1vw, 21px);
             --text-small: calc(var(--text-base) / 1.2);
             --text-tiny: calc(var(--text-small) / 1.2);
@@ -38,11 +42,13 @@
             font-family: var(--serif);
             font-size: var(--text-base);
             font-weight: 400;
+            font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "onum" 1, "pnum" 1;
             line-height: 1.618;
             color: var(--ink);
             background: var(--paper);
             text-rendering: optimizeLegibility;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
@@ -238,7 +244,7 @@
         <a href="/" class="back-link">← Raeez Lorgat</a>
 
         <h1>/dev/finance inc.</h1>
-        <p class="subtitle">Palo Alto, 2009–2010</p>
+        <p class="subtitle">Palo Alto, 2009–2011</p>
 
         <p class="narrative">
             An MIT upperclassman introduced me to Patrick Collison during my freshman year (the 2008-2009 academic year). We hit it off immediately—both interested in payments, APIs, developer tools, global finance and programmable money. Almost immediately, Patrick invited me to join him on his first international flight: Palo Alto to Vancouver, British Columbia, in a small plane he'd fly himself. The trip was in a week.
@@ -252,12 +258,9 @@
             That morning I lay down on the grass in Central Park and <a href="https://twitter.com/raeez">tweeted</a>: "laying on the grass in central park after hacking my way to a visa." Patrick liked the tweet, and our trajectory was set.
         </p>
 
-        <div class="divider"></div>
-
-        <p class="section-label">The flight</p>
 
         <p class="narrative">
-            We flew from Palo Alto up the coast over Oregon and Washington: Patrick's first international flight. That same day, we hiked the Grouse Grind in Vancouver—the sign said it was closed for winter conditions; we hiked it anyway.
+            We flew from Palo Alto up the coast over Oregon and Washington: Patrick's first international flight. That same day, we hiked the Grouse Grind in Vancouver.
         </p>
 
 
@@ -303,7 +306,7 @@
 
 <br/>
 <br/>
-The product idea was to make accepting money online as simple as a few lines of code. It was later renamed Stripe.
+The product idea was to make accepting money online as simple as a few lines of code. In 2010 at the Ramona St. /dev/finance inc. office, Greg Brockman came up with the name Stripe during a team renaming session.
         </p>
 
         <div class="photo-grid">
@@ -345,7 +348,7 @@ The product idea was to make accepting money online as simple as a few lines of 
             </li>
             <li class="artifact-item">
                 <span class="year-tag">2022</span>
-                <a href="https://raeez.com/Raeez Letter GC Letter Teneja.pdf">Letter from Hemant Taneja</a>
+                <a href="https://raeez.com/Raeez Letter GC Letter Taneja.pdf">Letter from Hemant Taneja</a>
                 <span class="artifact-description">General Catalyst O1A visa support</span>
             </li>
         </ul>

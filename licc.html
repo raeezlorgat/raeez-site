@@ -3,6 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Laboratory for Incentivization, Coordination and Cooperation — Raeez Lorgat</title>
+
+    <!-- SEO -->
+    <meta name="description" content="LICC is a private research institute dedicated to Coordination Science.">
+    <meta name="author" content="Raeez Lorgat">
+    <meta property="og:title" content="The Laboratory for Incentivization, Coordination and Cooperation">
+    <meta property="og:description" content="LICC is a private research institute dedicated to Coordination Science.">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://raeez.com/licc.html">
+
+    <!-- Structured data for LLMs -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ScholarlyArticle",
+        "headline": "The Laboratory for Incentivization, Coordination and Cooperation",
+        "author": {
+            "@type": "Person",
+            "name": "Raeez Lorgat",
+            "url": "https://raeez.com"
+        },
+        "description": "LICC is a private research institute dedicated to Coordination Science."
+    }
+    </script>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP8T5J8M28"></script>
@@ -13,32 +37,25 @@
         gtag('config', 'G-JP8T5J8M28');
     </script>
 
-    <title>The Laboratory for Incentivization, Coordination and Cooperation — Raeez Lorgat</title>
+    <!-- Adobe Fonts: Garamond Premier Pro -->
+    <link rel="stylesheet" href="https://use.typekit.net/zlu2quo.css">
 
-    <!-- SEO Meta -->
-    <meta name="description" content="LICC is a private research institute dedicated to Coordination Science—the rigorous study of how agents align actions, beliefs, and resources to achieve collective outcomes across scales.">
-    <meta name="author" content="Raeez Lorgat">
-    <meta property="og:title" content="The Laboratory for Incentivization, Coordination and Cooperation (LICC)">
-    <meta property="og:description" content="A Research Institute for Coordination Science — Raeez Lorgat">
-    <meta property="og:type" content="article">
-
-    <!-- Typography: EB Garamond variable font -->
+    <!-- Fallback -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 
     <style>
-        /* Reset */
         *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Typography System */
         :root {
-            --serif: 'EB Garamond', 'Hoefler Text', Garamond, serif;
-            --mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+            --serif: 'garamond-premier-pro', 'EB Garamond', 'Hoefler Text', Garamond, serif;
+            --mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+
             --scale-ratio: 1.333;
             --text-base: clamp(19px, 2.1vw, 22px);
             --text-small: calc(var(--text-base) / var(--scale-ratio));
@@ -48,7 +65,7 @@
             --text-xxlarge: calc(var(--text-xlarge) * var(--scale-ratio));
 
             --baseline: 8px;
-            --line-height-tight: 1.35;
+            --line-height-tight: 1.25;
             --line-height-base: 1.618;
             --line-height-loose: 1.75;
 
@@ -62,357 +79,486 @@
             --measure-narrow: 580px;
             --measure-base: 640px;
             --measure-wide: 720px;
-            --gutter: calc(var(--space-atom) * 1.618);
 
             --ink: #1a1917;
             --ink-secondary: #57534e;
-            --ink-tertiary: #78716c;
+            --ink-tertiary: #a8a29e;
             --ink-ghost: #d6d3d1;
-            --paper: #fafaf9;
-            --paper-warm: #f5f5f4;
+            --paper: #fefdfb;
+            --paper-alt: #f7f6f4;
+
+            --optical-edge: -0.05em;
+            --kern-tight: -0.02em;
+            --kern-loose: 0.015em;
+            --kern-ultra: 0.12em;
         }
 
         html {
-            font-size: 16px;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
+            font-size: 100%;
+            -webkit-text-size-adjust: 100%;
+            scroll-behavior: smooth;
+            hanging-punctuation: first last;
         }
 
         body {
             font-family: var(--serif);
             font-size: var(--text-base);
+            font-weight: 400;
+            font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "onum" 1, "pnum" 1;
             line-height: var(--line-height-base);
             color: var(--ink);
             background: var(--paper);
-            min-height: 100vh;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Article Container */
-        .article-container {
-            max-width: var(--measure-wide);
+        .container {
+            max-width: var(--measure-base);
             margin: 0 auto;
-            padding: var(--space-universe) var(--gutter) var(--space-ecosystem);
+            padding: var(--space-universe) var(--space-molecule) var(--space-ecosystem);
         }
 
-        /* Back link */
-        .back-link {
-            display: inline-block;
-            font-size: var(--text-small);
+        /* Back navigation */
+        .back-nav {
+            font-size: var(--text-tiny);
+            font-weight: 500;
+            letter-spacing: var(--kern-ultra);
+            text-transform: uppercase;
+            margin-bottom: var(--space-ecosystem);
+        }
+
+        .back-nav a {
             color: var(--ink-tertiary);
             text-decoration: none;
-            margin-bottom: var(--space-ecosystem);
-            transition: color 0.2s ease;
+            transition: color 200ms ease;
         }
 
-        .back-link:hover {
+        .back-nav a:hover {
             color: var(--ink);
-        }
-
-        .back-link::before {
-            content: '←';
-            margin-right: 0.5em;
         }
 
         /* Article Header */
         .article-header {
             margin-bottom: var(--space-ecosystem);
+            padding-bottom: var(--space-organism);
+            border-bottom: 1px solid var(--ink-ghost);
         }
 
         .article-title {
             font-size: var(--text-xxlarge);
-            font-weight: 500;
+            font-weight: 400;
+            letter-spacing: var(--kern-tight);
             line-height: var(--line-height-tight);
-            letter-spacing: -0.02em;
             margin-bottom: var(--space-molecule);
+            margin-left: var(--optical-edge);
         }
 
         .article-subtitle {
             font-size: var(--text-large);
+            font-weight: 400;
             font-style: italic;
+            line-height: var(--line-height-base);
             color: var(--ink-secondary);
-            line-height: var(--line-height-tight);
-            margin-bottom: var(--space-atom);
+            max-width: var(--measure-narrow);
         }
 
         .article-meta {
             font-size: var(--text-small);
             color: var(--ink-tertiary);
+            margin-top: var(--space-molecule);
         }
 
         .article-meta a {
             color: var(--ink-secondary);
             text-decoration: none;
             border-bottom: 1px solid var(--ink-ghost);
+            transition: border-color 200ms ease;
         }
 
         .article-meta a:hover {
-            border-color: var(--ink);
+            border-color: var(--ink-secondary);
         }
 
-        /* Article Content */
-        .article-content h1 {
+        /* Article Body */
+        .article-body {
+            font-variant-ligatures: common-ligatures;
+        }
+
+        .article-body p {
+            margin-bottom: var(--space-molecule);
+            max-width: var(--measure-base);
+            hyphens: auto;
+            hyphenate-limit-chars: 6 3 2;
+            hyphenate-limit-lines: 2;
+        }
+
+        .article-body h1 {
             font-size: var(--text-xlarge);
             font-weight: 600;
-            margin: var(--space-universe) 0 var(--space-organism);
+            letter-spacing: var(--kern-tight);
             line-height: var(--line-height-tight);
-            letter-spacing: -0.01em;
+            margin-top: var(--space-universe);
+            margin-bottom: var(--space-molecule);
+            margin-left: var(--optical-edge);
         }
 
-        .article-content h2 {
+        .article-body h2 {
             font-size: var(--text-large);
             font-weight: 600;
-            margin: var(--space-ecosystem) 0 var(--space-organism);
+            letter-spacing: var(--kern-tight);
             line-height: var(--line-height-tight);
+            margin-top: var(--space-ecosystem);
+            margin-bottom: var(--space-molecule);
+            margin-left: var(--optical-edge);
         }
 
-        .article-content h3 {
+        .article-body h3 {
             font-size: var(--text-base);
             font-weight: 600;
-            margin: var(--space-organism) 0 var(--space-molecule);
             line-height: var(--line-height-tight);
-        }
-
-        .article-content p {
-            margin-bottom: var(--space-organism);
-            text-align: justify;
-            hyphens: auto;
-        }
-
-        .article-content a {
-            color: var(--ink);
-            text-decoration: none;
-            border-bottom: 1px solid var(--ink-ghost);
-            transition: border-color 0.2s ease;
-        }
-
-        .article-content a:hover {
-            border-color: var(--ink);
-        }
-
-        .article-content blockquote {
-            margin: var(--space-organism) 0;
-            padding-left: var(--space-molecule);
-            border-left: 2px solid var(--ink-ghost);
-            color: var(--ink-secondary);
-            font-style: italic;
-        }
-
-        .article-content strong {
-            font-weight: 600;
-        }
-
-        .article-content em {
-            font-style: italic;
-        }
-
-        .article-content ul,
-        .article-content ol {
-            margin: var(--space-organism) 0;
-            padding-left: var(--space-ecosystem);
-        }
-
-        .article-content li {
+            margin-top: var(--space-organism);
             margin-bottom: var(--space-atom);
         }
 
-        .article-content code {
-            font-family: var(--mono);
-            font-size: 0.9em;
-            background: var(--paper-warm);
-            padding: 0.1em 0.3em;
-            border-radius: 3px;
+        .article-body h4 {
+            font-size: var(--text-base);
+            font-weight: 600;
+            font-style: italic;
+            line-height: var(--line-height-tight);
+            margin-top: var(--space-organism);
+            margin-bottom: var(--space-atom);
         }
 
-        .article-content pre {
-            background: var(--paper-warm);
+        /* Links */
+        .article-body a {
+            color: var(--ink);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.15em;
+            text-decoration-color: var(--ink-ghost);
+            transition: text-decoration-color 200ms ease;
+        }
+
+        .article-body a:hover {
+            text-decoration-color: var(--ink);
+        }
+
+        .article-body strong {
+            font-weight: 600;
+        }
+
+        .article-body em {
+            font-style: italic;
+        }
+
+        /* Block Quote */
+        .article-body blockquote {
+            margin: var(--space-organism) 0;
+            padding-left: var(--space-molecule);
+            border-left: 2px solid var(--ink-ghost);
+            font-style: italic;
+            color: var(--ink-secondary);
+        }
+
+        /* Code */
+        code {
+            font-family: var(--mono);
+            font-size: 0.75em;
+            letter-spacing: -0.02em;
+            background: var(--paper-alt);
+            padding: 0.15em 0.35em;
+            border-radius: 3px;
+            color: var(--ink-secondary);
+        }
+
+        pre {
+            background: var(--ink);
+            color: var(--paper);
             padding: var(--space-molecule);
             border-radius: 4px;
             overflow-x: auto;
             margin: var(--space-organism) 0;
+            font-size: var(--text-small);
+            line-height: var(--line-height-base);
         }
 
-        .article-content pre code {
+        pre code {
             background: none;
             padding: 0;
+            font-size: inherit;
+            color: inherit;
         }
 
-        .article-content table {
+        /* Lists */
+        .article-body ul,
+        .article-body ol {
+            margin: var(--space-molecule) 0;
+            padding-left: var(--space-molecule);
+        }
+
+        .article-body li {
+            margin-bottom: var(--space-atom);
+        }
+
+        .article-body li::marker {
+            color: var(--ink-tertiary);
+        }
+
+        /* Tables */
+        .article-body table {
             width: 100%;
             border-collapse: collapse;
             margin: var(--space-organism) 0;
             font-size: var(--text-small);
         }
 
-        .article-content th,
-        .article-content td {
+        .article-body th,
+        .article-body td {
             padding: var(--space-atom) var(--space-molecule);
             text-align: left;
             border-bottom: 1px solid var(--ink-ghost);
         }
 
-        .article-content th {
+        .article-body th {
             font-weight: 600;
-            background: var(--paper-warm);
+            background: var(--paper-alt);
         }
 
-        .article-content img {
+        /* Images */
+        .article-body img {
             max-width: 100%;
             height: auto;
             margin: var(--space-organism) 0;
             border-radius: 4px;
         }
 
-        /* Author byline */
-        .author-byline {
-            margin-top: var(--space-ecosystem);
-            padding-top: var(--space-organism);
-            border-top: 1px solid var(--ink-ghost);
-            font-style: italic;
-            color: var(--ink-secondary);
-        }
-
-        /* Horizontal rule */
-        .article-content hr {
+        /* Section Break */
+        .article-body hr {
             border: none;
-            border-top: 1px solid var(--ink-ghost);
+            text-align: center;
             margin: var(--space-ecosystem) 0;
         }
 
-        /* Loading state */
-        .loading {
-            text-align: center;
-            padding: var(--space-universe) 0;
+        .article-body hr::before {
+            content: '· · ·';
             color: var(--ink-tertiary);
-            font-style: italic;
+            letter-spacing: 0.5em;
         }
 
-        /* Error state */
-        .error {
-            text-align: center;
-            padding: var(--space-ecosystem) 0;
+        /* ════════════════════════════════════════════
+           Table of Contents
+           ════════════════════════════════════════════ */
+        .toc {
+            margin: var(--space-molecule) 0 var(--space-ecosystem);
+            padding: var(--space-organism);
+            background: var(--paper-alt);
+            border-radius: 6px;
+            max-width: var(--measure-narrow);
+        }
+
+        .toc-title {
+            font-size: var(--text-small) !important;
+            font-weight: 500 !important;
+            letter-spacing: var(--kern-ultra);
+            text-transform: uppercase;
+            color: var(--ink-tertiary);
+            margin: 0 0 var(--space-molecule) 0 !important;
+            padding: 0;
+        }
+
+        .toc-list {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            font-size: var(--text-small);
+        }
+
+        .toc-list li {
+            margin: 0 !important;
+            padding: 0;
+        }
+
+        .toc-list a {
+            display: block;
+            padding: calc(var(--space-quantum) * 1.25) 0;
+            text-decoration: none !important;
+            color: var(--ink);
+            border-bottom: 1px solid transparent;
+            transition: color 150ms ease, padding-left 150ms ease;
+            line-height: var(--line-height-tight);
+        }
+
+        .toc-list li:not(:last-child) a {
+            border-bottom-color: var(--ink-ghost);
+        }
+
+        .toc-list a:hover {
+            color: var(--ink);
+            padding-left: var(--space-atom);
+        }
+
+        /* Part/Chapter level - bold, full width */
+        .toc-level-0 a {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: var(--text-tiny);
+            letter-spacing: var(--kern-loose);
+            padding-top: var(--space-atom);
+            padding-bottom: var(--space-atom);
+            color: var(--ink);
+        }
+
+        /* Section level (1.1, 2.3, etc.) */
+        .toc-level-1 a {
+            padding-left: var(--space-atom);
             color: var(--ink-secondary);
         }
 
-        .error a {
-            color: var(--ink);
-            border-bottom: 1px solid var(--ink-ghost);
+        .toc-level-1 a:hover {
+            padding-left: calc(var(--space-atom) + var(--space-quantum));
         }
 
-        /* Responsive */
-        @media (max-width: 680px) {
-            .article-container {
-                padding: var(--space-ecosystem) var(--space-molecule) var(--space-organism);
+        /* Subsection level (1.1.1, 2.3.4, etc.) */
+        .toc-level-2 a {
+            padding-left: var(--space-molecule);
+            color: var(--ink-tertiary);
+            font-size: calc(var(--text-small) * 0.95);
+        }
+
+        .toc-level-2 a:hover {
+            padding-left: calc(var(--space-molecule) + var(--space-quantum));
+            color: var(--ink-secondary);
+        }
+
+        /* Sub-subsection level (1.1.1.1, etc.) */
+        .toc-level-3 a {
+            padding-left: var(--space-organism);
+            color: var(--ink-tertiary);
+            font-size: calc(var(--text-small) * 0.9);
+        }
+
+        .toc-level-3 a:hover {
+            padding-left: calc(var(--space-organism) + var(--space-quantum));
+            color: var(--ink-secondary);
+        }
+
+        /* ════════════════════════════════════════════
+           Footer
+           ════════════════════════════════════════════ */
+        .article-footer {
+            margin-top: var(--space-ecosystem);
+            padding-top: var(--space-organism);
+            border-top: 1px solid var(--ink-ghost);
+            font-size: var(--text-small);
+            color: var(--ink-tertiary);
+        }
+
+        .article-footer-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: var(--space-molecule);
+        }
+
+        .article-footer-nav a {
+            color: var(--ink-secondary);
+            text-decoration: none;
+            transition: color 200ms ease;
+        }
+
+        .article-footer-nav a:hover {
+            color: var(--ink);
+        }
+
+        .author-byline {
+            font-style: italic;
+            color: var(--ink-secondary);
+        }
+
+        /* ════════════════════════════════════════════
+           Responsive
+           ════════════════════════════════════════════ */
+        @media (max-width: 640px) {
+            .container {
+                padding: var(--space-ecosystem) var(--space-atom) var(--space-organism);
             }
 
             .article-title {
                 font-size: var(--text-xlarge);
             }
 
-            .article-subtitle {
-                font-size: var(--text-base);
+            .toc {
+                padding: var(--space-molecule);
             }
 
-            .article-content table {
-                font-size: var(--text-tiny);
+            .toc-level-1 a { padding-left: var(--space-quantum); }
+            .toc-level-2 a { padding-left: var(--space-atom); }
+            .toc-level-3 a { padding-left: var(--space-molecule); }
+        }
+
+        /* ════════════════════════════════════════════
+           Print
+           ════════════════════════════════════════════ */
+        @media print {
+            .back-nav,
+            .article-footer-nav {
+                display: none;
             }
 
-            .article-content th,
-            .article-content td {
-                padding: var(--space-quantum) var(--space-atom);
+            .container {
+                padding: 0;
+                max-width: 100%;
             }
+
+            body {
+                background: white;
+            }
+
+            .toc {
+                background: none;
+                border: 1px solid #ddd;
+            }
+        }
+
+        /* ════════════════════════════════════════════
+           Selection & Focus
+           ════════════════════════════════════════════ */
+        ::selection {
+            background: var(--ink);
+            color: var(--paper);
+        }
+
+        a:focus-visible {
+            outline: 2px solid var(--ink-secondary);
+            outline-offset: 4px;
+            border-radius: 2px;
         }
     </style>
 </head>
 <body>
-    <article class="article-container">
-        <a href="index.html" class="back-link">Raeez Lorgat</a>
+    <div class="container">
+        <nav class="back-nav">
+            <a href="/">← Raeez Lorgat</a>
+        </nav>
 
-        <header class="article-header">
-            <h1 class="article-title">The Laboratory for Incentivization, Coordination and Cooperation</h1>
-            <p class="article-subtitle">A Research Institute for Coordination Science</p>
-            <p class="article-meta">
-                July 2025 — <a href="https://docs.google.com/document/d/1eGnq8WpcdjS5TbD4U87v4HaN5YBgSwjKvXwerrXMIFY" target="_blank" rel="noopener">View on Google Docs</a>
-            </p>
-        </header>
+        <article>
+            <header class="article-header">
+                <h1 class="article-title">The Laboratory for Incentivization, Coordination and Cooperation</h1>
+                <p class="article-subtitle">A Research Institute for Coordination Science</p>
+                <p class="article-meta">July 2025 <a href="https://docs.google.com/document/d/1eGnq8WpcdjS5TbD4U87v4HaN5YBgSwjKvXwerrXMIFY" target="_blank" rel="noopener">View on Google Docs</a></p>
+            </header>
 
-        <div id="article-content" class="article-content">
-            <p class="loading">Loading article...</p>
-        </div>
+            <div class="article-body">
+<div></div><p>"Show me the incentives and I'll show you the outcome."</p><p>— Charlie Munger</p><h1>I. Foundation</h1><p>The Laboratory for Incentivization, Coordination and Cooperation (LICC) is a private, non-profit research institute dedicated to the emerging discipline of Coordination Science—the rigorous study of how agents align actions, beliefs, and resources to achieve collective outcomes across scales. We investigate the mathematical and physical foundations of multi-scale coordination, from the dynamics of two-agent trust formation to the design of planetary-scale governance infrastructure.</p><p>The twenty-first century presents coordination challenges without historical precedent. The theory of the firm continues to evolve in the small and the large: the nature and function of institutions drift even as new possibilities of organizational sovereignty emerge through programmable assets and autonomous agents. Climate change, pandemic response, artificial intelligence governance, and financial system stability all demand coordination mechanisms that current institutions cannot provide. The gap between our coordination capacity and our coordination requirements widens daily.</p><p>LICC exists to close this gap. We bring first-principles, academically rigorous inquiry to incentivization and coordination design, synthesizing insights from dynamical systems theory, network science, mechanism design, and mathematical physics to develop practical infrastructure for human flourishing at every scale.</p><h1>II. Coordination Science: The Discipline</h1><p>Coordination Science is the systematic study of how heterogeneous agents—human, machine, and institutional—align their actions to achieve outcomes that no agent could accomplish alone. Where game theory asks what rational agents will do, Coordination Science asks what mechanisms enable agents to achieve mutual benefit. Where economics studies equilibria, Coordination Science studies the dynamical processes by which equilibria form, persist, and transform.</p><h2>Mathematical Foundations</h2><p>Coordination Science draws on and contributes to several mathematical traditions:</p><h3>Dynamical Systems Theory</h3><p>Coordination phenomena are fundamentally dynamical. Trust accumulates through repeated interaction. Reputations form through observation cascades. Institutions crystallize from informal norms. We employ the full apparatus of dynamical systems—stability analysis, bifurcation theory, ergodic theory, and chaos—to understand how coordination states emerge, persist, and collapse. Of particular interest are phase transitions in coordination systems: the critical thresholds at which cooperation suddenly becomes possible or impossible.</p><h3>Physical Network Theory</h3><p>Agents coordinate through networks of interaction, communication, and observation. We study these networks not as abstract graphs but as physical systems with measurable properties: spectral characteristics that determine information diffusion, topological features that enable or constrain collective action, and structural dynamics that govern network evolution. The algebraic connectivity of a coordination network—the second-smallest eigenvalue of its Laplacian—determines the rate at which consensus can form. Network motifs reveal the building blocks of trust infrastructure.</p><h3>Decentralized Systems Theory</h3><p>Many coordination problems require solutions that do not rely on central authority. We study the mathematics of decentralized consensus, distributed computation, and fault-tolerant coordination. Byzantine fault tolerance, cryptographic commitment schemes, and verifiable computation provide the primitives for coordination without trust. We investigate how these primitives compose into higher-order coordination structures: DAOs, prediction markets, and programmable institutions.</p><h3>Mechanism Design and Game Theory</h3><p>If game theory is the analysis of strategic interaction, mechanism design is its synthesis: given desired outcomes, what rules of interaction achieve them? We extend classical mechanism design to dynamic, multi-scale, and hybrid human-machine architectures. Incentive compatibility, strategy-proofness, and individual rationality remain central, but we add new desiderata: robustness to bounded rationality, graceful degradation under attack, and composability across institutional boundaries.</p><h3>Statistical Mechanics of Coordination</h3><p>Large coordination systems exhibit emergent collective behavior that cannot be understood through individual agent analysis alone. We apply methods from statistical physics—mean-field theory, renormalization, and critical phenomena—to understand how microscopic interaction rules generate macroscopic coordination outcomes. Maximum entropy principles characterize equilibrium distributions. Phase transitions mark boundaries between coordination regimes. Finite-size scaling reveals how coordination capacity grows with system size.</p><h3>Category Theory and Compositionality</h3><p>Coordination mechanisms must compose. A system that coordinates entities must integrate with systems that coordinate ownership, which must integrate with systems that coordinate consent. Category theory provides the language for understanding compositional structure: functors between coordination categories, natural transformations between coordination strategies, and monads that capture the essence of computational coordination primitives.</p><h1>III. Research Vision</h1><p>LICC investigates coordination across three fundamental axes: the scale of coordination (from dyadic trust to planetary governance), the substrate of coordination (human-human, human-machine, machine-machine, and institutional), and the duration of coordination (from single interactions to multigenerational institutions).</p><p>We explore:</p><ul><li>How incentive structures and governance frameworks amplify or suppress cooperation across diverse systems</li><li>The ethical implications, liability structures, and accountability mechanisms within interconnected human-machine ecosystems</li><li>Conservation laws and thermodynamic bounds on coordination efficiency</li><li>The potential of hyperstructures, programmable assets, and autonomous agents to redefine organizational sovereignty</li><li>Spectral methods and number-theoretic structures as coordination primitives</li></ul><h1>IV. Special Economic Zones as Living Laboratories</h1><p>A particular focus for LICC is the design, development, and evolution of programmable Special Economic Zones (SEZs) around the world. We treat SEZs not merely as bounded jurisdictions with exceptional legal and economic privileges, but as programmable, testable substrates for institutional and infrastructural experimentation. Each zone becomes a minimally viable polity for exploring new modes of human-machine-institutional cooperation.</p><p>Drawing on frameworks developed through Mass and Momentum, we approach SEZs as deployable instances of coordination infrastructure. Mass provides five fundamental primitives—entities, ownership, financial instruments, identity, and consent—that make economic activity computable and interoperable. These primitives encode not just data structures but coordination semantics: who can act, what they can do, under what conditions, with what consequences.</p><p>Our work spans from formal modeling of zone-internal incentive structures to the architectural and technological scaffolding required to support dynamic, participatory governance and compliance automation. We investigate:</p><ul><li>Smart asset origination and management across jurisdictional boundaries</li><li>Earned-equity land systems and hyperstructural public goods funding</li><li>Stakeholder-aligned reputation systems with cryptographic verification</li><li>Forkable legal stacks with version-controlled governance</li><li>Network effects across federated jurisdictions</li></ul><p>Through rigorous design and empirical iteration, we aim to transform SEZs from instruments of extractive growth to crucibles for equitable development, cultural dignity, and planetary-scale experimentation in the coordination of flourishing.</p><h1>V. Research Themes</h1><ul><li>Multi-scale Coordination Dynamics: From trust formation in dyads to consensus in global networks, with attention to critical phenomena and phase transitions</li><li>Cryptoeconomic Mechanism Design: Bonding curves, conviction voting, quadratic funding, and mutual credit architectures with formal incentive compatibility proofs</li><li>Hybrid Human-Machine Coordination: Protocols for collaboration between agents of radically different cognitive architectures, including liability and culpability frameworks</li><li>Spectral Coordination Theory: Network Laplacian analysis, random matrix theory for robustness, and prime-inspired analytical techniques</li><li>Programmable Institutional Design: Smart contracts as coordination primitives, attestation streams as evidence infrastructure, and hyperstructures as public goods</li><li>Jurisdictional Competition and Decentralization: Race-to-the-top dynamics, network effects in federated governance, and capital corridor design</li><li>Conservation Laws and Thermodynamic Bounds: Energy conservation in coordination protocols, entropy production in consensus formation, and efficiency limits</li></ul><h1>VI. Research Outputs</h1><ul><li>First-principles analyses of incentive mechanisms and coordination structures with complete mathematical proofs</li><li>Protocol specifications with formal verification, security proofs, and attack resistance bounds</li><li>Simulations and computational models of alternative governance and economic structures</li><li>Participatory design frameworks involving diverse stakeholders from civic groups to government bodies</li><li>Hyperstructure designs and implementations demonstrating decentralized governance and incentivization strategies</li><li>Forkable legal infrastructure with version-controlled governance documentation in machine-readable formats</li><li>Thought leadership synthesizing philosophical rigor, mathematical physics, and pragmatic governance practices</li></ul><h1>VII. Research Candidates</h1><p>We invite researchers who:</p><ul><li>Combine analytical rigor with philosophical and ethical reflection</li><li>Have deep expertise in one or more of: dynamical systems, network science, mechanism design, distributed systems, mathematical physics, or cryptography</li><li>Demonstrate capacity to translate theoretical insights into deployable infrastructure</li><li>Approach complex systemic problems with intellectual curiosity, humility, and ethical awareness</li><li>Are committed to fostering equitable, dignified, and meaningful outcomes at scale</li></ul><h1>VIII. Strategic Partnerships</h1><p>We actively collaborate with:</p><ul><li>Academic researchers in mathematical physics, network science, mechanism design, ethics, and governance</li><li>Jurisdictional authorities including SEZ administrations, free zone councils, and regulatory innovation offices</li><li>Protocol developers building programmable assets, decentralized governance, and coordination infrastructure</li><li>Civic technology platforms fostering democratic participation and transparent governance</li><li>Infrastructure capital aligned with long-term coordination capacity building</li></ul><h1>IX. Framing and Orientation</h1><p>Emphasis: Human flourishing, humanistic values, systems-and-incentives focus, governance awareness, intentional design</p><p>Scope: Coordination and cooperation across human-machine, human-human, and machine-machine substrates; flourishing and growth; ethics, dignity, liability and culpability; governance; incentivization; economic and governance efficiency</p><p>Methodological Focus: Coordination Science, dynamical systems, physical network theory, decentralized systems, mechanism design, game theory, statistical mechanics, category theory, human-computer interaction</p><p>Outputs: First-principles analysis, interfaces and systems, simulations, participatory design, protocol design, incentive design, hyperstructure design, forkable legal infrastructure</p><p>Audience and Partners: Academics, civic platforms, infrastructure capital, technically-oriented institutions, governmental bodies, special economic zones, special administrative regions, and nations</p><p>—</p><p>The coordination problems of the twenty-first century will not be solved by the institutions of the twentieth. LICC exists to develop the science, design the mechanisms, and build the infrastructure for a world where coordination capacity matches coordination need—where the incentives are aligned for outcomes of mutual flourishing.</p><p>licc.institute</p>
+            </div>
 
-        <footer class="author-byline">
-            <strong>Raeez Lorgat</strong>, Managing Partner at Momentum
-        </footer>
-    </article>
-
-    <script>
-        const GOOGLE_DOC_ID = '1eGnq8WpcdjS5TbD4U87v4HaN5YBgSwjKvXwerrXMIFY';
-
-        // Your deployed Google Apps Script URL (same one used for other articles)
-        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwap-GYIRky-iOioo_7IaA0VvW8t_i1lXNesPlLT-hcGsJxQUeb93YR_t466iVw8wpdBQ/exec';
-
-        async function loadArticle() {
-            const contentEl = document.getElementById('article-content');
-
-            try {
-                const url = `${APPS_SCRIPT_URL}?id=${GOOGLE_DOC_ID}`;
-                const response = await fetch(url);
-
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status}`);
-                }
-
-                let html = await response.text();
-
-                // Check if it's an error JSON response
-                if (html.startsWith('{') && html.includes('error')) {
-                    throw new Error('Apps Script error');
-                }
-
-                // Filter out the intro elements we display in the header
-                html = filterIntro(html);
-
-                contentEl.innerHTML = html;
-
-            } catch (error) {
-                console.error('Failed to load article:', error);
-                contentEl.innerHTML = `
-                    <div class="error">
-                        <p>Unable to load the article.</p>
-                        <p><a href="https://docs.google.com/document/d/${GOOGLE_DOC_ID}/pub" target="_blank" rel="noopener">Read on Google Docs →</a></p>
-                    </div>
-                `;
-            }
-        }
-
-        function filterIntro(html) {
-            // Parse and filter out intro elements we already display in the header
-            const temp = document.createElement('div');
-            temp.innerHTML = html;
-
-            const elements = temp.querySelectorAll('p, h1, h2, h3');
-            let skipCount = 0;
-
-            elements.forEach(el => {
-                const text = el.textContent.trim().toUpperCase();
-                if (skipCount < 6) {
-                    // Skip title, subtitle, author that we show in header
-                    if (text.includes('LABORATORY FOR INCENTIVIZATION') ||
-                        text.includes('COORDINATION AND COOPERATION') ||
-                        text.includes('LICC') ||
-                        text.includes('RESEARCH INSTITUTE FOR COORDINATION SCIENCE') ||
-                        text.includes('RAEEZ LORGAT, MANAGING PARTNER')) {
-                        el.remove();
-                        skipCount++;
-                    }
-                }
-            });
-
-            return temp.innerHTML;
-        }
-
-        // Load immediately
-        loadArticle();
-    </script>
+            <footer class="article-footer">
+                <p class="author-byline"><strong>Raeez Lorgat</strong>, Managing Partner at Momentum</p>
+                <nav class="article-footer-nav">
+                    <a href="/">← All Papers</a>
+                </nav>
+            </footer>
+        </article>
+    </div>
 </body>
 </html>
