@@ -293,6 +293,33 @@
             background: var(--ink);
             color: var(--paper);
         }
+
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .photo-grid.single {
+            grid-template-columns: 1fr;
+        }
+
+        .photo-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            filter: contrast(1.02);
+        }
+
+        .photo-caption {
+            font-size: var(--text-small);
+            color: var(--ink-tertiary);
+            font-style: italic;
+            margin-bottom: 48px;
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
@@ -310,9 +337,17 @@
     <div class="bio">
       <p>In 2009 <a href="https://raeez.com/devfinance.html">I dropped out of MIT</a> to help build the payments infrastructure that became <a href="https://stripe.com">Stripe</a>. We cold-called banks and wrote the code that would eventually process hundreds of billions of dollars.</p>
 
+        <div class="photo-grid">
+            <img src="IMG_1975.JPG" alt="Late night coding, 2010">
+            <img src="IMG_1976.JPG" alt="The apartment office">
+        </div>
+        <p class="photo-caption">
+            The apartment. Standing desks made of IKEA parts, cables everywhere.
+        </p>
+
         <p>After Stripe, I returned to the mathematics and physics that had occupied me since childhood—spending a decade at MIT and the <a href="https://perimeterinstitute.ca">Perimeter Institute for Theoretical Physics</a> working on <a href="https://en.wikipedia.org/wiki/Arithmetic_geometry">arithmetic geometry</a>, <a href="https://en.wikipedia.org/wiki/Factorization_algebra">factorization algebras</a>, and the geometry of <a href="https://en.wikipedia.org/wiki/Quantum_field_theory">quantum field theory</a>. The mathematics I study—how local structures compose into global ones—shapes how I think about institutional design.</p>
 
-        <p>Now I'm building <a href="https://mass.inc">Mass</a>—programmable jurisdiction infrastructure that turns incorporation, compliance, and banking into APIs. Mass is the operating system for a <a href="https://raeez.com/smart-assets.html">new kind of decentralized network</a>, liveu across the US, Cayman, BVI and the Special Economic Zone Próspera ZEDE on the island of <a href="https://en.wikipedia.org/wiki/Roat%C3%A1n">Roatán, Honduras</a>. In 2026 and beyond we're expanding into Abu Dhabi, Dubai, Kazakhstan, Korea, Indonesia and China.</p>
+        <p>Now I'm building <a href="https://mass.inc">Mass</a>—programmable jurisdiction infrastructure that turns incorporation, compliance, and banking into APIs. Mass is the operating system for a <a href="https://raeez.com/smart-assets.html">new kind of decentralized network</a>, live across the US, Cayman, BVI and the Special Economic Zone Próspera ZEDE on the island of <a href="https://en.wikipedia.org/wiki/Roat%C3%A1n">Roatán, Honduras</a>. In 2026 and beyond we're expanding into Abu Dhabi, Dubai, Kazakhstan, Korea, Indonesia and China.</p>
     </div>
 
     <ul class="project-list">
