@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty — Raeez Lorgat</title>
+
+    <!-- SEO -->
+    <meta name="description" content="On the aesthetic origins of a life in mathematics and infrastructure.">
+    <meta name="author" content="Raeez Lorgat">
+    <link rel="canonical" href="https://raeez.com/beauty.html">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP8T5J8M28"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JP8T5J8M28');
+    </script>
+
+    <!-- Adobe Fonts: Garamond Premier Pro -->
+    <link rel="stylesheet" href="https://use.typekit.net/zlu2quo.css">
+
+    <!-- Fallback -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --serif: 'garamond-premier-pro', 'EB Garamond', 'Hoefler Text', Garamond, serif;
+            --serif-display: 'garamond-premier-pro-display', 'garamond-premier-pro', 'EB Garamond', Garamond, serif;
+            --serif-caption: 'garamond-premier-pro-caption', 'garamond-premier-pro', 'EB Garamond', Garamond, serif;
+
+            --scale-ratio: 1.333;
+            --text-base: clamp(19px, 2.1vw, 22px);
+            --text-small: calc(var(--text-base) / var(--scale-ratio));
+            --text-tiny: calc(var(--text-small) / var(--scale-ratio));
+
+            --baseline: 8px;
+            --line-height-loose: 1.7;
+
+            --space-xs: calc(var(--baseline) * 1);
+            --space-sm: calc(var(--baseline) * 2);
+            --space-md: calc(var(--baseline) * 3);
+            --space-lg: calc(var(--baseline) * 5);
+            --space-xl: calc(var(--baseline) * 8);
+            --space-2xl: calc(var(--baseline) * 13);
+
+            --measure-narrow: 580px;
+            --measure-base: 640px;
+            --gutter: calc(var(--baseline) * 3);
+
+            --ink: #1a1917;
+            --ink-secondary: #4a4744;
+            --ink-tertiary: #8a8580;
+            --ink-ghost: #bab5b0;
+            --ink-whisper: #d6d3d1;
+            --paper: #fefdfb;
+            --paper-alt: #f9f8f6;
+
+            --optical-edge: -0.03em;
+            --kern-caps: 0.06em;
+        }
+
+        html {
+            font-size: 100%;
+            -webkit-text-size-adjust: 100%;
+            scroll-behavior: smooth;
+            hanging-punctuation: first last;
+        }
+
+        body {
+            font-family: var(--serif);
+            font-size: var(--text-base);
+            font-weight: 400;
+            font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "onum" 1, "pnum" 1, "dlig" 1;
+            line-height: var(--line-height-loose);
+            color: var(--ink);
+            background: var(--paper);
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-variant-ligatures: common-ligatures discretionary-ligatures contextual;
+        }
+
+        .container {
+            max-width: var(--measure-base);
+            margin: 0 auto;
+            padding: var(--space-2xl) var(--gutter) var(--space-xl);
+        }
+
+        .back-link {
+            display: inline-block;
+            font-size: var(--text-small);
+            color: var(--ink-tertiary);
+            text-decoration: none;
+            margin-bottom: var(--space-lg);
+            transition: color 150ms ease;
+        }
+
+        .back-link:hover {
+            color: var(--ink);
+        }
+
+        .back-link::before {
+            content: "←";
+            margin-right: 0.4em;
+        }
+
+        .title {
+            font-size: var(--text-base);
+            font-weight: 400;
+            font-variant-caps: small-caps;
+            font-feature-settings: "smcp" 1, "c2sc" 1, "kern" 1;
+            letter-spacing: var(--kern-caps);
+            color: var(--ink);
+            margin-bottom: var(--space-lg);
+            margin-left: var(--optical-edge);
+        }
+
+        .essay {
+            max-width: var(--measure-narrow);
+        }
+
+        .essay p {
+            margin-bottom: var(--space-md);
+            text-indent: 0;
+            hyphens: auto;
+            hyphenate-limit-chars: 6 3 2;
+            hyphenate-limit-lines: 2;
+        }
+
+        .essay p:first-of-type::first-letter {
+            font-size: 1.05em;
+            font-weight: 500;
+        }
+
+        .essay a {
+            color: var(--ink);
+            text-decoration: underline;
+            text-decoration-color: var(--ink-whisper);
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.15em;
+            text-decoration-skip-ink: auto;
+            transition: text-decoration-color 150ms ease;
+        }
+
+        .essay a:hover {
+            text-decoration-color: var(--ink);
+            text-decoration-thickness: 1.5px;
+        }
+
+        .photo-grid {
+            display: grid;
+            gap: var(--space-sm);
+            margin: var(--space-lg) 0;
+        }
+
+        .photo-grid.grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .photo-grid.grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .photo-grid.grid-2x2 {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        .photo-grid img {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 3px;
+            filter: contrast(1.02);
+        }
+
+        .photo-grid.grid-3 img {
+            aspect-ratio: 1 / 1;
+        }
+
+        .photo-caption {
+            font-family: var(--serif-caption);
+            font-size: var(--text-small);
+            color: var(--ink-tertiary);
+            font-style: italic;
+            margin-top: calc(-1 * var(--space-sm));
+            margin-bottom: var(--space-lg);
+            line-height: 1.45;
+            letter-spacing: 0.005em;
+        }
+
+        .separator {
+            width: 2em;
+            height: 1px;
+            background: var(--ink-whisper);
+            margin: var(--space-xl) 0;
+            border: none;
+        }
+
+        .footer {
+            margin-top: var(--space-xl);
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--ink-whisper);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer a {
+            font-size: var(--text-small);
+            color: var(--ink-tertiary);
+            text-decoration: none;
+            transition: color 150ms ease;
+        }
+
+        .footer a:hover {
+            color: var(--ink);
+        }
+
+        .footer .social {
+            display: flex;
+            align-items: center;
+            gap: 0.35em;
+        }
+
+        .footer .icon-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2em;
+            height: 2em;
+            color: var(--ink-ghost);
+            transition: color 150ms ease;
+            border-radius: 3px;
+        }
+
+        .footer .icon-link:hover {
+            color: var(--ink);
+        }
+
+        .footer .icon-link svg {
+            display: block;
+        }
+
+        ::selection {
+            background: var(--ink);
+            color: var(--paper);
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: var(--space-xl) var(--gutter) var(--space-lg);
+            }
+
+            .photo-grid.grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .photo-grid.grid-3 img:last-child {
+                grid-column: span 2;
+                aspect-ratio: 2 / 1;
+            }
+        }
+
+        @media print {
+            :root { --ink: #000; --paper: #fff; }
+            body { font-size: 11pt; line-height: 1.4; }
+            .container { max-width: 100%; padding: 0; }
+            .back-link { display: none; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="/" class="back-link">Raeez Lorgat</a>
+
+    <h1 class="title">Beauty</h1>
+
+    <div class="essay">
+        <p>I started programming at eleven. Not because I cared about corporations, or money, or career—I wanted to build worlds. Visual stories with their own lore, their own languages, their own fashion, their own color palettes. Virtually none were realistic. That was the point.</p>
+
+        <p>By fourteen I was building <a href="https://en.wikipedia.org/wiki/Tile-based_video_game">tiling map-makers</a>, <a href="https://en.wikipedia.org/wiki/Isometric_video_game_graphics">isometric engines</a>, primitive scripting languages to animate characters through scenes I'd sketched the night before. My father refused to pay for continuous internet—we had dialup, metered by the minute—so I taught myself from books. The public library. <a href="https://www.exclusivebooks.co.za">Exclusive Books</a> in Cavendish Square, Cape Town, where I'd convinced my mother to buy me an 800-page volume on 3D graphics programming.</p>
+
+        <div class="photo-grid grid-2x2">
+            <img src="beauty/early-1.jpg" alt="Early work">
+            <img src="beauty/early-2.jpg" alt="Early work">
+            <img src="beauty/early-3.jpg" alt="Early work">
+            <img src="beauty/early-4.jpg" alt="Early work">
+        </div>
+        <p class="photo-caption">Ages 14–17. Sketches, renders, worlds that existed only on paper and in code.</p>
+
+        <p>The book had a chapter on <a href="https://en.wikipedia.org/wiki/Ray_tracing_(graphics)">raytracing</a>. I spent months on it. The mathematics was beautiful—not useful, beautiful. How light bounces. How surfaces reflect. How a few equations could conjure depth and shadow from nothing.</p>
+
+        <p>But something puzzled me. The transformation matrices had four coordinates, not three: <em>x</em>, <em>y</em>, <em>z</em>, <em>w</em>. Why? What was <em>w</em>? I could make it work—plug in the numbers, get the perspective correct—but I didn't understand why. The mystery nagged at me for years.</p>
+
+        <p>Only much later, at MIT, would I learn that the natural language for building a raytracer is <a href="https://en.wikipedia.org/wiki/Projective_geometry">projective geometry</a>—the study of lines through the origin in higher-dimensional space. That mysterious <em>w</em> coordinate was a window into a playground where parallel lines meet at infinity and every transformation becomes linear. I took <a href="https://math.mit.edu/classes/18.721/">18.721 Algebraic Geometry</a> with <a href="https://en.wikipedia.org/wiki/Michael_Artin">Michael Artin</a> and fell in love. I TA'd for him twice. The subject has given my life an infinitude of enrichment—a deep, abiding love that has never faded. And only later still would it become infinitely useful: the same geometric language describes the moduli spaces of quantum fields and strings.</p>
+
+        <p>I was not social during those years. I slept through classes—they moved too slowly. Raced through homework, which was mostly annoying. Then stayed up all night: sketching, illustrating, 3D modeling, programming, building engines no one would ever use for games no one would ever play. The competitions came as byproduct. <a href="https://en.wikipedia.org/wiki/Eskom">Eskom Expo</a>. <a href="https://en.wikipedia.org/wiki/International_Science_and_Engineering_Fair">ISEF</a>. A minor planet. None of it was the goal. The goal was the worlds.</p>
+
+        <hr class="separator">
+
+        <p>The obsession never left. It just changed medium.</p>
+
+        <p>I've carried a professional camera for fifteen years. Shot a short film for the <a href="https://www.48hourfilm.com">48 Hour Film Project</a> with a crew of fifteen. Storyboarded feature films that remain unproduced. Founded <a href="https://instagram.com/personagallerynyc">Persona</a>, an art community in New York, because I needed people around me who understood that making things beautiful was itself a form of rigor.</p>
+
+        <div class="photo-grid grid-2">
+            <img src="beauty/photo-1.jpg" alt="Photography">
+            <img src="beauty/photo-2.jpg" alt="Photography">
+        </div>
+        <p class="photo-caption">The camera as constant companion.</p>
+
+        <p>The mathematics I study now—<a href="https://en.wikipedia.org/wiki/Factorization_algebra">factorization algebras</a>, the geometry of <a href="https://en.wikipedia.org/wiki/Quantum_field_theory">quantum field theory</a>—I chose them for the same reason I chose raytracing at fourteen. They're beautiful. The way local structures compose into global ones. The way symmetry constrains possibility. The way a few axioms can unfold into infinite consequence.</p>
+
+        <p>Utility came later, almost by accident. It turns out that understanding how things compose is useful for building institutions. But that was never why I learned it.</p>
+
+        <p>I learned it because it was beautiful.</p>
+    </div>
+
+    <footer class="footer">
+        <a href="/">← Back</a>
+        <nav class="social" aria-label="Social links">
+            <a href="https://x.com/raeez" aria-label="X (Twitter)" class="icon-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+            </a>
+            <a href="https://instagram.com/raeez" aria-label="Instagram" class="icon-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/raeez-lorgat/" aria-label="LinkedIn" class="icon-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+            </a>
+        </nav>
+    </footer>
+</div>
+</body>
+</html>
