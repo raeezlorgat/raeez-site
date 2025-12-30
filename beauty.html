@@ -280,6 +280,37 @@
             .container { max-width: 100%; padding: 0; }
             .back-link { display: none; }
         }
+
+        .epigraph {
+            margin: var(--space-xl) 0;
+            text-align: center;
+
+        }
+
+        .epigraph .verse {
+            font-style: italic;
+            color: var(--ink-secondary);
+            line-height: 1.9;
+            margin-bottom: var(--space-sm);
+        }
+
+        .epigraph .verse br {
+            content: "";
+            display: block;
+            margin-bottom: 0.1em;
+        }
+
+        .epigraph .attribution {
+            font-family: var(--serif-caption);
+            font-size: var(--text-small);
+            font-style: normal;
+            color: var(--ink-tertiary);
+            letter-spacing: 0.01em;
+        }
+
+        .epigraph .attribution cite {
+            font-style: italic;
+}
     </style>
 </head>
 <body>
@@ -294,10 +325,10 @@
         <p>By fourteen I was building <a href="https://en.wikipedia.org/wiki/Tile-based_video_game">tiling map-makers</a>, <a href="https://en.wikipedia.org/wiki/Isometric_video_game_graphics">isometric engines</a>, primitive scripting languages to animate characters through scenes I'd sketched the night before. My father refused to pay for continuous internet—we had dialup, metered by the minute—so I taught myself from books. The public library. <a href="https://www.exclusivebooks.co.za">Exclusive Books</a> in Cavendish Square, Cape Town, where I'd convinced my mother to buy me an 800-page volume on 3D graphics programming.</p>
 
         <div class="photo-grid grid-2x2">
-            <img src="beauty/early-1.jpg" alt="Early work">
-            <img src="beauty/early-2.jpg" alt="Early work">
-            <img src="beauty/early-3.jpg" alt="Early work">
-            <img src="beauty/early-4.jpg" alt="Early work">
+            <img src="early-1.jpg" alt="Early work">
+            <img src="early-2.jpg" alt="Early work">
+            <img src="early-3.png" alt="Early work">
+            <img src="early-4.jpg" alt="Early work">
         </div>
         <p class="photo-caption">Ages 14–17. Sketches, renders, worlds that existed only on paper and in code.</p>
 
@@ -316,16 +347,36 @@
         <p>I've carried a professional camera for fifteen years. Shot a short film for the <a href="https://www.48hourfilm.com">48 Hour Film Project</a> with a crew of fifteen. Storyboarded feature films that remain unproduced. Founded <a href="https://instagram.com/personagallerynyc">Persona</a>, an art community in New York, because I needed people around me who understood that making things beautiful was itself a form of rigor.</p>
 
         <div class="photo-grid grid-2">
-            <img src="beauty/photo-1.jpg" alt="Photography">
-            <img src="beauty/photo-2.jpg" alt="Photography">
+            <img src="photo-1.jpg" alt="Photography">
+            <img src="photo-2.jpg" alt="Photography">
         </div>
-        <p class="photo-caption">The camera as constant companion.</p>
+        <p class="photo-caption">
+          The <a href="https://en.wikipedia.org/wiki/Auteur">auteur theory</a> holds that a filmmaker makes the same film over and over, each work a variation on a single obsession.
+        </p>
+
 
         <p>The mathematics I study now—<a href="https://en.wikipedia.org/wiki/Factorization_algebra">factorization algebras</a>, the geometry of <a href="https://en.wikipedia.org/wiki/Quantum_field_theory">quantum field theory</a>—I chose them for the same reason I chose raytracing at fourteen. They're beautiful. The way local structures compose into global ones. The way symmetry constrains possibility. The way a few axioms can unfold into infinite consequence.</p>
 
         <p>Utility came later, almost by accident. It turns out that understanding how things compose is useful for building institutions. But that was never why I learned it.</p>
 
         <p>I learned it because it was beautiful.</p>
+
+
+        <blockquote class="epigraph">
+          <p class="verse">
+              We shall not cease from exploration<br>
+              And the end of all our exploring<br>
+              Will be to arrive where we started<br>
+              And know the place for the first time.<br>
+              Through the unknown, unremembered gate<br>
+              When the last of earth left to discover<br>
+              Is that which was the beginning;<br>
+              At the source of the longest river<br>
+              The voice of the hidden waterfall<br>
+              And the children in the apple-tree
+          </p>
+          <p class="attribution">— T.S. Eliot, <cite>Little Gidding</cite></p>
+      </blockquote>
     </div>
 
     <footer class="footer">
