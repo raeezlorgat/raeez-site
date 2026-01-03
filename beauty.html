@@ -38,6 +38,7 @@
             --serif: 'garamond-premier-pro', 'EB Garamond', 'Hoefler Text', Garamond, serif;
             --serif-display: 'garamond-premier-pro-display', 'garamond-premier-pro', 'EB Garamond', Garamond, serif;
             --serif-caption: 'garamond-premier-pro-caption', 'garamond-premier-pro', 'EB Garamond', Garamond, serif;
+            --mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
 
             --scale-ratio: 1.333;
             --text-base: clamp(19px, 2.1vw, 22px);
@@ -45,6 +46,8 @@
             --text-tiny: calc(var(--text-small) / var(--scale-ratio));
 
             --baseline: 8px;
+            --line-height-tight: 1.3;
+            --line-height-base: 1.55;
             --line-height-loose: 1.7;
 
             --space-xs: calc(var(--baseline) * 1);
@@ -67,6 +70,9 @@
             --paper-alt: #f9f8f6;
 
             --optical-edge: -0.03em;
+            --kern-tight: -0.015em;
+            --kern-normal: 0;
+            --kern-loose: 0.02em;
             --kern-caps: 0.06em;
         }
 
@@ -210,44 +216,47 @@
         }
 
         .footer {
-            margin-top: var(--space-xl);
+            margin-top: var(--space-2xl);
             padding-top: var(--space-lg);
+            padding-bottom: var(--space-lg);
             border-top: 1px solid var(--ink-whisper);
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
-        .footer a {
+        .footer > a {
             font-size: var(--text-small);
             color: var(--ink-tertiary);
             text-decoration: none;
             transition: color 150ms ease;
+            letter-spacing: 0.01em;
         }
 
-        .footer a:hover {
+        .footer > a:hover {
             color: var(--ink);
         }
 
         .footer .social {
             display: flex;
             align-items: center;
-            gap: 0.35em;
+            gap: 0.5em;
         }
 
         .footer .icon-link {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 2em;
-            height: 2em;
+            width: 2.2em;
+            height: 2.2em;
             color: var(--ink-ghost);
-            transition: color 150ms ease;
-            border-radius: 3px;
+            transition: color 150ms ease, background-color 150ms ease;
+            border-radius: 4px;
         }
 
         .footer .icon-link:hover {
             color: var(--ink);
+            background-color: var(--paper-alt);
         }
 
         .footer .icon-link svg {
@@ -271,6 +280,12 @@
             .photo-grid.grid-3 img:last-child {
                 grid-column: span 2;
                 aspect-ratio: 2 / 1;
+            }
+
+            .footer {
+                flex-direction: column;
+                gap: var(--space-md);
+                text-align: center;
             }
         }
 
@@ -380,7 +395,7 @@
     </div>
 
     <footer class="footer">
-        <a href="https://raeez.com">← Back</a>
+        <a href="mailto:raeez@momentum.inc">raeez@momentum.inc</a>
         <nav class="social" aria-label="Social links">
             <a href="https://x.com/raeez" aria-label="X (Twitter)" class="icon-link">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

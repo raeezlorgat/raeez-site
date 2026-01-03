@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Raeez Lorgat</title>
+  <subtitle>Essays on programmable sovereignty, institutional design, and mathematics</subtitle>
+  <link href="https://raeez.com/feed.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://raeez.com" rel="alternate" type="text/html"/>
+  <id>https://raeez.com/</id>
+  <updated>2025-12-30T00:00:00Z</updated>
+  <author>
+    <name>Raeez Lorgat</name>
+    <email>raeez@momentum.inc</email>
+    <uri>https://raeez.com</uri>
+  </author>
+  <rights>© 2025 Raeez Lorgat</rights>
+
+  <entry>
+    <title>Open Source Special Economic Zone Legal, Fiscal &amp; Regulatory Stack</title>
+    <link href="https://raeez.com/sez-stack.html" rel="alternate" type="text/html"/>
+    <id>https://raeez.com/sez-stack.html</id>
+    <published>2025-12-01T00:00:00Z</published>
+    <updated>2025-12-01T00:00:00Z</updated>
+    <summary>Open source legal, fiscal, and regulatory infrastructure for special economic zones. Companion to the momentum-sez/stack public GitHub repository.</summary>
+    <category term="infrastructure"/>
+  </entry>
+
+  <entry>
+    <title>Competitive Topologies &amp; The Monopoly Problem: Why Democratic Institutions Need Competition</title>
+    <link href="https://raeez.com/competitive-topologies.html" rel="alternate" type="text/html"/>
+    <id>https://raeez.com/competitive-topologies.html</id>
+    <published>2025-11-15T00:00:00Z</published>
+    <updated>2025-11-15T00:00:00Z</updated>
+    <summary>A response to Eric Schmidt and Andrew Sorota's "This is No Way to Rule a Country" on why democratic institutions require competitive pressure.</summary>
+    <category term="infrastructure"/>
+  </entry>
+
+  <entry>
+    <title>Smart Assets</title>
+    <link href="https://raeez.com/smart-assets.html" rel="alternate" type="text/html"/>
+    <id>https://raeez.com/smart-assets.html</id>
+    <published>2025-10-01T00:00:00Z</published>
+    <updated>2025-10-01T00:00:00Z</updated>
+    <summary>Programmable primitive on a novel decentralized network embedding compliance, identity, and operational intelligence directly into assets.</summary>
+    <category term="infrastructure"/>
+  </entry>
+
+  <entry>
+    <title>Special Economic Zones in a Box</title>
+    <link href="https://raeez.com/sez-in-a-box.html" rel="alternate" type="text/html"/>
+    <id>https://raeez.com/sez-in-a-box.html</id>
+    <published>2025-09-15T00:00:00Z</published>
+    <updated>2025-09-15T00:00:00Z</updated>
+    <summary>From proof of scale to proof of network.</summary>
+    <category term="infrastructure"/>
+  </entry>
+
+  <entry>
+    <title>The Laboratory for Incentivization, Coordination and Cooperation (LICC)</title>
+    <link href="https://raeez.com/licc.html" rel="alternate" type="text/html"/>
+    <id>https://raeez.com/licc.html</id>
+    <published>2025-09-01T00:00:00Z</published>
+    <updated>2025-09-01T00:00:00Z</updated>
+    <summary>Research laboratory for mechanism design and coordination problems.</summary>
+    <category term="infrastructure"/>
+  </entry>
+
+  <entry>
+    <title>Moxie</title>
+    <link href="https://raeez.com/moxie.html" rel="alternate" type="text/html"/>
+    <id>https://raeez.com/moxie.html</id>
+    <published>2025-08-15T00:00:00Z</published>
+    <updated>2025-08-15T00:00:00Z</updated>
+    <summary>Programmable loyalty and rewards for large-distribution brands.</summary>
+    <category term="infrastructure"/>
+  </entry>
+
+  <entry>
+    <title>Momentum: Incubating Ecosystems</title>
+    <link href="https://raeez.com/momentum-monograph.html" rel="alternate" type="text/html"/>
+    <id>https://raeez.com/momentum-monograph.html</id>
+    <published>2025-08-01T00:00:00Z</published>
+    <updated>2025-08-01T00:00:00Z</updated>
+    <summary>Investment thesis and methodology for incubating programmable institutions.</summary>
+    <category term="infrastructure"/>
+  </entry>
+
+  <entry>
+    <title>Smart Buildings</title>
+    <link href="https://raeez.com/smart-buildings.html" rel="alternate" type="text/html"/>
+    <id>https://raeez.com/smart-buildings.html</id>
+    <published>2025-07-15T00:00:00Z</published>
+    <updated>2025-07-15T00:00:00Z</updated>
+    <summary>Towards a programmable built environment operating system.</summary>
+    <category term="built-environment"/>
+  </entry>
+
+  <entry>
+    <title>Prefabricated Construction Methodologies</title>
+    <link href="https://raeez.com/prefabricated-construction.html" rel="alternate" type="text/html"/>
+    <id>https://raeez.com/prefabricated-construction.html</id>
+    <published>2025-07-01T00:00:00Z</published>
+    <updated>2025-07-01T00:00:00Z</updated>
+    <summary>Analysis of modern prefabrication techniques and their application to rapid infrastructure deployment.</summary>
+    <category term="built-environment"/>
+  </entry>
+
+  <entry>
+    <title>Archai</title>
+    <link href="https://raeez.com/archai.html" rel="alternate" type="text/html"/>
+    <id>https://raeez.com/archai.html</id>
+    <published>2025-06-15T00:00:00Z</published>
+    <updated>2025-06-15T00:00:00Z</updated>
+    <summary>Scalable primitives for land and community infrastructure ownership.</summary>
+    <category term="built-environment"/>
+  </entry>
+
+  <entry>
+    <title>Beauty</title>
+    <link href="https://raeez.com/beauty.html" rel="alternate" type="text/html"/>
+    <id>https://raeez.com/beauty.html</id>
+    <published>2025-01-01T00:00:00Z</published>
+    <updated>2025-01-01T00:00:00Z</updated>
+    <summary>On learning mathematics because it was beautiful, from childhood raytracers to factorization algebras.</summary>
+    <category term="personal"/>
+  </entry>
+
+  <entry>
+    <title>/dev/finance inc.</title>
+    <link href="https://raeez.com/devfinance.html" rel="alternate" type="text/html"/>
+    <id>https://raeez.com/devfinance.html</id>
+    <published>2025-01-01T00:00:00Z</published>
+    <updated>2025-01-01T00:00:00Z</updated>
+    <summary>The story of dropping out of MIT, flying up the Pacific coast with Patrick Collison, and building the payments infrastructure that became Stripe.</summary>
+    <category term="personal"/>
+  </entry>
+
+</feed>

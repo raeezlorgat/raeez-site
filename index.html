@@ -9,6 +9,7 @@
     <meta name="description" content="South African mathematician. Stripe founding team. Building programmable sovereignty infrastructure.">
     <meta name="author" content="Raeez Lorgat">
     <link rel="canonical" href="https://raeez.com">
+    <link rel="alternate" type="application/atom+xml" title="Raeez Lorgat" href="https://raeez.com/feed.xml">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP8T5J8M28"></script>
@@ -124,8 +125,40 @@
             font-feature-settings: "smcp" 1, "c2sc" 1, "kern" 1;
             letter-spacing: var(--kern-caps);
             color: var(--ink);
-            margin-bottom: var(--space-md);
+            margin-bottom: var(--space-sm);
             margin-left: var(--optical-edge);
+        }
+
+        .concept-line {
+            font-size: var(--text-base);
+            font-style: italic;
+            color: var(--ink-secondary);
+            margin-bottom: var(--space-sm);
+            line-height: var(--line-height-base);
+        }
+
+        .proof-strip {
+            list-style: none;
+            font-size: var(--text-small);
+            color: var(--ink-secondary);
+            margin-top: var(--space-sm);
+            margin-bottom: var(--space-md);
+            padding-left: 0;
+            line-height: var(--line-height-base);
+        }
+
+        .proof-strip li {
+            position: relative;
+            padding-left: 1.2em;
+            margin-bottom: var(--space-xs);
+        }
+
+        .proof-strip li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: var(--ink-ghost);
+            font-weight: 600;
         }
 
         .bio {
@@ -190,18 +223,72 @@
 
         .project-item {
             display: grid;
-            grid-template-columns: 5rem 1fr;
-            gap: var(--space-sm);
+            grid-template-columns: 5.5rem 1fr;
+            gap: var(--space-md);
             align-items: baseline;
-            padding-top: calc(var(--space-xs) + 2px);
-            padding-bottom: calc(var(--space-sm) - 2px);
-            margin-bottom: 0;
+            padding-top: calc(var(--space-sm));
+            padding-bottom: calc(var(--space-sm));
+            margin-bottom: var(--space-xs);
             cursor: pointer;
             border-radius: 3px;
             margin-left: calc(-1 * var(--space-sm));
             padding-left: var(--space-sm);
             padding-right: var(--space-sm);
             transition: transform 150ms ease, background-color 150ms ease;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-lg);
+            font-size: var(--text-small);
+        }
+
+        .nav-links a {
+            color: var(--ink-secondary);
+            text-decoration: none;
+            font-variant-caps: small-caps;
+            font-feature-settings: "smcp" 1, "kern" 1;
+            letter-spacing: 0.04em;
+            transition: color 150ms ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--ink);
+        }
+
+        .testimonial {
+            margin: var(--space-lg) 0;
+            padding: var(--space-md) var(--space-lg);
+            border-left: 2px solid var(--ink-whisper);
+            background: var(--paper-alt);
+            border-radius: 0 3px 3px 0;
+        }
+
+        .testimonial blockquote {
+            font-size: var(--text-base);
+            font-style: italic;
+            color: var(--ink-secondary);
+            line-height: var(--line-height-loose);
+            margin-bottom: var(--space-sm);
+        }
+
+        .testimonial cite {
+            font-size: var(--text-small);
+            color: var(--ink-tertiary);
+            font-style: normal;
+        }
+
+        .testimonial cite a {
+            color: var(--ink-tertiary);
+            text-decoration: underline;
+            text-decoration-color: var(--ink-whisper);
+            text-underline-offset: 0.12em;
+        }
+
+        .testimonial cite a:hover {
+            color: var(--ink-secondary);
+            text-decoration-color: var(--ink-secondary);
         }
 
         .project-item:hover { transform: translateX(4px); background-color: var(--paper-alt); }
@@ -274,7 +361,7 @@
         ::selection { background: var(--ink); color: var(--paper); }
 
         .contact {
-            margin-top: calc(var(--space-xl) + var(--space-sm));
+            margin-top: var(--space-2xl);
             padding-top: var(--space-lg);
             padding-bottom: var(--space-lg);
             font-size: var(--text-small);
@@ -284,22 +371,30 @@
             border-top: 1px solid var(--ink-whisper);
         }
 
-        .contact > a { color: var(--ink-tertiary); text-decoration: none; transition: color 150ms ease; }
+        .contact > a {
+            color: var(--ink-tertiary);
+            text-decoration: none;
+            transition: color 150ms ease;
+            letter-spacing: 0.01em;
+        }
         .contact > a:hover { color: var(--ink); }
-        .contact .social { display: flex; align-items: center; gap: 0.35em; }
+        .contact .social { display: flex; align-items: center; gap: 0.5em; }
 
         .contact .icon-link {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 2em;
-            height: 2em;
+            width: 2.2em;
+            height: 2.2em;
             color: var(--ink-ghost);
-            transition: color 150ms ease;
-            border-radius: 3px;
+            transition: color 150ms ease, background-color 150ms ease;
+            border-radius: 4px;
         }
 
-        .contact .icon-link:hover { color: var(--ink); }
+        .contact .icon-link:hover {
+            color: var(--ink);
+            background-color: var(--paper-alt);
+        }
         .contact .icon-link svg { display: block; }
 
         .subsection-label {
@@ -315,10 +410,14 @@
         @media (max-width: 640px) {
             .container { padding: var(--space-xl) var(--gutter) var(--space-lg); padding-left: var(--gutter); }
             .profile-image { position: relative; left: auto; top: auto; margin-bottom: var(--space-lg); }
+            .nav-links { gap: var(--space-md); margin-bottom: var(--space-md); flex-wrap: wrap; }
             .project-item { grid-template-columns: 1fr; gap: var(--space-xs); margin-left: 0; padding-left: var(--space-xs); padding-right: var(--space-xs); }
             .project-item:hover { transform: none; }
             .year { color: var(--ink-tertiary); }
             .photo-grid { grid-template-columns: 1fr; }
+            .testimonial { padding: var(--space-sm) var(--space-md); margin: var(--space-md) 0; }
+            .testimonial blockquote { font-size: var(--text-small); }
+            .contact { flex-direction: column; gap: var(--space-md); text-align: center; }
         }
 
         @media print {
@@ -344,69 +443,56 @@
 
     <h1 class="name">Raeez Lorgat</h1>
 
-    <div class="bio">
-        <p> Apartheid fell; I left South Africa for the UK. Early life lesson: institutions are agreements—and agreements can be rewritten.</p>
+    <p class="concept-line">Building programmable institutions—starting with a new decentralized network of jurisdictions where assets carry compliance.</p>
 
-        <p>In 2007 I won Intel ISEF; <a href="https://www.ll.mit.edu">MIT's Lincoln Laboratory</a> later named <a href="https://en.wikipedia.org/wiki/Minor_planet">minor planet</a> <a href="https://www.spacereference.org/asteroid/23122-lorgat-2000-au52">23122 Lorgat</a> after me. This was possible because as a teen I built <a href="https://en.wikipedia.org/wiki/Ray_tracing_(graphics)">raytracers</a> and <a href="https://en.wikipedia.org/wiki/Game_engine#3D_game_engines">game engines</a> and short films, chasing geometry not because it was useful, <a href="https://raeez.com/beauty.html">but because it was beautiful</a>. MIT followed.</p>
+    <!--<ul class="proof-strip">
+        <li>Built early Stripe payment rails (cold-called banks; code now processes hundreds of billions)</li>
+        <li>10 years MIT + Perimeter Institute—arithmetic geometry, quantum field theory</li>
+        <li>Intel ISEF winner; minor planet 23122 Lorgat</li>
+    </ul>-->
+
+    <nav class="nav-links">
+        <a href="beauty.html">Beauty</a>
+        <a href="devfinance.html">/dev/finance</a>
+        <a href="experience.html">Experience</a>
+        <a href="mass.html">Mass</a>
+    </nav>
+
+    <div class="bio">
+        <p>In 1994, apartheid fell. My family left South Africa for the UK. I learned early: institutions are just agreements—and agreements can be rewritten.</p>
+
+        <p>As a teen I built <a href="https://en.wikipedia.org/wiki/Ray_tracing_(graphics)">raytracers</a> and <a href="https://en.wikipedia.org/wiki/Game_engine#3D_game_engines">game engines</a> and short films, chasing geometry not because it was useful, <a href="https://raeez.com/beauty.html">but because it was beautiful</a>. In 2007 I won Intel ISEF. <a href="https://www.ll.mit.edu">MIT's Lincoln Laboratory</a> named <a href="https://en.wikipedia.org/wiki/Minor_planet">minor planet</a> <a href="https://www.spacereference.org/asteroid/23122-lorgat-2000-au52">23122 Lorgat</a> after me. MIT followed.</p>
 
 
         <p>At MIT I met <a href="https://en.wikipedia.org/wiki/Patrick_Collison">Patrick Collison</a>. Freshman year we bounced between California and Massachusetts, and <a href="https://raeez.com/devfinance.html">ended one week flying up the Pacific coast in a small plane we’d pilot ourselves</a>—Patrick’s first international trip, my first flight ever.</p>
 
         <div class="photo-grid">
-            <img src="IMG_1987.JPG" alt="In the cockpit">
-            <img src="IMG_1989.JPG" alt="In the cockpit">
+            <img src="https://raeez.com/IMG_1987.JPG" alt="In the cockpit">
+            <img src="https://raeez.com/IMG_1989.JPG" alt="In the cockpit">
         </div>
+        <p class="photo-caption">Palo Alto to Vancouver, 2009. Patrick's first international flight. My first flight ever.</p>
 
 
-        <p>I dropped out with the Collison brothers, moved to Palo Alto, and helped build Stripe. We cold‑called banks and wrote the code that would  process hundreds of billions.</p>
+        <p>I dropped out with the Collison brothers and moved into an apartment in Palo Alto. We built Stripe. We cold-called banks and wrote the code that would process hundreds of billions of dollars a year.</p>
 
         <div class="photo-grid">
-            <img src="IMG_1976.JPG" alt="701 Webster Street">
-            <img src="IMG_1978.JPG" alt="701 Webster Street">
+            <img src="https://raeez.com/IMG_1976.JPG" alt="701 Webster Street">
+            <img src="https://raeez.com/IMG_1978.JPG" alt="701 Webster Street">
         </div>
+        <p class="photo-caption">701 Webster Street, Palo Alto. Standing desks made of IKEA parts. We all programmed using the Dvorak-QWERTY keyboard.</p>
+
+        <!--<div class="testimonial">
+            <blockquote>"Lorgat is an extraordinarily talented individual. When he joined Stripe in 2010, he struck me as extraordinary in his genuine curiosity, his energy, and commitment to learning. His exceptionally broad knowledge and wide range of curiosity make him just as capable as any of the top business minds working in the American technology industry today."</blockquote>
+            <cite>— <a href="https://en.wikipedia.org/wiki/Patrick_Collison">Patrick Collison</a>, CEO of Stripe, in a 2022 letter</cite>
+        </div>-->
 
 
-        <p>Stripe made the next problem obvious: the exponential friction in global compliance. I spent the next decade at <a href="https://math.mit.edu">MIT</a> and the <a href="https://perimeterinstitute.ca">Perimeter Institute for Theoretical Physics</a> working on <a href="https://en.wikipedia.org/wiki/Arithmetic_geometry">arithmetic geometry</a>, <a href="https://en.wikipedia.org/wiki/Factorization_algebra">factorization algebras</a>, and the geometry of <a href="https://en.wikipedia.org/wiki/Quantum_field_theory">quantum field theory</a>. The mathematics I study—how local structures compose into global ones—shapes how I think about institutional design.</p>
+        <p>Stripe showed me the real problem: not payments, but the exponential friction of global compliance. To solve it, I needed an approach that didn't exist yet. I spent a decade at <a href="https://math.mit.edu">MIT</a> and the <a href="https://perimeterinstitute.ca">Perimeter Institute for Theoretical Physics</a> studying <a href="https://en.wikipedia.org/wiki/Arithmetic_geometry">arithmetic geometry</a>, <a href="https://en.wikipedia.org/wiki/Factorization_algebra">factorization algebras</a>, and the geometry of <a href="https://en.wikipedia.org/wiki/Quantum_field_theory">quantum field theory</a>—the mathematics of how local structures compose into global ones. Now I'm deploying it.</p>
 
-        <p>Now I’m building <a href="https://mass.inc">Mass</a> : a <a href="smart-assets.html">new kind of decentralized network where the nodes are sovereign jurisdictions</a> and assets become programmable, carrying their own compliance. Live in the US, Cayman, BVI, and the Special Economic Zone <a href="https://prospera.hn">Próspera ZEDE</a> in <a href="https://en.wikipedia.org/wiki/Honduras">Honduras</a>. Combined asset volume passed $1B in 2025.</p>
+        <p><a href="mass.html">Mass</a> is a new kind of decentralized network where the nodes are sovereign jurisdictions. Mass realizes an operating system for jurisdictions—automated incorporation, structuring, compliance, banking and legal operations as APIs. Assets carry their own compliance and can move fluidly between competing sovereigns. Live across the US, Cayman, BVI, and the Special Economic Zone <a href="https://prospera.hn">Próspera ZEDE</a> in <a href="https://en.wikipedia.org/wiki/Honduras">Honduras</a>. We crossed $1B in 2025.</p>
 
-        <p><a href="https://momentum.inc">Momentum</a> is the fund building this ecosystem. In 2026, I'm moving our HQ and home to Abu Dhabi.</p>
+        <p><a href="https://momentum.inc">Momentum</a> is the fund building this ecosystem headquartered on Saadiyat Beach in Abu Dhabi.</p>
     </div>
-
-    <h2 class="section-header">Experience</h2>
-
-    <ul class="project-list roles-list">
-        <li class="project-item">
-            <span class="year">2025–</span>
-            <span class="content"><a href="https://momentum.inc">Managing Partner, Momentum</a>
-                <span class="subtitle">Investment fund incubating programmable institutions. Next: Abu Dhabi, Dubai, Kazakhstan, China.</span>
-            </span>
-        </li>
-        <li class="project-item">
-            <span class="year">2024–</span>
-            <span class="content"><a href="https://mass.inc">Founder & CEO, Mass</a>
-                <span class="subtitle">Jurisdictional operating system—live across US, Cayman, BVI, Próspera</span>
-            </span>
-        </li>
-        <li class="project-item">
-            <span class="year">2020–23</span>
-            <span class="content"><a href="https://instagram.com/personagallerynyc">Founder, Persona</a>
-                <span class="subtitle">Art community and gallery-studio, New York City</span>
-            </span>
-        </li>
-        <li class="project-item">
-            <span class="year">2014–24</span>
-            <span class="content">Teaching Assistant at <a href="https://math.mit.edu">MIT</a>, Research Fellow at <a href="https://perimeterinstitute.ca">Perimeter Institute</a>
-                <span class="subtitle">Geometric representation theory, arithmetic geometry, quantum field theory</span>
-            </span>
-        </li>
-        <li class="project-item">
-            <span class="year">2009–11</span>
-            <span class="content"><a href="devfinance.html">Founding Team, /dev/finance inc.</a>
-                <span class="subtitle">Built /dev/payments—API-driven payment rails for internet businesses</span>
-            </span>
-        </li>
-    </ul>
 
     <h2 class="section-header">Selected Work</h2>
 
