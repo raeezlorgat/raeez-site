@@ -2,13 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Beauty — Raeez Lorgat</title>
 
     <!-- SEO -->
     <meta name="description" content="On the aesthetic origins of a life in mathematics and infrastructure.">
     <meta name="author" content="Raeez Lorgat">
     <link rel="canonical" href="https://raeez.com/beauty.html">
+    <link rel="alternate" type="application/atom+xml" title="Raeez Lorgat" href="https://raeez.com/feed.xml">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Beauty — Raeez Lorgat">
+    <meta property="og:description" content="On the aesthetic origins of a life in mathematics and infrastructure.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://raeez.com/beauty.html">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP8T5J8M28"></script>
@@ -19,7 +26,7 @@
         gtag('config', 'G-JP8T5J8M28');
     </script>
 
-    <!-- Adobe Fonts: Garamond Premier Pro -->
+    <!-- Adobe Fonts: Garamond Premier Pro (all optical sizes) -->
     <link rel="stylesheet" href="https://use.typekit.net/zlu2quo.css">
 
     <!-- Fallback -->
@@ -28,52 +35,51 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 
     <style>
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --serif: 'garamond-premier-pro', 'EB Garamond', 'Hoefler Text', Garamond, serif;
-            --serif-display: 'garamond-premier-pro-display', 'garamond-premier-pro', 'EB Garamond', Garamond, serif;
-            --serif-caption: 'garamond-premier-pro-caption', 'garamond-premier-pro', 'EB Garamond', Garamond, serif;
-            --mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+            --font-text: 'garamond-premier-pro', 'EB Garamond', 'Hoefler Text', 'Baskerville', Garamond, serif;
+            --font-display: 'garamond-premier-pro-display', var(--font-text);
+            --font-caption: 'garamond-premier-pro-caption', var(--font-text);
+            --font-subhead: 'garamond-premier-pro-subhead', var(--font-text);
+            --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
 
-            --scale-ratio: 1.333;
-            --text-base: clamp(19px, 2.1vw, 22px);
-            --text-small: calc(var(--text-base) / var(--scale-ratio));
-            --text-tiny: calc(var(--text-small) / var(--scale-ratio));
+            --text-base: clamp(18px, 1.125rem + 0.25vw, 21px);
+            --text-sm: calc(var(--text-base) / 1.333);
+            --text-xs: calc(var(--text-sm) / 1.333);
+            --text-lg: calc(var(--text-base) * 1.333);
 
             --baseline: 8px;
-            --line-height-tight: 1.3;
-            --line-height-base: 1.55;
-            --line-height-loose: 1.7;
+            --leading-tight: 1.2;
+            --leading-snug: 1.35;
+            --leading-relaxed: 1.618;
+            --leading-loose: 1.8;
 
-            --space-xs: calc(var(--baseline) * 1);
-            --space-sm: calc(var(--baseline) * 2);
-            --space-md: calc(var(--baseline) * 3);
-            --space-lg: calc(var(--baseline) * 5);
-            --space-xl: calc(var(--baseline) * 8);
-            --space-2xl: calc(var(--baseline) * 13);
+            --space-1: calc(var(--baseline) * 1);
+            --space-2: calc(var(--baseline) * 2);
+            --space-3: calc(var(--baseline) * 3);
+            --space-5: calc(var(--baseline) * 5);
+            --space-6: calc(var(--baseline) * 6);
+            --space-8: calc(var(--baseline) * 8);
+            --space-10: calc(var(--baseline) * 10);
+            --space-13: calc(var(--baseline) * 13);
 
-            --measure-narrow: 580px;
-            --measure-base: 640px;
-            --gutter: calc(var(--baseline) * 3);
+            --measure: 65ch;
+            --measure-narrow: 55ch;
+            --gutter: clamp(16px, 4vw, 24px);
 
             --ink: #1a1917;
-            --ink-secondary: #4a4744;
-            --ink-tertiary: #8a8580;
-            --ink-ghost: #bab5b0;
-            --ink-whisper: #d6d3d1;
+            --ink-muted: #4a4744;
+            --ink-faint: #8a8580;
+            --ink-ghost: #b5b0ab;
+            --ink-whisper: #d4d0cc;
+            --ink-hint: #e8e5e2;
             --paper: #fefdfb;
-            --paper-alt: #f9f8f6;
+            --paper-tint: #f5f3f0;
 
-            --optical-edge: -0.03em;
-            --kern-tight: -0.015em;
-            --kern-normal: 0;
-            --kern-loose: 0.02em;
-            --kern-caps: 0.06em;
+            --kern-wide: 0.04em;
+            --kern-caps: 0.08em;
+            --optical-margin: -0.03em;
         }
 
         html {
@@ -81,71 +87,96 @@
             -webkit-text-size-adjust: 100%;
             scroll-behavior: smooth;
             hanging-punctuation: first last;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         body {
-            font-family: var(--serif);
+            font-family: var(--font-text);
             font-size: var(--text-base);
             font-weight: 400;
-            font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "onum" 1, "pnum" 1, "dlig" 1;
-            line-height: var(--line-height-loose);
+            line-height: var(--leading-relaxed);
             color: var(--ink);
             background: var(--paper);
             text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: "kern" 1, "liga" 1, "clig" 1, "calt" 1, "dlig" 1, "onum" 1, "pnum" 1;
             font-variant-ligatures: common-ligatures discretionary-ligatures contextual;
+            font-variant-numeric: oldstyle-nums proportional-nums;
+            font-kerning: normal;
         }
 
         .container {
-            max-width: var(--measure-base);
-            margin: 0 auto;
-            padding: var(--space-2xl) var(--gutter) var(--space-xl);
+            max-width: calc(var(--measure) + var(--space-8));
+            margin-inline: auto;
+            padding: var(--space-10) var(--gutter) var(--space-8);
+        }
+
+        .header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: var(--space-2) var(--space-5);
+            margin-bottom: var(--space-5);
         }
 
         .back-link {
-            display: inline-block;
-            font-size: var(--text-small);
-            color: var(--ink-tertiary);
+            font-family: var(--font-caption);
+            font-size: var(--text-sm);
+            color: var(--ink-faint);
             text-decoration: none;
-            margin-bottom: var(--space-lg);
-            transition: color 150ms ease;
+            transition: color 180ms ease;
+            letter-spacing: var(--kern-wide);
+            font-variant-caps: small-caps;
+            font-feature-settings: "smcp" 1, "c2sc" 1, "kern" 1, "cpsp" 1;
         }
 
-        .back-link:hover {
-            color: var(--ink);
+        .back-link:hover { color: var(--ink); }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-2);
+            font-family: var(--font-caption);
+            font-size: var(--text-sm);
         }
 
-        .back-link::before {
-            content: "←";
-            margin-right: 0.4em;
+        nav a {
+            color: var(--ink-faint);
+            text-decoration: none;
+            transition: color 180ms ease;
+            letter-spacing: var(--kern-wide);
+            font-variant-caps: small-caps;
+            font-feature-settings: "smcp" 1, "c2sc" 1, "kern" 1, "cpsp" 1;
         }
 
-        .title {
+        nav a:hover { color: var(--ink); }
+        nav a.active { color: var(--ink); }
+
+        .page-title {
+            font-family: var(--font-text);
             font-size: var(--text-base);
             font-weight: 400;
             font-variant-caps: small-caps;
-            font-feature-settings: "smcp" 1, "c2sc" 1, "kern" 1;
+            font-feature-settings: "smcp" 1, "c2sc" 1, "kern" 1, "cpsp" 1;
             letter-spacing: var(--kern-caps);
             color: var(--ink);
-            margin-bottom: var(--space-lg);
-            margin-left: var(--optical-edge);
+            margin-bottom: var(--space-6);
+            margin-left: var(--optical-margin);
         }
 
-        .essay {
-            max-width: var(--measure-narrow);
-        }
+        .essay { max-width: var(--measure-narrow); }
 
         .essay p {
-            margin-bottom: var(--space-md);
-            text-indent: 0;
+            margin-bottom: var(--space-3);
             hyphens: auto;
             hyphenate-limit-chars: 6 3 2;
             hyphenate-limit-lines: 2;
+            line-height: var(--leading-relaxed);
         }
 
         .essay p:first-of-type::first-letter {
-            font-size: 1.05em;
+            font-size: 1.08em;
             font-weight: 500;
         }
 
@@ -156,185 +187,163 @@
             text-decoration-thickness: 1px;
             text-underline-offset: 0.15em;
             text-decoration-skip-ink: auto;
-            transition: text-decoration-color 150ms ease;
+            transition: text-decoration-color 180ms ease;
         }
 
-        .essay a:hover {
-            text-decoration-color: var(--ink);
-            text-decoration-thickness: 1.5px;
-        }
+        .essay a:hover { text-decoration-color: var(--ink-muted); }
 
         .photo-grid {
             display: grid;
-            gap: var(--space-sm);
-            margin: var(--space-lg) 0;
+            gap: var(--space-2);
+            margin: var(--space-5) 0 var(--space-2);
         }
 
-        .photo-grid.grid-2 {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .photo-grid.grid-3 {
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        .photo-grid.grid-2x2 {
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-        }
+        .photo-grid.grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .photo-grid.grid-2x2 { grid-template-columns: repeat(2, 1fr); }
 
         .photo-grid img {
             width: 100%;
             height: 100%;
-            aspect-ratio: 4 / 3;
             object-fit: cover;
-            border-radius: 3px;
-            filter: contrast(1.02);
-        }
-
-        .photo-grid.grid-3 img {
-            aspect-ratio: 1 / 1;
+            border-radius: 2px;
+            aspect-ratio: 4 / 3;
         }
 
         .photo-caption {
-            font-family: var(--serif-caption);
-            font-size: var(--text-small);
-            color: var(--ink-tertiary);
+            font-family: var(--font-caption);
+            font-size: var(--text-sm);
+            color: var(--ink-faint);
             font-style: italic;
-            margin-top: calc(-1 * var(--space-sm));
-            margin-bottom: var(--space-lg);
-            line-height: 1.45;
-            letter-spacing: 0.005em;
+            margin-bottom: var(--space-5);
+            line-height: var(--leading-snug);
+            font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
+        }
+
+        .photo-caption a {
+            color: var(--ink-faint);
+            text-decoration: underline;
+            text-decoration-color: var(--ink-whisper);
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.12em;
+            transition: color 180ms ease, text-decoration-color 180ms ease;
+        }
+
+        .photo-caption a:hover {
+            color: var(--ink-muted);
+            text-decoration-color: var(--ink-muted);
         }
 
         .separator {
-            width: 2em;
-            height: 1px;
-            background: var(--ink-whisper);
-            margin: var(--space-xl) 0;
             border: none;
+            height: 1px;
+            background: var(--ink-hint);
+            margin: var(--space-6) 0;
+            max-width: 4rem;
         }
 
+        .epigraph {
+            margin: var(--space-8) 0;
+            text-align: center;
+        }
+
+        .epigraph .verse {
+            font-style: italic;
+            color: var(--ink-muted);
+            line-height: 1.9;
+            margin-bottom: var(--space-2);
+            font-feature-settings: "kern" 1, "liga" 1, "dlig" 1, "onum" 1;
+        }
+
+        .epigraph .attribution {
+            font-family: var(--font-caption);
+            font-size: var(--text-sm);
+            font-style: normal;
+            color: var(--ink-faint);
+        }
+
+        .epigraph .attribution cite { font-style: italic; }
+
         .footer {
-            margin-top: var(--space-2xl);
-            padding-top: var(--space-lg);
-            padding-bottom: var(--space-lg);
-            border-top: 1px solid var(--ink-whisper);
+            margin-top: var(--space-13);
+            padding-top: var(--space-5);
+            border-top: 1px solid var(--ink-hint);
             display: flex;
             align-items: center;
             justify-content: space-between;
+            font-family: var(--font-caption);
+            font-size: var(--text-sm);
         }
 
-        .footer > a {
-            font-size: var(--text-small);
-            color: var(--ink-tertiary);
-            text-decoration: none;
-            transition: color 150ms ease;
-            letter-spacing: 0.01em;
-        }
+        .footer a { color: var(--ink-faint); text-decoration: none; transition: color 180ms ease; }
+        .footer a:hover { color: var(--ink); }
 
-        .footer > a:hover {
-            color: var(--ink);
-        }
+        .social { display: flex; align-items: center; gap: 0.375em; }
 
-        .footer .social {
-            display: flex;
-            align-items: center;
-            gap: 0.5em;
-        }
-
-        .footer .icon-link {
+        .icon-link {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 2.2em;
-            height: 2.2em;
+            width: 2.25em;
+            height: 2.25em;
             color: var(--ink-ghost);
-            transition: color 150ms ease, background-color 150ms ease;
+            transition: color 180ms ease, background-color 180ms ease;
             border-radius: 4px;
         }
 
-        .footer .icon-link:hover {
-            color: var(--ink);
-            background-color: var(--paper-alt);
+        .icon-link:hover { color: var(--ink); background-color: var(--paper-tint); }
+        .icon-link svg { display: block; }
+
+        ::selection { background: var(--ink); color: var(--paper); }
+        a:focus-visible { outline: 2px solid var(--ink-muted); outline-offset: 3px; border-radius: 2px; }
+
+        @media (max-width: 680px) {
+            :root { --text-base: clamp(17px, 1rem + 0.2vw, 19px); }
+            .container { padding: var(--space-6) var(--gutter) var(--space-5); }
+            .header { flex-direction: column; align-items: flex-start; gap: var(--space-2); }
+            .photo-grid.grid-2, .photo-grid.grid-2x2 { grid-template-columns: 1fr; }
+            .footer { flex-direction: column; gap: var(--space-3); text-align: center; margin-top: var(--space-8); }
         }
 
-        .footer .icon-link svg {
-            display: block;
+        @media (max-width: 400px) {
+            :root { --text-base: 16px; }
+            .container { padding: var(--space-5) var(--space-2) var(--space-4); }
+            nav { gap: var(--space-1) var(--space-2); }
         }
 
-        ::selection {
-            background: var(--ink);
-            color: var(--paper);
-        }
-
-        @media (max-width: 640px) {
-            .container {
-                padding: var(--space-xl) var(--gutter) var(--space-lg);
-            }
-
-            .photo-grid.grid-3 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .photo-grid.grid-3 img:last-child {
-                grid-column: span 2;
-                aspect-ratio: 2 / 1;
-            }
-
-            .footer {
-                flex-direction: column;
-                gap: var(--space-md);
-                text-align: center;
-            }
-        }
+        @media (min-width: 1200px) { .container { padding-top: var(--space-13); } }
 
         @media print {
             :root { --ink: #000; --paper: #fff; }
             body { font-size: 11pt; line-height: 1.4; }
             .container { max-width: 100%; padding: 0; }
-            .back-link { display: none; }
+            nav, .social { display: none; }
+            a { text-decoration: none; color: var(--ink); }
         }
 
-        .epigraph {
-            margin: var(--space-xl) 0;
-            text-align: center;
-
+        @supports (padding: max(0px)) {
+            .container {
+                padding-left: max(var(--gutter), env(safe-area-inset-left));
+                padding-right: max(var(--gutter), env(safe-area-inset-right));
+            }
         }
-
-        .epigraph .verse {
-            font-style: italic;
-            color: var(--ink-secondary);
-            line-height: 1.9;
-            margin-bottom: var(--space-sm);
-        }
-
-        .epigraph .verse br {
-            content: "";
-            display: block;
-            margin-bottom: 0.1em;
-        }
-
-        .epigraph .attribution {
-            font-family: var(--serif-caption);
-            font-size: var(--text-small);
-            font-style: normal;
-            color: var(--ink-tertiary);
-            letter-spacing: 0.01em;
-        }
-
-        .epigraph .attribution cite {
-            font-style: italic;
-}
     </style>
 </head>
 <body>
 <div class="container">
-    <a href="https://raeez.com" class="back-link">Raeez Lorgat</a>
+    <header class="header">
+        <a href="index.html" class="back-link">← Raeez Lorgat</a>
+        <nav>
+            <a href="about.html">About</a>
+            <a href="mass.html">Mass</a>
+            <a href="writing.html">Writing</a>
+            <a href="experience.html">Experience</a>
+            <a href="beauty.html" class="active">Beauty</a>
+        </nav>
+    </header>
 
-    <h1 class="title">Beauty</h1>
+    <h1 class="page-title">Beauty</h1>
 
-    <div class="essay">
+    <article class="essay">
         <p>I started programming at eleven. Not because I cared about corporations, or money, or career—I wanted to build worlds. Visual stories with their own lore, their own languages, their own fashion, their own color palettes. Virtually none were realistic. That was the point.</p>
 
         <p>By fourteen I was building <a href="https://en.wikipedia.org/wiki/Tile-based_video_game">tiling map-makers</a>, <a href="https://en.wikipedia.org/wiki/Isometric_video_game_graphics">isometric engines</a>, primitive scripting languages to animate characters through scenes I'd sketched the night before. My father refused to pay for continuous internet—we had dialup, metered by the minute—so I taught myself from books. The public library. <a href="https://www.exclusivebooks.co.za">Exclusive Books</a> in Cavendish Square, Cape Town, where I'd convinced my mother to buy me an 800-page volume on 3D graphics programming.</p>
@@ -365,10 +374,7 @@
             <img src="photo-1.jpg" alt="Photography">
             <img src="photo-2.jpg" alt="Photography">
         </div>
-        <p class="photo-caption">
-          The <a href="https://en.wikipedia.org/wiki/Auteur">auteur theory</a> holds that a filmmaker makes the same film over and over, each work a variation on a single obsession.
-        </p>
-
+        <p class="photo-caption">The <a href="https://en.wikipedia.org/wiki/Auteur">auteur theory</a> holds that a filmmaker makes the same film over and over, each work a variation on a single obsession.</p>
 
         <p>The mathematics I study now—<a href="https://en.wikipedia.org/wiki/Factorization_algebra">factorization algebras</a>, the geometry of <a href="https://en.wikipedia.org/wiki/Quantum_field_theory">quantum field theory</a>—I chose them for the same reason I chose raytracing at fourteen. They're beautiful. The way local structures compose into global ones. The way symmetry constrains possibility. The way a few axioms can unfold into infinite consequence.</p>
 
@@ -376,23 +382,22 @@
 
         <p>I learned it because it was beautiful.</p>
 
-
         <blockquote class="epigraph">
-          <p class="verse">
-              We shall not cease from exploration<br>
-              And the end of all our exploring<br>
-              Will be to arrive where we started<br>
-              And know the place for the first time.<br>
-              Through the unknown, unremembered gate<br>
-              When the last of earth left to discover<br>
-              Is that which was the beginning;<br>
-              At the source of the longest river<br>
-              The voice of the hidden waterfall<br>
-              And the children in the apple-tree
-          </p>
-          <p class="attribution">— T.S. Eliot, <cite>Little Gidding</cite></p>
-      </blockquote>
-    </div>
+            <p class="verse">
+                We shall not cease from exploration<br>
+                And the end of all our exploring<br>
+                Will be to arrive where we started<br>
+                And know the place for the first time.<br>
+                Through the unknown, unremembered gate<br>
+                When the last of earth left to discover<br>
+                Is that which was the beginning;<br>
+                At the source of the longest river<br>
+                The voice of the hidden waterfall<br>
+                And the children in the apple-tree
+            </p>
+            <p class="attribution">— T.S. Eliot, <cite>Little Gidding</cite></p>
+        </blockquote>
+    </article>
 
     <footer class="footer">
         <a href="mailto:raeez@momentum.inc">raeez@momentum.inc</a>

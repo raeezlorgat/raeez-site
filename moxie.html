@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Moxie IP Operating System — Raeez Lorgat</title>
 
     <!-- SEO -->
@@ -12,6 +12,7 @@
     <meta property="og:description" content="Recent advances in tokenomic incentive coordination technology enable experience-based monetization of IP.">
     <meta property="og:type" content="article">
     <link rel="canonical" href="https://raeez.com/moxie.html">
+    <link rel="alternate" type="application/atom+xml" title="Raeez Lorgat" href="https://raeez.com/feed.xml">
 
     <!-- Structured data for LLMs -->
     <script type="application/ld+json">
@@ -37,7 +38,7 @@
         gtag('config', 'G-JP8T5J8M28');
     </script>
 
-    <!-- Adobe Fonts: Garamond Premier Pro -->
+    <!-- Adobe Fonts: Garamond Premier Pro (all optical sizes) -->
     <link rel="stylesheet" href="https://use.typekit.net/zlu2quo.css">
 
     <!-- Fallback -->
@@ -46,207 +47,244 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 
     <style>
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           RESET & BOX MODEL
+           ═══════════════════════════════════════════════════════════════════════════════ */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           DESIGN TOKENS — ELITE TYPOGRAPHY SYSTEM
+           
+           Typography Philosophy:
+           - Garamond Premier Pro with full optical size range
+           - Perfect Fourth modular scale (1.333)
+           - 8px baseline grid for vertical rhythm
+           - Golden ratio (1.618) line-height for body text
+           - Advanced OpenType features: discretionary ligatures, old-style figures,
+             contextual alternates, capital spacing
+           ═══════════════════════════════════════════════════════════════════════════════ */
         :root {
-            --serif: 'garamond-premier-pro', 'EB Garamond', 'Hoefler Text', Garamond, serif;
-            --serif-display: 'garamond-premier-pro-display', 'garamond-premier-pro', 'EB Garamond', Garamond, serif;
-            --serif-caption: 'garamond-premier-pro-caption', 'garamond-premier-pro', 'EB Garamond', Garamond, serif;
-            --mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+            /* ─── Font Stacks with Optical Sizes ─── */
+            --font-text: 'garamond-premier-pro', 'EB Garamond', 'Hoefler Text', 'Baskerville', Garamond, serif;
+            --font-display: 'garamond-premier-pro-display', var(--font-text);
+            --font-caption: 'garamond-premier-pro-caption', var(--font-text);
+            --font-subhead: 'garamond-premier-pro-subhead', var(--font-text);
+            --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
 
-            --scale-ratio: 1.333;
-            --text-base: clamp(19px, 2.1vw, 22px);
-            --text-small: calc(var(--text-base) / var(--scale-ratio));
-            --text-tiny: calc(var(--text-small) / var(--scale-ratio));
-            --text-large: calc(var(--text-base) * var(--scale-ratio));
-            --text-xlarge: calc(var(--text-large) * var(--scale-ratio));
-            --text-xxlarge: calc(var(--text-xlarge) * var(--scale-ratio));
+            /* ─── Modular Scale: Perfect Fourth (1.333) ─── */
+            --text-base: clamp(18px, 1.125rem + 0.25vw, 21px);
+            --text-sm: calc(var(--text-base) / 1.333);
+            --text-xs: calc(var(--text-sm) / 1.333);
+            --text-lg: calc(var(--text-base) * 1.333);
+            --text-xl: calc(var(--text-lg) * 1.333);
+            --text-2xl: calc(var(--text-xl) * 1.333);
 
+            /* ─── Baseline Grid ─── */
             --baseline: 8px;
-            --line-height-tight: 1.3;
-            --line-height-base: 1.55;
-            --line-height-loose: 1.7;
 
-            --space-xs: calc(var(--baseline) * 1);
-            --space-sm: calc(var(--baseline) * 2);
-            --space-md: calc(var(--baseline) * 3);
-            --space-lg: calc(var(--baseline) * 5);
-            --space-xl: calc(var(--baseline) * 8);
-            --space-2xl: calc(var(--baseline) * 13);
+            /* ─── Line Heights ─── */
+            --leading-tight: 1.2;
+            --leading-snug: 1.35;
+            --leading-normal: 1.5;
+            --leading-relaxed: 1.618;
+            --leading-loose: 1.8;
 
-            --measure-narrow: 580px;
-            --measure-base: 640px;
-            --measure-wide: 720px;
-            --gutter: calc(var(--baseline) * 3);
+            /* ─── Spacing Scale (baseline multiples) ─── */
+            --space-1: calc(var(--baseline) * 1);
+            --space-2: calc(var(--baseline) * 2);
+            --space-3: calc(var(--baseline) * 3);
+            --space-4: calc(var(--baseline) * 4);
+            --space-5: calc(var(--baseline) * 5);
+            --space-6: calc(var(--baseline) * 6);
+            --space-8: calc(var(--baseline) * 8);
+            --space-10: calc(var(--baseline) * 10);
+            --space-13: calc(var(--baseline) * 13);
 
+            /* ─── Measure (line length) ─── */
+            --measure: 65ch;
+            --measure-narrow: 55ch;
+            --measure-wide: 75ch;
+            --gutter: clamp(16px, 4vw, 24px);
+
+            /* ─── Color Palette ─── */
             --ink: #1a1917;
-            --ink-secondary: #4a4744;
-            --ink-tertiary: #8a8580;
-            --ink-ghost: #bab5b0;
-            --ink-whisper: #d6d3d1;
+            --ink-muted: #4a4744;
+            --ink-subtle: #6a6662;
+            --ink-faint: #8a8580;
+            --ink-ghost: #b5b0ab;
+            --ink-whisper: #d4d0cc;
+            --ink-hint: #e8e5e2;
             --paper: #fefdfb;
-            --paper-alt: #f9f8f6;
+            --paper-tint: #f5f3f0;
 
-            --optical-edge: -0.03em;
-            --kern-tight: -0.015em;
+            /* ─── Kerning & Tracking ─── */
+            --kern-tight: -0.02em;
+            --kern-snug: -0.01em;
             --kern-normal: 0;
-            --kern-loose: 0.02em;
-            --kern-caps: 0.06em;
+            --kern-loose: 0.015em;
+            --kern-wide: 0.04em;
+            --kern-caps: 0.08em;
+            --optical-margin: -0.03em;
         }
 
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           BASE TYPOGRAPHY
+           ═══════════════════════════════════════════════════════════════════════════════ */
         html {
             font-size: 100%;
             -webkit-text-size-adjust: 100%;
             scroll-behavior: smooth;
             hanging-punctuation: first last;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         body {
-            font-family: var(--serif);
+            font-family: var(--font-text);
             font-size: var(--text-base);
             font-weight: 400;
-            font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "onum" 1, "pnum" 1, "dlig" 1;
-            line-height: var(--line-height-base);
+            line-height: var(--leading-relaxed);
             color: var(--ink);
             background: var(--paper);
             text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+
+            /* ─── OpenType Feature Settings ─── */
+            font-feature-settings: 
+                "kern" 1,     /* Kerning */
+                "liga" 1,     /* Standard ligatures: fi, fl, ff, ffi, ffl */
+                "clig" 1,     /* Contextual ligatures */
+                "calt" 1,     /* Contextual alternates */
+                "dlig" 1,     /* Discretionary ligatures: ct, st, sp */
+                "onum" 1,     /* Old-style (lowercase) figures */
+                "pnum" 1;     /* Proportional figures */
+            
             font-variant-ligatures: common-ligatures discretionary-ligatures contextual;
+            font-variant-numeric: oldstyle-nums proportional-nums;
+            font-kerning: normal;
         }
 
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           LAYOUT
+           ═══════════════════════════════════════════════════════════════════════════════ */
         .container {
-            max-width: var(--measure-base);
-            margin: 0 auto;
-            padding: var(--space-2xl) var(--gutter) var(--space-xl);
+            max-width: calc(var(--measure) + var(--space-8));
+            margin-inline: auto;
+            padding: var(--space-10) var(--gutter) var(--space-8);
         }
 
-        /* ════════════════════════════════════════════
-           Back Navigation
-           ════════════════════════════════════════════ */
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           BACK NAVIGATION
+           ═══════════════════════════════════════════════════════════════════════════════ */
         .back-nav {
-            margin-bottom: var(--space-xl);
+            margin-bottom: var(--space-8);
         }
 
         .back-nav a {
-            font-size: var(--text-small);
+            font-family: var(--font-caption);
+            font-size: var(--text-sm);
             font-variant-caps: small-caps;
-            font-feature-settings: "smcp" 1, "c2sc" 1, "kern" 1;
-            letter-spacing: var(--kern-caps);
-            color: var(--ink-tertiary);
+            font-feature-settings: "smcp" 1, "c2sc" 1, "kern" 1, "cpsp" 1;
+            letter-spacing: var(--kern-wide);
+            color: var(--ink-faint);
             text-decoration: none;
-            transition: color 150ms ease;
+            transition: color 180ms ease;
         }
 
-        .back-nav a:hover {
-            color: var(--ink);
-        }
+        .back-nav a:hover { color: var(--ink); }
 
-        /* ════════════════════════════════════════════
-           Article Header
-           ════════════════════════════════════════════ */
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           ARTICLE HEADER
+           ═══════════════════════════════════════════════════════════════════════════════ */
         .article-header {
-            margin-bottom: var(--space-lg);
-            padding-bottom: var(--space-lg);
-            border-bottom: 1px solid var(--ink-whisper);
+            margin-bottom: var(--space-6);
+            padding-bottom: var(--space-5);
+            border-bottom: 1px solid var(--ink-hint);
         }
 
         .article-title {
-            font-family: var(--serif-display);
-            font-size: var(--text-xxlarge);
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
             font-weight: 400;
             letter-spacing: var(--kern-tight);
-            line-height: var(--line-height-tight);
-            margin-bottom: var(--space-md);
-            margin-left: var(--optical-edge);
+            line-height: var(--leading-tight);
+            margin-bottom: var(--space-3);
+            margin-left: var(--optical-margin);
         }
 
         .article-subtitle {
-            font-size: var(--text-large);
+            font-size: var(--text-lg);
             font-weight: 400;
             font-style: italic;
-            line-height: var(--line-height-base);
-            color: var(--ink-secondary);
+            line-height: var(--leading-snug);
+            color: var(--ink-muted);
             max-width: var(--measure-narrow);
+            font-feature-settings: "kern" 1, "liga" 1, "dlig" 1, "onum" 1;
         }
 
         .article-meta {
-            font-size: var(--text-small);
-            color: var(--ink-tertiary);
-            margin-top: var(--space-md);
+            font-family: var(--font-caption);
+            font-size: var(--text-sm);
+            color: var(--ink-faint);
+            margin-top: var(--space-3);
         }
 
         .article-meta a {
-            color: var(--ink-secondary);
+            color: var(--ink-muted);
             text-decoration: underline;
             text-decoration-color: var(--ink-whisper);
             text-decoration-thickness: 1px;
             text-underline-offset: 0.12em;
-            transition: text-decoration-color 150ms ease;
+            transition: text-decoration-color 180ms ease;
         }
 
-        .article-meta a:hover {
-            text-decoration-color: var(--ink-secondary);
-        }
+        .article-meta a:hover { text-decoration-color: var(--ink-muted); }
 
-        /* ════════════════════════════════════════════
-           Article Body
-           ════════════════════════════════════════════ */
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           ARTICLE BODY
+           ═══════════════════════════════════════════════════════════════════════════════ */
         .article-body {
-            font-variant-ligatures: common-ligatures discretionary-ligatures;
+            font-variant-ligatures: common-ligatures discretionary-ligatures contextual;
         }
 
         .article-body p {
-            margin-bottom: var(--space-md);
-            max-width: var(--measure-base);
-            line-height: var(--line-height-loose);
+            margin-bottom: var(--space-3);
+            max-width: var(--measure);
+            line-height: var(--leading-loose);
             hyphens: auto;
             hyphenate-limit-chars: 6 3 2;
             hyphenate-limit-lines: 2;
         }
 
         .article-body h1 {
-            font-size: var(--text-xlarge);
+            font-family: var(--font-subhead);
+            font-size: var(--text-xl);
             font-weight: 600;
             letter-spacing: var(--kern-tight);
-            line-height: var(--line-height-tight);
-            margin-top: var(--space-2xl);
-            margin-bottom: var(--space-md);
-            margin-left: var(--optical-edge);
+            line-height: var(--leading-tight);
+            margin-top: var(--space-10);
+            margin-bottom: var(--space-3);
+            margin-left: var(--optical-margin);
         }
 
         .article-body h2 {
-            font-size: var(--text-large);
+            font-family: var(--font-subhead);
+            font-size: var(--text-lg);
             font-weight: 600;
-            letter-spacing: var(--kern-tight);
-            line-height: var(--line-height-tight);
-            margin-top: var(--space-xl);
-            margin-bottom: var(--space-md);
-            margin-left: var(--optical-edge);
+            letter-spacing: var(--kern-snug);
+            line-height: var(--leading-snug);
+            margin-top: var(--space-8);
+            margin-bottom: var(--space-3);
+            margin-left: var(--optical-margin);
         }
 
         .article-body h3 {
             font-size: var(--text-base);
             font-weight: 600;
-            line-height: var(--line-height-tight);
-            margin-top: var(--space-lg);
-            margin-bottom: var(--space-sm);
+            line-height: var(--leading-snug);
+            margin-top: var(--space-6);
+            margin-bottom: var(--space-2);
         }
 
-        .article-body h4 {
-            font-size: var(--text-base);
-            font-weight: 600;
-            font-style: italic;
-            line-height: var(--line-height-tight);
-            margin-top: var(--space-lg);
-            margin-bottom: var(--space-sm);
-        }
-
-        /* Links */
         .article-body a {
             color: var(--ink);
             text-decoration: underline;
@@ -254,225 +292,125 @@
             text-decoration-thickness: 1px;
             text-underline-offset: 0.15em;
             text-decoration-skip-ink: auto;
-            transition: text-decoration-color 150ms ease;
-            cursor: pointer;
+            transition: text-decoration-color 180ms ease;
         }
 
-        .article-body a:hover {
-            text-decoration-color: var(--ink);
-        }
+        .article-body a:hover { text-decoration-color: var(--ink-muted); }
 
-        .article-body strong {
-            font-weight: 600;
-        }
-
-        .article-body em {
-            font-style: italic;
-        }
-
-        /* Block Quote */
-        .article-body blockquote {
-            margin: var(--space-lg) 0;
-            padding-left: var(--space-md);
-            border-left: 2px solid var(--ink-ghost);
-            font-style: italic;
-            color: var(--ink-secondary);
-        }
-
-        /* Code */
-        code {
-            font-family: var(--mono);
-            font-size: 0.8em;
-            letter-spacing: -0.02em;
-            background: var(--paper-alt);
-            padding: 0.15em 0.35em;
-            border-radius: 3px;
-        }
-
-        pre {
-            font-family: var(--mono);
-            font-size: var(--text-small);
-            line-height: 1.5;
-            background: var(--paper-alt);
-            padding: var(--space-md);
-            border-radius: 4px;
-            overflow-x: auto;
-            margin: var(--space-lg) 0;
-        }
-
-        pre code {
-            background: none;
-            padding: 0;
-            border-radius: 0;
-        }
-
-        /* Lists */
-        .article-body ul,
-        .article-body ol {
-            margin: var(--space-md) 0;
-            padding-left: 1.5em;
-            max-width: var(--measure-base);
+        .article-body ul, .article-body ol {
+            margin-bottom: var(--space-3);
+            margin-left: var(--space-5);
+            max-width: var(--measure);
         }
 
         .article-body li {
-            margin-bottom: var(--space-xs);
-            line-height: var(--line-height-base);
+            margin-bottom: var(--space-1);
+            line-height: var(--leading-relaxed);
         }
 
-        .article-body li::marker {
-            color: var(--ink-tertiary);
+        .article-body blockquote {
+            margin: var(--space-5) 0;
+            padding-left: var(--space-3);
+            border-left: 2px solid var(--ink-hint);
+            font-style: italic;
+            color: var(--ink-muted);
         }
 
-        /* Tables */
+        .article-body hr {
+            border: none;
+            height: 1px;
+            background: var(--ink-hint);
+            margin: var(--space-8) 0;
+            max-width: 4rem;
+        }
+
         .article-body table {
             width: 100%;
             border-collapse: collapse;
-            margin: var(--space-lg) 0;
-            font-size: var(--text-small);
+            margin: var(--space-5) 0;
+            font-size: var(--text-sm);
         }
 
-        .article-body th,
-        .article-body td {
-            padding: var(--space-sm) var(--space-md);
-            border-bottom: 1px solid var(--ink-whisper);
+        .article-body th, .article-body td {
+            padding: var(--space-2);
+            border-bottom: 1px solid var(--ink-hint);
             text-align: left;
+            vertical-align: top;
         }
 
         .article-body th {
             font-weight: 600;
-            background: var(--paper-alt);
+            font-variant-caps: small-caps;
+            font-feature-settings: "smcp" 1, "c2sc" 1, "kern" 1;
+            letter-spacing: var(--kern-wide);
         }
 
-        /* Images */
-        .article-body img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px;
-            margin: var(--space-lg) 0;
-        }
-
-        /* Horizontal Rule - Section Break */
-        .article-body hr {
-            border: none;
-            text-align: center;
-            margin: var(--space-lg) 0;
-        }
-
-        .article-body hr::before {
-            content: '· · ·';
-            color: var(--ink-ghost);
-            letter-spacing: 0.5em;
-        }
-
-        /* ════════════════════════════════════════════
-           Table of Contents
-           ════════════════════════════════════════════ */
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           TABLE OF CONTENTS
+           ═══════════════════════════════════════════════════════════════════════════════ */
         .toc {
-            margin: var(--space-md) 0 var(--space-xl);
-            padding: var(--space-lg);
-            background: var(--paper-alt);
-            border-radius: 4px;
+            margin: var(--space-6) 0;
+            padding: var(--space-5);
+            background: var(--paper-tint);
+            border-radius: 3px;
         }
 
         .toc-title {
-            font-size: var(--text-small);
+            font-family: var(--font-caption);
+            font-size: var(--text-xs);
             font-weight: 400;
-            font-variant-caps: small-caps;
-            font-feature-settings: "smcp" 1, "c2sc" 1, "kern" 1;
-            letter-spacing: 0.08em;
-            color: var(--ink-tertiary);
-            margin-bottom: var(--space-md);
-            margin-left: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ink-ghost);
+            margin-bottom: var(--space-3);
         }
 
         .toc-list {
             list-style: none;
-            padding: 0;
-            margin: 0;
+            counter-reset: toc-counter;
         }
 
-        .toc-list li {
-            margin-bottom: var(--space-sm);
-            border-bottom: 1px solid var(--ink-whisper);
-            padding-bottom: var(--space-sm);
+        .toc-item {
+            counter-increment: toc-counter;
+            margin-bottom: var(--space-1);
         }
 
-        .toc-list li:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-            margin-bottom: 0;
+        .toc-item::before {
+            content: counter(toc-counter) ".";
+            font-family: var(--font-caption);
+            font-size: var(--text-sm);
+            color: var(--ink-ghost);
+            margin-right: var(--space-1);
+            font-feature-settings: "tnum" 1, "lnum" 1;
         }
 
-        .toc-list a {
-            color: var(--ink);
+        .toc-item a {
+            font-size: var(--text-sm);
+            color: var(--ink-muted);
             text-decoration: none;
-            font-size: var(--text-small);
-            display: block;
-            transition: padding-left 150ms ease, color 150ms ease;
+            transition: color 180ms ease;
         }
 
-        .toc-list a:hover {
-            padding-left: var(--space-sm);
-            color: var(--ink-secondary);
-        }
+        .toc-item a:hover { color: var(--ink); }
 
-        /* Part/Chapter level */
-        .toc-level-0 a {
-            font-weight: 600;
-            font-size: var(--text-base);
-        }
-
-        /* Section level */
-        .toc-level-1 a {
-            padding-left: var(--space-sm);
-            font-size: var(--text-small);
-        }
-
-        .toc-level-1 a:hover {
-            padding-left: calc(var(--space-sm) + var(--space-xs));
-        }
-
-        /* Subsection level */
-        .toc-level-2 a {
-            padding-left: var(--space-md);
-            color: var(--ink-tertiary);
-            font-size: calc(var(--text-small) * 0.95);
-        }
-
-        .toc-level-2 a:hover {
-            padding-left: calc(var(--space-md) + var(--space-xs));
-            color: var(--ink-secondary);
-        }
-
-        /* Sub-subsection level */
-        .toc-level-3 a {
-            padding-left: var(--space-lg);
-            color: var(--ink-tertiary);
-            font-size: calc(var(--text-small) * 0.9);
-        }
-
-        .toc-level-3 a:hover {
-            padding-left: calc(var(--space-lg) + var(--space-xs));
-            color: var(--ink-secondary);
-        }
-
-        /* ════════════════════════════════════════════
-           Footer / Contact
-           ════════════════════════════════════════════ */
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           ARTICLE FOOTER
+           ═══════════════════════════════════════════════════════════════════════════════ */
         .article-footer {
-            margin-top: var(--space-xl);
-            padding-top: var(--space-lg);
-            padding-bottom: var(--space-lg);
-            border-top: 1px solid var(--ink-whisper);
+            margin-top: var(--space-10);
+            padding-top: var(--space-5);
+            padding-bottom: var(--space-5);
+            border-top: 1px solid var(--ink-hint);
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
         .author-byline {
-            font-size: var(--text-small);
+            font-family: var(--font-caption);
+            font-size: var(--text-sm);
             font-style: italic;
-            color: var(--ink-secondary);
+            color: var(--ink-muted);
         }
 
         .author-byline strong {
@@ -481,164 +419,138 @@
         }
 
         .footer-nav a {
-            font-size: var(--text-small);
+            font-family: var(--font-caption);
+            font-size: var(--text-sm);
             font-variant-caps: small-caps;
-            font-feature-settings: "smcp" 1, "c2sc" 1, "kern" 1;
-            letter-spacing: var(--kern-caps);
-            color: var(--ink-tertiary);
+            font-feature-settings: "smcp" 1, "c2sc" 1, "kern" 1, "cpsp" 1;
+            letter-spacing: var(--kern-wide);
+            color: var(--ink-faint);
             text-decoration: none;
-            transition: color 150ms ease;
+            transition: color 180ms ease;
         }
 
-        .footer-nav a:hover {
-            color: var(--ink);
-        }
+        .footer-nav a:hover { color: var(--ink); }
 
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           CONTACT FOOTER
+           ═══════════════════════════════════════════════════════════════════════════════ */
         .contact-footer {
-            margin-top: var(--space-2xl);
-            padding-top: var(--space-lg);
-            padding-bottom: var(--space-lg);
-            font-size: var(--text-small);
+            margin-top: var(--space-10);
+            padding-top: var(--space-5);
+            border-top: 1px solid var(--ink-hint);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-top: 1px solid var(--ink-whisper);
+            font-family: var(--font-caption);
+            font-size: var(--text-sm);
         }
 
         .contact-footer > a {
-            color: var(--ink-tertiary);
+            color: var(--ink-faint);
             text-decoration: none;
-            transition: color 150ms ease;
-            letter-spacing: 0.01em;
+            transition: color 180ms ease;
         }
 
-        .contact-footer > a:hover {
-            color: var(--ink);
-        }
+        .contact-footer > a:hover { color: var(--ink); }
 
         .contact-footer .social {
             display: flex;
             align-items: center;
-            gap: 0.5em;
+            gap: 0.375em;
         }
 
         .contact-footer .icon-link {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 2.2em;
-            height: 2.2em;
+            width: 2.25em;
+            height: 2.25em;
             color: var(--ink-ghost);
-            transition: color 150ms ease, background-color 150ms ease;
+            transition: color 180ms ease, background-color 180ms ease;
             border-radius: 4px;
         }
 
         .contact-footer .icon-link:hover {
             color: var(--ink);
-            background-color: var(--paper-alt);
+            background-color: var(--paper-tint);
         }
 
-        .contact-footer .icon-link svg {
-            display: block;
+        .contact-footer .icon-link svg { display: block; }
+
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           UTILITIES
+           ═══════════════════════════════════════════════════════════════════════════════ */
+        ::selection { background: var(--ink); color: var(--paper); }
+
+        a:focus-visible {
+            outline: 2px solid var(--ink-muted);
+            outline-offset: 3px;
+            border-radius: 2px;
         }
 
-        /* ════════════════════════════════════════════
-           Responsive
-           ════════════════════════════════════════════ */
-        @media (max-width: 640px) {
-            .container {
-                padding: var(--space-xl) var(--space-sm) var(--space-lg);
-            }
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           RESPONSIVE
+           ═══════════════════════════════════════════════════════════════════════════════ */
+        @media (max-width: 680px) {
+            :root { --text-base: clamp(17px, 1rem + 0.2vw, 19px); }
 
-            .article-title {
-                font-size: var(--text-xlarge);
-            }
+            .container { padding: var(--space-6) var(--gutter) var(--space-5); }
 
-            .article-subtitle {
-                font-size: var(--text-base);
-            }
+            .article-title { font-size: var(--text-xl); }
+            .article-subtitle { font-size: var(--text-base); }
+            .article-body h1 { font-size: var(--text-lg); }
+            .article-body h2 { font-size: calc(var(--text-base) * 1.1); }
 
-            .article-body h1 {
-                font-size: var(--text-large);
-            }
-
-            .article-body h2 {
-                font-size: calc(var(--text-base) * 1.1);
-            }
-
-            .toc {
-                padding: var(--space-md);
-            }
+            .toc { padding: var(--space-3); }
 
             .article-footer {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: var(--space-sm);
+                gap: var(--space-2);
             }
 
             .contact-footer {
                 flex-direction: column;
-                gap: var(--space-md);
+                gap: var(--space-3);
                 text-align: center;
             }
         }
 
-        /* ════════════════════════════════════════════
-           Print
-           ════════════════════════════════════════════ */
+        @media (max-width: 400px) {
+            :root { --text-base: 16px; }
+            .container { padding: var(--space-5) var(--space-2) var(--space-4); }
+        }
+
+        @media (min-width: 1200px) {
+            .container { padding-top: var(--space-13); }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           PRINT
+           ═══════════════════════════════════════════════════════════════════════════════ */
         @media print {
-            :root {
-                --ink: #000;
-                --paper: #fff;
-            }
+            :root { --ink: #000; --paper: #fff; }
+            body { font-size: 11pt; line-height: 1.4; }
+            .container { max-width: 100%; padding: 0; }
+            .back-nav, .contact-footer { display: none; }
+            a { text-decoration: none !important; color: var(--ink) !important; }
+            .article-body h1, .article-body h2 { page-break-after: avoid; }
+            .toc { page-break-after: always; }
+        }
 
-            body {
-                font-size: 11pt;
-                line-height: 1.4;
-            }
-
+        /* Safe area insets for notched devices */
+        @supports (padding: max(0px)) {
             .container {
-                max-width: 100%;
-                padding: 0;
+                padding-left: max(var(--gutter), env(safe-area-inset-left));
+                padding-right: max(var(--gutter), env(safe-area-inset-right));
             }
-
-            .back-nav { display: none; }
-            .contact-footer { display: none; }
-
-            a {
-                text-decoration: none !important;
-                color: var(--ink) !important;
-            }
-
-            .article-body h1,
-            .article-body h2 {
-                page-break-after: avoid;
-            }
-
-            .toc {
-                page-break-after: always;
-            }
-        }
-
-        /* ════════════════════════════════════════════
-           Selection & Focus
-           ════════════════════════════════════════════ */
-        ::selection {
-            background: var(--ink);
-            color: var(--paper);
-        }
-
-        a:focus-visible {
-            outline: 2px solid var(--ink-secondary);
-            outline-offset: 4px;
-            border-radius: 2px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <nav class="back-nav">
-            <a href="/">← Raeez Lorgat</a>
+            <a href="writing.html">← Writing</a>
         </nav>
 
         <article>
@@ -650,13 +562,13 @@
 
             <div class="article-body">
 <p>Abstract. Recent advances in tokenomic incentive coordination technology enable experience-based monetization of IP extending traditional loyalty programs. Novel tools are specified that enable holders of IP to erect for-profit finite-support<sup><a href="#ftnt1">[1]</a></sup> analogues of hyperstructures<sup><a href="#ftnt2">[2]</a></sup>.</p><p>Who is the user? Across large to small scale, from premium IP brands to underground artists, all have in common stakeholders who manage the monetization of any given IP property. The generic user archetype has no understanding of web3, crypto, or technology in general. They understand the emotional characteristics and vibe of their IP property, they understand their audience deeply, they understand the memetics of their subculture and are ready to manage a growing community of participants. The primary goal is to monetize the IP, either direct ownership of the IP could be monetized or a lease or sublease of some aspect of the IP may be monetized. In all cases, the primary user driving the use of Moxie IPOS is always an IP holder who wants to monetize their IP by deploying experiences to the fanbase of that IP property.</p><p>In this setting Moxie provides an operating suite of tools as well as an admin dashboard allowing users to register IP and launch experiences monetizing registered IP, all the while building fan engagement through a loyalty program dedicated to that IP universe. The same dashboard gives IP holders who register with Moxie an ongoing toolkit for the management of the fanbase and growing community around these experiences, including tools for IP infringement detection, engagement visualization and community controls, and ongoing management and parameterization of the deployed experiences monetizing the IP. Ultimately these tools are deployed in pursuit of growing fandom and engagement, as crystallized in a points- or token-based loyalty program driving incentivization of community behavior.</p><p>For example, we can treat the UFC as a pilot user of the Moxie OS, allowing the innovation lab / incubator (Concept Labs<span>) to register UFC IP on Moxie and deploy a set of experiences for purchase or as a reward, including:<br></span></p><ul><li>Sale of UFC fight Tickets</li><li>Merchandise and Experience Redemption Store, with a timed drop mechanic encouraging UFC fans to queue up for a limited release of rare experiences, such as the chance to meet celebrity fighters or step into the Octagon post-fight and take selfies</li><li>Prediction markets for upcoming UFC fights, furnishing ongoing behind the scenes season-by-season predictions<br></li></ul><p>All of which interact with the upcoming on-chain UFC loyalty program, as realized by the $FIGHT token. This loyalty program is designed in such a way as to drive buy and hold pressure for the UFC token. A central mechanic at play is the deployment of merchandise and custom experience redemption via a timed drop mechanic.<sup><a href="#ftnt3">[3]</a></sup></p><p>User Archetypes. The primary user archetype engaging directly with the Moxie IPOS itself is always an IP Holder, in all cases either the original IP owner or an IP lessee (or sublessee). The secondary user archetype is the end-user who themselves are a client of the IP owner’s launch on the Moxie platform, and in most cases are active participants in the fandom around the IP property, either as direct fans (consumers) or via revenue-sharing from the growth of the IP (businesses). All end-users consume outputs from Moxie, extending, enriching and participating in fandom and loyalty experiences launched on the Moxie platform by the IP holder.</p><p>[ R: We need a diagram here showing how value flows between IP holders ←→ businesses ←→ retail (B2B2C), or directly from IP holders to retail to (B2C) ]</p><p>IP Holders. For this user archetype Moxie ships a Shopify “merchant builder” for IP Monetization that allows the user to seamlessly launch, in a no-code fashion, complete end-user experiences powered by the launch of one or more tokens. The Moxie user dashboard allows the IP holder to onboard an IP property onto the Moxie IPOS, in the process potentially launching or managing two general kinds of loyalty points or tokens:</p><ul><li>security points/tokens (RWA), potentially onboarding the IP on chain, allowing direct B2B monetization via businesses who extend the fandom through experiences and services rendered by subleasing the IP and/or participating in revenue share with the IP Holder.</li><li>utility points/tokens, not necessarily onboarding the IP as an asset on-chain, but rather launching and sustaining an ecosystem or utility token typically allowing direct experience-driven B2C monetization via experiences consumed by retail</li></ul><p>Deployments of all experiences on the Moxie platform are extensible via Moxie API’s, allowing IP holders to employ teams of experience developers to extend a selection of basic offerings provided by Moxie.</p><p>Once an IP Holder has launched a registered IP on Moxie IPOS, they benefit from 24/7 automated AI-driven IP infringement detection and legal protection services (automatic issuing of DMCA takedown notices to infringers online and offline, as detected via social media, web search etc.)</p><p>The Moxie dashboard provides an ongoing suite of monitoring tools to track and visualize community engagement in various experiences delivered to the community, identify whale holders of the underlying point(s)/token(s), list and take action on IP infringements, and track revenue shares out of experiences mediated by tokens (both utility and security).</p><p>End Users. Two primary kinds of end-users: businesses and consumers. Both businesses and consumers interact with a hybrid of offline and online experiences</p><ul><li>Businesses typically participate in the fandom around the IP property by providing retail experiences in return for revenue generating potential, typically via production of privately rendered experiences using the IP. e.g. an icecream store can sell pikachu branded ice cream. Businesses may also participate in the fandom around the IP property by speculating on the token, and/or participating in revenue sharing with the IP holder. </li></ul><ul><li>Consumers typically participate in the fandom to form a deeper emotional connection with the IP universe as well as other fans. Consumers may also speculate on the growth in engagement and popularity of the IP. Consumers directly engage with the IP both financially and emotionally, transforming passive consumption into active participation and deepening the IP–fan connection.</li></ul><p>Once an end-user participates within the IP fandom around a Moxie launch, either extending the experience set or consuming from it, they generically earn towards a native fandom loyalty program as measured in accumulated points or tokens.</p><p>Points, Tokens &amp; Experiences. In addition to a basic (non-tradable) “fandom” (i.e. social) loyalty score<sup><a href="#ftnt4">[4]</a></sup>, there are broadly speaking two categories of points or tokens launched on the Moxie platform: securitized points/tokens and utility points/tokens. Corresponding to each category, Moxie facilitates the IP holder’s launching of experiences mediated by token holders. Experiences may be launched directly by the IP Holder (B2C) or alternatively experiences may be launched by businesses that contract in with the IP holder through the acquisition of a securitized token (B2B2C).</p><p>Basic experiences offered by default on platform in the B2C category are:</p><ul><li>(Core Mechanic) Experience &amp; Merch Redemption Drop Store On schedule unique merch and boutique experiences are revealed and dropped to the community. Participation requires staking the base token, and minimum staking rates are communicated before the reveal. Experiences may be delivered by random choice to a staker, which may include the ability to purchase an item with additional base token. Staking must take place in a window period before the drop occurs, and a global countdown on the drop store builds anticipation within the community. Example: redeem a universal pass to skip all queues at the fifa 2026 world cup. The schedule for these drops is communicated to the community ahead of time, but the experiences that can be redeemed are kept hidden until the reveal. A core principle in order for this mechanic to work: experiences or merch randomly revealed in the drop must in principle attain arbitrarily high monetary value over the lifecycle of all drops.</li></ul><ul><li>(Onboarding) Ticketing Engine Tickets for events can be purchased using usual payment methods (credit/debit card). Event management allows the creation of events, with specified parameters (ticket supply, ticket engagement rules, rewards). Users may earn rewards in the base token as well as fandom score .</li></ul><ul><li>(Gambling/Gaming) Prediction Market Fans can trade shares in a prediction liquidity pool in return for fiat or the base token.</li></ul><ul><li>(Social Fandom) Leaderboard Fans can view community leaders in terms of fandom score, token holdings/staking rates and redemptions.</li></ul><p>Meanwhile, in the B2B2C category, the following securities are available by default:</p><ul><li>Likeness reproduction</li><li>Audio/Video Content Lease</li><li>(Crowd) Fundraising</li><li>…<br></li></ul><p>Moxie Dashboard Flows. IP Holders can use the Moxie no-code dashboard to:</p><ul><li>Register IP on the Moxie Platform</li><li>Fair Launch Points/Tokens </li></ul><ul><li>Securitized Points/Tokens which grant revenue-sharing and IP sublease rights</li><li>Utility (Application) Points/tokens</li><li>Persona-driven Secondary Points/Tokens</li></ul><ul><li>Direct launch and manage utility experiences</li></ul><ul><li>Whitelabeled Prediction Market</li><li>Merchandise/Experience Redemption Storefront</li><li>Ticket Onramp</li><li>Gated Content Unlock</li><li>Fantasy League</li><li>Community Leaderboard</li></ul><ul><li>Direct launch and manage security experiences</li></ul><ul><li>Enable businesses to reproduce likeness of characters and logos, with ongoing licensing fees payable by the token holder</li><li>Enable businesses to reproduce content (e.g. audio or video) in a limited format, with ongoing licensing fees payable by the token holder</li><li>Crowd fundraise in return for fractional ownership of the underlying IP (in either lease format or direct ownership)</li></ul><ul><li>Track, Monitor and Manage IP Infringements</li></ul><p>Prospective Launch Clients. Founders collected relationships with the following pilot IP brands:</p><ol start="1"><li>UFC</li></ol><ol start="1"><li>Token</li><li>Prediction market</li><li>Ticketing</li><li>Merch/Experience redemption</li></ol><ol start="2"><li>Doge Only Fans</li></ol><ol start="1"><li>Merch/Experience redemption</li><li>Gated Content Unlock</li></ol><ol start="3"><li>Tokyo Street Drifting Community</li></ol><ol start="1"><li>Token(s)</li></ol><ol start="1"><li>Rider backing</li></ol><ol start="2"><li>Prediction Market</li><li>Merch/Experience Redemption</li></ol><ol start="4"><li>Fifa (ongoing)</li></ol><ol start="1"><li>Token</li><li>Prediction Market</li><li>Ticketing</li><li>Merch/Experience redemption</li></ol><ol start="5"><li>Fifa World Cup 2026, with streaming rights</li></ol><ol start="1"><li>Token</li><li>Prediction Market</li><li>Ticketing</li><li>Merch/Experience redemption</li><li>Streaming rights</li></ol><ol start="6"><li>Universal Music Catalogue</li></ol><ol start="1"><li>Universal Token</li><li>Merch</li><li>Artist Ticketing</li><li>Promoter Incentivization</li></ol><ol start="7"><li>Custom Ronaldo vs. Messi end of 2025/beginning 2026 game</li></ol><ol start="1"><li>Prediction market</li><li>Ticketing</li><li>Merch/Redemption Market</li></ol><ol start="8"><li>Warner Music Catalogue</li></ol><ol start="1"><li>Warner Token</li><li>Merch</li><li>Artist Ticketing</li><li>Promoter Incentizitaino</li></ol><ol start="9"><li>Tier 3 metal bands</li></ol><ol start="1"><li>E.g. Megadeth</li></ol><ol start="10"><li>Agnez Mo Music </li><li>SHE Shorts</li></ol><h3 id="h.h9vezuev20bw">Default Experience Specs.</h3><ol start="1"><li>Experience &amp; Merch Redemption Drop</li></ol><ol start="1"><li>Calendar input allows the scheduling of Drops </li><li>Participation in any given drop requires staking a base utility token</li></ol><ol start="1"><li>Staking minimum for participation is communicated ahead of time, before staking period commences</li><li>After staking commences, there is a countdown period (with publicly available timer) where fans can stake an arbitrary quantity (above the minimum) of the base token.</li><li>The combination of a bonding curve (how early the user stakes) as well as the amount staked determines the probability the user will be dropped an interesting reward</li><li>Rewards may be either, both or a combination of, an item received for no further contribution (special event tickets, meet and hang out with a celebrity, gain access to a private party, public shoutout, custom limited release merchandise) or the opportunity to buy rare items or experiences from a limited release storefront.</li></ol><ol start="3"><li>Multiple drops may take place simultaneously</li><li>Drops can be scoped to secondary personas or occur at the top-level</li><li>Arbitrarily high monetary value experiences, merchandise and items can be redeemed via this drop mechanic</li><li>The Moxie dashboard allows the full customization and configuration of drops, including inventory and supply management, branding, theming and communications with the fanbase.<br></li></ol><ol start="2"><li>Ticketing Engine</li></ol><ol start="1"><li>Event management allows the creation of multiple dated, location-specified events, with specified parameters</li></ol><ol start="1"><li>ticket supply &amp; ticket categories, with distinct purchase prices</li><li>ticket engagement rules, disclaimers</li><li>Rewards &amp; perks for particular ticket types</li><li>Events display relevant meta-data</li></ol><ol start="1"><li>date/start time/end time</li><li>Event map</li><li>public/private toggled guest list, number of guests</li><li>pubic/private toggled comments, with emoji reactions</li></ol><ol start="2"><li>Ticket supply can be titrated, including</li></ol><ol start="1"><li>Enable/Disable sharing/secondary sale of tickets</li></ol><ol start="1"><li>Shareable QR codes</li></ol><ol start="2"><li>Enable/Disable Promo codes for discounts on tickets</li><li>Limits on the number of tickets an identity can purchase/redeem</li></ol><ol start="3"><li>Users may earn rewards in the base token as well as fandom score .</li></ol><ol start="3"><li>Prediction Market</li></ol><ol start="1"><li>Fans can trade shares in prediction liquidity pools in return for fiat or base utility token participation</li><li>Permissioned creation of betting markets split into three categories</li></ol><ol start="1"><li>Binary option primary scenarios (UFC fights, Fifa football matches, Tokyo Street drift races)</li><li>Secondary Scenarios extend the base binary options with Categorical, Scalar, Combinatorial or Parameterized markets, optionally sub-scoped to particular Primary Scenarios</li><li>Real-time scenarios include blow-by-blow scenarios created in-game or mid-match</li></ol><ol start="3"><li>Scenario Resolution is controlled from the admin dashboard</li><li>The above design specifically allows for:</li></ol><p>"Hype Feed" Embedded Markets</p><ul><li>Live Twitter/X feeds + predictive overlays during fight week</li><li>Real-time market creation based on interviews, weigh-ins, press conferences</li><li>Markets like: “Will McGregor trash-talk Chandler’s mom?”<br></li></ul><p>Narrative/Meta Prediction Layer</p><ul><li>Long-tail bets on UFC culture, rumors, and narratives<br></li></ul><ul><li>“Will Khamzat miss weight?”</li><li>“Will Dana White announce new weight class in Q3?”</li><li>“Will Rogan say ‘world-class striker’ in first 5 mins?”<br></li></ul><ol start="4"><li>Leaderboard The leaderboard aggregates a composite score across the following weighted dimensions:</li></ol><ul><li>Token Metrics<br></li></ul><ul><li>base token holdings</li><li>Time-weighted staking duration</li><li>Participation in secondary persona tokens<br></li></ul><ul><li>Experience Engagement<br></li></ul><ul><li>Redemption of merch/experiences via drop store</li><li>Attendance at ticketed events</li><li>Win/loss record in prediction markets<br></li></ul><ul><li>Prediction Accuracy<br></li></ul><ul><li>ROI on trades in prediction markets</li><li>Bonus points for early/contrarian correct positions<br></li></ul><ul><li>Cultural Engagement<br></li></ul><ul><li>Participation in narrative/meta layer markets (e.g., “Will Khamzat miss weight?”)</li><li>Interactions with real-time “Hype Feed” overlays (weigh-in reactions, press conf bets)</li><li>Meme curation: verified submissions used in official UFC social or Moxie embeds<br></li></ul><ul><li>Community Recognition<br></li></ul><ul><li>Received community badges</li><li>Upvoted fan content (clips, reactions, tweets)</li><li>Featured in weekly "Top 10 Fan Moments"<br></li></ul><p>Allow users to opt-in their X/Twitter handles to connect community profiles and hence leaderboard positions with real-world identities and boost social clout.</p><ol start="4"><li>🥇 Overall Leaders</li><li>🔮 Prediction Kings — top ROI + accuracy across all markets</li><li>🎟️ Event Streakers — most consecutive IRL/URL ticketed events attended</li><li>🔥 Drop Hunters — most rare drop redemptions</li><li>🧠 Lore Masters — active in narrative/meta markets + content submission</li><li>💬 Social Stars — most fan upvotes, content impressions<br></li></ol><ol start="5"><li>Secondary Persona Utility Tokens In most competitive sports scenarios, and in many creator-driven economies, it is natural to launch a secondary set of tokens, one for each Persona:</li></ol><ol start="1"><li>Individual persona tokens allow for speculation and support for the brand of celebrity participants (e.g. UFC fighters, Ronaldo and Messi as football players)</li><li>Secondary persona tokens can be staked alongside the base utility token to extend the Merch &amp; Experience redemption drop mechanic, to enable the redemption of merchandise and experiences tailored specifically to the persona</li><li>… </li></ol><p>Open Source, extensible experiences. By default experiences are open-source applications listed on github, built using published Moxie API’s. Default experiences ship with rich documentation and tutorials detailing the extension or specialization of existing, or construction of new experiences.</p><p>Appendix: Cindy Wu &amp; Jordan Friedman’s Notes, mixed in with comments on a discussion With James Lucas. Feature Spec follows.</p><p>Token Creation and Feature management of tokens</p><ul><li>Multiple floor-preserving fair launch mechanisms (e.g. Nirvana Model)</li></ul><ul><li>Tokenomics</li></ul><ul><li>Premade tokenomics models to follow</li><li>Private launches and public launches</li></ul><ul><li>These serve different purposes</li></ul><ul><li>IP marketplace so that people who want to use the IP to launch something publicly can discover IP’s on the marketplace that are open to collaboration</li></ul><ul><li>Type of IP being used matters</li></ul><ul><li>need some proof that the user owns the IP</li></ul><ul><li>Need to add art</li><li>Need ability to set raise amounts before IP Launchers can collect money for certain types of projects</li><li>Ability to make landing page website for the launch</li><li>Need to handle legal (copyright etc)</li></ul><ul><li>Infringement monitoring<sup><a href="#cmnt1">[a]</a></sup></li></ul><ul><li>Potentially need to upsell foundation or other entity</li><li>Launch Ecosystem</li></ul><ul><li>Marketing agencies</li><li>Dex’s (listing partners… Moonshot)</li></ul><ul><li>Dropship branded product connection (printify)</li></ul><ul><li>Helps people sell IP branded things with built in royalties</li></ul><p>Launchpad hub for end user (token buyer): Premium Pump.fun</p><ul><li>See new tokens</li><li>make trades</li><li>engage in community</li></ul><p>AI Remixing</p><ul><li>Remixing videos and music from the IP </li></ul><p>Dashboard</p><p>Community management? </p><p>Traditional RWA through Reg A/Reg D/ Form C</p><ul><li>Use Mass</li></ul><p>Types of IP</p><ul><li>Major brands</li></ul><ul><li>UFC</li><li>Fifa</li></ul><ul><li>Music</li><li>Art </li><li></li></ul><p>Whiteglove service: </p><ul><li>I think most initial clients are going to need a lot of hand holding from a design and development standpoint. We will need a number of solid launches before </li></ul><p>Fight – Prediction Market</p><p>Dogely Fans – onlyfans doge edition</p><div></div><hr><div><p><a href="#ftnt_ref1">[1]</a> finite-support qualifies the observation that these analogues are not hyperstructures in the sense of the original definition: they are neither free, unstoppable, credibly neutral, or permissionless. The relaxing of these public good characteristics of a hyperstructure results in incentives that obstruct the “hyperstructure” from existing indefinitely without the IP holder’s consent and participation. For a concrete example, Moxie enables the deployment of experiences for a limited time only, e.g. in the case of a time-bounded IP lease.</p></div><div><p><a href="#ftnt_ref2">[2]</a>
-<span><a href="https://www.google.com/url?q=https://nicogs.medium.com/hyperstructures-5e6f36c2c82b&amp;sa=D&amp;source=editors&amp;ust=1767430267354154&amp;usg=AOvVaw0Hx3piMmYvAP5JksD_0Vfc">https://nicogs.medium.com/hyperstructures-5e6f36c2c82b</a></span></p></div><div><p><a href="#ftnt_ref3">[3]</a> See later section Default Experience Lightweight Specs.</p></div><div><p><a href="#ftnt_ref4">[4]</a> Leaderboards will always, for example, show the social (user lifetime) score alongside more fungible loyalty scores.</p></div><div><p><a href="#cmnt_ref1">[a]</a>this is actually huge</p></div>
+<span><a href="https://www.google.com/url?q=https://nicogs.medium.com/hyperstructures-5e6f36c2c82b&amp;sa=D&amp;source=editors&amp;ust=1767499100906068&amp;usg=AOvVaw0G3vr0Ijitvt8l3tl09626">https://nicogs.medium.com/hyperstructures-5e6f36c2c82b</a></span></p></div><div><p><a href="#ftnt_ref3">[3]</a> See later section Default Experience Lightweight Specs.</p></div><div><p><a href="#ftnt_ref4">[4]</a> Leaderboards will always, for example, show the social (user lifetime) score alongside more fungible loyalty scores.</p></div><div><p><a href="#cmnt_ref1">[a]</a>this is actually huge</p></div>
             </div>
 
             <footer class="article-footer">
                 <p class="author-byline"><strong>Raeez Lorgat</strong>, Managing Partner at Momentum</p>
                 <nav class="footer-nav">
-                    <a href="/">← All Papers</a>
+                    <a href="writing.html">← All Writing</a>
                 </nav>
             </footer>
 
@@ -684,4 +596,3 @@
     </div>
 </body>
 </html>
-              

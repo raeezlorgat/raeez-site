@@ -35,8 +35,14 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 
     <style>
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           RESET
+           ═══════════════════════════════════════════════════════════════════════════════ */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           DESIGN TOKENS — ELITE TYPOGRAPHY SYSTEM
+           ═══════════════════════════════════════════════════════════════════════════════ */
         :root {
             --font-text: 'garamond-premier-pro', 'EB Garamond', 'Hoefler Text', Garamond, serif;
             --font-display: 'garamond-premier-pro-display', var(--font-text);
@@ -78,6 +84,9 @@
             --optical-margin: -0.03em;
         }
 
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           BASE TYPOGRAPHY
+           ═══════════════════════════════════════════════════════════════════════════════ */
         html {
             font-size: 100%;
             -webkit-text-size-adjust: 100%;
@@ -101,14 +110,23 @@
             font-variant-ligatures: common-ligatures discretionary-ligatures contextual;
             font-variant-numeric: oldstyle-nums proportional-nums;
             font-kerning: normal;
+            hyphens: auto;
+            hyphenate-limit-chars: 6 3 2;
+            hyphenate-limit-lines: 2;
         }
 
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           LAYOUT
+           ═══════════════════════════════════════════════════════════════════════════════ */
         .container {
             max-width: calc(var(--measure) + var(--space-8));
             margin-inline: auto;
             padding: var(--space-10) var(--gutter) var(--space-8);
         }
 
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           HEADER
+           ═══════════════════════════════════════════════════════════════════════════════ */
         .header {
             display: flex;
             align-items: center;
@@ -162,6 +180,9 @@
 
         nav a:hover { color: var(--ink); }
 
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           TAGLINE
+           ═══════════════════════════════════════════════════════════════════════════════ */
         .tagline {
             font-family: var(--font-text);
             font-size: var(--text-base);
@@ -173,32 +194,98 @@
             font-feature-settings: "kern" 1, "liga" 1, "dlig" 1, "calt" 1, "onum" 1;
         }
 
-        .beats {
-            margin-top: var(--space-6);
-            line-height: 1.9;
-        }
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           STORY
+           ═══════════════════════════════════════════════════════════════════════════════ */
+        .story { margin-top: var(--space-6); }
 
-        .beats p {
-            margin-bottom: var(--space-1);
+        .story p {
+            margin-bottom: var(--space-3);
             max-width: var(--measure);
+            line-height: var(--leading-relaxed);
         }
 
-        .beats a {
+        .story p:first-of-type::first-letter {
+            font-size: 1.08em;
+            font-weight: 500;
+        }
+
+        .story a {
             color: var(--ink);
             text-decoration: underline;
             text-decoration-color: var(--ink-whisper);
             text-decoration-thickness: 1px;
             text-underline-offset: 0.15em;
+            text-decoration-skip-ink: auto;
             transition: text-decoration-color 180ms ease;
         }
 
-        .beats a:hover { text-decoration-color: var(--ink-muted); }
+        .story a:hover { text-decoration-color: var(--ink-muted); }
 
-        .highlight {
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           PHOTOS
+           ═══════════════════════════════════════════════════════════════════════════════ */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2);
+            margin: var(--space-5) 0;
+        }
+
+        .photo-grid img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+
+        .photo-caption {
+            font-family: var(--font-caption);
+            font-size: var(--text-sm);
+            color: var(--ink-faint);
+            font-style: italic;
+            margin-top: calc(-1 * var(--space-1));
+            margin-bottom: var(--space-5);
+            line-height: var(--leading-snug);
+            font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           CLIMAX
+           ═══════════════════════════════════════════════════════════════════════════════ */
+        .climax {
             font-weight: 500;
+            margin-top: var(--space-5);
+            margin-bottom: var(--space-3);
+            letter-spacing: var(--kern-snug);
             font-feature-settings: "kern" 1, "liga" 1, "lnum" 1;
         }
 
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           EPIGRAPH
+           ═══════════════════════════════════════════════════════════════════════════════ */
+        .epigraph {
+            margin: var(--space-8) 0;
+            padding-left: var(--space-3);
+            border-left: 2px solid var(--ink-hint);
+        }
+
+        .epigraph blockquote {
+            font-style: italic;
+            color: var(--ink-muted);
+            margin-bottom: var(--space-1);
+            font-feature-settings: "kern" 1, "liga" 1, "dlig" 1, "onum" 1;
+        }
+
+        .epigraph cite {
+            font-size: var(--text-sm);
+            font-style: normal;
+            color: var(--ink-faint);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           FOOTER
+           ═══════════════════════════════════════════════════════════════════════════════ */
         .footer {
             margin-top: var(--space-13);
             padding-top: var(--space-5);
@@ -246,6 +333,9 @@
             border-radius: 2px;
         }
 
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           MOBILE
+           ═══════════════════════════════════════════════════════════════════════════════ */
         @media (max-width: 680px) {
             :root { --text-base: clamp(17px, 1rem + 0.2vw, 19px); }
 
@@ -267,7 +357,10 @@
                 margin-bottom: var(--space-5);
             }
 
-            .beats { margin-top: var(--space-5); }
+            .story { margin-top: var(--space-5); }
+
+            .photo-grid { grid-template-columns: 1fr; }
+            .photo-grid img { aspect-ratio: 3 / 2; }
 
             .footer {
                 flex-direction: column;
@@ -310,23 +403,52 @@
         <div class="header-text">
             <h1 class="name">Raeez Lorgat</h1>
             <nav>
-                <a href="about.html">About</a>
                 <a href="mass.html">Mass</a>
                 <a href="writing.html">Writing</a>
                 <a href="experience.html">Experience</a>
                 <a href="beauty.html">Beauty</a>
+                <a href="devfinance.html">/dev/finance</a>
             </nav>
         </div>
     </header>
 
     <p class="tagline">Building operating systems for sovereignty</p>
 
-    <main class="beats">
-        <p>In 1994, apartheid fell. I learned institutions are just agreements.</p>
-        <p>In 2007, <a href="https://www.ll.mit.edu">MIT Lincoln Lab</a> named <a href="https://www.spacereference.org/asteroid/23122-lorgat-2000-au52">asteroid 23122 Lorgat</a> after me.</p>
-        <p>In 2009, we built <a href="https://stripe.com">Stripe</a>.</p>
-        <p>I spent a decade studying <a href="beauty.html">beautiful mathematics</a>.</p>
-        <p>Then I built <a href="mass.html">Mass</a>. <span class="highlight">$1B in 2025.</span></p>
+    <main class="story">
+        <p>In 1994, apartheid fell. My family left South Africa for the UK. I learned early: institutions are just agreements—and agreements can be rewritten.</p>
+
+        <p>In 2007 I won <a href="https://en.wikipedia.org/wiki/International_Science_and_Engineering_Fair">Intel ISEF</a>. <a href="https://www.ll.mit.edu">MIT's Lincoln Laboratory</a> named <a href="https://en.wikipedia.org/wiki/Minor_planet">minor planet</a> <a href="https://www.spacereference.org/asteroid/23122-lorgat-2000-au52">23122 Lorgat</a> after me. MIT followed.</p>
+
+        <p>At MIT I met <a href="https://en.wikipedia.org/wiki/Patrick_Collison">Patrick Collison</a>. In 2009, we dropped out—Patrick and <a href="https://en.wikipedia.org/wiki/John_Collison">John</a> from Harvard, me from MIT—and moved into an apartment in Palo Alto. We built <a href="https://stripe.com">Stripe</a>.</p>
+
+        <div class="photo-grid">
+            <img src="IMG_1987.JPG" alt="Flying up the Pacific coast, 2009">
+            <img src="IMG_1989.JPG" alt="Patrick's first international flight">
+        </div>
+        <p class="photo-caption">Palo Alto to Vancouver, 2009. Patrick's first international flight. My first flight ever.</p>
+
+        <div class="photo-grid">
+            <img src="IMG_1976.JPG" alt="701 Webster Street">
+            <img src="IMG_1978.JPG" alt="Building Stripe">
+        </div>
+        <p class="photo-caption">701 Webster Street. We cold-called banks and wrote the code that would process hundreds of billions of dollars a year.</p>
+
+        <p>Stripe taught me the real problem: not payments, but the exponential friction of global compliance. Every jurisdiction, a different rulebook. Every border, a wall of paperwork.</p>
+
+        <p>So I returned to what I loved. I spent a decade at MIT and the <a href="https://perimeterinstitute.ca">Perimeter Institute</a> studying <a href="https://en.wikipedia.org/wiki/Arithmetic_geometry">arithmetic geometry</a>, <a href="https://en.wikipedia.org/wiki/Factorization_algebra">factorization algebras</a>, and the geometry of <a href="https://en.wikipedia.org/wiki/Quantum_field_theory">quantum field theory</a>. Not because it was useful—<a href="beauty.html">because it was beautiful</a>. The mathematics of how local structures compose into global ones.</p>
+
+        <div class="epigraph">
+            <blockquote>"The mathematics was beautiful—not useful, beautiful. Utility came later, almost by accident."</blockquote>
+            <cite>— from <a href="beauty.html">Beauty</a></cite>
+        </div>
+
+        <p>It turns out that understanding how things compose is useful for building institutions.</p>
+
+        <p><a href="mass.html">Mass</a> is a new kind of network where the nodes are sovereign jurisdictions. Automated incorporation, structuring, compliance, banking and legal operations as APIs. Assets carry their own compliance. Live across US, Cayman, BVI, and <a href="https://prospera.hn">Próspera</a>.</p>
+
+        <p class="climax">We crossed $1B in 2025.</p>
+
+        <p><a href="https://momentum.inc">Momentum</a> is the fund building this ecosystem, headquartered on Saadiyat Beach in Abu Dhabi.</p>
     </main>
 
     <footer class="footer">

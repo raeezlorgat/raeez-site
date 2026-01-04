@@ -35,8 +35,14 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 
     <style>
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           RESET
+           ═══════════════════════════════════════════════════════════════════════════════ */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           DESIGN TOKENS — ELITE TYPOGRAPHY SYSTEM
+           ═══════════════════════════════════════════════════════════════════════════════ */
         :root {
             --font-text: 'garamond-premier-pro', 'EB Garamond', 'Hoefler Text', Garamond, serif;
             --font-display: 'garamond-premier-pro-display', var(--font-text);
@@ -78,6 +84,9 @@
             --optical-margin: -0.03em;
         }
 
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           BASE TYPOGRAPHY
+           ═══════════════════════════════════════════════════════════════════════════════ */
         html {
             font-size: 100%;
             -webkit-text-size-adjust: 100%;
@@ -103,12 +112,18 @@
             font-kerning: normal;
         }
 
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           LAYOUT
+           ═══════════════════════════════════════════════════════════════════════════════ */
         .container {
             max-width: calc(var(--measure) + var(--space-8));
             margin-inline: auto;
             padding: var(--space-10) var(--gutter) var(--space-8);
         }
 
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           HEADER
+           ═══════════════════════════════════════════════════════════════════════════════ */
         .header {
             display: flex;
             align-items: center;
@@ -162,6 +177,9 @@
 
         nav a:hover { color: var(--ink); }
 
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           TAGLINE
+           ═══════════════════════════════════════════════════════════════════════════════ */
         .tagline {
             font-family: var(--font-text);
             font-size: var(--text-base);
@@ -173,6 +191,9 @@
             font-feature-settings: "kern" 1, "liga" 1, "dlig" 1, "calt" 1, "onum" 1;
         }
 
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           MINIMAL BEATS
+           ═══════════════════════════════════════════════════════════════════════════════ */
         .beats {
             margin-top: var(--space-6);
             line-height: 1.9;
@@ -199,6 +220,9 @@
             font-feature-settings: "kern" 1, "liga" 1, "lnum" 1;
         }
 
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           FOOTER
+           ═══════════════════════════════════════════════════════════════════════════════ */
         .footer {
             margin-top: var(--space-13);
             padding-top: var(--space-5);
@@ -246,6 +270,9 @@
             border-radius: 2px;
         }
 
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           MOBILE
+           ═══════════════════════════════════════════════════════════════════════════════ */
         @media (max-width: 680px) {
             :root { --text-base: clamp(17px, 1rem + 0.2vw, 19px); }
 
@@ -310,11 +337,11 @@
         <div class="header-text">
             <h1 class="name">Raeez Lorgat</h1>
             <nav>
-                <a href="about.html">About</a>
                 <a href="mass.html">Mass</a>
                 <a href="writing.html">Writing</a>
                 <a href="experience.html">Experience</a>
                 <a href="beauty.html">Beauty</a>
+                <a href="devfinance.html">/dev/finance</a>
             </nav>
         </div>
     </header>

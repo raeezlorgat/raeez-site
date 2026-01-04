@@ -1,136 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Raeez Lorgat</title>
-  <subtitle>Essays on programmable sovereignty, institutional design, and mathematics</subtitle>
+  <subtitle>Building operating systems for sovereignty</subtitle>
   <link href="https://raeez.com/feed.xml" rel="self" type="application/atom+xml"/>
   <link href="https://raeez.com" rel="alternate" type="text/html"/>
   <id>https://raeez.com/</id>
-  <updated>2025-12-30T00:00:00Z</updated>
+  <updated>2026-01-04T03:00:52.749Z</updated>
   <author>
     <name>Raeez Lorgat</name>
     <email>raeez@momentum.inc</email>
     <uri>https://raeez.com</uri>
   </author>
-  <rights>© 2025 Raeez Lorgat</rights>
-
-  <entry>
-    <title>Open Source Special Economic Zone Legal, Fiscal &amp; Regulatory Stack</title>
-    <link href="https://raeez.com/sez-stack.html" rel="alternate" type="text/html"/>
-    <id>https://raeez.com/sez-stack.html</id>
-    <published>2025-12-01T00:00:00Z</published>
-    <updated>2025-12-01T00:00:00Z</updated>
-    <summary>Open source legal, fiscal, and regulatory infrastructure for special economic zones. Companion to the momentum-sez/stack public GitHub repository.</summary>
-    <category term="infrastructure"/>
-  </entry>
-
-  <entry>
-    <title>Competitive Topologies &amp; The Monopoly Problem: Why Democratic Institutions Need Competition</title>
-    <link href="https://raeez.com/competitive-topologies.html" rel="alternate" type="text/html"/>
-    <id>https://raeez.com/competitive-topologies.html</id>
-    <published>2025-11-15T00:00:00Z</published>
-    <updated>2025-11-15T00:00:00Z</updated>
-    <summary>A response to Eric Schmidt and Andrew Sorota's "This is No Way to Rule a Country" on why democratic institutions require competitive pressure.</summary>
-    <category term="infrastructure"/>
-  </entry>
-
-  <entry>
-    <title>Smart Assets</title>
-    <link href="https://raeez.com/smart-assets.html" rel="alternate" type="text/html"/>
-    <id>https://raeez.com/smart-assets.html</id>
-    <published>2025-10-01T00:00:00Z</published>
-    <updated>2025-10-01T00:00:00Z</updated>
-    <summary>Programmable primitive on a novel decentralized network embedding compliance, identity, and operational intelligence directly into assets.</summary>
-    <category term="infrastructure"/>
-  </entry>
+  <rights>© 2026 Raeez Lorgat</rights>
+  <icon>https://raeez.com/favicon.ico</icon>
+  <generator>Raeez Site Builder</generator>
 
   <entry>
     <title>Special Economic Zones in a Box</title>
     <link href="https://raeez.com/sez-in-a-box.html" rel="alternate" type="text/html"/>
     <id>https://raeez.com/sez-in-a-box.html</id>
-    <published>2025-09-15T00:00:00Z</published>
-    <updated>2025-09-15T00:00:00Z</updated>
-    <summary>From proof of scale to proof of network.</summary>
-    <category term="infrastructure"/>
+    <published>2026-01-04T03:00:52.749Z</published>
+    <updated>2026-01-04T03:00:52.749Z</updated>
+    <summary>A comprehensive framework for deploying turnkey Special Economic Zone infrastructure.</summary>
+    <category term="infrastructure" label="Infrastructure"/>
+    <content type="html">&lt;p&gt;&lt;em&gt;From Proof of Scale to Proof of Network&lt;/em&gt;&lt;/p&gt;<p>A comprehensive framework for deploying turnkey Special Economic Zone infrastructure.</p><p><a href="https://docs.google.com/document/d/1oTfyWyjEgBjWSw30W4BLQa029pMGJ7ciFDUzn4fUjj4">View on Google Docs</a></p></content>
   </entry>
 
   <entry>
-    <title>The Laboratory for Incentivization, Coordination and Cooperation (LICC)</title>
-    <link href="https://raeez.com/licc.html" rel="alternate" type="text/html"/>
-    <id>https://raeez.com/licc.html</id>
-    <published>2025-09-01T00:00:00Z</published>
-    <updated>2025-09-01T00:00:00Z</updated>
-    <summary>Research laboratory for mechanism design and coordination problems.</summary>
-    <category term="infrastructure"/>
-  </entry>
-
-  <entry>
-    <title>Moxie</title>
-    <link href="https://raeez.com/moxie.html" rel="alternate" type="text/html"/>
-    <id>https://raeez.com/moxie.html</id>
-    <published>2025-08-15T00:00:00Z</published>
-    <updated>2025-08-15T00:00:00Z</updated>
-    <summary>Programmable loyalty and rewards for large-distribution brands.</summary>
-    <category term="infrastructure"/>
-  </entry>
-
-  <entry>
-    <title>Momentum: Incubating Ecosystems</title>
-    <link href="https://raeez.com/momentum-monograph.html" rel="alternate" type="text/html"/>
-    <id>https://raeez.com/momentum-monograph.html</id>
-    <published>2025-08-01T00:00:00Z</published>
-    <updated>2025-08-01T00:00:00Z</updated>
-    <summary>Investment thesis and methodology for incubating programmable institutions.</summary>
-    <category term="infrastructure"/>
-  </entry>
-
-  <entry>
-    <title>Smart Buildings</title>
-    <link href="https://raeez.com/smart-buildings.html" rel="alternate" type="text/html"/>
-    <id>https://raeez.com/smart-buildings.html</id>
-    <published>2025-07-15T00:00:00Z</published>
-    <updated>2025-07-15T00:00:00Z</updated>
-    <summary>Towards a programmable built environment operating system.</summary>
-    <category term="built-environment"/>
+    <title>Competitive Topologies &amp; The Monopoly Problem</title>
+    <link href="https://raeez.com/competitive-topologies.html" rel="alternate" type="text/html"/>
+    <id>https://raeez.com/competitive-topologies.html</id>
+    <published>2026-01-04T03:00:52.749Z</published>
+    <updated>2026-01-04T03:00:52.749Z</updated>
+    <summary>Why Democratic Institutions Need Competition. A Response to Eric Schmidt and Andrew Sorota.</summary>
+    <category term="infrastructure" label="Infrastructure"/>
+    <content type="html">&lt;p&gt;&lt;em&gt;Why Democratic Institutions Need Competition&lt;/em&gt;&lt;/p&gt;<p>Why Democratic Institutions Need Competition. A Response to Eric Schmidt and Andrew Sorota.</p><p><a href="https://www.nytimes.com/2025/11/11/opinion/ai-democracy-government-authoritarianism.html">&quot;This Is No Way to Rule a Country&quot;</a></p></content>
   </entry>
 
   <entry>
     <title>Prefabricated Construction Methodologies</title>
     <link href="https://raeez.com/prefabricated-construction.html" rel="alternate" type="text/html"/>
     <id>https://raeez.com/prefabricated-construction.html</id>
-    <published>2025-07-01T00:00:00Z</published>
-    <updated>2025-07-01T00:00:00Z</updated>
-    <summary>Analysis of modern prefabrication techniques and their application to rapid infrastructure deployment.</summary>
-    <category term="built-environment"/>
+    <published>2026-01-04T03:00:52.749Z</published>
+    <updated>2026-01-04T03:00:52.749Z</updated>
+    <summary>This paper proposes a dual-track, industrialized response combining Precast Concrete and Modular Integrated BOX technologies.</summary>
+    <category term="built-environment" label="Built Environment"/>
+    <content type="html">&lt;p&gt;&lt;em&gt;A Dual-Track Industrialized Response for the UAE and Wider Middle East&lt;/em&gt;&lt;/p&gt;<p>This paper proposes a dual-track, industrialized response combining Precast Concrete and Modular Integrated BOX technologies.</p></content>
   </entry>
 
   <entry>
-    <title>Archai</title>
+    <title>The Momentum Open Source SEZ Stack</title>
+    <link href="https://raeez.com/sez-stack.html" rel="alternate" type="text/html"/>
+    <id>https://raeez.com/sez-stack.html</id>
+    <published>2025-12-15T00:00:00Z</published>
+    <updated>2025-12-15T00:00:00Z</updated>
+    <summary>The complete open-source stack for building and operating Special Economic Zones.</summary>
+    <category term="infrastructure" label="Infrastructure"/>
+    <content type="html">&lt;p&gt;&lt;em&gt;A Technical Specification for Programmable Jurisdictional Infrastructure&lt;/em&gt;&lt;/p&gt;<p>The complete open-source stack for building and operating Special Economic Zones.</p><p><a href="https://docs.google.com/document/d/18c076KBHJZLo-HZSI8rZM5l5xgzPJ_J1HHMHzafMg2Y">View on Google Docs</a></p></content>
+  </entry>
+
+  <entry>
+    <title>Momentum</title>
+    <link href="https://raeez.com/momentum-monograph.html" rel="alternate" type="text/html"/>
+    <id>https://raeez.com/momentum-monograph.html</id>
+    <published>2025-10-15T00:00:00Z</published>
+    <updated>2025-10-15T00:00:00Z</updated>
+    <summary>Momentum exists to originate, incubate, and scale programmable institutions into trillion-dollar market outcomes.</summary>
+    <category term="infrastructure" label="Infrastructure"/>
+    <content type="html">&lt;p&gt;&lt;em&gt;Incubating Ecosystems: A New Model for Capital Formation Through Jurisdictional Decentralization&lt;/em&gt;&lt;/p&gt;<p>Momentum exists to originate, incubate, and scale programmable institutions into trillion-dollar market outcomes.</p><p><a href="https://docs.google.com/document/d/170dFcQSTIIXgQYSaiL8BJYL8Az_Cj4llPrvU9OjB1DI">View on Google Docs</a></p></content>
+  </entry>
+
+  <entry>
+    <title>Smart Buildings</title>
+    <link href="https://raeez.com/smart-buildings.html" rel="alternate" type="text/html"/>
+    <id>https://raeez.com/smart-buildings.html</id>
+    <published>2025-10-15T00:00:00Z</published>
+    <updated>2025-10-15T00:00:00Z</updated>
+    <summary>A strategic specification for buildings as autonomous economic entities.</summary>
+    <category term="built-environment" label="Built Environment"/>
+    <content type="html">&lt;p&gt;&lt;em&gt;The Programmable Built Environment Operating System&lt;/em&gt;&lt;/p&gt;<p>A strategic specification for buildings as autonomous economic entities.</p><p><a href="https://docs.google.com/document/d/1G4qUdBcrrabR50oqOvCk2uqI7mWh371ykvx92bILPL4">View on Google Docs</a></p></content>
+  </entry>
+
+  <entry>
+    <title>Smart Assets</title>
+    <link href="https://raeez.com/smart-assets.html" rel="alternate" type="text/html"/>
+    <id>https://raeez.com/smart-assets.html</id>
+    <published>2025-08-15T00:00:00Z</published>
+    <updated>2025-08-15T00:00:00Z</updated>
+    <summary>Smart Assets are a fundamental reimagining of how financial assets exist, behave, and interact in the global economy.</summary>
+    <category term="infrastructure" label="Infrastructure"/>
+    <content type="html">&lt;p&gt;&lt;em&gt;Embedding Compliance, Identity, and Operational Intelligence Directly into Assets&lt;/em&gt;&lt;/p&gt;<p>Smart Assets are a fundamental reimagining of how financial assets exist, behave, and interact in the global economy.</p></content>
+  </entry>
+
+  <entry>
+    <title>The Laboratory for Incentivization, Coordination and Cooperation</title>
+    <link href="https://raeez.com/licc.html" rel="alternate" type="text/html"/>
+    <id>https://raeez.com/licc.html</id>
+    <published>2025-07-15T00:00:00Z</published>
+    <updated>2025-07-15T00:00:00Z</updated>
+    <summary>LICC is a private research institute dedicated to Coordination Science.</summary>
+    <category term="infrastructure" label="Infrastructure"/>
+    <content type="html">&lt;p&gt;&lt;em&gt;A Research Institute for Coordination Science&lt;/em&gt;&lt;/p&gt;<p>LICC is a private research institute dedicated to Coordination Science.</p><p><a href="https://docs.google.com/document/d/1eGnq8WpcdjS5TbD4U87v4HaN5YBgSwjKvXwerrXMIFY">View on Google Docs</a></p></content>
+  </entry>
+
+  <entry>
+    <title>Archai Protocol Whitepaper</title>
     <link href="https://raeez.com/archai.html" rel="alternate" type="text/html"/>
     <id>https://raeez.com/archai.html</id>
     <published>2025-06-15T00:00:00Z</published>
     <updated>2025-06-15T00:00:00Z</updated>
-    <summary>Scalable primitives for land and community infrastructure ownership.</summary>
-    <category term="built-environment"/>
+    <summary>The protocol layer that turns land and buildings into programmable, arbitration-enabled, on-chain/off-chain hybrid institutions.</summary>
+    <category term="built-environment" label="Built Environment"/>
+    <content type="html">&lt;p&gt;&lt;em&gt;Programmable Ownership for Land, Housing, and Community Infrastructure&lt;/em&gt;&lt;/p&gt;<p>The protocol layer that turns land and buildings into programmable, arbitration-enabled, on-chain/off-chain hybrid institutions.</p><p><a href="https://docs.google.com/document/d/12TriV64rqMidmlzEXU5HdvbhpX_Fu4bNq5UUo7-125I">View on Google Docs</a></p></content>
   </entry>
 
   <entry>
-    <title>Beauty</title>
-    <link href="https://raeez.com/beauty.html" rel="alternate" type="text/html"/>
-    <id>https://raeez.com/beauty.html</id>
-    <published>2025-01-01T00:00:00Z</published>
-    <updated>2025-01-01T00:00:00Z</updated>
-    <summary>On learning mathematics because it was beautiful, from childhood raytracers to factorization algebras.</summary>
-    <category term="personal"/>
+    <title>Moxie IP Operating System</title>
+    <link href="https://raeez.com/moxie.html" rel="alternate" type="text/html"/>
+    <id>https://raeez.com/moxie.html</id>
+    <published>2025-04-15T00:00:00Z</published>
+    <updated>2025-04-15T00:00:00Z</updated>
+    <summary>Recent advances in tokenomic incentive coordination technology enable experience-based monetization of IP.</summary>
+    <category term="infrastructure" label="Infrastructure"/>
+    <content type="html">&lt;p&gt;&lt;em&gt;Programmable Loyalty and Rewards for Large-Distribution Brands&lt;/em&gt;&lt;/p&gt;<p>Recent advances in tokenomic incentive coordination technology enable experience-based monetization of IP.</p><p><a href="https://docs.google.com/document/d/1c5iKhtAs03-KnmoRyF45xjePOszGIeMRUe642dpWTEQ">View on Google Docs</a></p></content>
   </entry>
-
-  <entry>
-    <title>/dev/finance inc.</title>
-    <link href="https://raeez.com/devfinance.html" rel="alternate" type="text/html"/>
-    <id>https://raeez.com/devfinance.html</id>
-    <published>2025-01-01T00:00:00Z</published>
-    <updated>2025-01-01T00:00:00Z</updated>
-    <summary>The story of dropping out of MIT, flying up the Pacific coast with Patrick Collison, and building the payments infrastructure that became Stripe.</summary>
-    <category term="personal"/>
-  </entry>
-
 </feed>

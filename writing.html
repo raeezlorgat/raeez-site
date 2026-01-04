@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Experience — Raeez Lorgat</title>
+    <title>Writing — Raeez Lorgat</title>
 
     <!-- SEO -->
-    <meta name="description" content="Professional experience: Momentum, Mass, Stripe, MIT, Perimeter Institute.">
+    <meta name="description" content="Essays, papers, and monographs on infrastructure, institutions, and mathematics by Raeez Lorgat.">
     <meta name="author" content="Raeez Lorgat">
-    <link rel="canonical" href="https://raeez.com/experience.html">
+    <link rel="canonical" href="https://raeez.com/writing.html">
     <link rel="alternate" type="application/atom+xml" title="Raeez Lorgat" href="https://raeez.com/feed.xml">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Experience — Raeez Lorgat">
-    <meta property="og:description" content="Professional experience: Momentum, Mass, Stripe, MIT, Perimeter Institute.">
-    <meta property="og:type" content="profile">
-    <meta property="og:url" content="https://raeez.com/experience.html">
+    <meta property="og:title" content="Writing — Raeez Lorgat">
+    <meta property="og:description" content="Essays, papers, and monographs on infrastructure, institutions, and mathematics.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://raeez.com/writing.html">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP8T5J8M28"></script>
@@ -163,11 +163,24 @@
             margin-left: var(--optical-margin);
         }
 
+        .section-label {
+            font-family: var(--font-caption);
+            font-size: var(--text-xs);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ink-ghost);
+            margin-top: var(--space-6);
+            margin-bottom: var(--space-2);
+        }
+
+        .section-label:first-of-type { margin-top: 0; }
+
         .project-list { list-style: none; }
 
         .project-item {
             display: grid;
-            grid-template-columns: 5.5rem 1fr;
+            grid-template-columns: 4.5rem 1fr;
             gap: var(--space-3);
             align-items: baseline;
             padding: var(--space-2);
@@ -230,6 +243,15 @@
             color: var(--ink-muted);
             text-decoration-color: var(--ink-muted);
         }
+
+        .subtitle code {
+            font-family: var(--font-mono);
+            font-size: 0.85em;
+            font-style: normal;
+            letter-spacing: -0.02em;
+        }
+
+        .math { font-style: italic; }
 
         .footer {
             margin-top: var(--space-13);
@@ -303,55 +325,128 @@
         <nav>
             <a href="about.html">About</a>
             <a href="mass.html">Mass</a>
-            <a href="writing.html">Writing</a>
-            <a href="experience.html" class="active">Experience</a>
+            <a href="writing.html" class="active">Writing</a>
+            <a href="experience.html">Experience</a>
             <a href="beauty.html">Beauty</a>
         </nav>
     </header>
 
-    <h1 class="page-title">Experience</h1>
+    <h1 class="page-title">Writing</h1>
 
+    <p class="section-label">Infrastructure</p>
     <ul class="project-list">
         <li class="project-item">
-            <span class="year">2025–</span>
+            <span class="year">2025</span>
             <span class="content">
-                <a href="https://momentum.inc">Managing Partner, Momentum</a>
-                <span class="subtitle">Investment fund incubating programmable institutions. Next: Abu Dhabi, Dubai, Kazakhstan, China.</span>
+                <a href="sez-stack.html">Open Source Special Economic Zone Legal, Fiscal & Regulatory Stack</a>
+                <span class="subtitle"><a href="https://github.com/momentum-sez/stack"><code>momentum-sez/stack</code> public github repository</a></span>
             </span>
         </li>
         <li class="project-item">
-            <span class="year">2024–</span>
+            <span class="year">2025</span>
             <span class="content">
-                <a href="https://mass.inc">Founder & CEO, Mass</a>
-                <span class="subtitle">Jurisdictional operating system—live across US, Cayman, BVI, Próspera</span>
+                <a href="competitive-topologies.html">Competitive Topologies & The Monopoly Problem: Why Democratic Institutions Need Competition</a>
+                <span class="subtitle"><a href="https://www.nytimes.com/2025/11/11/opinion/ai-democracy-government-authoritarianism.html">a response to Eric Schmidt and Andrew Sorota's "This is No Way to Rule a Country"</a></span>
             </span>
         </li>
         <li class="project-item">
-            <span class="year">2020–23</span>
+            <span class="year">2025</span>
             <span class="content">
-                <a href="https://instagram.com/personagallerynyc">Founder, Persona</a>
-                <span class="subtitle">Art community and gallery-studio, New York City</span>
+                <a href="smart-assets.html">Smart Assets</a>
+                <span class="subtitle">Programmable primitive on a novel decentralized network embedding compliance, identity, and operational intelligence directly into assets</span>
             </span>
         </li>
         <li class="project-item">
-            <span class="year">2014–24</span>
+            <span class="year">2025</span>
             <span class="content">
-                Teaching Assistant at <a href="https://math.mit.edu">MIT</a>, Research Fellow at <a href="https://perimeterinstitute.ca">Perimeter Institute</a>
-                <span class="subtitle">Geometric representation theory, arithmetic geometry, quantum field theory</span>
+                <a href="sez-in-a-box.html">Special Economic Zones in a Box</a>
+                <span class="subtitle">From proof of scale to proof of network</span>
             </span>
         </li>
         <li class="project-item">
-            <span class="year">2010–12</span>
+            <span class="year">2025</span>
             <span class="content">
-                <a href="https://stripe.com">Early Stripe</a>
-                <span class="subtitle">Payment rails, bank integrations, API infrastructure</span>
+                <a href="licc.html">The Laboratory for Incentivization, Coordination and Cooperation (LICC)</a>
             </span>
         </li>
         <li class="project-item">
-            <span class="year">2009–11</span>
+            <span class="year">2025</span>
             <span class="content">
-                <a href="devfinance.html">Founding Team, /dev/finance inc.</a>
-                <span class="subtitle">Built /dev/payments—API-driven payment rails for internet businesses</span>
+                <a href="moxie.html">Moxie</a>
+                <span class="subtitle">Programmable loyalty and rewards for large-distribution brands</span>
+            </span>
+        </li>
+        <li class="project-item">
+            <span class="year">2025</span>
+            <span class="content">
+                <a href="momentum-monograph.html">Momentum: Incubating Ecosystems</a>
+            </span>
+        </li>
+    </ul>
+
+    <p class="section-label">Built Environment</p>
+    <ul class="project-list">
+        <li class="project-item">
+            <span class="year">2025</span>
+            <span class="content">
+                <a href="smart-buildings.html">Smart Buildings</a>
+                <span class="subtitle">Towards a programmable built environment operating system</span>
+            </span>
+        </li>
+        <li class="project-item">
+            <span class="year">2025</span>
+            <span class="content">
+                <a href="prefabricated-construction.html">Prefabricated Construction Methodologies</a>
+            </span>
+        </li>
+        <li class="project-item">
+            <span class="year">2025</span>
+            <span class="content">
+                <a href="archai.html">Archai</a>
+                <span class="subtitle">Scalable primitives for land and community infrastructure ownership</span>
+            </span>
+        </li>
+    </ul>
+
+    <p class="section-label">Mathematics</p>
+    <ul class="project-list">
+        <li class="project-item">
+            <span class="year">2025</span>
+            <span class="content">
+                <a href="https://tinyurl.com/mr368bkn">A<sub>∞</sub> Chiral Algebras and Chiral Hochschild Cohomology in 3D Holomorphic–Topological Quantum Field Theory</a>
+            </span>
+        </li>
+        <li class="project-item">
+            <span class="year">2025</span>
+            <span class="content">
+                <a href="https://tinyurl.com/55hsc5ky">Chiral Duality in the presence of Quantum Corrections: Geometric Realizations via Configuration Spaces</a>
+            </span>
+        </li>
+        <li class="project-item">
+            <span class="year">2020</span>
+            <span class="content">
+                <a href="https://github.com/raeez/igusa-cusp-form/blob/master/raeez.lorgat.automorphic-corrections.pdf">Automorphic Corrections: A Borcherds Lift of the Weak Jacobi Form <span class="math">φ</span><sub>0,1</sub>, Generalized Borcherds-Kac-Moody Superalgebras and the Igusa Cusp Form</a>
+                <span class="subtitle"><a href="https://github.com/raeez/igusa-cusp-form/blob/master/raeez.lorgat.automorphic-corrections-presentation.pdf">Slides with example CY3 geometries categorifying Automorphic forms</a></span>
+            </span>
+        </li>
+        <li class="project-item">
+            <span class="year">2018</span>
+            <span class="content">
+                <a href="https://github.com/raeez/topological-strings/blob/master/out/main.pdf">Some calculations concerning the topological string</a>
+            </span>
+        </li>
+        <li class="project-item">
+            <span class="year">2017</span>
+            <span class="content">
+                <a href="https://github.com/raeez/etingof-dmod/blob/master/out/etingof-dmod.pdf">Algebraic D-Modules</a>
+                <span class="subtitle"><a href="https://math.mit.edu/~etingof/18.769.html">Lecture notes on MIT 18.769 (Pavel Etingof)</a></span>
+            </span>
+        </li>
+        <li class="project-item">
+            <span class="year">2017</span>
+            <span class="content">
+                <a href="https://www.cip.ifi.lmu.de/~grinberg/algebra/etingof-lie.pdf">Infinite Dimensional Lie Algebras</a>
+                <span class="subtitle"><a href="https://math.mit.edu/~etingof/18.747.html">Lecture notes on MIT course 18.747 taught by Pavel Etingof</a></span>
             </span>
         </li>
     </ul>
