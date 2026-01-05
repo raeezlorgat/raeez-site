@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>MIT-MBZUAI Laboratory for Incentivization, Coordination and Cooperation (LICC) — Raeez Lorgat</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Dual-sponsorship model, strategic framework, tactical execution guide, and fundraising strategy for establishing LICC as a jointly-sponsored research institution between MIT and MBZUAI.">
+    <meta name="author" content="Raeez Lorgat">
+    <meta property="og:title" content="MIT-MBZUAI Laboratory for Incentivization, Coordination and Cooperation (LICC)">
+    <meta property="og:description" content="Dual-sponsorship model, strategic framework, tactical execution guide, and fundraising strategy for establishing LICC as a jointly-sponsored research institution between MIT and MBZUAI.">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://raeez.com/licc-blueprint.html">
+    <link rel="alternate" type="application/atom+xml" title="Raeez Lorgat" href="https://raeez.com/feed.xml">
+
+    <!-- Structured data for LLMs -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ScholarlyArticle",
+        "headline": "MIT-MBZUAI Laboratory for Incentivization, Coordination and Cooperation (LICC)",
+        "author": {
+            "@type": "Person",
+            "name": "Raeez Lorgat",
+            "url": "https://raeez.com"
+        },
+        "description": "Dual-sponsorship model, strategic framework, tactical execution guide, and fundraising strategy for establishing LICC as a jointly-sponsored research institution between MIT and MBZUAI."
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP8T5J8M28"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JP8T5J8M28');
+    </script>
+
+    <!-- Adobe Fonts: Garamond Premier Pro (all optical sizes) -->
+    <link rel="stylesheet" href="https://use.typekit.net/zlu2quo.css">
+
+    <!-- Fallback -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           RESET & BOX MODEL
+           ═══════════════════════════════════════════════════════════════════════════════ */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           DESIGN TOKENS — ELITE TYPOGRAPHY SYSTEM
+           
+           Typography Philosophy:
+           - Garamond Premier Pro with full optical size range
+           - Perfect Fourth modular scale (1.333)
+           - 8px baseline grid for vertical rhythm
+           - Golden ratio (1.618) line-height for body text
+           - Advanced OpenType features: discretionary ligatures, old-style figures,
+             contextual alternates, capital spacing
+           ═══════════════════════════════════════════════════════════════════════════════ */
+        :root {
+            /* ─── Font Stacks with Optical Sizes ─── */
+            --font-text: 'garamond-premier-pro', 'EB Garamond', 'Hoefler Text', 'Baskerville', Garamond, serif;
+            --font-display: 'garamond-premier-pro-display', var(--font-text);
+            --font-caption: 'garamond-premier-pro-caption', var(--font-text);
+            --font-subhead: 'garamond-premier-pro-subhead', var(--font-text);
+            --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+
+            /* ─── Modular Scale: Perfect Fourth (1.333) ─── */
+            --text-base: clamp(18px, 1.125rem + 0.25vw, 21px);
+            --text-sm: calc(var(--text-base) / 1.333);
+            --text-xs: calc(var(--text-sm) / 1.333);
+            --text-lg: calc(var(--text-base) * 1.333);
+            --text-xl: calc(var(--text-lg) * 1.333);
+            --text-2xl: calc(var(--text-xl) * 1.333);
+
+            /* ─── Baseline Grid ─── */
+            --baseline: 8px;
+
+            /* ─── Line Heights ─── */
+            --leading-tight: 1.2;
+            --leading-snug: 1.35;
+            --leading-normal: 1.5;
+            --leading-relaxed: 1.618;
+            --leading-loose: 1.8;
+
+            /* ─── Spacing Scale (baseline multiples) ─── */
+            --space-1: calc(var(--baseline) * 1);
+            --space-2: calc(var(--baseline) * 2);
+            --space-3: calc(var(--baseline) * 3);
+            --space-4: calc(var(--baseline) * 4);
+            --space-5: calc(var(--baseline) * 5);
+            --space-6: calc(var(--baseline) * 6);
+            --space-8: calc(var(--baseline) * 8);
+            --space-10: calc(var(--baseline) * 10);
+            --space-13: calc(var(--baseline) * 13);
+
+            /* ─── Measure (line length) ─── */
+            --measure: 65ch;
+            --measure-narrow: 55ch;
+            --measure-wide: 75ch;
+            --gutter: clamp(16px, 4vw, 24px);
+
+            /* ─── Color Palette ─── */
+            --ink: #1a1917;
+            --ink-muted: #4a4744;
+            --ink-subtle: #6a6662;
+            --ink-faint: #8a8580;
+            --ink-ghost: #b5b0ab;
+            --ink-whisper: #d4d0cc;
+            --ink-hint: #e8e5e2;
+            --paper: #fefdfb;
+            --paper-tint: #f5f3f0;
+
+            /* ─── Kerning & Tracking ─── */
+            --kern-tight: -0.02em;
+            --kern-snug: -0.01em;
+            --kern-normal: 0;
+            --kern-loose: 0.015em;
+            --kern-wide: 0.04em;
+            --kern-caps: 0.08em;
+            --optical-margin: -0.03em;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           BASE TYPOGRAPHY
+           ═══════════════════════════════════════════════════════════════════════════════ */
+        html {
+            font-size: 100%;
+            -webkit-text-size-adjust: 100%;
+            scroll-behavior: smooth;
+            hanging-punctuation: first last;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-text);
+            font-size: var(--text-base);
+            font-weight: 400;
+            line-height: var(--leading-relaxed);
+            color: var(--ink);
+            background: var(--paper);
+            text-rendering: optimizeLegibility;
+
+            /* ─── OpenType Feature Settings ─── */
+            font-feature-settings: 
+                "kern" 1,     /* Kerning */
+                "liga" 1,     /* Standard ligatures: fi, fl, ff, ffi, ffl */
+                "clig" 1,     /* Contextual ligatures */
+                "calt" 1,     /* Contextual alternates */
+                "dlig" 1,     /* Discretionary ligatures: ct, st, sp */
+                "onum" 1,     /* Old-style (lowercase) figures */
+                "pnum" 1;     /* Proportional figures */
+            
+            font-variant-ligatures: common-ligatures discretionary-ligatures contextual;
+            font-variant-numeric: oldstyle-nums proportional-nums;
+            font-kerning: normal;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           LAYOUT
+           ═══════════════════════════════════════════════════════════════════════════════ */
+        .container {
+            max-width: calc(var(--measure) + var(--space-8));
+            margin-inline: auto;
+            padding: var(--space-10) var(--gutter) var(--space-8);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           BACK NAVIGATION
+           ═══════════════════════════════════════════════════════════════════════════════ */
+        .back-nav {
+            margin-bottom: var(--space-8);
+        }
+
+        .back-nav a {
+            font-family: var(--font-caption);
+            font-size: var(--text-sm);
+            font-variant-caps: small-caps;
+            font-feature-settings: "smcp" 1, "c2sc" 1, "kern" 1, "cpsp" 1;
+            letter-spacing: var(--kern-wide);
+            color: var(--ink-faint);
+            text-decoration: none;
+            transition: color 180ms ease;
+        }
+
+        .back-nav a:hover { color: var(--ink); }
+
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           ARTICLE HEADER
+           ═══════════════════════════════════════════════════════════════════════════════ */
+        .article-header {
+            margin-bottom: var(--space-6);
+            padding-bottom: var(--space-5);
+            border-bottom: 1px solid var(--ink-hint);
+        }
+
+        .article-title {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            font-weight: 400;
+            letter-spacing: var(--kern-tight);
+            line-height: var(--leading-tight);
+            margin-bottom: var(--space-3);
+            margin-left: var(--optical-margin);
+        }
+
+        .article-subtitle {
+            font-size: var(--text-lg);
+            font-weight: 400;
+            font-style: italic;
+            line-height: var(--leading-snug);
+            color: var(--ink-muted);
+            max-width: var(--measure-narrow);
+            font-feature-settings: "kern" 1, "liga" 1, "dlig" 1, "onum" 1;
+        }
+
+        .article-meta {
+            font-family: var(--font-caption);
+            font-size: var(--text-sm);
+            color: var(--ink-faint);
+            margin-top: var(--space-3);
+        }
+
+        .article-meta a {
+            color: var(--ink-muted);
+            text-decoration: underline;
+            text-decoration-color: var(--ink-whisper);
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.12em;
+            transition: text-decoration-color 180ms ease;
+        }
+
+        .article-meta a:hover { text-decoration-color: var(--ink-muted); }
+
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           ARTICLE BODY
+           ═══════════════════════════════════════════════════════════════════════════════ */
+        .article-body {
+            font-variant-ligatures: common-ligatures discretionary-ligatures contextual;
+        }
+
+        .article-body p {
+            margin-bottom: var(--space-3);
+            max-width: var(--measure);
+            line-height: var(--leading-loose);
+            hyphens: auto;
+            hyphenate-limit-chars: 6 3 2;
+            hyphenate-limit-lines: 2;
+        }
+
+        .article-body h1 {
+            font-family: var(--font-subhead);
+            font-size: var(--text-xl);
+            font-weight: 600;
+            letter-spacing: var(--kern-tight);
+            line-height: var(--leading-tight);
+            margin-top: var(--space-10);
+            margin-bottom: var(--space-3);
+            margin-left: var(--optical-margin);
+        }
+
+        .article-body h2 {
+            font-family: var(--font-subhead);
+            font-size: var(--text-lg);
+            font-weight: 600;
+            letter-spacing: var(--kern-snug);
+            line-height: var(--leading-snug);
+            margin-top: var(--space-8);
+            margin-bottom: var(--space-3);
+            margin-left: var(--optical-margin);
+        }
+
+        .article-body h3 {
+            font-size: var(--text-base);
+            font-weight: 600;
+            line-height: var(--leading-snug);
+            margin-top: var(--space-6);
+            margin-bottom: var(--space-2);
+        }
+
+        .article-body a {
+            color: var(--ink);
+            text-decoration: underline;
+            text-decoration-color: var(--ink-whisper);
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.15em;
+            text-decoration-skip-ink: auto;
+            transition: text-decoration-color 180ms ease;
+        }
+
+        .article-body a:hover { text-decoration-color: var(--ink-muted); }
+
+        .article-body ul, .article-body ol {
+            margin-bottom: var(--space-3);
+            margin-left: var(--space-5);
+            max-width: var(--measure);
+        }
+
+        .article-body li {
+            margin-bottom: var(--space-1);
+            line-height: var(--leading-relaxed);
+        }
+
+        .article-body blockquote {
+            margin: var(--space-5) 0;
+            padding-left: var(--space-3);
+            border-left: 2px solid var(--ink-hint);
+            font-style: italic;
+            color: var(--ink-muted);
+        }
+
+        .article-body hr {
+            border: none;
+            height: 1px;
+            background: var(--ink-hint);
+            margin: var(--space-8) 0;
+            max-width: 4rem;
+        }
+
+        .article-body table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--space-5) 0;
+            font-size: var(--text-sm);
+        }
+
+        .article-body th, .article-body td {
+            padding: var(--space-2);
+            border-bottom: 1px solid var(--ink-hint);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .article-body th {
+            font-weight: 600;
+            font-variant-caps: small-caps;
+            font-feature-settings: "smcp" 1, "c2sc" 1, "kern" 1;
+            letter-spacing: var(--kern-wide);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           TABLE OF CONTENTS
+           ═══════════════════════════════════════════════════════════════════════════════ */
+        .toc {
+            margin: var(--space-6) 0;
+            padding: var(--space-5);
+            background: var(--paper-tint);
+            border-radius: 3px;
+        }
+
+        .toc-title {
+            font-family: var(--font-caption);
+            font-size: var(--text-xs);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ink-ghost);
+            margin-bottom: var(--space-3);
+        }
+
+        .toc-list {
+            list-style: none;
+            counter-reset: toc-counter;
+        }
+
+        .toc-item {
+            counter-increment: toc-counter;
+            margin-bottom: var(--space-1);
+        }
+
+        .toc-item::before {
+            content: counter(toc-counter) ".";
+            font-family: var(--font-caption);
+            font-size: var(--text-sm);
+            color: var(--ink-ghost);
+            margin-right: var(--space-1);
+            font-feature-settings: "tnum" 1, "lnum" 1;
+        }
+
+        .toc-item a {
+            font-size: var(--text-sm);
+            color: var(--ink-muted);
+            text-decoration: none;
+            transition: color 180ms ease;
+        }
+
+        .toc-item a:hover { color: var(--ink); }
+
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           ARTICLE FOOTER
+           ═══════════════════════════════════════════════════════════════════════════════ */
+        .article-footer {
+            margin-top: var(--space-10);
+            padding-top: var(--space-5);
+            padding-bottom: var(--space-5);
+            border-top: 1px solid var(--ink-hint);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .author-byline {
+            font-family: var(--font-caption);
+            font-size: var(--text-sm);
+            font-style: italic;
+            color: var(--ink-muted);
+        }
+
+        .author-byline strong {
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .footer-nav a {
+            font-family: var(--font-caption);
+            font-size: var(--text-sm);
+            font-variant-caps: small-caps;
+            font-feature-settings: "smcp" 1, "c2sc" 1, "kern" 1, "cpsp" 1;
+            letter-spacing: var(--kern-wide);
+            color: var(--ink-faint);
+            text-decoration: none;
+            transition: color 180ms ease;
+        }
+
+        .footer-nav a:hover { color: var(--ink); }
+
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           CONTACT FOOTER
+           ═══════════════════════════════════════════════════════════════════════════════ */
+        .contact-footer {
+            margin-top: var(--space-10);
+            padding-top: var(--space-5);
+            border-top: 1px solid var(--ink-hint);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: var(--font-caption);
+            font-size: var(--text-sm);
+        }
+
+        .contact-footer > a {
+            color: var(--ink-faint);
+            text-decoration: none;
+            transition: color 180ms ease;
+        }
+
+        .contact-footer > a:hover { color: var(--ink); }
+
+        .contact-footer .social {
+            display: flex;
+            align-items: center;
+            gap: 0.375em;
+        }
+
+        .contact-footer .icon-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.25em;
+            height: 2.25em;
+            color: var(--ink-ghost);
+            transition: color 180ms ease, background-color 180ms ease;
+            border-radius: 4px;
+        }
+
+        .contact-footer .icon-link:hover {
+            color: var(--ink);
+            background-color: var(--paper-tint);
+        }
+
+        .contact-footer .icon-link svg { display: block; }
+
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           UTILITIES
+           ═══════════════════════════════════════════════════════════════════════════════ */
+        ::selection { background: var(--ink); color: var(--paper); }
+
+        a:focus-visible {
+            outline: 2px solid var(--ink-muted);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           RESPONSIVE
+           ═══════════════════════════════════════════════════════════════════════════════ */
+        @media (max-width: 680px) {
+            :root { --text-base: clamp(17px, 1rem + 0.2vw, 19px); }
+
+            .container { padding: var(--space-6) var(--gutter) var(--space-5); }
+
+            .article-title { font-size: var(--text-xl); }
+            .article-subtitle { font-size: var(--text-base); }
+            .article-body h1 { font-size: var(--text-lg); }
+            .article-body h2 { font-size: calc(var(--text-base) * 1.1); }
+
+            .toc { padding: var(--space-3); }
+
+            .article-footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-2);
+            }
+
+            .contact-footer {
+                flex-direction: column;
+                gap: var(--space-3);
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 400px) {
+            :root { --text-base: 16px; }
+            .container { padding: var(--space-5) var(--space-2) var(--space-4); }
+        }
+
+        @media (min-width: 1200px) {
+            .container { padding-top: var(--space-13); }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════════════════
+           PRINT
+           ═══════════════════════════════════════════════════════════════════════════════ */
+        @media print {
+            :root { --ink: #000; --paper: #fff; }
+            body { font-size: 11pt; line-height: 1.4; }
+            .container { max-width: 100%; padding: 0; }
+            .back-nav, .contact-footer { display: none; }
+            a { text-decoration: none !important; color: var(--ink) !important; }
+            .article-body h1, .article-body h2 { page-break-after: avoid; }
+            .toc { page-break-after: always; }
+        }
+
+        /* Safe area insets for notched devices */
+        @supports (padding: max(0px)) {
+            .container {
+                padding-left: max(var(--gutter), env(safe-area-inset-left));
+                padding-right: max(var(--gutter), env(safe-area-inset-right));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="back-nav">
+            <a href="writing.html">← Writing</a>
+        </nav>
+
+        <article>
+            <header class="article-header">
+                <h1 class="article-title">MIT-MBZUAI Laboratory for Incentivization, Coordination and Cooperation (LICC)</h1>
+                <p class="article-subtitle">Comprehensive Founding Blueprint</p>
+                <p class="article-meta">December 2025 • Version 1.0 • CONFIDENTIAL</p>
+            </header>
+
+            <div class="article-body">
+<p class="c27 c39"><span class="c0"></span></p><p class="c38"><span class="c35 c48">MIT-MBZUAI</span></p><p class="c42"><span class="c35 c46">Laboratory for Incentivization,</span></p><p class="c42"><span class="c46 c35">Coordination and Cooperation</span></p><p class="c43"><span class="c35 c53">(LICC)</span></p><p class="c29"><span class="c4 c32 c52">────────────────────────────</span></p><p class="c42"><span class="c4 c36 c51">Comprehensive Founding Blueprint</span></p><p class="c38"><span class="c4 c45 c44">Dual-Sponsorship Model, Strategic Framework,</span></p><p class="c38"><span class="c4 c44 c45">Tactical Execution Guide, and Fundraising Strategy</span></p><p class="c24"><span class="c0"></span></p><p class="c29"><span class="c4 c32 c36">Prepared for: Momentum Partners</span></p><p class="c29"><span class="c4 c32 c36">December 2025</span></p><p class="c29"><span class="c4 c33 c44">Version 1.0 | CONFIDENTIAL</span></p><hr style="page-break-before:always;display:none;"><p class="c30 c27"><span class="c0"></span></p><h1 class="c26"><span class="c10">Executive Summary</span></h1><p class="c9"><span class="c0">This document presents a comprehensive blueprint for establishing the Laboratory for Incentivization, Coordination and Cooperation (LICC) as a jointly-sponsored research institution between the Massachusetts Institute of Technology (MIT) and the Mohamed bin Zayed University of Artificial Intelligence (MBZUAI). LICC will pioneer the emerging field of coordination science—the mathematical and computational study of how economic agents, institutions, and jurisdictions can be designed to achieve optimal collective outcomes through programmable incentive mechanisms.</span></p><h2 class="c18"><span class="c23">The Opportunity</span></h2><p class="c9"><span class="c0">The convergence of cryptographic primitives, programmable compliance infrastructure, and the emergence of Special Economic Zones as innovation laboratories has created an unprecedented opportunity to establish a new academic discipline. Current institutional arrangements—from international trade to jurisdictional governance—operate on frameworks designed for a pre-digital era. LICC will develop the theoretical foundations and practical tools to design "programmable institutions" that can operate at software speed while maintaining the legitimacy and stability of traditional governance structures.</span></p><h2 class="c18"><span class="c23">Why MIT-MBZUAI?</span></h2><p class="c9"><span class="c0">This dual-sponsorship model uniquely combines MIT's world-class theoretical expertise in mechanism design, institutional economics, and network science with MBZUAI's applied AI infrastructure and direct pathways to government implementation through UAE's 27 free zones. The recently announced MIT-MBZUAI Collaborative Research Program (October 2025) provides an existing institutional framework that can be expanded to accommodate LICC's coordination science mandate.</span></p><h2 class="c18"><span class="c23">Key Figures</span></h2><table class="c20"><tbody><tr class="c12"><td class="c8 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Metric</span></p></td><td class="c8 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Target</span></p></td></tr><tr class="c12"><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Total 5-Year Budget</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">$47.5 Million</span></p></td></tr><tr class="c12"><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Year 1 Launch Capital</span></p></td><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$5.5 Million</span></p></td></tr><tr class="c12"><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Faculty Positions (Year 5)</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">12 Full-Time Equivalent</span></p></td></tr><tr class="c12"><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">PhD Students (Year 5)</span></p></td><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">25 Students</span></p></td></tr><tr class="c12"><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Timeline to Launch</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">18-24 Months</span></p></td></tr><tr class="c12"><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Primary Implementation Site</span></p></td><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">UAE Free Zone Federation</span></p></td></tr></tbody></table><p class="c9 c27"><span class="c0"></span></p><hr style="page-break-before:always;display:none;"><p class="c30 c27"><span class="c0"></span></p><h1 class="c26"><span class="c10">Part I: Institutional Context and Strategic Rationale</span></h1><h2 class="c18"><span class="c23">1.1 What is LICC?</span></h2><p class="c9"><span class="c0">The Laboratory for Incentivization, Coordination and Cooperation (LICC) is a proposed interdisciplinary research institute dedicated to the mathematical, computational, and empirical study of coordination mechanisms across scales—from individual economic transactions to international institutional design. LICC's research agenda spans:</span></p><ul class="c21 lst-kix_k4h3rovdn5r3-0 start"><li class="c13 li-bullet-0"><span class="c0">Cryptoeconomic Mechanism Design: Formal methods for designing incentive-compatible protocols that align individual rationality with collective welfare in decentralized systems</span></li><li class="c13 li-bullet-0"><span class="c0">Spectral Coordination Theory: Mathematical frameworks using spectral graph theory and category theory to analyze multi-agent coordination dynamics</span></li><li class="c13 li-bullet-0"><span class="c0">Jurisdictional Competition and Decentralization: Empirical and theoretical analysis of how regulatory competition shapes institutional evolution</span></li><li class="c13 li-bullet-0"><span class="c0">Programmable Compliance Infrastructure: Technical architectures for "Smart Assets" that carry compliance, identity, and operational intelligence across jurisdictions</span></li><li class="c13 li-bullet-0"><span class="c0">Multi-Scale Coordination Dynamics: Understanding how coordination mechanisms interact across individual, organizational, and societal scales</span></li></ul><h2 class="c18"><span class="c23">1.2 MIT: Institutional Profile and Strategic Assets</span></h2><p class="c9"><span class="c0">The Massachusetts Institute of Technology represents the world's premier institution for the theoretical foundations LICC requires. MIT's research enterprise spans $2.1 billion annually, with industry-sponsored research totaling $175 million from over 300 companies in fiscal year 2024—approximately 20% of total MIT research expenditures. According to the National Science Foundation, MIT consistently ranks first or second in industry-funded research and development expenditures among universities without a medical school.</span></p><h3 class="c25"><span class="c14">Critical Faculty Assets for LICC</span></h3><table class="c20"><tbody><tr class="c12"><td class="c6 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Faculty</span></p></td><td class="c6 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Position</span></p></td><td class="c8 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">LICC Relevance</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Constantinos Daskalakis</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Avanessians Professor, EECS/CSAIL</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">World's leading computational mechanism design researcher. Nevanlinna Prize (2018), Simons Investigator. Work on Nash equilibrium complexity and multi-item auction design directly applicable to LICC's cryptoeconomic theme.</span></p></td></tr><tr class="c12"><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Daron Acemoglu</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Institute Professor, Economics</span></p></td><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">2024 Nobel Prize in Economics for "how institutions are formed and affect prosperity." Author of Why Nations Fail. Direct empirical foundation for LICC's jurisdictional competition research.</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Alex "Sandy" Pentland</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Toshiba Professor, Media Lab; Director, Connection Science</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Co-architect of EU GDPR, UN SDG data framework. ADIA Lab advisory board member. Network science and computational social science perfectly aligned with LICC's coordination dynamics research.</span></p></td></tr><tr class="c12"><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Silvio Micali</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Ford Professor, CSAIL</span></p></td><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Turing Award laureate. Inventor of verifiable random functions, zero-knowledge proofs. Founder of Algorand. Cryptographic foundations for programmable compliance.</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Asuman Ozdaglar</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Professor, EECS/LIDS</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Network economics, game theory, distributed optimization. Multi-agent dynamics research essential for understanding coordination at scale.</span></p></td></tr></tbody></table><p class="c9 c27"><span class="c0"></span></p><h2 class="c18"><span class="c23">1.3 MBZUAI: Institutional Profile and Strategic Assets</span></h2><p class="c9"><span class="c0">The Mohamed bin Zayed University of Artificial Intelligence, established in October 2019, represents the world's first graduate-level research university dedicated entirely to artificial intelligence. Located in Masdar City, Abu Dhabi, MBZUAI operates as part of the UAE Strategy for Artificial Intelligence 2031—a national initiative positioning the UAE as a global AI hub. The university is fully state-funded with sovereign wealth backing through Mubadala Investment Company.</span></p><h3 class="c25"><span class="c14">MBZUAI Key Metrics (2025)</span></h3><table class="c20"><tbody><tr class="c12"><td class="c8 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Metric</span></p></td><td class="c8 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Value</span></p></td></tr><tr class="c12"><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Faculty</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">84+ full-time faculty members</span></p></td></tr><tr class="c12"><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Researchers</span></p></td><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">200+ research staff</span></p></td></tr><tr class="c12"><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Students</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">700+ from 49 countries</span></p></td></tr><tr class="c12"><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Publications (H1 2024)</span></p></td><td class="c7 c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">300+ in top-tier venues</span></p></td></tr><tr class="c12"><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Global Rankings</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Top 20 in AI, CV, ML, NLP, Robotics (CSRankings)</span></p></td></tr><tr class="c12"><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">UAE AI Investment (since 2024)</span></p></td><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$147+ billion</span></p></td></tr></tbody></table><p class="c9 c27"><span class="c0"></span></p><h3 class="c25"><span class="c14">MBZUAI Leadership</span></h3><table class="c20"><tbody><tr class="c12"><td class="c6 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Role</span></p></td><td class="c16 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Name</span></p></td><td class="c15 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Background</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">President</span></p></td><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">Professor Eric Xing</span></p></td><td class="c15" colspan="1" rowspan="1"><p class="c5"><span class="c4">Former CMU ML Department Head. PhD UC Berkeley. Founder/CEO Petuum Inc. (2018 WEF Technology Pioneer)</span></p></td></tr><tr class="c12"><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Provost</span></p></td><td class="c16 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Professor Timothy Baldwin</span></p></td><td class="c15 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Appointed April 2024. Former University of Melbourne.</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">VP Research</span></p></td><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">Professor Sami Haddadin</span></p></td><td class="c15" colspan="1" rowspan="1"><p class="c5"><span class="c4">Robotics and human-robot interaction. MIT-MBZUAI program signatory.</span></p></td></tr><tr class="c12"><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Board Chair</span></p></td><td class="c16 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Khaldoon Khalifa Al Mubarak</span></p></td><td class="c15 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">CEO, Mubadala Investment Company. Direct sovereign wealth connection.</span></p></td></tr></tbody></table><p class="c9 c27"><span class="c0"></span></p><h2 class="c18"><span class="c23">1.4 The MIT-MBZUAI Collaborative Research Program</span></h2><p class="c9"><span class="c0">In October 2025, MIT's Schwarzman College of Computing and MBZUAI announced the MIT-MBZUAI Collaborative Research Program—a five-year agreement uniting faculty, students, and research staff from both institutions. This existing framework provides the institutional foundation upon which LICC can be built.</span></p><h3 class="c25"><span class="c14">Current Program Structure</span></h3><table class="c20"><tbody><tr class="c12"><td class="c16 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Element</span></p></td><td class="c34 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Detail</span></p></td></tr><tr class="c12"><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">Duration</span></p></td><td class="c34" colspan="1" rowspan="1"><p class="c5"><span class="c4">5 years (2025-2030)</span></p></td></tr><tr class="c12"><td class="c16 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Funding</span></p></td><td class="c34 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">MBZUAI-sponsored research projects</span></p></td></tr><tr class="c12"><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">Focus Areas</span></p></td><td class="c34" colspan="1" rowspan="1"><p class="c5"><span class="c4">Scientific discovery, human thriving, planetary health</span></p></td></tr><tr class="c12"><td class="c16 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Current Priorities</span></p></td><td class="c34 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Digital health, intelligent robotics, efficient computing architectures</span></p></td></tr><tr class="c12"><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">MIT Director</span></p></td><td class="c34" colspan="1" rowspan="1"><p class="c5"><span class="c4">Philip Isola (EECS, computer vision/generative models)</span></p></td></tr><tr class="c12"><td class="c16 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">MBZUAI Director</span></p></td><td class="c34 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Le Song (Professor of Machine Learning)</span></p></td></tr><tr class="c12"><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">Governance</span></p></td><td class="c34" colspan="1" rowspan="1"><p class="c5"><span class="c4">Steering committee with representatives from both institutions; dual-PI requirement for all projects</span></p></td></tr><tr class="c12"><td class="c16 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Publication</span></p></td><td class="c34 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Openly publishable findings</span></p></td></tr></tbody></table><p class="c9 c27"><span class="c0"></span></p><h3 class="c25"><span class="c14">Strategic Opening for LICC</span></h3><p class="c9"><span class="c0">The MIT-MBZUAI collaboration explicitly addresses "social and ethical responsibilities of computing in shaping global impact"—language that creates direct alignment with LICC's coordination science mandate. However, the current program emphasizes foundation models, robotics, and healthcare AI. LICC's positioning requires demonstrating how coordination science represents a natural fourth pillar that complements rather than competes with existing priorities.</span></p><hr style="page-break-before:always;display:none;"><p class="c30 c27"><span class="c0"></span></p><h1 class="c26"><span class="c10">Part II: Dual-Sponsorship Model Analysis</span></h1><h2 class="c18"><span class="c23">2.1 Structural Options</span></h2><p class="c9"><span class="c0">Three primary structural configurations exist for establishing LICC within the MIT-MBZUAI framework. Each offers distinct advantages and constraints that must be evaluated against LICC's long-term research independence requirements.</span></p><h3 class="c25"><span class="c14">Option A: Expansion of Existing MIT-MBZUAI Collaboration</span></h3><p class="c9"><span class="c0">Mechanism: Propose LICC as an additional research theme within the existing MIT-MBZUAI Collaborative Research Program, positioning "Coordination Science" as a fourth pillar alongside scientific discovery, human thriving, and planetary health.</span></p><table class="c20"><tbody><tr class="c12"><td class="c8 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Advantages</span></p></td><td class="c8 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Constraints</span></p></td></tr><tr class="c12"><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Uses existing infrastructure and governance mechanisms</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Must convince current directors (Isola, Song) to expand scope beyond AI/ML focus</span></p></td></tr><tr class="c12"><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">MBZUAI funding already committed under 5-year agreement</span></p></td><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">May be constrained by existing program priorities and steering committee composition</span></p></td></tr><tr class="c12"><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Steering committee pathway provides clear decision process</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Limited independence for LICC-specific research agenda</span></p></td></tr><tr class="c12"><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Fastest path to initial research funding</span></p></td><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Risk of being absorbed into broader AI research portfolio</span></p></td></tr></tbody></table><p class="c27 c50"><span class="c0"></span></p><p class="c9"><span class="c4 c32 c33">Assessment: High resource access, low autonomy. Appropriate for bootstrap phase (Months 1-12) but insufficient for LICC's long-term independence requirements.</span></p><h3 class="c25"><span class="c14">Option B: Affiliated Independent Institute (RECOMMENDED)</span></h3><p class="c9"><span class="c0">Mechanism: Establish LICC as a legally distinct research institute with formal affiliation agreements with both MIT and MBZUAI. LICC maintains independent governance while leveraging institutional resources through partnership agreements.</span></p><table class="c20"><tbody><tr class="c12"><td class="c8 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Advantages</span></p></td><td class="c8 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Constraints</span></p></td></tr><tr class="c12"><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Full research agenda autonomy protected by affiliation agreement</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Must secure separate funding streams beyond MIT-MBZUAI program</span></p></td></tr><tr class="c12"><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Broader hiring flexibility across disciplines (economics, mathematics, law)</span></p></td><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Less direct access to MBZUAI computing infrastructure</span></p></td></tr><tr class="c12"><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Multi-institutional partnerships enabled (Santa Fe Institute, ETH Zürich, etc.)</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Requires independent governance structure and administration</span></p></td></tr><tr class="c12"><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Geopolitical insulation through neutral governance</span></p></td><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Longer timeline to full operations (18-24 months)</span></p></td></tr><tr class="c12"><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Preserves LICC brand independently of either institution</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">More complex negotiation with both universities</span></p></td></tr></tbody></table><p class="c50 c27"><span class="c0"></span></p><p class="c9"><span class="c4 c32 c33">Assessment: Optimal for LICC's interdisciplinary mandate and long-term independence. Recommended structure for mature LICC operations.</span></p><h3 class="c25"><span class="c14">Option C: Joint Venture with UAE Government</span></h3><p class="c9"><span class="c0">Mechanism: Establish LICC as a trilateral joint venture between MIT, MBZUAI, and UAE government entities (ADGM, Dubai Free Zone Council, or similar). LICC operates as a quasi-governmental research institution with direct regulatory pathway.</span></p><table class="c20"><tbody><tr class="c12"><td class="c8 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Advantages</span></p></td><td class="c8 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Constraints</span></p></td></tr><tr class="c12"><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Direct regulatory pathway for implementation research</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Complex governance structure with multiple stakeholders</span></p></td></tr><tr class="c12"><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Government funding mandate ensures long-term sustainability</span></p></td><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Potential for political interference in research agenda</span></p></td></tr><tr class="c12"><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Living laboratory access through 27 UAE free zones</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Slower decision-making due to government processes</span></p></td></tr><tr class="c12"><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Maximum legitimacy for policy-relevant research</span></p></td><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">UAE-specific focus may limit global research applicability</span></p></td></tr></tbody></table><p class="c50 c27"><span class="c0"></span></p><p class="c9"><span class="c4 c32 c33">Assessment: Maximum implementation leverage, maximum complexity. Appropriate for Phase 2 after proof-of-concept through Options A or B.</span></p><h2 class="c18"><span class="c23">2.2 Recommended Hybrid Strategy</span></h2><p class="c9"><span class="c0">The optimal path combines elements of all three options through a phased approach that prioritizes speed-to-launch while preserving long-term independence:</span></p><p class="c9"><span class="c35 c32">Phase 1 (Months 1-12): Bootstrap through Option A. Launch initial research projects within MIT-MBZUAI program framework. Build faculty relationships and demonstrate research value.</span></p><p class="c9"><span class="c35 c32">Phase 2 (Months 12-24): Transition to Option B. Establish LICC as affiliated independent institute while maintaining MIT-MBZUAI partnership. Secure independent funding and governance.</span></p><p class="c9"><span class="c35 c32">Phase 3 (Months 24-48): Selective Option C elements. Formalize government partnerships for implementation research. Expand to multi-jurisdictional scope beyond UAE.</span></p><hr style="page-break-before:always;display:none;"><p class="c30 c27"><span class="c0"></span></p><h2 class="c18"><span class="c23">2.3 Critical Gap Analysis</span></h2><p class="c9"><span class="c0">Understanding the complementary strengths and weaknesses of each institution is essential for designing an effective dual-sponsorship structure.</span></p><h3 class="c25"><span class="c14">What MIT Provides That MBZUAI Lacks</span></h3><ul class="c21 lst-kix_k4h3rovdn5r3-0"><li class="c13 li-bullet-0"><span class="c0">Domain Expertise in Mechanism Design: MBZUAI has virtually no faculty in game theory, mathematical economics, or auction theory. MIT's Daskalakis, Acemoglu, and affiliated researchers represent the global frontier.</span></li><li class="c13 li-bullet-0"><span class="c0">Network Science and Social Physics: Pentland's Connection Science initiative has no MBZUAI equivalent. This is essential for understanding coordination dynamics at scale.</span></li><li class="c13 li-bullet-0"><span class="c0">Institutional Economics: Acemoglu's Nobel-winning research on how institutions shape prosperity provides the empirical foundation LICC requires.</span></li><li class="c13 li-bullet-0"><span class="c0">Cryptographic Foundations: Micali's Turing Award work on zero-knowledge proofs and verifiable computation underlies programmable compliance infrastructure.</span></li><li class="c13 li-bullet-0"><span class="c0">Publication Prestige: MIT publications carry greater weight in economics journals (Econometrica, AER, QJE) than MBZUAI's ML-focused venues (NeurIPS, ICLR, CVPR).</span></li></ul><h3 class="c25"><span class="c14">What MBZUAI Provides That MIT Lacks</span></h3><ul class="c21 lst-kix_k4h3rovdn5r3-0"><li class="c13 li-bullet-0"><span class="c0">Direct Government Channel: MBZUAI's board includes Sultan Ahmed Al Jaber (UAE Minister of Industry) and Khaldoon Al Mubarak (Mubadala CEO). MIT has no equivalent government access.</span></li><li class="c13 li-bullet-0"><span class="c0">Implementation Laboratory: UAE's 27 free zones provide a living laboratory for testing coordination mechanisms. MIT research remains theoretical without such testing grounds.</span></li><li class="c13 li-bullet-0"><span class="c0">Sovereign Wealth Funding: MBZUAI's state funding model provides long-term stability that MIT's grant-dependent research cannot match.</span></li><li class="c13 li-bullet-0"><span class="c0">Applied AI Infrastructure: MBZUAI's Foundation Models Hub and computing infrastructure exceed what MIT can provide for applied coordination research.</span></li><li class="c13 li-bullet-0"><span class="c0">Speed of Decision-Making: MBZUAI's young institution can move faster than MIT's established bureaucracy for new initiative approval.</span></li></ul><h2 class="c18"><span class="c23">2.4 Risk Framework</span></h2><table class="c20"><tbody><tr class="c12"><td class="c6 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Risk Category</span></p></td><td class="c16 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Description</span></p></td><td class="c15 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Mitigation Strategy</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Domain Expertise Risk</span></p></td><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">MBZUAI faculty unable to contribute to mechanism design research</span></p></td><td class="c15" colspan="1" rowspan="1"><p class="c5"><span class="c4">Pursue parallel relationships with Santa Fe Institute (complex systems), Oxford Mathematical Institute (category theory), Simons Institute Berkeley (mechanism design), ETH Zürich (distributed systems). LICC should be multi-homed.</span></p></td></tr><tr class="c12"><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Mission Drift Risk</span></p></td><td class="c16 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">LICC's mathematical physics orientation misunderstood as "applied ML for economics"</span></p></td><td class="c15 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Independent research agenda committee with veto rights. Publication targets in economics/governance venues. External advisory board with non-UAE majority.</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Geopolitical Risk</span></p></td><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">US-China-UAE technology transfer concerns; export control compliance</span></p></td><td class="c15" colspan="1" rowspan="1"><p class="c5"><span class="c4">Parallel LICC presence in neutral jurisdiction (Switzerland, Singapore). US-incorporated legal entity for Western partnerships. Clear publication review protocols.</span></p></td></tr><tr class="c12"><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Dependency Risk</span></p></td><td class="c16 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Over-reliance on single funding source or institutional sponsor</span></p></td><td class="c15 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Diversify funding across government, private, and foundation sources. Maintain alternative academic sponsor relationships. Establish non-UAE research activities from Year 1.</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Faculty Interest Risk</span></p></td><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">Key MIT faculty decline to participate</span></p></td><td class="c15" colspan="1" rowspan="1"><p class="c5"><span class="c4">Start with Pentland (known UAE interest through ADIA Lab). Build momentum before approaching others. Offer compelling research opportunities unavailable elsewhere.</span></p></td></tr></tbody></table><p class="c9 c27"><span class="c0"></span></p><hr style="page-break-before:always;display:none;"><p class="c30 c27"><span class="c0"></span></p><h1 class="c26"><span class="c10">Part III: Tactical Execution Guide</span></h1><h2 class="c18"><span class="c23">3.1 Key Contact Directory</span></h2><h3 class="c25"><span class="c14">MIT Institutional Contacts</span></h3><table class="c20"><tbody><tr class="c12"><td class="c6 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Office/Person</span></p></td><td class="c6 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Role</span></p></td><td class="c6 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Contact</span></p></td><td class="c6 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Purpose</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">MIT Industrial Liaison Program (ILP)</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Industry-MIT portal</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">ask-ilp@mit.eduPhone: 617-253-2691ilp.mit.edu</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Membership inquiry; faculty access</span></p></td></tr><tr class="c12"><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">OSATT (Office of Strategic Alliances)</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Research partnerships</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">One Main, E90-12th FloorCambridge, MA 02142osatt.mit.edu</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Formal partnership negotiation</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Office of Resource Development</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Philanthropic partnerships</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">development.mit.edu</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Gift/endowment structuring</span></p></td></tr><tr class="c12"><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">MIT Alumni Association</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Alumni network</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">alum.mit.edu600 Memorial DriveCambridge, MA 02139617-253-8200</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Alumni directory; introductions</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">MIT Connection Science</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Network science research</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">connection.mit.edu</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Pentland engagement pathway</span></p></td></tr></tbody></table><p class="c9 c27"><span class="c0"></span></p><h3 class="c25"><span class="c14">MIT Faculty Contacts (Priority Order)</span></h3><table class="c20"><tbody><tr class="c12"><td class="c17 c31" colspan="1" rowspan="1"><p class="c3"><span class="c11">Faculty</span></p></td><td class="c28 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Department</span></p></td><td class="c28 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Email/Web</span></p></td><td class="c40 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Approach Strategy</span></p></td></tr><tr class="c12"><td class="c31" colspan="1" rowspan="1"><p class="c5"><span class="c4">Alex "Sandy" Pentland</span></p></td><td class="c28" colspan="1" rowspan="1"><p class="c5"><span class="c4">Media Lab / Connection Science</span></p></td><td class="c28" colspan="1" rowspan="1"><p class="c5"><span class="c4">sandy@media.mit.edumedia.mit.edu/people/sandy</span></p></td><td class="c40" colspan="1" rowspan="1"><p class="c5"><span class="c4">HIGHEST PRIORITY. Already on ADIA Lab advisory board. Approach via UAE connection.</span></p></td></tr><tr class="c12"><td class="c31 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Constantinos Daskalakis</span></p></td><td class="c28 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">EECS / CSAIL</span></p></td><td class="c28 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">costis@csail.mit.edupeople.csail.mit.edu/costis</span></p></td><td class="c7 c40" colspan="1" rowspan="1"><p class="c5"><span class="c4">Mechanism design expertise. Approach via ILP or economics seminar invitation.</span></p></td></tr><tr class="c12"><td class="c31" colspan="1" rowspan="1"><p class="c5"><span class="c4">Daron Acemoglu</span></p></td><td class="c28" colspan="1" rowspan="1"><p class="c5"><span class="c4">Economics</span></p></td><td class="c28" colspan="1" rowspan="1"><p class="c5"><span class="c4">daron@mit.edueconomics.mit.edu/people/faculty/daron-acemoglu</span></p></td><td class="c40" colspan="1" rowspan="1"><p class="c5"><span class="c4">2024 Nobel laureate. Approach with institutional economics research proposal.</span></p></td></tr><tr class="c12"><td class="c31 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Dan Huttenlocher</span></p></td><td class="c28 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Dean, Schwarzman College</span></p></td><td class="c28 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">computing.mit.edu</span></p></td><td class="c40 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Gatekeeper for MIT-MBZUAI expansion. Approach via MBZUAI channel.</span></p></td></tr><tr class="c12"><td class="c31" colspan="1" rowspan="1"><p class="c5"><span class="c4">Philip Isola</span></p></td><td class="c28" colspan="1" rowspan="1"><p class="c5"><span class="c4">EECS (MIT-MBZUAI Director)</span></p></td><td class="c28" colspan="1" rowspan="1"><p class="c5"><span class="c4">phillipi@mit.edu</span></p></td><td class="c40" colspan="1" rowspan="1"><p class="c5"><span class="c4">Current program director. Engage to propose LICC as expansion.</span></p></td></tr></tbody></table><p class="c9 c27"><span class="c0"></span></p><h3 class="c25"><span class="c14">MBZUAI Institutional Contacts</span></h3><table class="c20"><tbody><tr class="c12"><td class="c6 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Person/Office</span></p></td><td class="c6 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Role</span></p></td><td class="c6 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Contact</span></p></td><td class="c6 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Purpose</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Professor Eric Xing</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">President</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">eric.xing@mbzuai.ac.aexing.mbzuai.ac.ae</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Ultimate decision-maker. Propose MIT relationship expansion.</span></p></td></tr><tr class="c12"><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Professor Timothy Baldwin</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Provost</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">mbzuai.ac.ae</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Academic program approval</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Professor Sami Haddadin</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">VP Research</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">mbzuai.ac.ae</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Research partnership signatory (signed MIT agreement)</span></p></td></tr><tr class="c12"><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Professor Le Song</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">MBZUAI MIT-MBZUAI Director</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">le.song@mbzuai.ac.ae</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Propose LICC as program expansion</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">MBZUAI General</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">University website</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">mbzuai.ac.aeMasdar City, Abu Dhabi, UAE</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">General inquiries</span></p></td></tr></tbody></table><p class="c9 c27"><span class="c0"></span></p><hr style="page-break-before:always;display:none;"><p class="c27 c30"><span class="c0"></span></p><h2 class="c18"><span class="c23">3.2 Phased Execution Roadmap</span></h2><h3 class="c25"><span class="c14">Phase 1: Foundation Building (Months 1-6)</span></h3><p class="c9"><span class="c4 c32 c33">Objective: Establish formal relationships with both institutions and identify faculty champions.</span></p><table class="c20"><tbody><tr class="c12"><td class="c37 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Month</span></p></td><td class="c8 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Action</span></p></td><td class="c16 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Success Metric</span></p></td></tr><tr class="c12"><td class="c37" colspan="1" rowspan="1"><p class="c5"><span class="c4">1</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Submit MIT ILP membership inquiry (ask-ilp@mit.edu). Request OSATT consultation on partnership structures.</span></p></td><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">ILP response received; OSATT meeting scheduled</span></p></td></tr><tr class="c12"><td class="c2" colspan="1" rowspan="1"><p class="c5"><span class="c4">1-2</span></p></td><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Search MIT alumni directory for MBZUAI, ADIA, G42, UAE government connections. Activate alumni network.</span></p></td><td class="c16 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">5+ relevant alumni identified</span></p></td></tr><tr class="c12"><td class="c37" colspan="1" rowspan="1"><p class="c5"><span class="c4">2</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Draft LICC concept note (5 pages) positioning coordination science as natural MIT-MBZUAI expansion.</span></p></td><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">Concept note completed and reviewed</span></p></td></tr><tr class="c12"><td class="c2" colspan="1" rowspan="1"><p class="c5"><span class="c4">2-3</span></p></td><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Request Sandy Pentland meeting via ADIA Lab connection or Connection Science webinar attendance.</span></p></td><td class="c16 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Pentland meeting scheduled</span></p></td></tr><tr class="c12"><td class="c37" colspan="1" rowspan="1"><p class="c5"><span class="c4">3-4</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Present LICC concept to Eric Xing via existing UAE/ADGM relationships. Position as MIT relationship enhancement.</span></p></td><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">Xing meeting completed; interest confirmed</span></p></td></tr><tr class="c12"><td class="c2" colspan="1" rowspan="1"><p class="c5"><span class="c4">4-5</span></p></td><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Identify 2-3 MBZUAI faculty with adjacent research interests (HCI, distributed systems, optimization).</span></p></td><td class="c16 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Faculty champions identified</span></p></td></tr><tr class="c12"><td class="c37" colspan="1" rowspan="1"><p class="c5"><span class="c4">5-6</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Draft MOU for exploratory research collaboration between Momentum and both institutions.</span></p></td><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">MOU signed with at least one institution</span></p></td></tr></tbody></table><p class="c9 c27"><span class="c0"></span></p><h3 class="c25"><span class="c14">Phase 2: Pilot Partnership (Months 6-18)</span></h3><p class="c9"><span class="c4 c32 c33">Objective: Launch initial research projects and demonstrate LICC value proposition.</span></p><table class="c20"><tbody><tr class="c12"><td class="c37 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Month</span></p></td><td class="c8 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Action</span></p></td><td class="c16 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Success Metric</span></p></td></tr><tr class="c12"><td class="c37" colspan="1" rowspan="1"><p class="c5"><span class="c4">6-8</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Launch pilot research project: "Coordination Mechanisms for UAE Free Zone Federation." Fund via Momentum sponsorship ($250-500K).</span></p></td><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">Project launched with MIT and MBZUAI PIs</span></p></td></tr><tr class="c12"><td class="c2" colspan="1" rowspan="1"><p class="c5"><span class="c4">8-10</span></p></td><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Embed 1-2 LICC researchers at MBZUAI as visiting scholars. Establish physical presence in Abu Dhabi.</span></p></td><td class="c16 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Researchers placed; workspace secured</span></p></td></tr><tr class="c12"><td class="c37" colspan="1" rowspan="1"><p class="c5"><span class="c4">10-12</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Co-author 2-3 working papers with MIT and MBZUAI faculty. Target submission to economics/governance venues.</span></p></td><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">Papers drafted and submitted</span></p></td></tr><tr class="c12"><td class="c2" colspan="1" rowspan="1"><p class="c5"><span class="c4">12-14</span></p></td><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Present at MIT Connection Science seminar and MBZUAI workshop series. Build institutional visibility.</span></p></td><td class="c16 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Presentations completed; positive reception</span></p></td></tr><tr class="c12"><td class="c37" colspan="1" rowspan="1"><p class="c5"><span class="c4">14-16</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Engage UAE government stakeholders (ADGM, Dubai Free Zone Council) on pilot findings.</span></p></td><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">Government interest documented</span></p></td></tr><tr class="c12"><td class="c2" colspan="1" rowspan="1"><p class="c5"><span class="c4">16-18</span></p></td><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Conduct internal review of pilot phase. Document lessons learned and refine LICC model.</span></p></td><td class="c16 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Review completed; Phase 3 plan approved</span></p></td></tr></tbody></table><p class="c9 c27"><span class="c0"></span></p><h3 class="c25"><span class="c14">Phase 3: Institutional Formation (Months 18-36)</span></h3><p class="c9"><span class="c4 c32 c33">Objective: Establish LICC as formal affiliated institute with independent governance and sustainable funding.</span></p><table class="c20"><tbody><tr class="c12"><td class="c37 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Month</span></p></td><td class="c8 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Action</span></p></td><td class="c16 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Success Metric</span></p></td></tr><tr class="c12"><td class="c37" colspan="1" rowspan="1"><p class="c5"><span class="c4">18-20</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Propose LICC as affiliated institute to MIT (OSATT) and MBZUAI (Board of Trustees) leadership.</span></p></td><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">Formal proposals submitted to both institutions</span></p></td></tr><tr class="c12"><td class="c2" colspan="1" rowspan="1"><p class="c5"><span class="c4">20-24</span></p></td><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Negotiate research funding from UAE government entities (G42, MGX, ADIA) and MIT philanthropic channels. Target $5-10M minimum.</span></p></td><td class="c16 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Term sheets signed for $5M+ funding</span></p></td></tr><tr class="c12"><td class="c37" colspan="1" rowspan="1"><p class="c5"><span class="c4">24-28</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Establish LICC advisory board with representatives from MIT, MBZUAI, Momentum, and independent academics.</span></p></td><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">Advisory board constituted and meeting</span></p></td></tr><tr class="c12"><td class="c2" colspan="1" rowspan="1"><p class="c5"><span class="c4">28-32</span></p></td><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Complete legal entity formation (US and UAE structures). Finalize affiliation agreements with both universities.</span></p></td><td class="c16 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Legal entities registered; agreements signed</span></p></td></tr><tr class="c12"><td class="c37" colspan="1" rowspan="1"><p class="c5"><span class="c4">32-36</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Launch inaugural LICC research programs. Recruit founding director and initial faculty cohort.</span></p></td><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">Director hired; 3+ faculty committed</span></p></td></tr></tbody></table><p class="c9 c27"><span class="c0"></span></p><hr style="page-break-before:always;display:none;"><p class="c30 c27"><span class="c0"></span></p><h1 class="c26"><span class="c10">Part IV: Comprehensive Budget Framework</span></h1><h2 class="c18"><span class="c23">4.1 Five-Year Operating Budget</span></h2><table class="c20"><tbody><tr class="c12"><td class="c19 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Category</span></p></td><td class="c1 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Year 1</span></p></td><td class="c1 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Year 2</span></p></td><td class="c1 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Year 3</span></p></td><td class="c1 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Year 4</span></p></td><td class="c1 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Year 5</span></p></td></tr><tr class="c12"><td class="c19" colspan="1" rowspan="1"><p class="c5"><span class="c4">PERSONNEL</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5 c27"><span class="c0"></span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5 c27"><span class="c0"></span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5 c27"><span class="c0"></span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5 c27"><span class="c0"></span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5 c27"><span class="c0"></span></p></td></tr><tr class="c12"><td class="c19 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">&nbsp; Founding Director</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$400K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$420K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$440K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$460K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$480K</span></p></td></tr><tr class="c12"><td class="c19" colspan="1" rowspan="1"><p class="c5"><span class="c4">&nbsp; Senior Faculty (FTE)</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">1 @ $350K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">2 @ $360K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">3 @ $375K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">4 @ $390K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">5 @ $400K</span></p></td></tr><tr class="c12"><td class="c19 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">&nbsp; Research Staff (FTE)</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">3 @ $120K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">5 @ $125K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">7 @ $130K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">9 @ $135K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">10 @ $140K</span></p></td></tr><tr class="c12"><td class="c19" colspan="1" rowspan="1"><p class="c5"><span class="c4">&nbsp; PhD Students (stipend + tuition)</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">5 @ $60K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">10 @ $62K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">15 @ $64K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">20 @ $66K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">25 @ $68K</span></p></td></tr><tr class="c12"><td class="c19 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">&nbsp; Operations &amp; Admin</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">2 @ $100K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">3 @ $105K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">4 @ $110K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">5 @ $115K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">6 @ $120K</span></p></td></tr><tr class="c12"><td class="c19" colspan="1" rowspan="1"><p class="c5"><span class="c4">Personnel Subtotal</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$1.71M</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$2.88M</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$4.20M</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$5.62M</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$6.90M</span></p></td></tr><tr class="c12"><td class="c19 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">INFRASTRUCTURE</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5 c27"><span class="c0"></span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5 c27"><span class="c0"></span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5 c27"><span class="c0"></span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5 c27"><span class="c0"></span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5 c27"><span class="c0"></span></p></td></tr><tr class="c12"><td class="c19" colspan="1" rowspan="1"><p class="c5"><span class="c4">&nbsp; Computing (cloud/HPC)</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$300K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$400K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$500K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$600K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$700K</span></p></td></tr><tr class="c12"><td class="c19 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">&nbsp; Office/Lab Space</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$200K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$250K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$300K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$350K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$400K</span></p></td></tr><tr class="c12"><td class="c19" colspan="1" rowspan="1"><p class="c5"><span class="c4">&nbsp; Software/Licenses</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$50K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$75K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$100K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$125K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$150K</span></p></td></tr><tr class="c12"><td class="c19 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Infrastructure Subtotal</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$550K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$725K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$900K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$1.08M</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$1.25M</span></p></td></tr><tr class="c12"><td class="c19" colspan="1" rowspan="1"><p class="c5"><span class="c4">PROGRAMS</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5 c27"><span class="c0"></span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5 c27"><span class="c0"></span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5 c27"><span class="c0"></span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5 c27"><span class="c0"></span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5 c27"><span class="c0"></span></p></td></tr><tr class="c12"><td class="c19 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">&nbsp; Research Projects</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$500K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$750K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$1.0M</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$1.25M</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$1.5M</span></p></td></tr><tr class="c12"><td class="c19" colspan="1" rowspan="1"><p class="c5"><span class="c4">&nbsp; Conferences/Workshops</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$150K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$200K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$300K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$400K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$500K</span></p></td></tr><tr class="c12"><td class="c19 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">&nbsp; Travel &amp; Collaboration</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$200K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$250K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$300K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$350K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$400K</span></p></td></tr><tr class="c12"><td class="c19" colspan="1" rowspan="1"><p class="c5"><span class="c4">&nbsp; Publications/Dissemination</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$100K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$125K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$150K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$175K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$200K</span></p></td></tr><tr class="c12"><td class="c19 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Programs Subtotal</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$950K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$1.33M</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$1.75M</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$2.18M</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$2.60M</span></p></td></tr><tr class="c12"><td class="c19" colspan="1" rowspan="1"><p class="c5"><span class="c4">INSTITUTIONAL</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5 c27"><span class="c0"></span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5 c27"><span class="c0"></span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5 c27"><span class="c0"></span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5 c27"><span class="c0"></span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5 c27"><span class="c0"></span></p></td></tr><tr class="c12"><td class="c19 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">&nbsp; MIT Overhead (58%)</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$400K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$500K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$600K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$700K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$800K</span></p></td></tr><tr class="c12"><td class="c19" colspan="1" rowspan="1"><p class="c5"><span class="c4">&nbsp; MBZUAI Partnership Fee</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$200K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$250K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$300K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$350K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$400K</span></p></td></tr><tr class="c12"><td class="c19 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">&nbsp; Legal/Compliance</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$150K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$100K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$100K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$100K</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$100K</span></p></td></tr><tr class="c12"><td class="c19" colspan="1" rowspan="1"><p class="c5"><span class="c4">&nbsp; Contingency (10%)</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$390K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$578K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$795K</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$1.00M</span></p></td><td class="c1" colspan="1" rowspan="1"><p class="c5"><span class="c4">$1.21M</span></p></td></tr><tr class="c12"><td class="c19 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Institutional Subtotal</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$1.14M</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$1.43M</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$1.80M</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$2.15M</span></p></td><td class="c1 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$2.51M</span></p></td></tr><tr class="c12"><td class="c19 c17" colspan="1" rowspan="1"><p class="c30"><span class="c11 c32">ANNUAL TOTAL</span></p></td><td class="c1 c17" colspan="1" rowspan="1"><p class="c30"><span class="c11 c32">$4.35M</span></p></td><td class="c1 c17" colspan="1" rowspan="1"><p class="c30"><span class="c11 c32">$6.36M</span></p></td><td class="c1 c17" colspan="1" rowspan="1"><p class="c30"><span class="c11 c32">$8.65M</span></p></td><td class="c1 c17" colspan="1" rowspan="1"><p class="c30"><span class="c11 c32">$11.0M</span></p></td><td class="c1 c17" colspan="1" rowspan="1"><p class="c30"><span class="c11 c32">$13.3M</span></p></td></tr><tr class="c12"><td class="c19 c47" colspan="1" rowspan="1"><p class="c30"><span class="c11 c32">CUMULATIVE TOTAL</span></p></td><td class="c1 c47" colspan="1" rowspan="1"><p class="c30"><span class="c11 c32">$4.35M</span></p></td><td class="c1 c47" colspan="1" rowspan="1"><p class="c30"><span class="c11 c32">$10.7M</span></p></td><td class="c1 c47" colspan="1" rowspan="1"><p class="c30"><span class="c11 c32">$19.4M</span></p></td><td class="c1 c47" colspan="1" rowspan="1"><p class="c30"><span class="c11 c32">$30.4M</span></p></td><td class="c1 c47" colspan="1" rowspan="1"><p class="c30"><span class="c11 c32">$43.7M</span></p></td></tr></tbody></table><p class="c9 c27"><span class="c0"></span></p><h2 class="c18"><span class="c23">4.2 Launch Capital Requirements</span></h2><p class="c9"><span class="c0">Initial capitalization required before operational funding begins:</span></p><table class="c20"><tbody><tr class="c12"><td class="c8 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Item</span></p></td><td class="c6 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Amount</span></p></td><td class="c6 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Timing</span></p></td></tr><tr class="c12"><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Legal entity formation (US + UAE)</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">$150,000</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Month -6 to 0</span></p></td></tr><tr class="c12"><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Initial MIT/MBZUAI partnership deposits</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$500,000</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Month 0</span></p></td></tr><tr class="c12"><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Founding Director recruitment (search + sign-on)</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">$300,000</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Month -3 to 3</span></p></td></tr><tr class="c12"><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Initial faculty/researcher recruitment</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$400,000</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Month 0-6</span></p></td></tr><tr class="c12"><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Computing infrastructure setup</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">$250,000</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Month 0-3</span></p></td></tr><tr class="c12"><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Office establishment (MIT + Abu Dhabi)</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$200,000</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Month 0-6</span></p></td></tr><tr class="c12"><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Launch events and communications</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">$100,000</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Month 3-6</span></p></td></tr><tr class="c12"><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Working capital reserve (6 months operations)</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$2,000,000</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Month 0</span></p></td></tr><tr class="c12"><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Contingency (15%)</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">$585,000</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Reserved</span></p></td></tr><tr class="c12"><td class="c8 c17" colspan="1" rowspan="1"><p class="c30"><span class="c11 c32">TOTAL LAUNCH CAPITAL</span></p></td><td class="c6 c17" colspan="1" rowspan="1"><p class="c30"><span class="c11 c32">$4,485,000</span></p></td><td class="c6 c17" colspan="1" rowspan="1"><p class="c30 c27"><span class="c0"></span></p></td></tr></tbody></table><p class="c9 c27"><span class="c0"></span></p><hr style="page-break-before:always;display:none;"><p class="c30 c27"><span class="c0"></span></p><h1 class="c26"><span class="c10">Part V: Fundraising Strategy</span></h1><h2 class="c18"><span class="c23">5.1 Funding Source Matrix</span></h2><table class="c20"><tbody><tr class="c12"><td class="c22 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Source</span></p></td><td class="c22 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Target Amount</span></p></td><td class="c22 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Timeline</span></p></td><td class="c22 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Key Contact</span></p></td><td class="c22 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Approach</span></p></td></tr><tr class="c12"><td class="c22" colspan="1" rowspan="1"><p class="c5"><span class="c4">Momentum (Founding Sponsor)</span></p></td><td class="c22" colspan="1" rowspan="1"><p class="c5"><span class="c4">$5M (5-year)</span></p></td><td class="c22" colspan="1" rowspan="1"><p class="c5"><span class="c4">Year 1</span></p></td><td class="c22" colspan="1" rowspan="1"><p class="c5"><span class="c4">Internal</span></p></td><td class="c22" colspan="1" rowspan="1"><p class="c5"><span class="c4">Lead gift establishes credibility; naming rights</span></p></td></tr><tr class="c12"><td class="c22 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">MBZUAI Institutional</span></p></td><td class="c22 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$5-7M</span></p></td><td class="c22 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Years 1-5</span></p></td><td class="c22 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Eric Xing</span></p></td><td class="c22 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Position as MIT relationship enhancement</span></p></td></tr><tr class="c12"><td class="c22" colspan="1" rowspan="1"><p class="c5"><span class="c4">UAE Government (G42/MGX/ADIA)</span></p></td><td class="c22" colspan="1" rowspan="1"><p class="c5"><span class="c4">$10-15M</span></p></td><td class="c22" colspan="1" rowspan="1"><p class="c5"><span class="c4">Years 2-5</span></p></td><td class="c22" colspan="1" rowspan="1"><p class="c5"><span class="c4">Via MBZUAI Board</span></p></td><td class="c22" colspan="1" rowspan="1"><p class="c5"><span class="c4">SEZ implementation research mandate</span></p></td></tr><tr class="c12"><td class="c7 c22" colspan="1" rowspan="1"><p class="c5"><span class="c4">MIT Philanthropic</span></p></td><td class="c22 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$3-5M</span></p></td><td class="c22 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Years 2-5</span></p></td><td class="c22 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Resource Development</span></p></td><td class="c22 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Endowed fellowship; research fund naming</span></p></td></tr><tr class="c12"><td class="c22" colspan="1" rowspan="1"><p class="c5"><span class="c4">Foundation Grants</span></p></td><td class="c22" colspan="1" rowspan="1"><p class="c5"><span class="c4">$5-8M</span></p></td><td class="c22" colspan="1" rowspan="1"><p class="c5"><span class="c4">Years 2-5</span></p></td><td class="c22" colspan="1" rowspan="1"><p class="c5"><span class="c4">Various</span></p></td><td class="c22" colspan="1" rowspan="1"><p class="c5"><span class="c4">Governance/democracy research alignment</span></p></td></tr><tr class="c12"><td class="c22 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Industry Consortium</span></p></td><td class="c22 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$5-10M</span></p></td><td class="c22 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Years 3-5</span></p></td><td class="c22 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Via MIT ILP</span></p></td><td class="c22 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Programmable compliance research</span></p></td></tr></tbody></table><p class="c9 c27"><span class="c0"></span></p><h2 class="c18"><span class="c23">5.2 Foundation Targets</span></h2><table class="c20"><tbody><tr class="c12"><td class="c6 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Foundation</span></p></td><td class="c6 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Focus Area</span></p></td><td class="c6 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">LICC Alignment</span></p></td><td class="c6 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Grant Range</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Open Philanthropy</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">AI governance, global development</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Coordination mechanisms for AI safety</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">$1-5M</span></p></td></tr><tr class="c12"><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Hewlett Foundation</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Democratic institutions</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Jurisdictional competition research</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$500K-2M</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">MacArthur Foundation</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Technology and democracy</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Programmable governance primitives</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">$1-3M</span></p></td></tr><tr class="c12"><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Simons Foundation</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Mathematics, theoretical CS</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Spectral coordination theory</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$500K-2M</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Berggruen Institute</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Governance innovation</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Network state coordination</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">$500K-1M</span></p></td></tr><tr class="c12"><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Ethereum Foundation</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Decentralized systems</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Cryptoeconomic mechanism design</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$1-3M</span></p></td></tr></tbody></table><p class="c9 c27"><span class="c0"></span></p><h2 class="c18"><span class="c23">5.3 Naming and Recognition Opportunities</span></h2><table class="c20"><tbody><tr class="c12"><td class="c8 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Opportunity</span></p></td><td class="c6 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Gift Level</span></p></td><td class="c6 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Duration</span></p></td></tr><tr class="c12"><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Founding Sponsor: "The [Name] MIT-MBZUAI LICC"</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">$10M+</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Perpetual</span></p></td></tr><tr class="c12"><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Named Research Chair in Coordination Science</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$3M endowment</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Perpetual</span></p></td></tr><tr class="c12"><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Named Research Program (e.g., "[Name] Mechanism Design Initiative")</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">$2M (5-year)</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Term</span></p></td></tr><tr class="c12"><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Endowed PhD Fellowship</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$1M endowment</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Perpetual</span></p></td></tr><tr class="c12"><td class="c8" colspan="1" rowspan="1"><p class="c5"><span class="c4">Annual Research Fund (with naming)</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">$500K/year</span></p></td><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Annual</span></p></td></tr><tr class="c12"><td class="c8 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Conference/Workshop Series Sponsor</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">$250K/year</span></p></td><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Annual</span></p></td></tr></tbody></table><p class="c9 c27"><span class="c0"></span></p><hr style="page-break-before:always;display:none;"><p class="c30 c27"><span class="c0"></span></p><h1 class="c26"><span class="c10">Part VI: Strategic Partners and Co-Founders</span></h1><h2 class="c18"><span class="c23">6.1 Academic Partners</span></h2><table class="c20"><tbody><tr class="c12"><td class="c6 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Institution</span></p></td><td class="c16 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Relevance</span></p></td><td class="c15 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Partnership Model</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Santa Fe Institute</span></p></td><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">Complex adaptive systems, network science</span></p></td><td class="c15" colspan="1" rowspan="1"><p class="c5"><span class="c4">Research affiliate program; joint workshops; faculty exchange</span></p></td></tr><tr class="c12"><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">ETH Zürich</span></p></td><td class="c16 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Distributed systems, cryptography</span></p></td><td class="c15 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Joint PhD program; European implementation research</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Oxford Mathematical Institute</span></p></td><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">Category theory, algebraic methods</span></p></td><td class="c15" colspan="1" rowspan="1"><p class="c5"><span class="c4">Visiting researcher positions; theoretical foundations</span></p></td></tr><tr class="c12"><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Simons Institute (Berkeley)</span></p></td><td class="c16 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Mechanism design, algorithmic game theory</span></p></td><td class="c15 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Semester-long research programs; workshop co-hosting</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">London School of Economics</span></p></td><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">Institutional economics, political economy</span></p></td><td class="c15" colspan="1" rowspan="1"><p class="c5"><span class="c4">Joint research projects; policy analysis</span></p></td></tr></tbody></table><p class="c9 c27"><span class="c0"></span></p><h2 class="c18"><span class="c23">6.2 Government and Regulatory Partners</span></h2><table class="c20"><tbody><tr class="c12"><td class="c6 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Entity</span></p></td><td class="c16 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Role</span></p></td><td class="c15 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">LICC Value</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">ADGM (Abu Dhabi)</span></p></td><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">Financial free zone regulator</span></p></td><td class="c15" colspan="1" rowspan="1"><p class="c5"><span class="c4">Living laboratory for programmable compliance; regulatory sandbox access</span></p></td></tr><tr class="c12"><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Dubai Free Zone Council</span></p></td><td class="c16 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">27 free zone coordination</span></p></td><td class="c15 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Multi-zone coordination research; implementation pathway</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">AIFC (Kazakhstan)</span></p></td><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">Central Asian financial hub</span></p></td><td class="c15" colspan="1" rowspan="1"><p class="c5"><span class="c4">Second implementation jurisdiction; comparative research</span></p></td></tr><tr class="c12"><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Singapore EDB</span></p></td><td class="c16 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Economic development</span></p></td><td class="c15 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Southeast Asian research presence; neutral jurisdiction</span></p></td></tr></tbody></table><p class="c9 c27"><span class="c0"></span></p><h2 class="c18"><span class="c23">6.3 Industry and Technology Partners</span></h2><table class="c20"><tbody><tr class="c12"><td class="c6 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Company</span></p></td><td class="c16 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Relevance</span></p></td><td class="c15 c17" colspan="1" rowspan="1"><p class="c3"><span class="c11">Partnership Value</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Chainlink Labs</span></p></td><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">Oracle infrastructure</span></p></td><td class="c15" colspan="1" rowspan="1"><p class="c5"><span class="c4">Data feeds for programmable compliance; research sponsorship</span></p></td></tr><tr class="c12"><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Polygon Labs</span></p></td><td class="c16 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">L2 infrastructure</span></p></td><td class="c15 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Implementation platform for Smart Assets; technical collaboration</span></p></td></tr><tr class="c12"><td class="c6" colspan="1" rowspan="1"><p class="c5"><span class="c4">Circle</span></p></td><td class="c16" colspan="1" rowspan="1"><p class="c5"><span class="c4">Stablecoin infrastructure</span></p></td><td class="c15" colspan="1" rowspan="1"><p class="c5"><span class="c4">Payment primitive research; compliance mechanisms</span></p></td></tr><tr class="c12"><td class="c6 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">G42 (UAE)</span></p></td><td class="c16 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">UAE AI infrastructure</span></p></td><td class="c15 c7" colspan="1" rowspan="1"><p class="c5"><span class="c4">Computing resources; government channel; implementation partner</span></p></td></tr></tbody></table><p class="c9 c27"><span class="c0"></span></p><hr style="page-break-before:always;display:none;"><p class="c30 c27"><span class="c0"></span></p><h1 class="c26"><span class="c10">Appendices</span></h1><h2 class="c18"><span class="c23">Appendix A: MIT Research Agreement Framework</span></h2><p class="c9"><span class="c0">MIT offers standard templates for research partnerships through OSATT:</span></p><ul class="c21 lst-kix_k4h3rovdn5r3-0"><li class="c13 li-bullet-0"><span class="c0">Master Research Agreement (MRA): Umbrella agreement covering multiple projects over multi-year period. Recommended for LICC's ongoing relationship.</span></li><li class="c13 li-bullet-0"><span class="c0">Individual Research Agreement (IRA): Single project agreements for specific research initiatives.</span></li><li class="c13 li-bullet-0"><span class="c0">Consortium Agreement: Multi-sponsor arrangements allowing industry partners to join LICC research programs.</span></li><li class="c13 li-bullet-0"><span class="c0">Non-Disclosure Agreement (NDA): Required for initial discussions involving proprietary research.</span></li><li class="c13 li-bullet-0"><span class="c0">Data Use Agreement (DUA): Governs data sharing between institutions and implementation partners.</span></li></ul><p class="c9"><span class="c4 c32 c33">Standard MIT overhead rate: 58% on-campus, 26% off-campus. LICC research conducted primarily at MBZUAI may qualify for reduced rates.</span></p><h2 class="c18"><span class="c23">Appendix B: LICC Research Agenda Summary</span></h2><p class="c9"><span class="c0">Initial research programs for Years 1-3:</span></p><p class="c9"><span class="c35 c32">Program 1: UAE Free Zone Federation Coordination</span></p><p class="c9"><span class="c0">Develop mathematical framework for optimal coordination among UAE's 27 free zones. Design incentive mechanisms that align individual zone policies with federation-wide objectives. Model inter-zone capital flows and regulatory arbitrage dynamics.</span></p><p class="c9"><span class="c35 c32">Program 2: Smart Asset Compliance Architecture</span></p><p class="c9"><span class="c0">Formal specification of programmable compliance primitives for cross-jurisdictional assets. Cryptographic mechanisms for privacy-preserving regulatory reporting. Implementation framework for Mass Protocol integration.</span></p><p class="c9"><span class="c35 c32">Program 3: Jurisdictional Competition Dynamics</span></p><p class="c9"><span class="c0">Empirical analysis of regulatory competition effects on institutional quality. Game-theoretic models of jurisdiction selection by mobile capital and talent. Policy implications for optimal regulatory design.</span></p><h2 class="c18"><span class="c23">Appendix C: Governance Structure Template</span></h2><p class="c9"><span class="c0">Proposed LICC governance for affiliated independent institute model:</span></p><p class="c9"><span class="c35 c32">Board of Directors (7 members):</span></p><ul class="c21 lst-kix_k4h3rovdn5r3-0"><li class="c13 li-bullet-0"><span class="c0">2 seats: MIT-appointed (faculty representatives)</span></li><li class="c13 li-bullet-0"><span class="c0">2 seats: MBZUAI-appointed (including 1 UAE government representative)</span></li><li class="c13 li-bullet-0"><span class="c0">1 seat: Momentum-appointed (Founding Sponsor)</span></li><li class="c13 li-bullet-0"><span class="c0">2 seats: Independent academics (non-affiliated)</span></li></ul><p class="c9"><span class="c35 c32">Research Advisory Committee (9 members):</span></p><ul class="c21 lst-kix_k4h3rovdn5r3-0"><li class="c13 li-bullet-0"><span class="c0">External academics with relevant expertise</span></li><li class="c13 li-bullet-0"><span class="c0">Rotating 3-year terms</span></li><li class="c13 li-bullet-0"><span class="c0">Veto authority over research agenda changes</span></li></ul><p class="c9"><span class="c32 c35">Executive Leadership:</span></p><ul class="c21 lst-kix_k4h3rovdn5r3-0"><li class="c13 li-bullet-0"><span class="c0">Founding Director: Appointed by Board, 5-year renewable term</span></li><li class="c13 li-bullet-0"><span class="c0">Deputy Director (MIT): Based in Cambridge</span></li><li class="c13 li-bullet-0"><span class="c0">Deputy Director (MBZUAI): Based in Abu Dhabi</span></li><li class="c13 li-bullet-0"><span class="c0">Chief Operating Officer: Administrative leadership</span></li></ul><p class="c27 c55"><span class="c0"></span></p><p class="c29"><span class="c4 c32 c52">────────────────────────────</span></p><p class="c38"><span class="c4 c33 c44">Document prepared December 2025</span></p><p class="c38"><span class="c4 c33 c44">For questions regarding this blueprint, contact Momentum Partners</span></p><p class="c27 c49"><span class="c41"></span></p>
+            </div>
+
+            <footer class="article-footer">
+                <p class="author-byline"><strong>Raeez Lorgat</strong>, Managing Partner at Momentum</p>
+                <nav class="footer-nav">
+                    <a href="writing.html">← All Writing</a>
+                </nav>
+            </footer>
+
+            <footer class="contact-footer">
+                <a href="mailto:raeez@momentum.inc">raeez@momentum.inc</a>
+                <nav class="social" aria-label="Social links">
+                    <a href="https://x.com/raeez" aria-label="X (Twitter)" class="icon-link">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/raeez" aria-label="Instagram" class="icon-link">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/raeez-lorgat/" aria-label="LinkedIn" class="icon-link">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                </nav>
+            </footer>
+        </article>
+    </div>
+</body>
+</html>
