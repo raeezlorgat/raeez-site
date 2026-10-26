@@ -14,7 +14,10 @@ Read `README.md` and the affected HTML page before changing content or layout.
 Check navigation in `index.html`, `about.html`, and `writing.html` when changing their destinations.
 Read `feed.xml` when changing an article listed in the feed.
 Inspect `google-apps-script.js` before changing document retrieval behavior.
-Do not assume this repository and `~/www` are interchangeable. Verify ownership before proposing cross-repository synchronization.
+This checkout contains static HTML and has no local package build pipeline.
+Do not assume this repository and `~/www` are interchangeable.
+Check the target checkout, branch, and publication configuration before copying pages between them.
+Matching `CNAME` values do not establish which checkout owns a live deployment.
 
 ## Publication and evidence
 
